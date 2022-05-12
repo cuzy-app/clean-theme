@@ -1,0 +1,20 @@
+{
+  "id": "clean-theme",
+  "name": "Clean Theme",
+  "description": "Clean theme for Humhub based on the Community theme",
+  "keywords": [],
+  "version": "0.1",
+  "humhub": {
+    "minVersion": "1.11"
+  },
+  "homepage": "https://cuzy.app",
+  "authors": [
+    {
+      "name": "Marc FARRE",
+      "homepage": "https://marc.fun",
+      "role": "Developer"
+    }
+  ],
+  "screenshots": [
+  ]
+}

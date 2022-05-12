@@ -1,0 +1,107 @@
+/**
+ * Define or overwrite your theme variables here.
+ *
+ * Check for @humhub/static/less/variables.less file for all available variables.
+ *
+ * You can also access your variables within your view files by calling Yii::$app->view->theme->variable('myVariable');
+ *
+ * You can disable the import of humhub theme components by using variables of the format @prev-{component} e.g.:
+ * This will prevent comment.less component from beeing imported.
+ * e.g.:
+ * @prev-comment: true;
+ *
+**/
+
+@baseTheme: "HumHub";
+
+// Disable topbar import of humhub theme
+@prev-topbar: true;
+
+
+//
+// Colors for buttons status etc.
+// --------------------------------------------------
+
+@default: #f3f3f3;
+@primary: #435f6f;
+@info: #21A1B3;
+@success: #97d271;
+@warning: #f8b763;
+@danger: #FC4A64;
+@link: #2eaae1;
+@isFluid: false;
+
+//
+// Text color
+// --------------------------------------------------
+
+// Default body text color.
+@text-color-main: #76838f;
+
+// used for some icons and buttons etc. - former @font2
+@text-color-secondary: #7a7a7a;
+
+// highlighted text like some active links hovered links etc. - former @font3
+@text-color-highlight: #242424;
+
+// side information like dates, placeholder, some dropdown headers - former @font4
+@text-color-soft: #555555;
+
+// also side information wall entry links (like/comment), help blocks in forms etc.  - former @font5
+@text-color-soft2: #aeaeae;
+
+// used in gridview summary and installer - former @font1
+@text-color-soft3: #bac2c7;
+
+// used as contrast color for @primary, @info, @success, @warning, @danger backgrounds for buttons etc.
+// Note that @default does not use a contrast color @default is normally combined with @text-color-secondary
+@text-color-contrast: #fff;
+
+
+//
+// Text color
+// --------------------------------------------------
+
+// main content background color should be in contrast with @text-color-main, @text-color-secondary and other text colors
+@background-color-main: #fff;
+
+// used beside others for tabs - former @background1
+@background-color-secondary: #f7f7f7;
+
+// page background which is also used for other ui components as comment box etc. - former @background2
+@background-color-page: #f1f4f5;
+
+// text highlight
+@background-color-highlight: #fff8e0;
+
+// Additional background colors
+@background3: #d7d7d7;
+@background4: #b2b2b2;
+
+//
+// Bootstrap Alert boxes
+// --------------------------------------------------
+
+// Alert box success (used in forms)
+@background-color-success: #b7ead0;
+@text-color-success: #28d17c;
+@border-color-success: #28d17c;
+
+// Alert box warning (used in forms)
+@background-color-warning: #f5ccaa;
+@text-color-warning: #f57d1b;
+@border-color-warning: #f57d1b;
+
+// Alert box danger (used in forms)
+@background-color-danger: #ffc9ca;
+@text-color-danger: #ff666b;
+@border-color-danger: #ff666b;
+
+
+//
+// For Clean Theme
+// --------------------------------------------------
+
+@menu-border-color: #e4eaec;
+
+@text-color-heading: #37474f;

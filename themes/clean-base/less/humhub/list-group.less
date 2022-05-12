@@ -1,0 +1,28 @@
+//
+// List-Group
+// --------------------------------------------------
+
+// Remove left line
+.list-group-item {
+  border-left: none !important;
+  padding: 10px 15px;
+  transition: .25s;
+}
+
+a.list-group-item {
+  color: @text-color-main;
+}
+
+a.list-group-item:hover,
+a.list-group-item.active,
+a.list-group-item.active:hover,
+a.list-group-item.active:focus {
+  border-left: none !important;
+  background-color: @primary;
+  color: @text-color-contrast;
+}
+
+a.list-group-item:hover {
+  background-color: @background-color-secondary;
+  color: @text-color-highlight;
+}

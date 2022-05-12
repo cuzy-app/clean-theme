@@ -1,0 +1,36 @@
+.panel {
+  border: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  border-radius: 0;
+}
+
+.panel-profile {
+  .panel-profile-header {
+
+    // Hide default gray image
+    img.img-profile-header-background {
+      min-height: 100px;
+
+      &[src$="/static/img/default_banner.jpg"] {
+        width: 0;
+      }
+    }
+
+    div.img-profile-header-background {
+      border-radius: 50% !important;
+    }
+
+    .img-profile-data {
+      background: none;
+      color: @headings-color;
+
+      h1 {
+        color: @headings-color;
+        font-weight: 600 !important;
+        font-size: 150% !important;
+      }
+    }
+  }
+}

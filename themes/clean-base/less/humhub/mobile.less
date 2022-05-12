@@ -1,0 +1,38 @@
+// The mobile design will load when screen is less then 768px
+@responsive: ~"only screen and (max-width : 768px)";
+
+@media @responsive {
+
+  // Layout Contents: Adjusting the contents to fit perfectly on mobile devices
+  #layout-content {
+    // Layout Space: Space navigation
+    .left-navigation {
+      .list-group {
+        white-space: normal;
+      }
+    }
+
+    .panel-profile .panel-profile-header .img-profile-header-background {
+      min-height: 65px !important;
+    }
+  }
+
+  .topbar {
+    &, > .container {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  #topbar {
+    > .container {
+      // Space dropdown menu
+      #space-menu-dropdown,
+      #search-menu-dropdown {
+        .media-list {
+          max-height: 200px;
+        }
+      }
+    }
+  }
+}
