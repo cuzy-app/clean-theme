@@ -3,6 +3,7 @@ humhub.module('clean.theme.topNavigation', function (module, require, $) {
     var $topBar = $('#topbar');
     var $topBarContainer = $('#topbar > .container');
     var $topMenuNav = $('#topbar > .container #top-menu-nav');
+    var $topMenuSub = $topMenuNav.find('#top-menu-sub');
 
     var init = function () {
 
@@ -22,11 +23,25 @@ humhub.module('clean.theme.topNavigation', function (module, require, $) {
     };
 
     var fixNavigationOverflow = function () {
+        var $topMenuDropdown = $topMenuSub.find('#top-menu-sub-dropdown');
         if (!isOverflow()) {
-            return;
+            if ($topMenuSub.is(":visible")) {
+                $topMenuSub.hide();
+                while (!isOverflow() && $topMenuDropdown.children('.top-menu-item').length > 0) {
+                    moveFirstItemToMenuBar($topMenuDropdown);
+                }
+                if ($topMenuDropdown.children('.top-menu-item').length > 0) {
+                    $topMenuSub.show();
+                }
+                if (!isOverflow()) {
+                    return;
+                }
+            } else {
+                return;
+            }
         }
 
-        var $topMenuDropdown = $topMenuNav.find('#top-menu-sub').show().find('#top-menu-sub-dropdown');
+        $topMenuSub.show();
 
         while (isOverflow() && moveNextItemToDropDown($topMenuDropdown)) {
         }
@@ -48,6 +63,15 @@ humhub.module('clean.theme.topNavigation', function (module, require, $) {
         $item.find('br').remove();
         $topMenuDropdown.prepend($item);
         return true;
+    };
+
+    var moveFirstItemToMenuBar = function ($topMenuDropdown) {
+        var $item = $topMenuDropdown.children('.top-menu-item:first');
+        var $iitem = $item.find('a:first > i:first');
+        if ($iitem) {
+            $iitem.after('<br/>');
+        }
+        $topMenuSub.before($item);
     };
 
     var isOverflow = function () {
