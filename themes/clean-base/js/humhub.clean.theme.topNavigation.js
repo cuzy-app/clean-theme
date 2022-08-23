@@ -4,6 +4,7 @@ humhub.module('clean.theme.topNavigation', function (module, require, $) {
     var $topBarContainer = $('#topbar > .container');
     var $topMenuNav = $('#topbar > .container #top-menu-nav');
     var $topMenuSub = $topMenuNav.find('#top-menu-sub');
+    var $topMenuDropdown = $topMenuSub.find('#top-menu-sub-dropdown');
 
     var init = function () {
 
@@ -23,7 +24,6 @@ humhub.module('clean.theme.topNavigation', function (module, require, $) {
     };
 
     var fixNavigationOverflow = function () {
-        var $topMenuDropdown = $topMenuSub.find('#top-menu-sub-dropdown');
         if (!isOverflow()) {
             if ($topMenuSub.is(":visible")) {
                 $topMenuSub.hide();
@@ -50,7 +50,7 @@ humhub.module('clean.theme.topNavigation', function (module, require, $) {
         moveNextItemToDropDown($topMenuDropdown);
 
         $topBar.css('overflow', '');
-        $topMenuNav.find('#top-menu-sub').find('.dropdown-toggle').dropdown();
+        $topMenuSub.find('.dropdown-toggle').dropdown();
 
     };
 
@@ -67,9 +67,9 @@ humhub.module('clean.theme.topNavigation', function (module, require, $) {
 
     var moveFirstItemToMenuBar = function ($topMenuDropdown) {
         var $item = $topMenuDropdown.children('.top-menu-item:first');
-        var $iitem = $item.find('a:first > i:first');
-        if ($iitem) {
-            $iitem.after('<br/>');
+        var $iItem = $item.find('a:first > i:first');
+        if ($iItem) {
+            $iItem.after('<br/>');
         }
         $topMenuSub.before($item);
     };

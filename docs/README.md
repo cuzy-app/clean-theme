@@ -6,7 +6,7 @@ Clean theme for Humhub based on the Community theme
 ## Overview
 
 - Modern, smooth and uncluttered theme
-- Variants : Contrasted and Bordered (+ Dark under development)
+- Variants : Contrasted and Bordered
 - Merges the 2 top menu bars of the community theme into 1 menu bar
 - Adds the profile's header in the user's account pages
 - You can create a child theme to customize colors, fonts, etc. (see instructions bellow) or use the [Theme Builder module](https://www.humhub.com/en/marketplace/theme-builder/)
