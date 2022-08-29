@@ -3,9 +3,9 @@
   "name": "Clean Theme",
   "description": "Clean theme for Humhub based on the Community theme",
   "keywords": [],
-  "version": "0.2",
+  "version": "0.3",
   "humhub": {
-    "minVersion": "1.11"
+    "minVersion": "1.12"
   },
   "homepage": "https://cuzy.app",
   "authors": [
