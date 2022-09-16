@@ -1,8 +1,8 @@
 // The mobile design will load when screen is less then 768px
-@responsive: ~"only screen and (max-width : 768px)";
+@smallScreen: ~"only screen and (max-width : 768px)";
+@tinyScreen: ~"only screen and (max-width : 399px)";
 
-@media @responsive {
-
+@media @smallScreen {
   // Layout Contents: Adjusting the contents to fit perfectly on mobile devices
   #layout-content {
     // Layout Space: Space navigation
@@ -33,6 +33,14 @@
           max-height: 200px;
         }
       }
+    }
+  }
+}
+
+@media @tinyScreen {
+  #topbar {
+    .caret {
+      display: none;
     }
   }
 }
