@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0 (September 20, 2022)
+--------------------
+- Fix: Small fixes for the menu on small screens
+- Enh: Tested enough for releasing version 1.0
+
 0.3 (August 26, 2022)
 --------------------
 - Fix: Added compatibility with Theme Builder module (for `clean-base` theme)
