@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1 (September 25, 2022)
+--------------------
+- Fix: Position of notifications (+ mail) dropdown on mobile (thanks @felixhahnweilheim)
+
 1.0 (September 20, 2022)
 --------------------
 - Fix: Small fixes for the menu on small screens
