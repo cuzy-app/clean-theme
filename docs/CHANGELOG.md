@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.1 (September 27, 2022)
+--------------------
+- Fix: On small screens, the top menu items could have text not centered
+
 1.1 (September 25, 2022)
 --------------------
 - Fix: Position of notifications (+ mail) dropdown on mobile (thanks @felixhahnweilheim)
