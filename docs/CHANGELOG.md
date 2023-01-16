@@ -1,6 +1,16 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Chn: "Success" color (green) is now darker to have a better contrast with the white text inside buttons
+- Fix: In the user menu (dropdown menu at the top right), removed left bar when hovering the menu items
+
+1.2.0 (January 3, 2023)
+--------------------
+- Chn: CSS compiled for Humhub 1.13
+- Chn: Minimal Humhub version is now 1.13
+
 1.1.1 (September 27, 2022)
 --------------------
 - Fix: On small screens, the top menu items could have text not centered
