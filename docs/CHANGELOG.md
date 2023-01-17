@@ -3,7 +3,8 @@ Changelog
 
 Unreleased
 --------------------
-- Chn: "Success" color (green) is now darker to have a better contrast with the white text inside buttons
+- Chn: "Success" and "Warning" colors (green and orange) are now darker to have a better contrast with the white text inside buttons
+- Chn: Button font weight is now 600 instead of 500 to read better the text 
 - Fix: In the account top menu (dropdown menu at the top right), removed left bar when hovering the menu items
 
 1.2.0 (January 3, 2023)
