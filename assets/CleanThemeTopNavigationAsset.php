@@ -13,7 +13,7 @@ use humhub\components\assets\AssetBundle;
 
 class CleanThemeTopNavigationAsset extends AssetBundle
 {
-    public $sourcePath = '@clean-theme/themes/clean-base';
+    public $sourcePath = '@clean-theme/resources';
 
     public $css = [
     ];

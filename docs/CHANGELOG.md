@@ -1,11 +1,13 @@
 Changelog
 =========
 
-Unreleased
+1.3.0 (Unreleased)
 --------------------
+- Enh: Added possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
 - Chn: "Success" and "Warning" colors (green and orange) are now darker to have a better contrast with the white text inside buttons
 - Chn: Button font weight is now 600 instead of 500 to read better the text 
 - Fix: In the account top menu (dropdown menu at the top right), removed left bar when hovering the menu items
+- Fix: CSS build for bordered theme
 
 1.2.0 (January 3, 2023)
 --------------------

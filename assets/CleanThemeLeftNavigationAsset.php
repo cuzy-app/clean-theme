@@ -9,25 +9,16 @@
 namespace humhub\modules\cleanTheme\assets;
 
 use humhub\components\assets\AssetBundle;
-use yii\web\View;
 
 
-class CleanThemeAsset extends AssetBundle
+class CleanThemeLeftNavigationAsset extends AssetBundle
 {
-    /**
-     * @inheritdoc
-     */
-    public $jsOptions = ['position' => View::POS_END];
-
-    /**
-     * @inheritdoc
-     */
     public $sourcePath = '@clean-theme/resources';
 
-    /**
-     * @inheritdoc
-     */
+    public $css = [
+    ];
+
     public $js = [
-        'js/humhub.clean.theme.js'
+        'js/humhub.clean.theme.leftNavigation.js',
     ];
 }

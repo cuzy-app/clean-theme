@@ -23,6 +23,11 @@ class Module extends \humhub\components\Module
      */
     public $resourcesPath = 'resources';
 
+    /**
+     * @var bool
+     */
+    public $collapsibleLeftNavigation = false;
+
 
     public function getName()
     {
