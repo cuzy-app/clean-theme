@@ -22,7 +22,6 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
             navContainerColNb = nbColFromClass(navContainer);
             contentContainerColNb = nbColFromClass(contentContainer);
 
-            // expandMenu();
             collapseBtn.on('click', function () {
                 collapseMenu();
             });
@@ -43,21 +42,37 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     };
 
     const collapseMenu = function () {
-        menu.collapse('hide');
-        navContainer.removeClass('col-md-' + navContainerColNb);
-        navContainer.addClass('col-md-12');
-        contentContainer.removeClass('col-md-' + contentContainerColNb);
-        contentContainer.addClass('col-md-' + (contentContainerColNb + navContainerColNb));
-        expandBtn.removeClass('hidden');
+        function waitForInit() {
+            if (menu) {
+                menu.collapse('hide');
+                navContainer.removeClass('col-md-' + navContainerColNb);
+                navContainer.addClass('col-md-12');
+                contentContainer.removeClass('col-md-' + contentContainerColNb);
+                contentContainer.addClass('col-md-' + (contentContainerColNb + navContainerColNb));
+                expandBtn.removeClass('hidden');
+            } else {
+                window.setTimeout(waitForInit, 100);
+            }
+        }
+
+        waitForInit();
     };
 
     const expandMenu = function () {
-        menu.collapse('show');
-        navContainer.removeClass('col-md-12');
-        navContainer.addClass('col-md-' + navContainerColNb);
-        contentContainer.removeClass('col-md-' + (contentContainerColNb + navContainerColNb));
-        contentContainer.addClass('col-md-' + contentContainerColNb);
-        expandBtn.addClass('hidden');
+        function waitForInit() {
+            if (menu) {
+                menu.collapse('show');
+                navContainer.removeClass('col-md-12');
+                navContainer.addClass('col-md-' + navContainerColNb);
+                contentContainer.removeClass('col-md-' + (contentContainerColNb + navContainerColNb));
+                contentContainer.addClass('col-md-' + contentContainerColNb);
+                expandBtn.addClass('hidden');
+            } else {
+                window.setTimeout(waitForInit, 100);
+            }
+        }
+
+        waitForInit();
     };
 
     module.export({
