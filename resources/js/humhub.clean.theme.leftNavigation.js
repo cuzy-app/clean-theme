@@ -44,7 +44,7 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     const collapseMenu = function () {
         function waitForInit() {
             if (menu) {
-                menu.collapse('hide');
+                menu.hide();
                 navContainer.removeClass('col-md-' + navContainerColNb);
                 navContainer.addClass('col-md-12');
                 contentContainer.removeClass('col-md-' + contentContainerColNb);
@@ -61,7 +61,7 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     const expandMenu = function () {
         function waitForInit() {
             if (menu) {
-                menu.collapse('show');
+                menu.show();
                 navContainer.removeClass('col-md-12');
                 navContainer.addClass('col-md-' + navContainerColNb);
                 contentContainer.removeClass('col-md-' + (contentContainerColNb + navContainerColNb));

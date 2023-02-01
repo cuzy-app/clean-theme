@@ -23,13 +23,6 @@ $this->registerJsConfig('cleanTheme.leftNavigation', [
 /** @var Module $module */
 $module = Yii::$app->getModule('clean-theme');
 if ($module->collapsibleLeftNavigation) {
-    if (empty($options['class'])) {
-        $options['class'] = 'collapse in';
-    } else {
-        $options['class'] = is_array($options['class']) ?
-            array_merge(['collapse', 'in'], $options['class']) :
-            $options['class'] . ' collapse in';
-    }
     if (empty($options['id'])) {
         $options['id'] = 'left-navigation-collapse';
     }
