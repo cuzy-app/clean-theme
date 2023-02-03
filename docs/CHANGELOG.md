@@ -1,9 +1,10 @@
 Changelog
 =========
 
-1.3.0 (Unreleased)
+1.3.0 (February 3, 2023)
 --------------------
 - Enh: Added possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
+- Chn: On the top menu, added "Search" text bellow the magnifying glass icon
 - Chn: "Success" and "Warning" colors (green and orange) are now darker to have a better contrast with the white text inside buttons
 - Chn: Button font weight is now 600 instead of 500 to read better the text 
 - Fix: In the account top menu (dropdown menu at the top right), removed left bar when hovering the menu items
