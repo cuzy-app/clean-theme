@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.3.1 (February 10, 2023)
+--------------------
+- Fix: When the module was disabled, the theme was not changed to the default HumHub theme (thanks @luke-).
+- Enh: When the module is enabled, the theme is automatically changed to the clean-base theme (thanks @luke-).
+
 1.3.0 (February 3, 2023)
 --------------------
 - Enh: Added possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
