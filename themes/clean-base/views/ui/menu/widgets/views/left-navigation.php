@@ -35,7 +35,7 @@ if ($module->collapsibleLeftNavigation) {
 <?= Html::beginTag('div', $options) ?>
 <?php if (!empty($menu->panelTitle)) : ?>
     <div class="panel-heading">
-        <?= $menu->panelTitle; ?>
+        <?= $menu->panelTitle ?>
         <?= $module->collapsibleLeftNavigation ?
             Button::defaultType()->icon('chevron-left')->id($collapseBtn)->right()->sm()->loader(false) :
             '' ?>

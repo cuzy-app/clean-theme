@@ -7,20 +7,21 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     var topMenuDropdown = topMenuSub.find('#top-menu-sub-dropdown');
 
     var init = function () {
+        $(function () {
+            // Wait for the end of the resizing
+            var doit;
+            $(window).on('resize', function () {
+                clearTimeout(doit);
+                doit = setTimeout(fixNavigationOverflow, 100);
+            });
 
-        // Wait for the end of the resizing
-        var doit;
-        $(window).on('resize', function () {
-            clearTimeout(doit);
-            doit = setTimeout(fixNavigationOverflow, 100);
+            if (!isOverflow()) {
+                topBar.css('overflow', '');
+                return;
+            }
+
+            setTimeout(fixNavigationOverflow, 100);
         });
-
-        if (!isOverflow()) {
-            topBar.css('overflow', '');
-            return;
-        }
-
-        setTimeout(fixNavigationOverflow, 100);
     };
 
     var fixNavigationOverflow = function () {

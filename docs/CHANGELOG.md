@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+
+
 1.3.1 (February 10, 2023)
 --------------------
 - Fix: When the module was disabled, the theme was not changed to the default HumHub theme (thanks @luke-).
