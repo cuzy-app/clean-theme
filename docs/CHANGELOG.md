@@ -3,7 +3,7 @@ Changelog
 
 Unreleased
 --------------------
-
+- Fix: Removed the gap between the content and the top menu on mobile view (thanks @Eladnarlea)
 
 1.3.1 (February 10, 2023)
 --------------------
