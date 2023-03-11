@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.4.0 (February 10, 2023)
+1.4.0 (March 11, 2023)
 --------------------
 - Chn: CSS compiled for Humhub 1.14
 - Chn: Minimal Humhub version is now 1.14
