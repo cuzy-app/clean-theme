@@ -1,8 +1,10 @@
 Changelog
 =========
 
-Unreleased
+1.4.0 (February 10, 2023)
 --------------------
+- Chn: CSS compiled for Humhub 1.14
+- Chn: Minimal Humhub version is now 1.14
 - Fix: Removed the gap between the content and the top menu on mobile view (thanks @Eladnarlea)
 
 1.3.1 (February 10, 2023)
