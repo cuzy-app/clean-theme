@@ -10,10 +10,14 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     let contentContainer;
     let navContainerColNb;
     let contentContainerColNb;
+    let isReady = false;
 
     const init = function () {
         $(function () {
             menu = $('#' + module.config.menuId);
+            if (!menu.length || menu.is(':hidden')) {
+                return;
+            }
             collapseBtn = $('#' + module.config.collapseBtn);
             expandBtn = $('#' + module.config.expandBtn);
             rowChildren = menu.parents('.row').children();
@@ -28,6 +32,8 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
             expandBtn.on('click', function () {
                 expandMenu();
             });
+
+            isReady = true;
         });
     };
 
@@ -43,7 +49,7 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
 
     const collapseMenu = function () {
         function waitForInit() {
-            if (menu.length) {
+            if (isReady && menu.length) {
                 if (menu.is(':visible')) {
                     menu.hide();
                     navContainer.removeClass('col-md-' + navContainerColNb);
@@ -62,7 +68,7 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
 
     const expandMenu = function () {
         function waitForInit() {
-            if (menu.length) {
+            if (isReady && menu.length) {
                 if (menu.is(':hidden')) {
                     menu.show();
                     navContainer.removeClass('col-md-12');
