@@ -43,13 +43,15 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
 
     const collapseMenu = function () {
         function waitForInit() {
-            if (menu) {
-                menu.hide();
-                navContainer.removeClass('col-md-' + navContainerColNb);
-                navContainer.addClass('col-md-12');
-                contentContainer.removeClass('col-md-' + contentContainerColNb);
-                contentContainer.addClass('col-md-' + (contentContainerColNb + navContainerColNb));
-                expandBtn.removeClass('hidden');
+            if (menu.length) {
+                if (menu.is(':visible')) {
+                    menu.hide();
+                    navContainer.removeClass('col-md-' + navContainerColNb);
+                    navContainer.addClass('col-md-12');
+                    contentContainer.removeClass('col-md-' + contentContainerColNb);
+                    contentContainer.addClass('col-md-' + (contentContainerColNb + navContainerColNb));
+                    expandBtn.removeClass('hidden');
+                }
             } else {
                 window.setTimeout(waitForInit, 100);
             }
@@ -60,13 +62,15 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
 
     const expandMenu = function () {
         function waitForInit() {
-            if (menu) {
-                menu.show();
-                navContainer.removeClass('col-md-12');
-                navContainer.addClass('col-md-' + navContainerColNb);
-                contentContainer.removeClass('col-md-' + (contentContainerColNb + navContainerColNb));
-                contentContainer.addClass('col-md-' + contentContainerColNb);
-                expandBtn.addClass('hidden');
+            if (menu.length) {
+                if (menu.is(':hidden')) {
+                    menu.show();
+                    navContainer.removeClass('col-md-12');
+                    navContainer.addClass('col-md-' + navContainerColNb);
+                    contentContainer.removeClass('col-md-' + (contentContainerColNb + navContainerColNb));
+                    contentContainer.addClass('col-md-' + contentContainerColNb);
+                    expandBtn.addClass('hidden');
+                }
             } else {
                 window.setTimeout(waitForInit, 100);
             }
