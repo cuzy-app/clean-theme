@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Chg: Moved `@smallScreen` and `@tinyScreen` from `humhub+mobile.less` to `variables.less`
+- Chg: Replaced `@headings-color` with `@text-color-main`
+
 1.4.0 (March 11, 2023)
 --------------------
 - Chn: CSS compiled for Humhub 1.14
