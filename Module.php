@@ -11,6 +11,7 @@ namespace humhub\modules\cleanTheme;
 use humhub\libs\DynamicConfig;
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
+use yii\helpers\Url;
 
 class Module extends \humhub\components\Module
 {
@@ -40,6 +41,14 @@ class Module extends \humhub\components\Module
     public function getDescription()
     {
         return Yii::t('CleanThemeModule.config', 'Clean theme for Humhub based on the Community theme');
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getConfigUrl()
+    {
+        return Url::to(['/clean-theme/config']);
     }
 
     /**
