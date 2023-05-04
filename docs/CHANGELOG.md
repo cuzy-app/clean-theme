@@ -1,29 +1,26 @@
 Changelog
 =========
 
-Unreleased
+1.4.1 (May 4, 2023)
 --------------------
-
 - Chg: Moved `@smallScreen` and `@tinyScreen` from `humhub+mobile.less` to `variables.less`
 - Chg: Replaced `@headings-color` with `@text-color-main`
 - Enh: Added config page (for admins)
+- Enh: Added a child theme example (see [docs/README.md](https://github.com/cuzy-app/humhub-modules-clean-theme/blob/master/docs/README.md#child-themes))
 
 1.4.0 (March 11, 2023)
 --------------------
-
 - Chn: CSS compiled for Humhub 1.14
 - Chn: Minimal Humhub version is now 1.14
 - Fix: Removed the gap between the content and the top menu on mobile view (thanks @Eladnarlea)
 
 1.3.1 (February 10, 2023)
 --------------------
-
 - Fix: When the module was disabled, the theme was not changed to the default HumHub theme (thanks @luke-).
 - Enh: When the module is enabled, the theme is automatically changed to the clean-base theme (thanks @luke-).
 
 1.3.0 (February 3, 2023)
 --------------------
-
 - Enh: Added possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with
   the `collapsibleLeftNavigation`
   property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
@@ -36,39 +33,32 @@ Unreleased
 
 1.2.0 (January 3, 2023)
 --------------------
-
 - Chn: CSS compiled for Humhub 1.13
 - Chn: Minimal Humhub version is now 1.13
 
 1.1.1 (September 27, 2022)
 --------------------
-
 - Fix: On small screens, the top menu items could have text not centered
 
 1.1 (September 25, 2022)
 --------------------
-
 - Fix: Position of notifications (+ mail) dropdown on mobile (thanks @felixhahnweilheim)
 
 1.0 (September 20, 2022)
 --------------------
-
 - Fix: Small fixes for the menu on small screens
 - Enh: Tested enough for releasing version 1.0
 
 0.3 (August 26, 2022)
 --------------------
-
 - Fix: Added compatibility with Theme Builder module (for `clean-base` theme)
 - Chn: Compiled for Humhub 1.12
 
 0.2 (August 23, 2022)
 --------------------
-
 - Enh: Fix menu dropdown when browser is extended (thanks @sebmennetrier)
 - Chg: Removed dark theme
 
 0.1 (May 12, 2022)
 --------------------
-
 - Enh: Initial commit
