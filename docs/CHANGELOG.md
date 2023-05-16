@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Chg: On large screens, container max width is now 1600 px (instead of bootstrap native 1170px) 
+
 1.4.1 (May 4, 2023)
 --------------------
 - Chg: Moved `@smallScreen` and `@tinyScreen` from `humhub+mobile.less` to `variables.less`
@@ -10,8 +14,8 @@ Changelog
 
 1.4.0 (March 11, 2023)
 --------------------
-- Chn: CSS compiled for Humhub 1.14
-- Chn: Minimal Humhub version is now 1.14
+- Chg: CSS compiled for Humhub 1.14
+- Chg: Minimal Humhub version is now 1.14
 - Fix: Removed the gap between the content and the top menu on mobile view (thanks @Eladnarlea)
 
 1.3.1 (February 10, 2023)
@@ -24,17 +28,17 @@ Changelog
 - Enh: Added possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with
   the `collapsibleLeftNavigation`
   property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
-- Chn: On the top menu, added "Search" text bellow the magnifying glass icon
-- Chn: "Success" and "Warning" colors (green and orange) are now darker to have a better contrast with the white text
+- Chg: On the top menu, added "Search" text bellow the magnifying glass icon
+- Chg: "Success" and "Warning" colors (green and orange) are now darker to have a better contrast with the white text
   inside buttons
-- Chn: Button font weight is now 600 instead of 500 to read better the text
+- Chg: Button font weight is now 600 instead of 500 to read better the text
 - Fix: In the account top menu (dropdown menu at the top right), removed left bar when hovering the menu items
 - Fix: CSS build for bordered theme
 
 1.2.0 (January 3, 2023)
 --------------------
-- Chn: CSS compiled for Humhub 1.13
-- Chn: Minimal Humhub version is now 1.13
+- Chg: CSS compiled for Humhub 1.13
+- Chg: Minimal Humhub version is now 1.13
 
 1.1.1 (September 27, 2022)
 --------------------
@@ -52,7 +56,7 @@ Changelog
 0.3 (August 26, 2022)
 --------------------
 - Fix: Added compatibility with Theme Builder module (for `clean-base` theme)
-- Chn: Compiled for Humhub 1.12
+- Chg: Compiled for Humhub 1.12
 
 0.2 (August 23, 2022)
 --------------------
