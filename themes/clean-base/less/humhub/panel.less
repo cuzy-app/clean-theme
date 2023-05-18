@@ -24,10 +24,14 @@
 
     .img-profile-data {
       background: none;
-      color: @text-color-main;
+
+      .img-profile-data {
+        &, h1, h2 {
+          color: @text-color-contrast;
+        }
+      }
 
       h1 {
-        color: @text-color-main;
         font-weight: 600 !important;
         font-size: 150% !important;
       }
