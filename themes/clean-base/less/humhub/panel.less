@@ -8,7 +8,6 @@
 
 .panel-profile {
   .panel-profile-header {
-
     // Hide default gray image
     img.img-profile-header-background {
       min-height: 100px;
@@ -23,18 +22,21 @@
     }
 
     .img-profile-data {
-      background: none;
+      background: fade(black, 67%);
 
-      .img-profile-data {
-        &, h1, h2 {
-          color: @text-color-contrast;
-        }
+      &, h1, h2 {
+        color: @text-color-contrast;
       }
 
       h1 {
         font-weight: 600 !important;
         font-size: 150% !important;
       }
+    }
+
+    // If no image
+    img.img-profile-header-background[src$="/img/default_banner.jpg"] + .img-profile-data {
+      background: @primary;
     }
   }
 }
