@@ -7,7 +7,7 @@ Changelog
 - Chg: On large screens, container max width is now 1600 px (instead of bootstrap native 1170px)
 - Enh #3: On profile or space header, if a banner image is present, add a translucent black background layer to better
   see the text (thanks @dantefromhell)
-- Cgh: On clean theme "base" and "bordered", on profile or space header, the text is now white and if no image is
+- Chg: On clean theme "base" and "bordered", on profile or space header, the text is now white and if no image is
   present, the background is with the primary color (it was already the case with the "contrasted" theme)
 
 1.4.1 (May 4, 2023)
