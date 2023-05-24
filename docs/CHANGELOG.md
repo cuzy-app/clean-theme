@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+
+- Chg: Colors on the Contrasted theme are more contrasted to meet visually impaired requirements (tested
+  on  https://www.whocanuse.com/)
+
 1.4.2 (May 24, 2023)
 --------------------
 
