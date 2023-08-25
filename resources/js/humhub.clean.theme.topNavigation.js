@@ -1,81 +1,75 @@
 humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
-    var topBar = $('#topbar');
-    var topBarContainer = $('#topbar > .container');
-    var topMenuNav = $('#topbar > .container #top-menu-nav');
-    var topMenuSub = topMenuNav.find('#top-menu-sub');
-    var topMenuDropdown = topMenuSub.find('#top-menu-sub-dropdown');
+    const topBar = $('#topbar');
+    const topBarContainer = $('#topbar > .container');
+    const topMenuNav = $('#top-menu-nav');
+    const topMenuSub = $('#top-menu-sub');
+    const topMenuDropdown = $('#top-menu-sub-dropdown');
+    const searchMenuNav = $('#search-menu-nav');
 
-    var init = function () {
+    const init = function () {
         $(function () {
             // Wait for the end of the resizing
-            var doit;
+            let doit;
             $(window).on('resize', function () {
                 clearTimeout(doit);
                 doit = setTimeout(fixNavigationOverflow, 100);
             });
-
-            if (!isOverflow()) {
-                topBar.css('overflow', '');
-                return;
-            }
-
             setTimeout(fixNavigationOverflow, 100);
         });
     };
 
-    var fixNavigationOverflow = function () {
-        if (!isOverflow()) {
-            if (topMenuSub.is(":visible")) {
-                topMenuSub.hide();
-                while (!isOverflow() && topMenuDropdown.children('.top-menu-item').length > 0) {
-                    moveFirstItemToMenuBar(topMenuDropdown);
-                }
-                if (topMenuDropdown.children('.top-menu-item').length > 0) {
-                    topMenuSub.show();
-                }
-                if (!isOverflow()) {
-                    return;
-                }
-            } else {
-                return;
+    const fixNavigationOverflow = function () {
+        topMenuSub.show(); // For isOverflow() test
+
+        while (!isOverflow()) {
+            moveFromDropDown('.search-menu', searchMenuNav);
+            if (!moveFromDropDown('.top-menu-item:first', topMenuNav)) {
+                break;
             }
         }
 
-        topMenuSub.show();
-
-        while (isOverflow() && moveNextItemToDropDown(topMenuDropdown)) {
+        while (isOverflow()) {
+            if (!moveToDropDown('.top-menu-item:last', topMenuNav)) {
+                moveToDropDown('.search-menu', searchMenuNav);
+                break;
+            }
         }
 
-        // We remove the next dropdown for edgecases, e.g. the scrollbar appears after init
-        moveNextItemToDropDown(topMenuDropdown);
-
-        topBar.css('overflow', '');
-        topMenuSub.find('.dropdown-toggle').dropdown();
-
+        // If drop down sub-menu has items
+        if (topMenuDropdown.children('.top-menu-item').length > 0) {
+            topMenuSub.find('.dropdown-toggle').dropdown();
+            topMenuNav.append(topMenuSub); // Move dropdown sub menu to the end
+        } else {
+            topMenuSub.hide();
+        }
     };
 
-    var moveNextItemToDropDown = function (topMenuDropdown) {
-        var $item = topMenuNav.children('.top-menu-item:last');
-        if (!$item.length) {
+    const moveToDropDown = function (itemClass, from) {
+        const item = from.children(itemClass);
+        if (!item.length) {
             return false;
         }
-
-        $item.find('br').remove();
-        topMenuDropdown.prepend($item);
+        item.find('br').remove();
+        topMenuDropdown.prepend(item);
         return true;
     };
 
-    var moveFirstItemToMenuBar = function (topMenuDropdown) {
-        var $item = topMenuDropdown.children('.top-menu-item:first');
-        var $iItem = $item.find('a:first > i:first');
-        if ($iItem) {
-            $iItem.after('<br/>');
+    const moveFromDropDown = function (itemClass, to) {
+        const item = topMenuDropdown.children(itemClass);
+        if (!item.length) {
+            return false;
         }
-        topMenuSub.before($item);
+
+        const iItem = item.find('a:first > i:first');
+        if (iItem) {
+            iItem.after('<br/>');
+        }
+        to.append(item);
+        return true;
     };
 
-    var isOverflow = function () {
+    const isOverflow = function () {
         return topBarContainer[0].offsetHeight > topBar[0].offsetHeight;
     };
 
