@@ -1,13 +1,15 @@
 Changelog
 =========
 
+Unreleased (compile CSS for Humhub 1.15.0-beta.2 before new release)
+--------------------
 - Fix #6: Mobile: top bar issues with added items in the notifications block such as the night mode button
 
 1.5.0 (August 1, 2023)
 --------------------
 - Chg: CSS compiled for Humhub 1.15
 - Chg: The minimal Humhub version is now 1.15
-- Chg: Colors on the Contrasted theme are more contrasted to meet visually impaired requirements (tested on  https://www.whocanuse.com/)
+- Chg: Colors on the Contrasted theme are more contrasted to meet visually impaired requirements (tested on https://www.whocanuse.com/)
 
 1.4.2 (May 24, 2023)
 --------------------
