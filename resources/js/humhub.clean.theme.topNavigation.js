@@ -1,11 +1,11 @@
 humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
-    const topBar = $('#topbar');
-    const topBarContainer = $('#topbar > .container');
-    const topMenuNav = $('#top-menu-nav');
-    const topMenuSub = $('#top-menu-sub');
-    const topMenuDropdown = $('#top-menu-sub-dropdown');
-    const searchMenuNav = $('#search-menu-nav');
+    const $topBar = $('#topbar');
+    const $topBarContainer = $('#topbar > .container');
+    const $topMenuNav = $('#top-menu-nav');
+    const $topMenuSub = $('#top-menu-sub');
+    const $topMenuDropdown = $('#top-menu-sub-dropdown');
+    const $searchMenuNav = $('#search-menu-nav');
 
     const init = function () {
         $(function () {
@@ -20,28 +20,28 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     };
 
     const fixNavigationOverflow = function () {
-        topMenuSub.show(); // For isOverflow() test
+        $topMenuSub.show(); // For isOverflow() test
 
         while (!isOverflow()) {
-            moveFromDropDown('.search-menu', searchMenuNav);
-            if (!moveFromDropDown('.top-menu-item:first', topMenuNav)) {
+            moveFromDropDown('.search-menu', $searchMenuNav);
+            if (!moveFromDropDown('.top-menu-item:first', $topMenuNav)) {
                 break;
             }
         }
 
         while (isOverflow()) {
-            if (!moveToDropDown('.top-menu-item:last', topMenuNav)) {
-                moveToDropDown('.search-menu', searchMenuNav);
+            if (!moveToDropDown('.top-menu-item:last', $topMenuNav)) {
+                moveToDropDown('.search-menu', $searchMenuNav);
                 break;
             }
         }
 
         // If drop down sub-menu has items
-        if (topMenuDropdown.children('.top-menu-item').length > 0) {
-            topMenuSub.find('.dropdown-toggle').dropdown();
-            topMenuNav.append(topMenuSub); // Move the dropdown sub menu to the end
+        if ($topMenuDropdown.children('.top-menu-item').length > 0) {
+            $topMenuSub.find('.dropdown-toggle').dropdown();
+            $topMenuNav.append($topMenuSub); // Move the dropdown sub menu to the end
         } else {
-            topMenuSub.hide();
+            $topMenuSub.hide();
         }
     };
 
@@ -51,12 +51,12 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             return false;
         }
         item.find('br').remove();
-        topMenuDropdown.prepend(item);
+        $topMenuDropdown.prepend(item);
         return true;
     };
 
     const moveFromDropDown = function (itemClass, to) {
-        const item = topMenuDropdown.children(itemClass);
+        const item = $topMenuDropdown.children(itemClass);
         if (!item.length) {
             return false;
         }
@@ -70,7 +70,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     };
 
     const isOverflow = function () {
-        return topBarContainer[0].offsetHeight > topBar[0].offsetHeight;
+        return $topBarContainer[0].offsetHeight > $topBar[0].offsetHeight;
     };
 
     module.export({
