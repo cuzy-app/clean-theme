@@ -4,6 +4,7 @@ Changelog
 Unreleased (compile CSS for Humhub 1.15.0-beta.2 before new release)
 --------------------
 - Fix #6: Mobile: top bar issues with added items in the notifications block such as the night mode button
+- Enh #7: Dark CSS for the [Dark mode](https://marketplace.humhub.com/module/dark-mode/description) module (thanks @felixhahnweilheim)
 
 1.5.0 (August 1, 2023)
 --------------------
