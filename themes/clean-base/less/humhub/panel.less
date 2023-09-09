@@ -42,5 +42,16 @@
     img.img-profile-header-background[src$="/img/default_banner.jpg"] + .img-profile-data {
       background: @primary;
     }
+
+    .profile-user-photo-container {
+      .profile-user-photo {
+
+        // Force position of the online status because of rounded corners
+        + .user-online-status {
+          right: 8px;
+          bottom: 8px;
+        }
+      }
+    }
   }
 }
