@@ -1,10 +1,11 @@
 Changelog
 =========
 
-Unreleased (compile CSS for Humhub 1.15.0-beta.2 before new release)
+Unreleased
 --------------------
 - Fix #6: Mobile: top bar issues with added items in the notifications block such as the night mode button
 - Enh #7: Dark CSS for the [Dark mode](https://marketplace.humhub.com/module/dark-mode/description) module (thanks @felixhahnweilheim)
+- Chg: CSS compiled for Humhub 1.15.0-beta.2 (changed online indicator position in the people directory)
 - Fix: Position of the online status indicator because of rounded profile image on this theme
 
 1.5.0 (August 1, 2023)
