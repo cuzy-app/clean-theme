@@ -19,7 +19,7 @@ lessc less/dark/build.less css/dark.css
 css-color-extractor css/dark.css css/dark.css --format=css
 # Re-add CSS variables and compress CSS
 cp css/dark.css css/temporary.less
-lessc less/dark/build2.less css/dark.css --clean-css="--s1 --advanced" --source-map=css/dark.css.map
+lessc less/dark/build2.less css/dark.css --clean-css="--s1 --advanced"
 rm css/temporary.less
 cd ../../
 
@@ -30,7 +30,7 @@ lessc less/dark/build.less css/dark.css
 css-color-extractor css/dark.css css/dark.css --format=css
 # Re-add CSS variables and compress CSS
 cp css/dark.css css/temporary.less
-lessc less/dark/build2.less css/dark.css --clean-css="--s1 --advanced" --source-map=css/dark.css.map
+lessc less/dark/build2.less css/dark.css --clean-css="--s1 --advanced"
 rm css/temporary.less
 cd ../../
 
@@ -41,6 +41,6 @@ lessc less/dark/build.less css/dark.css
 css-color-extractor css/dark.css css/dark.css --format=css
 # Re-add CSS variables and compress CSS
 cp css/dark.css css/temporary.less
-lessc less/dark/build2.less css/dark.css --clean-css="--s1 --advanced" --source-map=css/dark.css.map
+lessc less/dark/build2.less css/dark.css --clean-css="--s1 --advanced"
 rm css/temporary.less
 cd ../../
