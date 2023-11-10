@@ -1,8 +1,9 @@
 Changelog
 =========
 
-Unreleased
+1.5.2 (Nov 10, 2023)
 --------------------
+- Chg: CSS compiled for Humhub 1.15.0
 - Fix #8: Dark Themes: remove css maps for the dark stylesheets, according to https://github.com/felixhahnweilheim/humhub-dark-mode/pull/16 and CSS recompiled with fix https://github.com/felixhahnweilheim/humhub-dark-mode/pull/17 (thanks @felixhahnweilheim)
 
 1.5.1 (Sept 9, 2023)
@@ -45,7 +46,7 @@ Unreleased
 1.3.0 (February 3, 2023)
 --------------------
 - Enh: Added possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
-- Chg: On the top menu, added "Search" text bellow the magnifying glass icon
+- Chg: On the top menu, added "Search" text below the magnifying glass icon
 - Chg: "Success" and "Warning" colors (green and orange) are now darker to have a better contrast with the white text inside buttons
 - Chg: Button font weight is now 600 instead of 500 to read better the text
 - Fix: In the account top menu (dropdown menu at the top right), removed left bar when hovering the menu items

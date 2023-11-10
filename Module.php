@@ -15,7 +15,7 @@ use yii\helpers\Url;
 
 class Module extends \humhub\components\Module
 {
-    const BASE_THEME_NAME = 'clean-base';
+    public const BASE_THEME_NAME = 'clean-base';
 
     /**
      * @var string defines the icon
