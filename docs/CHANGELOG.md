@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: "Add Search label to top menu Search entry" feature is now done in JS instead of overwriting a view
+
 1.5.2 (Nov 10, 2023)
 --------------------
 - Chg: CSS compiled for Humhub 1.15.0

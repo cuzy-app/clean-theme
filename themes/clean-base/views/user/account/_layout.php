@@ -17,11 +17,11 @@ $user = Yii::$app->user->identity;
     </div>
 <?php endif; ?>
 
-<?php // Replace "My account" button with "My profile" ?>
-    <script <?= Html::nonce() ?>>
-        $(function () {
-            $('#account-profile-header a.edit-account').attr('href', '<?= Yii::$app->user->identity->createUrl('/user/profile/home') ?>').text(<?= json_encode(Yii::t('base', 'My profile'), JSON_HEX_TAG) ?>);
-        });
-    </script>
-
 <?php require Yii::$app->getModule('user')->viewPath . '/account/_layout.php'; ?>
+
+<?php // Replace "My account" button with "My profile" ?>
+<script <?= Html::nonce() ?>>
+    $(function () {
+        $('#account-profile-header a.edit-account').attr('href', '<?= Yii::$app->user->identity->createUrl('/user/profile/home') ?>').text(<?= json_encode(Yii::t('base', 'My profile'), JSON_HEX_TAG) ?>);
+    });
+</script>

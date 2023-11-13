@@ -9,6 +9,9 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
     const init = function () {
         $(function () {
+            // Add "Search" label to top menu Search entry
+            $('#search-menu').append('<br>' + module.config.searchItemLabel);
+
             // Wait for the end of the resizing
             let doit;
             $(window).on('resize', function () {
