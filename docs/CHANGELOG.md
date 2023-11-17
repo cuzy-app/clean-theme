@@ -4,7 +4,8 @@ Changelog
 Unreleased
 --------------------
 - Enh: "Add Search label to top menu Search entry" feature is now done in JS instead of overwriting a view
-- Enh: The main container is larger (reduce left and right margin)
+- Enh: Make the main container larger (reduce left and right margin)
+- Enh: Hide the caret at the right of the top bar
 
 1.5.2 (Nov 10, 2023)
 --------------------
