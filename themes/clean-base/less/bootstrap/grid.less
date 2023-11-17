@@ -1,6 +1,12 @@
 .container {
+  @media (min-width: 768px) {
+    width: calc(100% - 10px);
+  }
+  @media (min-width: 992px) {
+    width: calc(100% - 30px);
+  }
   @media (min-width: @screen-lg-min) {
-    width: 90%;
+    width: calc(100% - 60px);
     max-width: @container-lg;
   }
 }
