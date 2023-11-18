@@ -8,6 +8,7 @@ Unreleased
 - Enh: Remove left and right spaces on the top bar
 - Enh: Remove border radius on module logos
 - Enh: Make space logos round even if no logo image is loaded
+- Chg: Change the module logo
 
 1.5.2 (Nov 10, 2023)
 --------------------
