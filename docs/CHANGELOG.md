@@ -3,9 +3,10 @@ Changelog
 
 Unreleased
 --------------------
-- Enh: "Add Search label to top menu Search entry" feature is now done in JS instead of overwriting a view
+- Enh: "Add Search label to top menu Search entry" feature should be done in JS instead of overwriting a view
 - Enh: Make the main container larger (reduce left and right margin)
-- Enh: Removed left and right spaces on the top bar
+- Enh: Remove left and right spaces on the top bar
+- Enh: Remove border radius on module logos
 
 1.5.2 (Nov 10, 2023)
 --------------------
