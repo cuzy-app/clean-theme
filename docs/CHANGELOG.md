@@ -9,6 +9,7 @@ Unreleased
 - Enh: Remove border radius on module logos
 - Enh: Make space logos round even if no logo image is loaded
 - Chg: Change the module logo
+- Enh: Panel and modal box corners should be made consistent, 4px rounded
 
 1.5.2 (Nov 10, 2023)
 --------------------
