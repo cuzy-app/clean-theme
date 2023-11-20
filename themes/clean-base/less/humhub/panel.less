@@ -3,11 +3,19 @@
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  border-radius: 4px;
+  border-radius: @panel-border-radius;
 }
 
 .panel-profile {
   .panel-profile-header {
+    border-radius: @panel-border-radius;
+    border-top-right-radius: @panel-border-radius;
+    border-top-left-radius: @panel-border-radius;
+
+    .image-upload-container {
+      border-radius: @panel-border-radius;
+    }
+
     // Hide default gray image
     img.img-profile-header-background {
       min-height: 100px;

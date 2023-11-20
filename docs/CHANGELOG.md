@@ -3,13 +3,13 @@ Changelog
 
 Unreleased
 --------------------
-- Enh: "Add Search label to top menu Search entry" feature should be done in JS instead of overwriting a view
 - Enh: Make the main container larger (reduce left and right margin)
 - Enh: Remove left and right spaces on the top bar
 - Enh: Remove border radius on module logos
 - Enh: Make space logos round even if no logo image is loaded
 - Chg: Change the module logo
-- Enh: Panel and modal box corners should be made consistent, 4px rounded
+- Enh: Panel, container header and modal box corners should be made consistent, 4px rounded
+- Enh: "Add Search label to top menu Search entry" feature should be done in JS instead of overwriting a view
 
 1.5.2 (Nov 10, 2023)
 --------------------
