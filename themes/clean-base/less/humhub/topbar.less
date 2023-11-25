@@ -101,6 +101,10 @@
         line-height: 1.1em;
         text-align: left;
 
+        @media (max-width: @screen-sm-min) {
+          padding-right: 8px;
+        }
+
         span {
           font-size: 12px;
         }
@@ -386,13 +390,6 @@
       font-size: 11px;
       margin: 0;
       font-weight: 400;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .topbar {
-      padding-left: 0;
-      padding-right: 0;
     }
   }
 }

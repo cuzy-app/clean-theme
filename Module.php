@@ -77,7 +77,7 @@ class Module extends \humhub\components\Module
      */
     private function enableTheme()
     {
-        // Already a theme based theme is active
+        // Check if already active
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
             if ($theme->name === self::BASE_THEME_NAME) {
                 return;

@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: The top menu account item (at the right) needs right margin on mobile screens
+
 1.6.0 (Nov 23, 2023)
 --------------------
 - Enh: Make the main container larger (reduce left and right margin)

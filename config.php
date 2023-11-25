@@ -13,4 +13,3 @@ return [
     'namespace' => 'humhub\modules\cleanTheme',
     'events' => []
 ];
-?>
