@@ -4,7 +4,6 @@ Changelog
 Unreleased
 --------------------
 - Fix: The top menu "Account" item (at the right) needs right margin on mobile screens
-- Fix: Round corners on left menu for the selected item
 
 1.6.0 (Nov 23, 2023)
 --------------------
