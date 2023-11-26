@@ -4,6 +4,22 @@
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   border-radius: @panel-border-radius;
+
+
+  &,
+  > .panel-collapse {
+    > .list-group .list-group-item {
+      &:first-child {
+        border-top-left-radius: @panel-border-radius;
+        border-top-right-radius: @panel-border-radius;
+      }
+
+      &:last-child {
+        border-bottom-left-radius: @panel-border-radius;
+        border-bottom-right-radius: @panel-border-radius;
+      }
+    }
+  }
 }
 
 .panel-profile {
