@@ -232,9 +232,17 @@
       display: none;
     }
 
-    .btn-group > a:hover {
-      background-color: lighten(@primary, 5%);
-      color: @text-color-contrast;
+    .btn-group {
+      > a:hover {
+        background-color: @background-color-secondary;
+      }
+
+      > a:active,
+      &.open > a,
+      &.open .dropdown-toggle {
+        background-color: lighten(@primary, 5%);
+        color: @text-color-contrast;
+      }
     }
 
     .btn-enter {

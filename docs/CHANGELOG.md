@@ -5,6 +5,7 @@ Unreleased
 --------------------
 - Fix: The top menu "Account" item (at the right) needs right margin on mobile screens
 - Fix: Space of User banner image stretched (change to cover)
+- Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active
 
 1.6.0 (Nov 23, 2023)
 --------------------
