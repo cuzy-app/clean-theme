@@ -13,10 +13,10 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             $('#search-menu').append('<br>' + module.config.searchItemLabel);
 
             // Wait for the end of the resizing
-            let doit;
+            let resizeTimeout;
             $(window).on('resize', function () {
-                clearTimeout(doit);
-                doit = setTimeout(fixNavigationOverflow, 100);
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(fixNavigationOverflow, 100);
             });
             setTimeout(fixNavigationOverflow, 100);
         });
@@ -39,10 +39,10 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             }
         }
 
-        // If drop down sub-menu has items
+        // If drop down submenu has items
         if ($topMenuDropdown.children('.top-menu-item').length > 0) {
             $topMenuSub.find('.dropdown-toggle').dropdown();
-            $topMenuNav.append($topMenuSub); // Move the dropdown sub menu to the end
+            $topMenuNav.append($topMenuSub); // Move the dropdown submenu to the end
         } else {
             $topMenuSub.hide();
         }
