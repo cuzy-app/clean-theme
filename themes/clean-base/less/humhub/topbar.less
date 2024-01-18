@@ -173,7 +173,6 @@
         height: 0;
         border-color: transparent;
         border-style: solid;
-        z-index: 1001;
         border-width: 11px;
         left: 50%;
         margin-left: -18px;
@@ -321,7 +320,7 @@
         position: absolute;
         color: #BFBFBF;
         margin: 7px;
-        top: 0px;
+        top: 0;
         right: 40px;
         z-index: 10;
         display: none;
@@ -342,7 +341,7 @@
         text-align: center;
         transition: .25s;
 
-        &:hover
+        &:hover,
         &:active,
         &:focus {
           background-color: @background-color-secondary;

@@ -1,9 +1,10 @@
 Changelog
 =========
 
-Unreleased
+Unreleased (redo screenshots)
 --------------------
-- Fix: The top menu "Account" item (at the right) needs right margin on mobile screens
+- Enh: On small screens, the main menu is divided in 2: top and bottom menu
+- Fix: The top menu "Account" item (at the right) needs a right margin on mobile screens
 - Fix: Space of User banner image stretched (change to cover)
 - Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active
 

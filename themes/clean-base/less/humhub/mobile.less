@@ -48,6 +48,55 @@
         padding-left: 6px !important;
         padding-right: 6px !important;
       }
+
+      // Bottom menu on small screens
+      .topbar-brand.hidden-xs {
+        flex: 1;
+
+        &, & .hidden-xs {
+          display: block !important;
+        }
+
+        a.navbar-brand {
+          padding-left: 10px !important;
+        }
+      }
+
+      #search-menu-nav a {
+        font-size: 0;
+        line-height: 0;
+        padding-top: 18px;
+        display: inline-block;
+      }
+
+      #top-menu-nav {
+        position: fixed;
+        bottom: 0;
+        background-color: @background-color-secondary;
+        border-top: solid 2px #CCC;
+        width: auto;
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        > li > a {
+          width: 50px;
+          padding: 0;
+          line-height: 0 !important;
+          font-size: 0;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: @background-color-main;
+          }
+
+          i {
+            line-height: 50px;
+            font-size: 20px;
+          }
+        }
+      }
     }
   }
 }

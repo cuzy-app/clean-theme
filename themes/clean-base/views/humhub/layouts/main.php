@@ -20,12 +20,12 @@ CleanThemeAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <title><?= strip_tags($this->pageTitle); ?></title>
+    <title><?= strip_tags($this->pageTitle) ?></title>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
     <?php $this->head() ?>
-    <?= $this->render('head'); ?>
+    <?= $this->render('head') ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -34,33 +34,33 @@ CleanThemeAsset::register($this);
 <div id="topbar" class="topbar">
     <div class="container">
         <div class="topbar-brand hidden-xs">
-            <?= SiteLogo::widget(); ?>
+            <?= SiteLogo::widget() ?>
         </div>
 
         <ul class="nav" id="top-menu-nav">
             <!-- load space chooser widget -->
-            <?= Chooser::widget(); ?>
+            <?= Chooser::widget() ?>
 
             <!-- load navigation from widget -->
-            <?= TopMenu::widget(); ?>
+            <?= TopMenu::widget() ?>
         </ul>
 
         <ul class="nav" id="search-menu-nav">
-            <?= TopMenuRightStack::widget(); ?>
+            <?= TopMenuRightStack::widget() ?>
         </ul>
 
         <div class="notifications">
-            <?= NotificationArea::widget(); ?>
+            <?= NotificationArea::widget() ?>
         </div>
 
         <div class="topbar-actions">
-            <?= AccountTopMenu::widget(); ?>
+            <?= AccountTopMenu::widget() ?>
         </div>
     </div>
 </div>
 <!-- end: top navigation bar -->
 
-<?= $content; ?>
+<?= $content ?>
 
 <?php $this->endBody() ?>
 </body>

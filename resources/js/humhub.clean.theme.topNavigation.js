@@ -12,7 +12,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             // Add "Search" label to top menu Search entry
             $('#search-menu').append('<br>' + module.config.searchItemLabel);
 
-            // Wait for the end of the resizing
+            // Waiting for the end of the resizing and setting up a window resize event listener
             let resizeTimeout;
             $(window).on('resize', function () {
                 clearTimeout(resizeTimeout);
@@ -22,11 +22,19 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         });
     };
 
+    /**
+     * Fix navigation overflow by moving menu items between navigation and dropdown menus.
+     * This function checks if the navigation menu is overflowing, and if so, moves items to the dropdown menu.
+     * It also checks if the dropdown menu is overflowing, and if so, moves items back to the navigation menu.
+     * Finally, it moves the dropdown submenu to the end of the navigation menu if it has items, or hides it otherwise.
+     *
+     * @function fixNavigationOverflow
+     */
     const fixNavigationOverflow = function () {
-        $topMenuSub.show(); // For isOverflow() test
+        $topMenuSub.show(); // For isOverflow() calculations (will be hidden at the end of this function)
 
         while (!isOverflow()) {
-            moveFromDropDown('.search-menu', $searchMenuNav);
+            // moveFromDropDown('.search-menu', $searchMenuNav);
             if (!moveFromDropDown('.top-menu-item:first', $topMenuNav)) {
                 break;
             }
@@ -34,20 +42,34 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
         while (isOverflow()) {
             if (!moveToDropDown('.top-menu-item:last', $topMenuNav)) {
-                moveToDropDown('.search-menu', $searchMenuNav);
+                // moveToDropDown('.search-menu', $searchMenuNav);
                 break;
             }
         }
 
-        // If drop down submenu has items
+        // If drop-down submenu has items
         if ($topMenuDropdown.children('.top-menu-item').length > 0) {
             $topMenuSub.find('.dropdown-toggle').dropdown();
             $topMenuNav.append($topMenuSub); // Move the dropdown submenu to the end
         } else {
             $topMenuSub.hide();
         }
+
+        // Change sub menu drop-down to drop-up if in the bottom menu (mobile view)
+        if (isMobileView()) {
+            $topMenuSub.removeClass('dropdown').addClass('dropup');
+        } else {
+            $topMenuSub.removeClass('dropup').addClass('dropdown');
+        }
     };
 
+    /**
+     * Moves an item from the main menu bar to the drop-down menu
+     *
+     * @param {string} itemClass - The class of the item to be moved.
+     * @param {jQuery} from - The element from which the item should be moved.
+     * @returns {boolean} - True if the item was successfully moved, false otherwise.
+     */
     const moveToDropDown = function (itemClass, from) {
         const item = from.children(itemClass);
         if (!item.length) {
@@ -58,6 +80,13 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         return true;
     };
 
+    /**
+     * Moves an item from a dropdown menu to the main menu bar
+     *
+     * @param {string} itemClass - The class of the item in the dropdown menu to be moved.
+     * @param {jQuery} to - The jQuery object representing the target location where the item will be moved to.
+     * @returns {boolean} - True if the item was successfully moved, false otherwise.
+     */
     const moveFromDropDown = function (itemClass, to) {
         const item = $topMenuDropdown.children(itemClass);
         if (!item.length) {
@@ -72,8 +101,24 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         return true;
     };
 
+    /**
+     * Checks if the top bar container overflows the top bar
+     *
+     * @returns {boolean} - True if the top bar container overflows the top bar, false otherwise
+     */
     const isOverflow = function () {
+        if (isMobileView()) {
+            return $topMenuNav.outerWidth() > $topBar.outerWidth();
+        }
         return $topBarContainer[0].offsetHeight > $topBar[0].offsetHeight;
+    };
+
+    /**
+     * Determines if the current view is a mobile view (small screen)
+     * @return {Boolean} True if the view is a mobile view, false otherwise.
+     */
+    const isMobileView = function () {
+        return $topMenuNav.css('position') === 'fixed';
     };
 
     module.export({
