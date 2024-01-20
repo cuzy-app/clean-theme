@@ -4,6 +4,7 @@ Changelog
 Unreleased (redo screenshots)
 --------------------
 - Enh: On small screens, the main menu is divided in 2: top and bottom menu
+- Enh: On small screens and on scrolling down, the top and bottom menus are hidden (this feature can be disabled in the configuration file)
 - Fix: The top menu "Account" item (at the right) needs a right margin on mobile screens
 - Fix: Space of User banner image stretched (change to cover)
 - Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active

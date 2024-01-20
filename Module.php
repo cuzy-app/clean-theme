@@ -18,19 +18,18 @@ class Module extends \humhub\components\Module
     public const BASE_THEME_NAME = 'clean-base';
 
     /**
-     * @var string defines the icon
+     * @inheridoc
      */
-    public $icon = 'circle-o-notch';
+    public string $icon = 'circle-o-notch';
 
     /**
-     * @var string defines path for resources, including the screenshots path for the marketplace
+     * @inheridoc
      */
     public $resourcesPath = 'resources';
 
-    /**
-     * @var bool
-     */
-    public $collapsibleLeftNavigation = false;
+    public bool $hideTopMenuOnScrollDown = true; // On small screens only
+    public bool $hideBottomMenuOnScrollDown = true; // On small screens only
+    public bool $collapsibleLeftNavigation = false;
 
 
     public function getName()
@@ -61,6 +60,20 @@ class Module extends \humhub\components\Module
     }
 
     /**
+     * @return void
+     */
+    private function disableTheme()
+    {
+        foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
+            if ($theme->name === self::BASE_THEME_NAME) {
+                $ceTheme = ThemeHelper::getThemeByName('HumHub');
+                $ceTheme->activate();
+                break;
+            }
+        }
+    }
+
+    /**
      * @inheritdoc
      */
     public function enable()
@@ -88,20 +101,6 @@ class Module extends \humhub\components\Module
         if ($theme !== null) {
             $theme->activate();
             DynamicConfig::rewrite();
-        }
-    }
-
-    /**
-     * @return void
-     */
-    private function disableTheme()
-    {
-        foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === self::BASE_THEME_NAME) {
-                $ceTheme = ThemeHelper::getThemeByName('HumHub');
-                $ceTheme->activate();
-                break;
-            }
         }
     }
 }

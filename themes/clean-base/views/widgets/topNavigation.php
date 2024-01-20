@@ -1,7 +1,6 @@
 <?php
 
 use humhub\libs\Html;
-use humhub\modules\cleanTheme\assets\CleanThemeTopNavigationAsset;
 use humhub\modules\ui\menu\MenuEntry;
 use humhub\modules\ui\view\components\View;
 use humhub\widgets\TopMenu;
@@ -9,11 +8,6 @@ use humhub\widgets\TopMenu;
 /* @var $this View */
 /* @var $menu TopMenu */
 /* @var $entries MenuEntry[] */
-
-CleanThemeTopNavigationAsset::register($this);
-$this->registerJsConfig('cleanTheme.topNavigation', [
-    'searchItemLabel' => Yii::t('SearchModule.base', 'Search'),
-]);
 ?>
 
 <?php foreach ($entries as $entry): ?>

@@ -5,6 +5,8 @@
 
 use humhub\assets\AppAsset;
 use humhub\modules\cleanTheme\assets\CleanThemeAsset;
+use humhub\modules\cleanTheme\assets\CleanThemeTopNavigationAsset;
+use humhub\modules\cleanTheme\Module;
 use humhub\modules\space\widgets\Chooser;
 use humhub\modules\ui\view\components\View;
 use humhub\modules\user\widgets\AccountTopMenu;
@@ -13,9 +15,19 @@ use humhub\widgets\SiteLogo;
 use humhub\widgets\TopMenu;
 use humhub\widgets\TopMenuRightStack;
 
+/** @var Module $module */
+$module = Yii::$app->getModule('clean-theme');
+
 AppAsset::register($this);
 CleanThemeAsset::register($this);
+CleanThemeTopNavigationAsset::register($this);
+$this->registerJsConfig('cleanTheme.topNavigation', [
+    'hideTopMenuOnScrollDown' => $module->hideTopMenuOnScrollDown,
+    'hideBottomMenuOnScrollDown' => $module->hideBottomMenuOnScrollDown,
+    'searchItemLabel' => Yii::t('SearchModule.base', 'Search'),
+]);
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">

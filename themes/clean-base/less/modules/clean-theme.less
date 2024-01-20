@@ -1,3 +1,27 @@
 #left-navigation-expand-btn {
   margin-bottom: 6px;
 }
+
+@media (max-width: @screen-xs-min) {
+  body.hide-top-menu {
+    & {
+      padding-top: 0;
+    }
+
+    #topbar {
+      top: -50px;
+      transition: top 0.3s;
+    }
+  }
+
+  body.hide-bottom-menu {
+    & {
+      padding-bottom: 0;
+    }
+
+    #topbar > .container #top-menu-nav {
+      bottom: -50px;
+      transition: bottom 0.3s;
+    }
+  }
+}

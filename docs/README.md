@@ -6,7 +6,10 @@ Clean theme for Humhub based on the Community theme.
 
 - Modern, smooth and uncluttered theme
 - Variants: Contrasted and Bordered
-- Merges the 2 top menu bars of the community theme into 1 menu bar
+- On large screens: the 2 top menu bars of the default theme are merged
+- On small screens:
+    - the second menu becomes a bottom menu bar
+    - on scrolling down, the top and bottom menus are hidden
 - Adds the profile's header in the user's account pages
 - Compatible with the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode/description)
 - Possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).

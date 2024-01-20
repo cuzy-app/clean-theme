@@ -12,6 +12,9 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             // Add "Search" label to top menu Search entry
             $('#search-menu').append('<br>' + module.config.searchItemLabel);
 
+            // Hide menus on scroll top
+            hideMenusOnScrollTop(module.config.hideTopMenuOnScrollDown, module.config.hideBottomMenuOnScrollDown);
+
             // Waiting for the end of the resizing and setting up a window resize event listener
             let resizeTimeout;
             $(window).on('resize', function () {
@@ -119,6 +122,30 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      */
     const isMobileView = function () {
         return $topMenuNav.css('position') === 'fixed';
+    };
+
+    const hideMenusOnScrollTop = function (hideTopMenuOnScrollDown, hideBottomMenuOnScrollDown) {
+        let lastScrollTop = 0;
+
+        $(window).on("scroll", function () {
+            let st = $(this).scrollTop();
+            if (st > lastScrollTop) {
+                if (hideTopMenuOnScrollDown) {
+                    $('body').addClass('hide-top-menu');
+                }
+                if (hideBottomMenuOnScrollDown) {
+                    $('body').addClass('hide-bottom-menu');
+                }
+            } else {
+                if (hideTopMenuOnScrollDown) {
+                    $('body').removeClass('hide-top-menu');
+                }
+                if (hideBottomMenuOnScrollDown) {
+                    $('body').removeClass('hide-bottom-menu');
+                }
+            }
+            lastScrollTop = st;
+        });
     };
 
     module.export({
