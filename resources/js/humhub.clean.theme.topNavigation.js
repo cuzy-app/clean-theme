@@ -1,8 +1,9 @@
 humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
-    const $topBar = $('#topbar');
-    const $topBarContainer = $('#topbar > .container');
-    const $topMenuNav = $('#top-menu-nav');
+    const $body = $('body');
+    const $topMenu = $('#topbar');
+    const $topMenuContainer = $('#topbar > .container');
+    const $topMenuNavOrBottomMenu = $('#top-menu-nav');
     const $topMenuSub = $('#top-menu-sub');
     const $topMenuDropdown = $('#top-menu-sub-dropdown');
     const $searchMenuNav = $('#search-menu-nav');
@@ -38,13 +39,13 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
         while (!isOverflow()) {
             // moveFromDropDown('.search-menu', $searchMenuNav);
-            if (!moveFromDropDown('.top-menu-item:first', $topMenuNav)) {
+            if (!moveFromDropDown('.top-menu-item:first', $topMenuNavOrBottomMenu)) {
                 break;
             }
         }
 
         while (isOverflow()) {
-            if (!moveToDropDown('.top-menu-item:last', $topMenuNav)) {
+            if (!moveToDropDown('.top-menu-item:last', $topMenuNavOrBottomMenu)) {
                 // moveToDropDown('.search-menu', $searchMenuNav);
                 break;
             }
@@ -53,7 +54,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         // If drop-down submenu has items
         if ($topMenuDropdown.children('.top-menu-item').length > 0) {
             $topMenuSub.find('.dropdown-toggle').dropdown();
-            $topMenuNav.append($topMenuSub); // Move the dropdown submenu to the end
+            $topMenuNavOrBottomMenu.append($topMenuSub); // Move the dropdown submenu to the end
         } else {
             $topMenuSub.hide();
         }
@@ -111,9 +112,9 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      */
     const isOverflow = function () {
         if (isMobileView()) {
-            return $topMenuNav.outerWidth() > $topBar.outerWidth();
+            return $topMenuNavOrBottomMenu.outerWidth() > $topMenu.outerWidth();
         }
-        return $topBarContainer[0].offsetHeight > $topBar[0].offsetHeight;
+        return $topMenuContainer[0].offsetHeight > $topMenu[0].offsetHeight;
     };
 
     /**
@@ -121,30 +122,32 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      * @return {Boolean} True if the view is a mobile view, false otherwise.
      */
     const isMobileView = function () {
-        return $topMenuNav.css('position') === 'fixed';
+        return $topMenuNavOrBottomMenu.css('position') === 'fixed';
     };
 
     const hideMenusOnScrollTop = function (hideTopMenuOnScrollDown, hideBottomMenuOnScrollDown) {
         let lastScrollTop = 0;
 
         $(window).on("scroll", function () {
-            let st = $(this).scrollTop();
-            if (st > lastScrollTop) {
-                if (hideTopMenuOnScrollDown) {
-                    $('body').addClass('hide-top-menu');
-                }
-                if (hideBottomMenuOnScrollDown) {
-                    $('body').addClass('hide-bottom-menu');
-                }
-            } else {
-                if (hideTopMenuOnScrollDown) {
-                    $('body').removeClass('hide-top-menu');
-                }
-                if (hideBottomMenuOnScrollDown) {
-                    $('body').removeClass('hide-bottom-menu');
+            let newScrollTop = $(this).scrollTop();
+            if ($body.height() > $(window).height()) { // Prevent freezing when scrolling down if the end of page is in the bottom menu
+                if (newScrollTop > lastScrollTop) { // Scrolling down
+                    if (hideTopMenuOnScrollDown) {
+                        $body.addClass('hide-top-menu');
+                    }
+                    if (hideBottomMenuOnScrollDown) {
+                        $body.addClass('hide-bottom-menu');
+                    }
+                } else {
+                    if (hideTopMenuOnScrollDown) { // Scrolling up
+                        $body.removeClass('hide-top-menu');
+                    }
+                    if (hideBottomMenuOnScrollDown) {
+                        $body.removeClass('hide-bottom-menu');
+                    }
                 }
             }
-            lastScrollTop = st;
+            lastScrollTop = newScrollTop;
         });
     };
 
