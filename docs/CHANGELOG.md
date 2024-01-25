@@ -8,6 +8,7 @@ Unreleased (redo screenshots)
 - Fix: The top menu "Account" item (at the right) needs a right margin on mobile screens
 - Fix: Space of User banner image stretched (change to cover)
 - Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active
+- Enh: Replaced the "Comment" text with an icon
 
 1.6.0 (Nov 23, 2023)
 --------------------

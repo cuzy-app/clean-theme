@@ -1,0 +1,12 @@
+// Replace the comment text with an icon
+.wall-entry-controls a[data-action-click="comment.toggleComment"] {
+  font-size: 0;
+
+  &:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+    content: "\f0e5"; // https://fontawesome.com/v4/icon/comment-o
+    display: inline-block;
+  }
+}
