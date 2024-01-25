@@ -129,27 +129,41 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         let lastScrollTop = 0;
 
         $(window).on("scroll", function () {
+            let bodyHeightDiffWithWindow = $('body').height() - $(window).height();
+
+            // Prevent freezing when scrolling down if the end of page is in the bottom menu (document height is slightly smaller than the screen height)
+
+            if (bodyHeightDiffWithWindow <= 0) {
+                return;
+            }
+
             let newScrollTop = $(this).scrollTop();
 
-            // $body.height() > $(window).height() to prevent freezing when scrolling down if the end of page is in the bottom menu (document height is slightly smaller than the screen height)
-            // The 2 other tests to prevent "elastic scrolling" or "scroll bounce" on iOs when scrolling to the top of the page
-            if ($body.height() > $(window).height() && newScrollTop >= 0 && newScrollTop <= ($(document).height() - $(window).height())) {
-                if (newScrollTop > lastScrollTop) { // Scrolling down
-                    if (hideTopMenuOnScrollDown) {
-                        $body.addClass('hide-top-menu');
-                    }
-                    if (hideBottomMenuOnScrollDown) {
-                        $body.addClass('hide-bottom-menu');
-                    }
-                } else {
-                    if (hideTopMenuOnScrollDown) { // Scrolling up
-                        $body.removeClass('hide-top-menu');
-                    }
-                    if (hideBottomMenuOnScrollDown) {
-                        $body.removeClass('hide-bottom-menu');
-                    }
+            // Prevent false scroll down due to "elastic scrolling"
+            // or "scroll bounce" on iOs when scrolling to the top of the page
+            if (newScrollTop < 0) {
+                newScrollTop = 0;
+            }
+            if (newScrollTop > bodyHeightDiffWithWindow) {
+                newScrollTop = bodyHeightDiffWithWindow;
+            }
+
+            if (newScrollTop && newScrollTop >= lastScrollTop) { // Scrolling down
+                if (hideTopMenuOnScrollDown) {
+                    $body.addClass('hide-top-menu');
+                }
+                if (hideBottomMenuOnScrollDown) {
+                    $body.addClass('hide-bottom-menu');
+                }
+            } else { // Scrolling up
+                if (hideTopMenuOnScrollDown) {
+                    $body.removeClass('hide-top-menu');
+                }
+                if (hideBottomMenuOnScrollDown) {
+                    $body.removeClass('hide-bottom-menu');
                 }
             }
+
             lastScrollTop = newScrollTop;
         });
     };
