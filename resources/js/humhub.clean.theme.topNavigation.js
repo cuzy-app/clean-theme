@@ -130,7 +130,10 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
         $(window).on("scroll", function () {
             let newScrollTop = $(this).scrollTop();
-            if ($body.height() > $(window).height()) { // Prevent freezing when scrolling down if the end of page is in the bottom menu
+
+            // $body.height() > $(window).height() to prevent freezing when scrolling down if the end of page is in the bottom menu (document height is slightly smaller than the screen height)
+            // The 2 other tests to prevent "elastic scrolling" or "scroll bounce" on iOs when scrolling to the top of the page
+            if ($body.height() > $(window).height() && newScrollTop >= 0 && newScrollTop <= ($(document).height() - $(window).height())) {
                 if (newScrollTop > lastScrollTop) { // Scrolling down
                     if (hideTopMenuOnScrollDown) {
                         $body.addClass('hide-top-menu');
