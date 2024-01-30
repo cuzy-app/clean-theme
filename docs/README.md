@@ -10,6 +10,8 @@ Clean theme for Humhub based on the Community theme.
 - On small screens:
     - the second menu becomes a bottom menu bar
     - on scrolling down, the top and bottom menus are hidden
+- The left menu is sticky when scrolling vertically
+- The top right icon becomes active when it's the URL of the current page.
 - Adds the profile's header in the user's account pages
 - Compatible with the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode/description)
 - Possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).

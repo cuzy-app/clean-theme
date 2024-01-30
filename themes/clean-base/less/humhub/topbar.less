@@ -358,8 +358,8 @@
     #search-menu {
       display: inline-block;
       min-height: auto;
+      padding: 5px 10px;
       margin: 10px 2px;
-      padding: 7px 10px 0;
     }
 
     > .nav {
@@ -392,7 +392,7 @@
         }
       }
 
-      > li.active > a {
+      > li.active > a, > li.hover > a {
         min-height: @topBarHeight;
         background-color: @primary;
         color: @text-color-contrast;
@@ -400,15 +400,13 @@
       }
 
       > li > ul > li > a {
-        border-left: 3px solid @text-color-contrast;
         background-color: @text-color-contrast;
         color: @text-color-highlight;
       }
 
       > li > ul > li > a:hover, > li > ul > li > a.active {
-        border-left: 3px solid @info;
-        background-color: @background-color-secondary;
-        color: @text-color-highlight;
+        background-color: @primary;
+        color: @text-color-contrast;
       }
 
       > li > a#space-menu {
@@ -431,6 +429,12 @@
       font-size: 11px;
       margin: 0;
       font-weight: 400;
+    }
+
+    // For JS communitee.theme.updateBtnStatus()
+    .btn-group.active > a {
+      background-color: lighten(@primary, 5%);
+      color: @text-color-contrast;
     }
   }
 }

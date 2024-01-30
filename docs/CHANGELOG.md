@@ -10,6 +10,8 @@ Unreleased (redo screenshots)
 - Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active
 - Enh: Replaced the "Comment" text with an icon
 - Enh: Move the "Search" menu item at the right, next to the "Bell" icon, and remove the "Search" label, to have a smaller icon which is better for the mobile view
+- Enh: Make the left menu fixed when scrolling down
+- Enh: Top menu icon buttons: update active status
 
 1.6.0 (Nov 23, 2023)
 --------------------

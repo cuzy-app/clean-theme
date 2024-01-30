@@ -1,11 +1,22 @@
 humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
+    module.initOnPjaxLoad = true;
+
+    let $leftNav;
+    let $topBarHeight;
+    let $leftNavTop;
+    let $leftNavIsFixed = false; // Only to improve performance while scrolling
+    let resizeTimeout;
+
+    const leftNavDistFromTopBar = 15;
+
     const $body = $('body');
     const $topMenu = $('#topbar');
     const $topMenuContainer = $('#topbar > .container');
     const $topMenuNavOrBottomMenu = $('#top-menu-nav');
     const $topMenuSub = $('#top-menu-sub');
     const $topMenuDropdown = $('#top-menu-sub-dropdown');
+
 
     const init = function () {
         $(function () {
@@ -20,6 +31,18 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
                 resizeTimeout = setTimeout(fixNavigationOverflow, 100);
             });
             setTimeout(fixNavigationOverflow, 100);
+
+            // Top menu -> icon buttons: update active status
+            updateBtnStatus('search-menu', 'search', 'search');
+            updateBtnStatus('icon-notifications', 'notification', 'overview');
+            updateBtnStatus('icon-messages', 'mail', 'mail');
+            updateBtnStatus('icon-activity-web-summary', 'activity-web-summary', 'latest');
+
+            // Make the left menu fixed when scrolling down
+            $leftNav = $('.left-navigation');
+            handelWindowSize();
+            $(window).off('resize', handelWindowSize);
+            $(window).on('resize', handelWindowSize);
         });
     };
 
@@ -161,6 +184,81 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
             lastScrollTop = newScrollTop;
         });
+    };
+
+    function handelWindowSize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+            if (!$leftNav.length) {
+                return;
+            }
+
+            $(window).off('scroll', switchFixedPanels);
+            removeLeftNavFixed();
+
+            $topBarHeight = $('#topbar').height();
+            $leftNavTop = $leftNav.offset().top;
+
+            // Force width to keep the same when position is fixed
+            $leftNav.css("width", "");
+            $leftNav.width($leftNav.width());
+
+            if ($leftNav.parent().css('float') === 'left') {
+                const availableHeightForSidebar = $(window).height() - $topBarHeight - leftNavDistFromTopBar;
+                if ($leftNav.height() < availableHeightForSidebar) {
+                    switchFixedPanels();
+                    $(window).on('scroll', switchFixedPanels);
+                }
+            }
+        }, 100);
+    }
+
+    const switchFixedPanels = function () {
+        const $scrollTop = $(window).scrollTop();
+        const distanceFromTopBar = $leftNavTop - $scrollTop - $topBarHeight;
+        if (distanceFromTopBar < leftNavDistFromTopBar) {
+            addLeftNavFixed();
+        } else {
+            removeLeftNavFixed();
+        }
+    };
+
+    const addLeftNavFixed = function () {
+        if (!$leftNavIsFixed) {
+            $leftNav.css({
+                'position': 'fixed',
+                'top': ($topBarHeight + leftNavDistFromTopBar) + 'px'
+            });
+            $leftNavIsFixed = true;
+        }
+    };
+
+    const removeLeftNavFixed = function () {
+        if ($leftNavIsFixed) {
+            $leftNav.css({
+                'position': 'static',
+                'top': 'auto'
+            });
+            $leftNavIsFixed = false;
+        }
+    };
+
+    /**
+     * Updates the active status of a button based on the current state of the UI module.
+     * @param {string} btnId - The ID of the button.
+     * @param {string} moduleId - The ID of the module.
+     * @param {string} controllerId - The ID of the controller.
+     */
+    const updateBtnStatus = function (btnId, moduleId, controllerId) {
+        const state = humhub.modules.ui.view.getState();
+        const searchBtn = $('#' + btnId).parent();
+        if (searchBtn.length) {
+            if (state.moduleId === moduleId && state.controllerId === controllerId) {
+                searchBtn.addClass('active');
+            } else {
+                searchBtn.removeClass('active');
+            }
+        }
     };
 
     module.export({
