@@ -81,7 +81,34 @@
     }
 
     a.navbar-brand-text {
-      padding-top: 15px;
+      padding-top: 7px;
+      padding-bottom: 0;
+      padding-right: 34px;
+      line-height: 33px;
+      font-weight: bold;
+    }
+
+    #top-menu-nav {
+      flex: 1; // The space must be between the main menu items and the search button
+    }
+
+    > :first-child {
+      margin-right: 13px;
+    }
+
+    > :last-child {
+      margin-left: 13px;
+    }
+
+    // Reduce dropdown menu spacings
+    .dropdown-menu > li > {
+      a {
+        padding: 8px 15px;
+      }
+
+      hr {
+        margin: 8px 25% 8px 10px;
+      }
     }
 
     .nav > li > a:hover,
@@ -302,7 +329,7 @@
       }
     }
 
-    // Space dropdown menu
+    // Space and search dropdown menu
     #space-menu-dropdown,
     #search-menu-dropdown {
       width: 400px;
@@ -326,6 +353,13 @@
         display: none;
         cursor: pointer;
       }
+    }
+
+    #search-menu {
+      display: inline-block;
+      min-height: auto;
+      margin: 10px 2px;
+      padding: 7px 10px 0;
     }
 
     > .nav {

@@ -9,6 +9,7 @@ Unreleased (redo screenshots)
 - Fix: Space of User banner image stretched (change to cover)
 - Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active
 - Enh: Replaced the "Comment" text with an icon
+- Enh: Move the "Search" menu item at the right, next to the "Bell" icon, and remove the "Search" label, to have a smaller icon which is better for the mobile view
 
 1.6.0 (Nov 23, 2023)
 --------------------

@@ -24,7 +24,6 @@ CleanThemeTopNavigationAsset::register($this);
 $this->registerJsConfig('cleanTheme.topNavigation', [
     'hideTopMenuOnScrollDown' => $module->hideTopMenuOnScrollDown,
     'hideBottomMenuOnScrollDown' => $module->hideBottomMenuOnScrollDown,
-    'searchItemLabel' => Yii::t('SearchModule.base', 'Search'),
 ]);
 ?>
 

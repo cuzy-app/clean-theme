@@ -6,12 +6,9 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     const $topMenuNavOrBottomMenu = $('#top-menu-nav');
     const $topMenuSub = $('#top-menu-sub');
     const $topMenuDropdown = $('#top-menu-sub-dropdown');
-    const $searchMenuNav = $('#search-menu-nav');
 
     const init = function () {
         $(function () {
-            // Add "Search" label to top menu Search entry
-            $('#search-menu').append('<br>' + module.config.searchItemLabel);
 
             // Hide menus on scroll top
             hideMenusOnScrollTop(module.config.hideTopMenuOnScrollDown, module.config.hideBottomMenuOnScrollDown);
@@ -38,7 +35,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         $topMenuSub.show(); // For isOverflow() calculations (will be hidden at the end of this function)
 
         while (!isOverflow()) {
-            // moveFromDropDown('.search-menu', $searchMenuNav);
             if (!moveFromDropDown('.top-menu-item:first', $topMenuNavOrBottomMenu)) {
                 break;
             }
@@ -46,7 +42,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
         while (isOverflow()) {
             if (!moveToDropDown('.top-menu-item:last', $topMenuNavOrBottomMenu)) {
-                // moveToDropDown('.search-menu', $searchMenuNav);
                 break;
             }
         }
