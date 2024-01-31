@@ -38,7 +38,7 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
     <?php $this->head() ?>
     <?= $this->render('head') ?>
 </head>
-<body>
+<body<?= Yii::$app->user->isGuest ? ' class="is-guest"' : '' ?>>
 <?php $this->beginBody() ?>
 
 <!-- start: top navigation bar -->
