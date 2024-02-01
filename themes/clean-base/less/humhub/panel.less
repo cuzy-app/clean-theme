@@ -39,7 +39,7 @@
     }
 
     .img-profile-data {
-      background: fade(black, 35%);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.4) 100%);
 
       &, h1, h2 {
         color: @text-color-contrast;
@@ -72,5 +72,9 @@
         }
       }
     }
+  }
+
+  .panel-body {
+    min-height: 50px; // In case there is no button
   }
 }

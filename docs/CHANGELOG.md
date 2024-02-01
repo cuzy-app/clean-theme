@@ -12,6 +12,7 @@ Unreleased (redo screenshots)
 - Enh: Move the "Search" menu item at the right, next to the "Bell" icon, and remove the "Search" label, to have a smaller icon which is better for the mobile view
 - Enh: Make the left menu fixed when scrolling down
 - Enh: Top menu icon buttons: update active status
+- Chg: On the space header, add a linear gradient at the top of the black translucent layer
 
 1.6.0 (Nov 23, 2023)
 --------------------
