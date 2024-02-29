@@ -64,12 +64,16 @@ class Module extends \humhub\components\Module
      */
     private function disableTheme()
     {
-        foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === self::BASE_THEME_NAME) {
-                $ceTheme = ThemeHelper::getThemeByName('HumHub');
+        $baseTheme = ThemeHelper::getThemeByName(self::BASE_THEME_NAME);
+        if ($baseTheme !== null) {
+            $ceTheme = ThemeHelper::getThemeByName('HumHub');
+            if ($ceTheme !== null) {
                 $ceTheme->activate();
-                break;
+            } else {
+                Yii::error('Failed to activate theme: HumHub', 'ui');
             }
+        } else {
+            Yii::error('Failed to find base theme: ' . self::BASE_THEME_NAME, 'ui');
         }
     }
 
@@ -90,17 +94,22 @@ class Module extends \humhub\components\Module
      */
     private function enableTheme()
     {
+        $baseTheme = ThemeHelper::getThemeByName(self::BASE_THEME_NAME);
+        if ($baseTheme === null) {
+            Yii::error('Failed to find base theme: ' . self::BASE_THEME_NAME, 'ui');
+            return;
+        }
+
         // Check if already active
-        foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
+        $activeThemes = ThemeHelper::getThemeTree(Yii::$app->view->theme);
+        foreach ($activeThemes as $theme) {
             if ($theme->name === self::BASE_THEME_NAME) {
                 return;
             }
         }
 
-        $theme = ThemeHelper::getThemeByName(self::BASE_THEME_NAME);
-        if ($theme !== null) {
-            $theme->activate();
-            DynamicConfig::rewrite();
-        }
+        // Activate base theme
+        $baseTheme->activate();
+        DynamicConfig::rewrite();
     }
 }
