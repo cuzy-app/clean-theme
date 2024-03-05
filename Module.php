@@ -15,7 +15,11 @@ use yii\helpers\Url;
 
 class Module extends \humhub\components\Module
 {
-    public const BASE_THEME_NAME = 'clean-base';
+    public const THEME_NAMES = [
+        'clean-base',
+        'clean-bordered',
+        'clean-contrasted',
+    ];
 
     /**
      * @inheridoc
@@ -65,7 +69,7 @@ class Module extends \humhub\components\Module
     private function disableTheme()
     {
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === self::BASE_THEME_NAME) {
+            if (in_array($theme->name, self::THEME_NAMES, true)) {
                 $ceTheme = ThemeHelper::getThemeByName('HumHub');
                 $ceTheme->activate();
                 break;
@@ -92,15 +96,23 @@ class Module extends \humhub\components\Module
     {
         // Check if already active
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === self::BASE_THEME_NAME) {
+            if (in_array($theme->name, self::THEME_NAMES, true)) {
                 return;
             }
         }
 
-        $theme = ThemeHelper::getThemeByName(self::BASE_THEME_NAME);
+        $theme = ThemeHelper::getThemeByName($this->getBaseThemeName());
         if ($theme !== null) {
             $theme->activate();
             DynamicConfig::rewrite();
         }
+    }
+
+    /**
+     * The base theme is the first of the list
+     */
+    public function getBaseThemeName(): string
+    {
+        return self::THEME_NAMES[0];
     }
 }

@@ -13,6 +13,7 @@ Unreleased (redo screenshots)
 - Enh: Make the left menu fixed when scrolling down
 - Enh: Top menu icon buttons: update active status
 - Chg: On the space header, add a linear gradient at the top of the black translucent layer, and a text shadow on the space name and description
+- Fix: If the "clean-bordered" or "clean-contrasted" themes are active, after disabling the module, the theme is not switched to the HumHub one
 
 1.6.0 (Nov 23, 2023)
 --------------------
