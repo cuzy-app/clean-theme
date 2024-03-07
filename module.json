@@ -3,7 +3,7 @@
   "name": "Clean Theme",
   "description": "Clean theme for Humhub based on the Community theme",
   "keywords": [],
-  "version": "1.6.0",
+  "version": "1.7.0",
   "humhub": {
     "minVersion": "1.15"
   },

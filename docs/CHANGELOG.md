@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased (redo screenshots)
+1.7.0 (MArch 7, 2024)
 --------------------
 - Enh: On small screens, the main menu is divided in 2: top and bottom menu
 - Enh: On small screens and on scrolling down, the top and bottom menus are hidden (this feature can be disabled in the configuration file)
@@ -10,10 +10,11 @@ Unreleased (redo screenshots)
 - Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active
 - Enh: Replaced the "Comment" text with an icon
 - Enh: Move the "Search" menu item at the right, next to the "Bell" icon, and remove the "Search" label, to have a smaller icon which is better for the mobile view
-- Enh: Make the left menu fixed when scrolling down
+- Enh: Make the left menu fixed when scrolling down (if the screen hight is sufficient)
 - Enh: Top menu icon buttons: update active status
 - Chg: On the space header, add a linear gradient at the top of the black translucent layer, and a text shadow on the space name and description
 - Fix: If the "clean-bordered" or "clean-contrasted" themes are active, after disabling the module, the theme is not switched to the HumHub one
+- Enh: Updated screenshots
 
 1.6.0 (Nov 23, 2023)
 --------------------
