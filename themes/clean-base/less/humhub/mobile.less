@@ -73,6 +73,7 @@
       #top-menu-nav {
         position: fixed;
         bottom: 0;
+        padding-bottom: env(safe-area-inset-bottom); // for the web view space (safe area) on iPhone X and above
         background-color: @background-color-secondary;
         border-top: solid 2px #CCC;
         width: auto;

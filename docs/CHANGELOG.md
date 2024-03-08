@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: On iPhone X and above, the bottom menu is too low and interferes with unclickable interactive elements
+
 1.7.0 (MArch 7, 2024)
 --------------------
 - Enh: On small screens, the main menu is divided in 2: top and bottom menu
