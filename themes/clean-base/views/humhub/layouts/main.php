@@ -34,7 +34,7 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
     <title><?= strip_tags($this->pageTitle) ?></title>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1, viewport-fit=cover">
     <?php $this->head() ?>
     <?= $this->render('head') ?>
 </head>
