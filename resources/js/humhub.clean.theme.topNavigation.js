@@ -166,7 +166,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
                 newScrollTop = bodyHeightDiffWithWindow;
             }
 
-            if (newScrollTop && newScrollTop >= lastScrollTop) { // Scrolling down
+            if (newScrollTop && newScrollTop > 10 && newScrollTop >= lastScrollTop) { // Scrolling down
                 if (hideTopMenuOnScrollDown) {
                     $body.addClass('hide-top-menu');
                 }
