@@ -99,6 +99,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         }
         item.find('br').remove();
         $topMenuDropdown.prepend(item);
+        from.children('.dropdown').removeClass('dropdown').addClass('dropup');
         return true;
     };
 
@@ -120,6 +121,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             iItem.after('<br/>');
         }
         to.append(item);
+        to.children('.dropup').removeClass('dropup').addClass('dropdown');
         return true;
     };
 
