@@ -1,11 +1,12 @@
 Changelog
 =========
 
-Unreleased
+1.7.1 (March 11, 2024)
 --------------------
-- Fix: On iPhone X and above, the bottom menu is too low and interferes with unclickable interactive elements
+- Fix #12: On iPhone X and above, the bottom menu is too low and interferes with unclickable interactive elements
+- Fix: Drop down menus (such as the Space chooser) must become drop up menus when the main navigation bar becomes a bottom bar on small screens
 
-1.7.0 (MArch 7, 2024)
+1.7.0 (March 7, 2024)
 --------------------
 - Enh: On small screens, the main menu is divided in 2: top and bottom menu
 - Enh: On small screens and on scrolling down, the top and bottom menus are hidden (this feature can be disabled in the configuration file)
