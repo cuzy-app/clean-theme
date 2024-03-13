@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh #11: Add the module configuration `hideTextInBottomMenuItems` (see https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
+
 1.7.1 (March 11, 2024)
 --------------------
 - Fix #12: On iPhone X and above, the bottom menu is too low and interferes with unclickable interactive elements

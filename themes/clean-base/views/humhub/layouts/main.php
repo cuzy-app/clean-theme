@@ -48,7 +48,7 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
             <?= SiteLogo::widget() ?>
         </div>
 
-        <ul class="nav" id="top-menu-nav">
+        <ul id="top-menu-nav" class="nav<?= $module->hideTextInBottomMenuItems ? ' hide-menu-item-texts' : '' ?>">
             <!-- load space chooser widget -->
             <?= Chooser::widget() ?>
 
