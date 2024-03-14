@@ -4,6 +4,7 @@ Changelog
 Unreleased
 --------------------
 - Enh #11: Add the module configuration `hideTextInBottomMenuItems` (see https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
+- Enh: Replace the "Like" text with an icon
 
 1.7.1 (March 11, 2024)
 --------------------
@@ -17,7 +18,7 @@ Unreleased
 - Fix: The top menu "Account" item (at the right) needs a right margin on mobile screens
 - Fix: Space of User banner image stretched (change to cover)
 - Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active
-- Enh: Replaced the "Comment" text with an icon
+- Enh: Replace the "Comment" text with an icon
 - Enh: Move the "Search" menu item at the right, next to the "Bell" icon, and remove the "Search" label, to have a smaller icon which is better for the mobile view
 - Enh: Make the left menu fixed when scrolling down (if the screen hight is sufficient)
 - Enh: Top menu icon buttons: update active status

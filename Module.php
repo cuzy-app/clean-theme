@@ -33,7 +33,7 @@ class Module extends \humhub\components\Module
 
     public bool $hideTopMenuOnScrollDown = true; // On small screens only
     public bool $hideBottomMenuOnScrollDown = true; // On small screens only
-    public bool $hideTextInBottomMenuItems = true; // On small screens only
+    public bool $hideTextInBottomMenuItems = false; // On small screens only
     public bool $collapsibleLeftNavigation = false;
 
 
