@@ -5,6 +5,7 @@ Unreleased
 --------------------
 - Enh #11: Add the module configuration `hideTextInBottomMenuItems` (see https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
 - Enh: Replace the "Like" text with an icon
+- Fix #13: On touch screens, when a menu element is clicked, the background color is the one of the hover background color
 
 1.7.1 (March 11, 2024)
 --------------------
