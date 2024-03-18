@@ -77,11 +77,11 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             $topMenuSub.hide();
         }
 
-        // Change sub menu drop-down to drop-up if in the bottom menu (mobile view)
+        // Change drop-down menus (such as the space chooser or the sub-menu) to drop-up if in the bottom menu (mobile view)
         if (isMobileView()) {
-            $topMenuSub.removeClass('dropdown').addClass('dropup');
+            $topMenuNavOrBottomMenu.children('.dropdown').removeClass('dropdown').addClass('dropup'); // Drop down menus (such as the Space chooser)
         } else {
-            $topMenuSub.removeClass('dropup').addClass('dropdown');
+            $topMenuNavOrBottomMenu.children('.dropup').removeClass('dropup').addClass('dropdown'); // Drop down menus (such as the Space chooser)
         }
     };
 
@@ -99,7 +99,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         }
         item.find('br').remove();
         $topMenuDropdown.prepend(item);
-        from.children('.dropdown').removeClass('dropdown').addClass('dropup');
         return true;
     };
 
@@ -121,7 +120,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             iItem.after('<br/>');
         }
         to.append(item);
-        to.children('.dropup').removeClass('dropup').addClass('dropdown');
         return true;
     };
 
@@ -142,7 +140,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      * @return {Boolean} True if the view is a mobile view, false otherwise.
      */
     const isMobileView = function () {
-        return $topMenuNavOrBottomMenu.css('position') === 'fixed';
+        return $topMenuNavOrBottomMenu.css('position') === 'fixed'; // The bottom menu is displayed
     };
 
     const hideMenusOnScrollTop = function (hideTopMenuOnScrollDown, hideBottomMenuOnScrollDown) {
