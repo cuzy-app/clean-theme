@@ -1,12 +1,12 @@
 Changelog
 =========
 
-Unreleased
+1.7.2 (March 18, 2024)
 --------------------
 - Enh #11: Add the module configuration `hideTextInBottomMenuItems` (see https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
 - Enh: Replace the "Like" text with an icon
 - Fix #13: On touch screens, when a menu element is clicked, the background color is the one of the hover background color
-- Fix: the fix for drop down menus (such as the Space chooser) in vers 1.7.1 doesn't work in some specific situations
+- Fix #13: the fix for drop down menus (such as the Space chooser) in vers 1.7.1 doesn't work in some specific situations
 
 1.7.1 (March 11, 2024)
 --------------------

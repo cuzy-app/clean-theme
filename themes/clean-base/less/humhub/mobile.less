@@ -60,13 +60,14 @@
       // Bottom menu on small screens
       .topbar-brand.hidden-xs {
         flex: 1;
-
-        &, & .hidden-xs {
-          display: block !important;
-        }
+        display: contents !important;
+        white-space: nowrap;
 
         a.navbar-brand {
           padding-left: 10px !important;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 16px;
         }
       }
 
