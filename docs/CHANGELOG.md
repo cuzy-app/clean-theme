@@ -8,6 +8,7 @@ Unreleased
 - Fix #13: On touch screens, when a menu element is clicked, the background color is the one of the hover background color
 - Fix #13: the fix for drop down menus (such as the Space chooser) in vers 1.7.1 doesn't work in some specific situations
 - Fix #11: Prevent top left application name to display on multiple lines
+- Fix #11: Too much vertical space between menu items in the space browser
 
 1.7.1 (March 11, 2024)
 --------------------
