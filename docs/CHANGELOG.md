@@ -9,6 +9,9 @@ Unreleased
 - Fix #13: the fix for drop down menus (such as the Space chooser) in vers 1.7.1 doesn't work in some specific situations
 - Fix #11: Prevent top left application name to display on multiple lines
 - Fix #11: Too much vertical space between menu items in the space browser
+- Enh: Change the "Share" link (Share between module) to an icon (requires https://github.com/humhub/sharebetween/pull/58)
+- Enh: Better vertical alignement of wall entry bottom links
+- Enh: When a content is liked, the "Like" icon is plain
 
 1.7.1 (March 11, 2024)
 --------------------
