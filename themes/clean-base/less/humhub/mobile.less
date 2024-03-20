@@ -26,6 +26,7 @@
 
   #topbar {
     > .container {
+
       // Space dropdown menu
       #space-menu-dropdown,
       #search-menu-dropdown {
@@ -42,6 +43,7 @@
   }
 }
 
+// Size for the bottom menu
 @media (max-width: @screen-xs-min) {
   body {
     padding-bottom: 52px;
@@ -83,21 +85,42 @@
         justify-content: space-between;
 
         > li > a {
-          width: 50px;
-          padding: 0;
+          width: 65px;
+          padding: 0 0 5px 0;
           line-height: 12px !important;
           font-size: 10px;
 
+          &#space-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+
+            .space-acronym {
+              line-height: 20px;
+            }
+
+            .no-space {
+              margin-bottom: 5px;
+            }
+          }
+
           i {
-            line-height: 50px;
+            line-height: 35px;
             font-size: 20px;
           }
         }
 
         &.hide-menu-item-texts {
           > li > a {
+            width: 50px;
+            padding: 0;
             line-height: 0 !important;
             font-size: 0;
+
+            i {
+              line-height: 50px;
+            }
           }
         }
       }

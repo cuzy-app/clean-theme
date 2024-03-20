@@ -12,6 +12,7 @@ Unreleased
 - Enh: Change the "Share" link (Share between module) to an icon (requires https://github.com/humhub/sharebetween/pull/58)
 - Enh: Better vertical alignement of wall entry bottom links
 - Enh: When a content is liked, the "Like" icon is plain
+- Fix #11: Space Browser drop up button in bottom navigation menu (mobile screen)
 
 1.7.1 (March 11, 2024)
 --------------------
