@@ -14,6 +14,7 @@ Unreleased
 - Enh: When a content is liked, the "Like" icon is plain
 - Fix #11: Space Browser drop up button in bottom navigation menu (mobile screen)
 - Enh: Transition duration when hiding menus (on mobile scroll down) changed from 0.3 to 0.6 seconds
+- Fix #14: small dark mode issues (thanks @felixhahnweilheim)
 
 1.7.1 (March 11, 2024)
 --------------------
