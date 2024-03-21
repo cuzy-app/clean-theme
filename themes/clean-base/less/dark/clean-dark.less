@@ -14,10 +14,21 @@ a.list-group-item:hover, a.list-group-item.active, a.list-group-item.active:hove
   color: @text-color-highlight;
 }
 
+// Bottom Menu
+@media (max-width: 570px) {
+  #topbar > .container #top-menu-nav {
+    border-top-color: var(--background4);
+  }
+}
+
 // Notifications and Mail dropdown (unread messages)
 .messagePreviewEntry.unread,
 .media-list li.new {
   background-color: @background-color-highlight !important;
+}
+// Hide misplaced arrow
+#topbar > .container .notifications .arrow::after {
+  display: none;
 }
 
 // Profile Title and Subtitle
