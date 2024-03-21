@@ -1,18 +1,4 @@
-// Top Bar
-#topbar > .container > .nav > li > a,
-#topbar > .container .notifications .btn-group > a {
-  color: @text-color-heading;
-}
-
-#topbar > .container .btn-group > a:hover {
-  background-color: @text-color-heading;
-  color: @text-color-contrast;
-}
-
-a.list-group-item:hover, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus,
-#topbar > .container > .nav > li.active > a {
-  color: @text-color-highlight;
-}
+/** Everything else which is not about colors (except var) **/
 
 // Bottom Menu
 @media (max-width: 570px) {
@@ -21,22 +7,7 @@ a.list-group-item:hover, a.list-group-item.active, a.list-group-item.active:hove
   }
 }
 
-// Notifications and Mail dropdown (unread messages)
-.messagePreviewEntry.unread,
-.media-list li.new {
-  background-color: @background-color-highlight !important;
-}
 // Hide misplaced arrow
 #topbar > .container .notifications .arrow::after {
   display: none;
-}
-
-// Profile Title and Subtitle
-.panel-profile .panel-profile-header .img-profile-data, .panel-profile .panel-profile-header .img-profile-data h1, .panel-profile .panel-profile-header .img-profile-data h2 {
-  color: @text-color-highlight;
-}
-
-// Tab Active
-.tab-menu .nav-tabs li.active > a, .tab-menu .nav-tabs li.active > a:focus, .tab-menu .nav-tabs li.active > a:hover, ul.tab-menu-settings li.active > a, ul.tab-menu-settings li.active > a:focus, ul.tab-menu-settings li.active > a:hover {
-  color: @text-color-highlight;
 }
