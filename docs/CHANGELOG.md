@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+1.7.2 (March 21, 2024)
 --------------------
 - Enh #11: Add the module configuration `hideTextInBottomMenuItems` (see https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
 - Enh: Replace the "Like" text with an icon
