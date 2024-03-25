@@ -27,6 +27,23 @@
   #topbar {
     > .container {
 
+      // Don't hide logo
+      .topbar-brand.hidden-xs {
+        flex: 1;
+        display: block !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        a.navbar-brand {
+          display: block !important;
+          padding-left: 10px !important;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 16px;
+        }
+      }
+
       // Space dropdown menu
       #space-menu-dropdown,
       #search-menu-dropdown {
@@ -60,19 +77,6 @@
       }
 
       // Bottom menu on small screens
-      .topbar-brand.hidden-xs {
-        flex: 1;
-        display: contents !important;
-        white-space: nowrap;
-
-        a.navbar-brand {
-          padding-left: 10px !important;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-size: 16px;
-        }
-      }
-
       #top-menu-nav {
         position: fixed;
         bottom: 0;
@@ -129,6 +133,13 @@
             }
           }
         }
+      }
+
+      .notifications .dropdown-menu {
+        position: fixed !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: 50px !important;
       }
     }
   }
