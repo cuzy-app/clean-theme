@@ -21,6 +21,7 @@ Clean theme for Humhub based on the Community theme.
 
 1. Administration -> Modules: install and activate the module
 2. Administration -> Settings -> Appearance: select the theme
+3. Advanced configuration: See available public properties in [the `Module.php` file](https://github.com/cuzy-app/humhub-modules-clean-theme/blob/master/Module.php) and [the Module configuration documentation](https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
 
 ## Pricing
 

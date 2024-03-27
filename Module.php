@@ -22,9 +22,13 @@ use yii\helpers\Url;
 class Module extends \humhub\components\Module
 {
     /**
-     * @var string The name of the base clean theme.
+     * @var array The name of the clean themes.
      */
-    public const BASE_THEME_NAME = 'clean-base';
+    public const THEME_NAMES = [
+        'clean-base',
+        'clean-bordered',
+        'clean-contrasted',
+    ];
 
     /**
      * @var string The icon for the module.
@@ -118,10 +122,10 @@ class Module extends \humhub\components\Module
     {
         try {
             foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-                if ($theme->name === self::BASE_THEME_NAME) return;
+                if ($theme->name === self::THEME_NAMES) return;
             }
 
-            $theme = ThemeHelper::getThemeByName(self::BASE_THEME_NAME);
+            $theme = ThemeHelper::getThemeByName(self::THEME_NAMES);
             if ($theme !== null) {
                 $theme->activate();
                 $this->updateDynamicConfig();
@@ -138,7 +142,7 @@ class Module extends \humhub\components\Module
     private function disableTheme()
     {
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === self::BASE_THEME_NAME) {
+            if ($theme->name === self::THEME_NAMES) {
                 $ceTheme = ThemeHelper::getThemeByName('HumHub');
                 $ceTheme->activate();
                 break;
@@ -155,11 +159,19 @@ class Module extends \humhub\components\Module
     {
         try {
             $config = DynamicConfig::load();
-            $config['theme'] = self::BASE_THEME_NAME;
+            $config['theme'] = self::THEME_NAMES;
             DynamicConfig::save($config);
         } catch (Exception $e) {
             Yii::error('Error updating dynamic config: ' . $e->getMessage(), 'clean-theme');
             throw $e;
         }
+    }
+
+    /**
+     * The base theme is the first of the list
+     */
+    public function getBaseThemeName(): string
+    {
+        return self::THEME_NAMES[0];
     }
 }

@@ -1,18 +1,44 @@
 Changelog
 =========
 
-Unreleased (redo screenshots)
+1.7.3 (March 27, 2024)
+--------------------
+- Fix #16: On mobile, top menu dropdown notification panels are not centered on the screen and the logo is hidden
+
+1.7.2 (March 21, 2024)
+--------------------
+- Enh #11: Add the module configuration `hideTextInBottomMenuItems` (see https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
+- Enh: Replace the "Like" text with an icon
+- Fix #13: On touch screens, when a menu element is clicked, the background color is the one of the hover background color
+- Fix #13: the fix for drop down menus (such as the Space chooser) in vers 1.7.1 doesn't work in some specific situations
+- Fix #11: Prevent top left application name to display on multiple lines
+- Fix #11: Too much vertical space between menu items in the space browser
+- Enh: Change the "Share" link (Share between module) to an icon (requires https://github.com/humhub/sharebetween/pull/58)
+- Enh: Better vertical alignement of wall entry bottom links
+- Enh: When a content is liked, the "Like" icon is plain
+- Fix #11: Space Browser drop up button in bottom navigation menu (mobile screen)
+- Enh: Transition duration when hiding menus (on mobile scroll down) changed from 0.3 to 0.6 seconds
+- Fix #14: small dark mode issues (thanks @felixhahnweilheim)
+
+1.7.1 (March 11, 2024)
+--------------------
+- Fix #12: On iPhone X and above, the bottom menu is too low and interferes with unclickable interactive elements
+- Fix: Drop down menus (such as the Space chooser) must become drop up menus when the main navigation bar becomes a bottom bar on small screens
+
+1.7.0 (March 7, 2024)
 --------------------
 - Enh: On small screens, the main menu is divided in 2: top and bottom menu
 - Enh: On small screens and on scrolling down, the top and bottom menus are hidden (this feature can be disabled in the configuration file)
 - Fix: The top menu "Account" item (at the right) needs a right margin on mobile screens
 - Fix: Space of User banner image stretched (change to cover)
 - Enh: On the top menu, the right icons should have a grey background on hover, and the primary color when active
-- Enh: Replaced the "Comment" text with an icon
+- Enh: Replace the "Comment" text with an icon
 - Enh: Move the "Search" menu item at the right, next to the "Bell" icon, and remove the "Search" label, to have a smaller icon which is better for the mobile view
-- Enh: Make the left menu fixed when scrolling down
+- Enh: Make the left menu fixed when scrolling down (if the screen hight is sufficient)
 - Enh: Top menu icon buttons: update active status
 - Chg: On the space header, add a linear gradient at the top of the black translucent layer, and a text shadow on the space name and description
+- Fix: If the "clean-bordered" or "clean-contrasted" themes are active, after disabling the module, the theme is not switched to the HumHub one
+- Enh: Updated screenshots
 
 1.6.0 (Nov 23, 2023)
 --------------------

@@ -1,0 +1,21 @@
+// Replace the comment text with an icon
+.wall-entry-controls a[data-action-click="like.toggleLike"] {
+  font-size: 0;
+
+  .comment-count {
+    font-size: 11px;
+  }
+
+  &:before {
+    font: normal normal normal 14px/1 FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    font-size: 18px;
+    content: "\f087"; // https://fontawesome.com/v4/icon/thumbs-o-up
+    display: inline-block;
+    margin-right: 3px;
+  }
+
+  &.unlike:before {
+    content: "\f164"; // https://fontawesome.com/v4/icon/thumbs-up
+  }
+}

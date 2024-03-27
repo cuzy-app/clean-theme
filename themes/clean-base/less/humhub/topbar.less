@@ -100,17 +100,6 @@
       margin-left: 13px;
     }
 
-    // Reduce dropdown menu spacings
-    .dropdown-menu > li > {
-      a {
-        padding: 8px 15px;
-      }
-
-      hr {
-        margin: 8px 25% 8px 10px;
-      }
-    }
-
     .nav > li > a:hover,
     .nav > .open > a {
       background-color: @background-color-secondary;
@@ -119,9 +108,6 @@
 
     .nav > .account {
       height: @topBarHeight;
-
-      img {
-      }
 
       .dropdown-toggle {
         padding: 8px 0 5px 5px;
@@ -176,37 +162,9 @@
         top: 4px;
         right: -2px;
       }
-
-      .arrow:after {
-        position: absolute;
-        display: block;
-        width: 0;
-        height: 0;
-        border-color: transparent;
-        border-style: solid;
-        border-width: 10px;
-        content: " ";
-        top: 1px;
-        margin-left: -10px;
-        border-top-width: 0;
-        border-bottom-color: @text-color-contrast;
-        z-index: 1035;
-      }
-
+      
       .arrow {
-        position: absolute;
-        display: block;
-        width: 0;
-        height: 0;
-        border-color: transparent;
-        border-style: solid;
-        border-width: 11px;
-        left: 50%;
-        margin-left: -18px;
-        border-top-width: 0;
-        border-bottom-color: #00000026;
-        top: -19px;
-        z-index: 1035;
+        display: none;
       }
 
       .dropdown-menu {
@@ -409,12 +367,7 @@
         color: @text-color-contrast;
       }
 
-      > li > a#space-menu {
-        padding-right: 13px;
-      }
-
-      > li > a:hover,
-      > li.active {
+      > li > a:not(.active):hover {
         background-color: @background-color-secondary;
         color: @text-color-highlight;
       }

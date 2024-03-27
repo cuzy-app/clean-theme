@@ -26,6 +26,24 @@
 
   #topbar {
     > .container {
+
+      // Don't hide logo
+      .topbar-brand.hidden-xs {
+        flex: 1;
+        display: block !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        a.navbar-brand {
+          display: block !important;
+          padding-left: 10px !important;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 16px;
+        }
+      }
+
       // Space dropdown menu
       #space-menu-dropdown,
       #search-menu-dropdown {
@@ -42,6 +60,7 @@
   }
 }
 
+// Size for the bottom menu
 @media (max-width: @screen-xs-min) {
   body {
     padding-bottom: 52px;
@@ -58,21 +77,10 @@
       }
 
       // Bottom menu on small screens
-      .topbar-brand.hidden-xs {
-        flex: 1;
-
-        &, & .hidden-xs {
-          display: block !important;
-        }
-
-        a.navbar-brand {
-          padding-left: 10px !important;
-        }
-      }
-
       #top-menu-nav {
         position: fixed;
         bottom: 0;
+        padding-bottom: env(safe-area-inset-bottom); // for the web view space (safe area) on iPhone X and above
         background-color: @background-color-secondary;
         border-top: solid 2px #CCC;
         width: auto;
@@ -81,16 +89,57 @@
         justify-content: space-between;
 
         > li > a {
-          width: 50px;
-          padding: 0;
-          line-height: 0 !important;
-          font-size: 0;
+          width: 65px;
+          padding: 0 0 5px 0;
+          line-height: 12px !important;
+          font-size: 10px;
+
+          &#space-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+
+            .space-acronym {
+              line-height: 20px;
+            }
+
+            .no-space {
+              margin-bottom: 5px;
+            }
+          }
 
           i {
-            line-height: 50px;
+            line-height: 35px;
             font-size: 20px;
           }
         }
+
+        &.hide-menu-item-texts {
+          > li > a {
+            width: 50px;
+            padding: 0;
+            line-height: 0 !important;
+            font-size: 0;
+
+            &#space-menu {
+              .no-space {
+                margin-bottom: 0;
+              }
+            }
+
+            i {
+              line-height: 50px;
+            }
+          }
+        }
+      }
+
+      .notifications .dropdown-menu {
+        position: fixed !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: 50px !important;
       }
     }
   }

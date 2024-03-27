@@ -77,11 +77,11 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             $topMenuSub.hide();
         }
 
-        // Change sub menu drop-down to drop-up if in the bottom menu (mobile view)
+        // Change drop-down menus (such as the space chooser or the sub-menu) to drop-up if in the bottom menu (mobile view)
         if (isMobileView()) {
-            $topMenuSub.removeClass('dropdown').addClass('dropup');
+            $topMenuNavOrBottomMenu.children('.dropdown').removeClass('dropdown').addClass('dropup'); // Drop down menus (such as the Space chooser)
         } else {
-            $topMenuSub.removeClass('dropup').addClass('dropdown');
+            $topMenuNavOrBottomMenu.children('.dropup').removeClass('dropup').addClass('dropdown'); // Drop down menus (such as the Space chooser)
         }
     };
 
@@ -140,7 +140,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      * @return {Boolean} True if the view is a mobile view, false otherwise.
      */
     const isMobileView = function () {
-        return $topMenuNavOrBottomMenu.css('position') === 'fixed';
+        return $topMenuNavOrBottomMenu.css('position') === 'fixed'; // The bottom menu is displayed
     };
 
     const hideMenusOnScrollTop = function (hideTopMenuOnScrollDown, hideBottomMenuOnScrollDown) {
@@ -166,7 +166,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
                 newScrollTop = bodyHeightDiffWithWindow;
             }
 
-            if (newScrollTop && newScrollTop >= lastScrollTop) { // Scrolling down
+            if (newScrollTop && newScrollTop > 10 && newScrollTop >= lastScrollTop) { // Scrolling down
                 if (hideTopMenuOnScrollDown) {
                     $body.addClass('hide-top-menu');
                 }
