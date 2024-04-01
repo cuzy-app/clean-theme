@@ -140,14 +140,15 @@
         left: 50% !important;
         transform: translateX(-50%) !important;
         top: 50px !important;
+      }
 
-        &#space-menu-dropdown {
-          display: flex;
-          flex-direction: column-reverse;
+      // Space browser
+      .open #space-menu-dropdown {
+        display: flex;
+        flex-direction: column-reverse; // Display the search input at the bottom
 
-          #space-menu-spaces {
-            max-height: calc(100vh - 230px);
-          }
+        #space-menu-spaces {
+          max-height: calc(100vh - 250px) !important; // When filtering spaces, limit the results height
         }
       }
     }
