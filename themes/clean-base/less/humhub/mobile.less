@@ -140,6 +140,15 @@
         left: 50% !important;
         transform: translateX(-50%) !important;
         top: 50px !important;
+
+        &#space-menu-dropdown {
+          display: flex;
+          flex-direction: column-reverse;
+
+          #space-menu-spaces {
+            max-height: calc(100vh - 230px);
+          }
+        }
       }
     }
   }

@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix #11: Search results when filtering in the space browser
+
 1.7.3 (March 27, 2024)
 --------------------
 - Fix #16: On mobile, top menu dropdown notification panels are not centered on the screen and the logo is hidden
