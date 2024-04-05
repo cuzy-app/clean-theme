@@ -1,9 +1,11 @@
 Changelog
 =========
 
-Unreleased
+1.7.4 (April 5, 2024)
 --------------------
 - Fix #11: Search results when filtering in the space browser
+- Fix #17: Dark Mode: unread notification background
+- Chg: Repository URL from https://github.com/cuzy-app/humhub-modules-clean-theme to https://github.com/cuzy-app/clean-theme
 
 1.7.3 (March 27, 2024)
 --------------------
@@ -85,7 +87,7 @@ Unreleased
 - Chg: Moved `@smallScreen` and `@tinyScreen` from `humhub+mobile.less` to `variables.less`
 - Chg: Replaced `@headings-color` with `@text-color-main`
 - Enh: Added config page (for admins)
-- Enh: Added a child theme example (see [docs/README.md](https://github.com/cuzy-app/humhub-modules-clean-theme/blob/master/docs/README.md#child-themes))
+- Enh: Added a child theme example (see [docs/README.md](https://github.com/cuzy-app/clean-theme/blob/master/docs/README.md#child-themes))
 
 1.4.0 (March 11, 2023)
 --------------------

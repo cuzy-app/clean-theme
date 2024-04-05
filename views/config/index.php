@@ -1,8 +1,8 @@
 <?php
 /**
  * Clean Theme
- * @link https://github.com/cuzy-app/humhub-modules-clean-theme
- * @license https://github.com/cuzy-app/humhub-modules-clean-theme/blob/master/docs/LICENCE.md
+ * @link https://github.com/cuzy-app/clean-theme
+ * @license https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md
  * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
@@ -34,7 +34,7 @@ $module = Yii::$app->getModule('clean-theme');
                 <a href="https://www.cuzy.app/checkout/donate/"
                    target="_blank">making a donation</a>
                 or
-                <a href="https://github.com/cuzy-app/humhub-modules-clean-theme"
+                <a href="https://github.com/cuzy-app/clean-theme"
                    target="_blank">participating in the code</a>.
                 Thanks!
             </div>

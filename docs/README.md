@@ -21,13 +21,13 @@ Clean theme for Humhub based on the Community theme.
 
 1. Administration -> Modules: install and activate the module
 2. Administration -> Settings -> Appearance: select the theme
-3. Advanced configuration: See available public properties in [the `Module.php` file](https://github.com/cuzy-app/humhub-modules-clean-theme/blob/master/Module.php) and [the Module configuration documentation](https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
+3. Advanced configuration: See available public properties in [the `Module.php` file](https://github.com/cuzy-app/clean-theme/blob/master/Module.php) and [the Module configuration documentation](https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
 
 ## Pricing
 
 This module is free, but is the result of a lot of work for the design and maintenance over time.
 
-If it's useful to you, please consider [making a donation](https://www.cuzy.app/checkout/donate/) or [participating in the code](https://github.com/cuzy-app/humhub-modules-clean-theme). Thanks!
+If it's useful to you, please consider [making a donation](https://www.cuzy.app/checkout/donate/) or [participating in the code](https://github.com/cuzy-app/clean-theme). Thanks!
 
 ## Child themes
 
@@ -35,7 +35,7 @@ To customize colors, fonts, etc., create a child theme (don't forget to copy img
 
 [See documentation here](https://docs.humhub.org/docs/theme/overview).
 
-You can start with [this empty template](https://github.com/cuzy-app/humhub-modules-clean-theme/blob/master/docs/clean-theme-contrasted-child.zip) which is a child theme of the "contrasted" theme.
+You can start with [this empty template](https://github.com/cuzy-app/clean-theme/blob/master/docs/clean-theme-contrasted-child.zip) which is a child theme of the "contrasted" theme.
 
 Simply unzip it in the `/themes` root folder (not in `protected` or the module).
 
@@ -53,7 +53,7 @@ You can load new fonts by [downloading the via this Google webfonts helper site]
 
 ## Repository
 
-https://github.com/cuzy-app/humhub-modules-clean-theme
+https://github.com/cuzy-app/clean-theme
 
 ## Publisher
 
@@ -61,4 +61,4 @@ https://github.com/cuzy-app/humhub-modules-clean-theme
 
 ## Licence
 
-[GNU AGPL](https://github.com/cuzy-app/humhub-modules-clean-theme/blob/master/docs/LICENCE.md)
+[GNU AGPL](https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md)
