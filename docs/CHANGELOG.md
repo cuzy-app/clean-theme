@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.7.5 (April 6, 2024)
+--------------------
+- Fix #17: Dark Mode for Clean Base theme
+
 1.7.4 (April 5, 2024)
 --------------------
 - Fix #11: Search results when filtering in the space browser
