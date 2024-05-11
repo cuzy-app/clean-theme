@@ -1,24 +1,24 @@
 {
-  "id": "clean-theme",
-  "name": "Clean Theme",
-  "description": "Clean theme for Humhub based on the Community theme",
-  "keywords": [],
-  "version": "1.7.5",
-  "humhub": {
-    "minVersion": "1.15"
-  },
-  "homepage": "https://cuzy.app",
-  "authors": [
-    {
-      "name": "Marc FARRE",
-      "homepage": "https://marc.fun",
-      "role": "Developer"
-    }
-  ],
-  "screenshots": [
-    "resources/screen_1.png",
-    "resources/screen_2.png",
-    "resources/screen_3.png",
-    "resources/screen_4.png"
-  ]
+    "id": "clean-theme",
+    "name": "Clean Theme",
+    "description": "Clean theme for Humhub based on the Community theme",
+    "keywords": [],
+    "version": "1.8.0",
+    "humhub": {
+        "minVersion": "1.16"
+    },
+    "homepage": "https://cuzy.app",
+    "authors": [
+        {
+            "name": "Marc FARRE",
+            "homepage": "https://marc.fun",
+            "role": "Developer"
+        }
+    ],
+    "screenshots": [
+        "resources/screen_1.png",
+        "resources/screen_2.png",
+        "resources/screen_3.png",
+        "resources/screen_4.png"
+    ]
 }

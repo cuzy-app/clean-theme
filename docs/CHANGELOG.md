@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.8.0 (May 11, 2024)
+--------------------
+- Chg: CSS compiled for Humhub 1.16
+- Enh: Make the view files work even if the module is disabled
+
 1.7.5 (April 6, 2024)
 --------------------
 - Fix #17: Dark Mode for Clean Base theme

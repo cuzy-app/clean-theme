@@ -22,19 +22,19 @@ $this->registerJsConfig('cleanTheme.leftNavigation', [
 
 /** @var Module $module */
 $module = Yii::$app->getModule('clean-theme');
-if ($module->collapsibleLeftNavigation && empty($options['id'])) {
+if ($module?->collapsibleLeftNavigation && empty($options['id'])) {
     $options['id'] = 'left-navigation-collapse';
 }
 ?>
 
-<?= $module->collapsibleLeftNavigation ?
+<?= $module?->collapsibleLeftNavigation ?
     Button::defaultType()->icon('bars')->id($expandBtn)->cssClass('hidden')->sm()->loader(false) :
     '' ?>
 <?= Html::beginTag('div', $options) ?>
 <?php if (!empty($menu->panelTitle)) : ?>
     <div class="panel-heading">
         <?= $menu->panelTitle ?>
-        <?= $module->collapsibleLeftNavigation ?
+        <?= $module?->collapsibleLeftNavigation ?
             Button::defaultType()->icon('chevron-left')->id($collapseBtn)->right()->sm()->loader(false) :
             '' ?>
     </div>
