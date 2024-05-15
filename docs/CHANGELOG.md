@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: Remove the top arrow of the new search dropdown modal box
+
 1.8.0 (May 11, 2024)
 --------------------
 - Chg: CSS compiled for Humhub 1.16
