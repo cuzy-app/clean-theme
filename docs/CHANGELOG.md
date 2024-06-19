@@ -1,13 +1,14 @@
 Changelog
 =========
 
-Unreleased
+1.8.1 (June 19, 2024)
 --------------------
 - Enh: Remove the top arrow of the new search dropdown modal box
+- Enh: CSS compiled for HumHub 1.16.0
 
 1.8.0 (May 11, 2024)
 --------------------
-- Chg: CSS compiled for Humhub 1.16
+- Chg: CSS compiled for Humhub 1.16-beta.2
 - Enh: Make the view files work even if the module is disabled
 
 1.7.5 (April 6, 2024)
