@@ -9,10 +9,17 @@
 namespace humhub\modules\cleanTheme;
 
 use humhub\libs\DynamicConfig;
+use humhub\modules\cleanTheme\models\Configuration;
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 use yii\helpers\Url;
 
+/**
+ *
+ * @property-read mixed $configUrl
+ * @property-read Configuration $configuration
+ * @property-read string $baseThemeName
+ */
 class Module extends \humhub\components\Module
 {
     public const THEME_NAMES = [
@@ -35,7 +42,16 @@ class Module extends \humhub\components\Module
     public bool $hideBottomMenuOnScrollDown = true; // On small screens only
     public bool $hideTextInBottomMenuItems = true; // On small screens only
     public bool $collapsibleLeftNavigation = false;
+    private ?Configuration $_configuration = null;
 
+    public function getConfiguration(): Configuration
+    {
+        if ($this->_configuration === null) {
+            $this->_configuration = new Configuration(['settingsManager' => $this->settings]);
+            $this->_configuration->loadBySettings();
+        }
+        return $this->_configuration;
+    }
 
     public function getName()
     {
@@ -65,6 +81,26 @@ class Module extends \humhub\components\Module
     }
 
     /**
+     * @inheritdoc
+     */
+    public function enable()
+    {
+        if (parent::enable()) {
+            $this->enableTheme();
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * The base theme is the first of the list
+     */
+    public function getBaseThemeName(): string
+    {
+        return self::THEME_NAMES[0];
+    }
+
+    /**
      * @return void
      */
     private function disableTheme()
@@ -76,18 +112,6 @@ class Module extends \humhub\components\Module
                 break;
             }
         }
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function enable()
-    {
-        if (parent::enable()) {
-            $this->enableTheme();
-            return true;
-        }
-        return false;
     }
 
     /**
@@ -107,13 +131,5 @@ class Module extends \humhub\components\Module
             $theme->activate();
             DynamicConfig::rewrite();
         }
-    }
-
-    /**
-     * The base theme is the first of the list
-     */
-    public function getBaseThemeName(): string
-    {
-        return self::THEME_NAMES[0];
     }
 }

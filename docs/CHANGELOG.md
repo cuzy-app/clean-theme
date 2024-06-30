@@ -1,6 +1,18 @@
 Changelog
 =========
 
+2.0.0 (unreleased - !! the current branch is version-2 !! - Release in beta for a start)
+--------------------
+TODO:
+- migration to switch theme from clean-base, clean-contrasted and clean-border to CleanTheme
+- select the corresponding options in the module configuration
+- README
+- ZIP example
+- Screenshots
+- Translations
+
+Important notice: this version 2 merges the 3 themes to a unique CleanTheme theme. Please check the new module configuration. If you have created a custom child theme, update it to the new CleanTheme parent theme.
+
 1.8.1 (June 19, 2024)
 --------------------
 - Enh: Remove the top arrow of the new search dropdown modal box

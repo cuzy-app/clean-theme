@@ -9,6 +9,8 @@
 namespace humhub\modules\cleanTheme\controllers;
 
 use humhub\modules\admin\components\Controller;
+use humhub\modules\cleanTheme\Module;
+use Yii;
 
 /**
  * Module configuation
@@ -22,6 +24,16 @@ class ConfigController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        /** @var Module $module */
+        $module = $this->module;
+        $model = $module->getConfiguration();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $this->view->saved();
+        }
+
+        return $this->render('index', [
+            'model' => $model
+        ]);
     }
 }
