@@ -1,0 +1,46 @@
+//
+// Navs
+// --------------------------------------------------
+
+// Remove left line
+.nav-pills,
+.nav-tabs,
+.account {
+  .dropdown-menu {
+    li {
+      &, &:hover, &.selected {
+        border-left: none !important;
+      }
+    }
+  }
+}
+
+// Tab menu: fill with color active tab, remove background color for others tabs, and remove borders
+.tab-menu .nav-tabs, ul.tab-menu-settings {
+  li > a {
+    padding-top: 14px;
+    border: none;
+    border-bottom: 1px solid var(--menu-border-color);
+    background-color: transparent;
+    max-height: 41px;
+    outline: none;
+    transition: .25s;
+  }
+
+  li > a:hover, li > a:focus {
+    padding-top: 14px;
+    border-top: none !important;
+  }
+
+  li > a:hover {
+    background-color: @background-color-secondary;
+  }
+
+  li.active > a, li.active > a:hover, li.active > a:focus {
+    padding-top: 14px;
+    background-color: @primary;
+    color: @text-color-contrast;
+    border: none !important;
+    border-bottom: 1px solid @primary !important;
+  }
+}

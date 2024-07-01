@@ -18,16 +18,14 @@ class CleanThemeAsset extends AssetBundle
      * @inheritdoc
      */
     public $jsOptions = ['position' => View::POS_END];
-
     /**
      * @inheritdoc
      */
     public $sourcePath = '@clean-theme/resources';
-
     /**
      * @inheritdoc
      */
     public $js = [
-        'js/humhub.clean.theme.js'
+        'js/humhub.clean.theme.js',
     ];
 }

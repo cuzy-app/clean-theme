@@ -1,6 +1,6 @@
 # Clean Theme
 
-Clean theme for Humhub based on the Community theme.
+Clean theme for HumHub based on the Community theme.
 
 ## Overview
 
@@ -15,7 +15,7 @@ Clean theme for Humhub based on the Community theme.
 - Adds the profile's header in the user's account pages
 - Compatible with the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode/description)
 - Possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
-- You can create a child theme to customize colors, fonts, etc. (see instructions below) or use the [Theme Builder module](https://marketplace.humhub.com/module/theme-builder) (works only on the `clean-base` theme).
+- You can create a child theme to customize colors, fonts, etc. (see instructions below) or use the [Theme Builder module](https://marketplace.humhub.com/module/theme-builder)
 
 ## Configuration
 

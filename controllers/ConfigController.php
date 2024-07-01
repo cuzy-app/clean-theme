@@ -17,19 +17,15 @@ use Yii;
  */
 class ConfigController extends Controller
 {
-    /**
-     * Render admin only page
-     *
-     * @return string
-     */
     public function actionIndex()
     {
         /** @var Module $module */
         $module = $this->module;
         $model = $module->getConfiguration();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->save()) {
             $this->view->saved();
+            return $this->refresh();
         }
 
         return $this->render('index', [

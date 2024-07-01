@@ -11,33 +11,81 @@ namespace humhub\modules\cleanTheme\models;
 use humhub\components\SettingsManager;
 use Yii;
 use yii\base\Model;
+use yii\helpers\Inflector;
 
 class Configuration extends Model
 {
+    public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/themes/Clean/css/';
+    public const DYNAMIC_CSS_FILE_NAME = 'variables.css';
+    public const CSS_ATTRIBUTE_UNITS = [
+        'containerMaxWidth' => 'px',
+        'topMenuNavJustifyContent' => '',
+        'default' => '',
+        'primary' => '',
+        'info' => '',
+        'success' => '',
+        'warning' => '',
+        'danger' => '',
+        'link' => '',
+        'menuBorderColor' => '',
+        'textColorHeading' => '',
+        'textColorMain' => '',
+        'textColorSecondary' => '',
+        'textColorHighlight' => '',
+        'textColorSoft' => '',
+        'textColorSoft2' => '',
+        'textColorSoft3' => '',
+        'textColorContrast' => '',
+        'backgroundColorMain' => '',
+        'backgroundColorSecondary' => '',
+        'backgroundColorPage' => '',
+        'backgroundColorHighlight' => '',
+        'fontFamily' => '',
+        'headingFontFamily' => '',
+        'fontSize' => 'px',
+        'phFontSize' => 'px',
+        'rtFontSize' => 'px',
+        'h1FontSize' => 'em',
+        'h1RtFontSize' => 'em',
+        'h2FontSize' => 'em',
+        'h2RtFontSize' => 'em',
+        'h3FontSize' => 'em',
+        'h4FontSize' => 'em',
+        'h5FontSize' => 'em',
+        'h6FontSize' => 'em',
+        'fontWeight' => '',
+        'phFontWeight' => '',
+        'panelBorderWidth' => 'px',
+        'panelBorderStyle' => '',
+        'panelBorderColor' => '',
+        'panelBorderRadius' => 'px',
+        'panelBoxShadow' => '',
+    ];
+
     public SettingsManager $settingsManager;
 
     public int $containerMaxWidth = 1600;
     public string $topMenuNavJustifyContent = 'center';
-    public string $default = 'f3f3f3';
-    public string $primary = '31414a';
-    public string $info = '1A808E';
-    public string $success = '518132';
-    public string $warning = 'AF640E';
-    public string $danger = 'EC0426';
-    public string $link = '1A7DB2';
-    public string $menuBorderColor = 'e4eaec';
-    public string $textColorHeading = '37474f';
-    public string $textColorMain = '31414a';
-    public string $textColorSecondary = '7a7a7a';
-    public string $textColorHighlight = '242424';
-    public string $textColorSoft = '555555';
-    public string $textColorSoft2 = '838383';
-    public string $textColorSoft3 = 'bac2c7';
-    public string $textColorContrast = 'fff';
-    public string $backgroundColorMain = 'fff';
-    public string $backgroundColorSecondary = 'f7f7f7';
-    public string $backgroundColorPage = 'f1f4f5';
-    public string $backgroundColorHighlight = 'fff8e0';
+    public string $default = '#f3f3f3';
+    public string $primary = '#31414a';
+    public string $info = '#1A808E';
+    public string $success = '#518132';
+    public string $warning = '#AF640E';
+    public string $danger = '#EC0426';
+    public string $link = '#1A7DB2';
+    public string $menuBorderColor = '#e4eaec';
+    public string $textColorHeading = '#37474f';
+    public string $textColorMain = '#31414a';
+    public string $textColorSecondary = '#7a7a7a';
+    public string $textColorHighlight = '#242424';
+    public string $textColorSoft = '#555555';
+    public string $textColorSoft2 = '#838383';
+    public string $textColorSoft3 = '#bac2c7';
+    public string $textColorContrast = '#ffffff';
+    public string $backgroundColorMain = '#ffffff';
+    public string $backgroundColorSecondary = '#f7f7f7';
+    public string $backgroundColorPage = '#f1f4f5';
+    public string $backgroundColorHighlight = '#fff8e0';
     public ?string $fontFamily = null;
     public ?string $headingFontFamily = null;
     public int $fontSize = 13;
@@ -102,26 +150,26 @@ class Configuration extends Model
         return [
             'containerMaxWidth' => Yii::t('CleanThemeModule.config', 'Container max width'),
             'topMenuNavJustifyContent' => Yii::t('CleanThemeModule.config', 'Top menu navigation alignment'),
-            'default' => Yii::t('CleanThemeModule.config', 'Default'),
-            'primary' => Yii::t('CleanThemeModule.config', 'Primary'),
-            'info' => Yii::t('CleanThemeModule.config', 'Info'),
-            'success' => Yii::t('CleanThemeModule.config', 'Success'),
-            'warning' => Yii::t('CleanThemeModule.config', 'Warning'),
-            'danger' => Yii::t('CleanThemeModule.config', 'Danger'),
-            'link' => Yii::t('CleanThemeModule.config', 'Link'),
-            'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Menu Border Color'),
-            'textColorHeading' => Yii::t('CleanThemeModule.config', 'Heading Text Color'),
-            'textColorMain' => Yii::t('CleanThemeModule.config', 'Main Text Color'),
-            'textColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary Text Color'),
-            'textColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight Text Color'),
-            'textColorSoft' => Yii::t('CleanThemeModule.config', 'Soft Text Color'),
-            'textColorSoft2' => Yii::t('CleanThemeModule.config', 'Soft Text Color 2'),
-            'textColorSoft3' => Yii::t('CleanThemeModule.config', 'Soft Text Color 3'),
-            'textColorContrast' => Yii::t('CleanThemeModule.config', 'Contrast Text Color'),
-            'backgroundColorMain' => Yii::t('CleanThemeModule.config', 'Main Background Color'),
-            'backgroundColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary Background Color'),
-            'backgroundColorPage' => Yii::t('CleanThemeModule.config', 'Page Background Color'),
-            'backgroundColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight Background Color'),
+            'default' => Yii::t('CleanThemeModule.config', 'Default main color'),
+            'primary' => Yii::t('CleanThemeModule.config', 'Primary main color'),
+            'info' => Yii::t('CleanThemeModule.config', 'Info main color'),
+            'success' => Yii::t('CleanThemeModule.config', 'Success main color'),
+            'warning' => Yii::t('CleanThemeModule.config', 'Warning main color'),
+            'danger' => Yii::t('CleanThemeModule.config', 'Danger main color'),
+            'link' => Yii::t('CleanThemeModule.config', 'Link main color'),
+            'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Menu border color'),
+            'textColorHeading' => Yii::t('CleanThemeModule.config', 'Heading text color'),
+            'textColorMain' => Yii::t('CleanThemeModule.config', 'Main text color'),
+            'textColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary text color'),
+            'textColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight text color'),
+            'textColorSoft' => Yii::t('CleanThemeModule.config', 'Soft text color'),
+            'textColorSoft2' => Yii::t('CleanThemeModule.config', 'Soft text color 2'),
+            'textColorSoft3' => Yii::t('CleanThemeModule.config', 'Soft text color 3'),
+            'textColorContrast' => Yii::t('CleanThemeModule.config', 'Contrast text color'),
+            'backgroundColorMain' => Yii::t('CleanThemeModule.config', 'Main background color'),
+            'backgroundColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary background color'),
+            'backgroundColorPage' => Yii::t('CleanThemeModule.config', 'Page background color'),
+            'backgroundColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight background color'),
             'fontFamily' => Yii::t('CleanThemeModule.config', 'Font family'),
             'headingFontFamily' => Yii::t('CleanThemeModule.config', 'Heading font family'),
             'fontSize' => Yii::t('CleanThemeModule.config', 'Font size'),
@@ -312,6 +360,21 @@ class Configuration extends Model
         $this->settingsManager->set('panelBorderRadius', $this->panelBorderRadius);
         $this->settingsManager->set('panelBoxShadow', $this->panelBoxShadow);
 
+        $this->generateDynamicCSSFile();
+
         return true;
+    }
+
+    private function generateDynamicCSSFile(): void
+    {
+        $css = ':root {' . PHP_EOL;
+        foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
+            // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px;`
+            $css .= '    --' . Inflector::camel2id($name) . ': ' . $this->$name . $unit . ';' . PHP_EOL;
+        }
+        $css .= '}' . PHP_EOL;
+
+        $dynamicCssFile = Yii::getAlias(self::DYNAMIC_CSS_FILE_PATH . self::DYNAMIC_CSS_FILE_NAME);
+        file_put_contents($dynamicCssFile, $css);
     }
 }

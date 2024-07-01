@@ -18,16 +18,9 @@ use yii\helpers\Url;
  *
  * @property-read mixed $configUrl
  * @property-read Configuration $configuration
- * @property-read string $baseThemeName
  */
 class Module extends \humhub\components\Module
 {
-    public const THEME_NAMES = [
-        'clean-base',
-        'clean-bordered',
-        'clean-contrasted',
-    ];
-
     /**
      * @inheridoc
      */
@@ -60,7 +53,7 @@ class Module extends \humhub\components\Module
 
     public function getDescription()
     {
-        return Yii::t('CleanThemeModule.config', 'Clean theme for Humhub based on the Community theme');
+        return Yii::t('CleanThemeModule.config', 'Clean theme for HumHub based on the Community theme');
     }
 
     /**
@@ -93,20 +86,12 @@ class Module extends \humhub\components\Module
     }
 
     /**
-     * The base theme is the first of the list
-     */
-    public function getBaseThemeName(): string
-    {
-        return self::THEME_NAMES[0];
-    }
-
-    /**
      * @return void
      */
     private function disableTheme()
     {
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if (in_array($theme->name, self::THEME_NAMES, true)) {
+            if ($theme->name === 'Clean') {
                 $ceTheme = ThemeHelper::getThemeByName('HumHub');
                 $ceTheme->activate();
                 break;
@@ -121,12 +106,12 @@ class Module extends \humhub\components\Module
     {
         // Check if already active
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if (in_array($theme->name, self::THEME_NAMES, true)) {
+            if ($theme->name === 'Clean') {
                 return;
             }
         }
 
-        $theme = ThemeHelper::getThemeByName($this->getBaseThemeName());
+        $theme = ThemeHelper::getThemeByName('Clean');
         if ($theme !== null) {
             $theme->activate();
             DynamicConfig::rewrite();
