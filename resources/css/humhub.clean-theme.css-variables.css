@@ -1,7 +1,7 @@
 :root {
-    --container-max-width: 1800px;
+    --container-max-width: 1000px;
     --top-menu-nav-justify-content: center;
-    --default: #f3f3f3;
+    --default: #9900ff;
     --primary: #31414a;
     --info: #1A808E;
     --success: #518132;
@@ -11,15 +11,16 @@
     --menu-border-color: #e4eaec;
     --text-color-heading: #37474f;
     --text-color-main: #31414a;
+    --text-color-default: #ff9900;
     --text-color-secondary: #7a7a7a;
     --text-color-highlight: #242424;
-    --text-color-soft: #555555;
+    --text-color-soft: #a61c00;
     --text-color-soft2: #838383;
     --text-color-soft3: #bac2c7;
     --text-color-contrast: #ffffff;
     --background-color-main: #ffffff;
     --background-color-secondary: #f7f7f7;
-    --background-color-page: #f1f4f5;
+    --background-color-page: #6aa84f;
     --background-color-highlight: #fff8e0;
     --font-family: ;
     --heading-font-family: ;

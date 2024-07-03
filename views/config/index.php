@@ -71,6 +71,7 @@ $module = Yii::$app->getModule('clean-theme');
         <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Text colors')) ?>
         <?= $form->field($model, 'textColorHeading')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
         <?= $form->field($model, 'textColorMain')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
+        <?= $form->field($model, 'textColorDefault')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
         <?= $form->field($model, 'textColorSecondary')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
         <?= $form->field($model, 'textColorHighlight')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
         <?= $form->field($model, 'textColorSoft')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>

@@ -15,8 +15,8 @@ use yii\helpers\Inflector;
 
 class Configuration extends Model
 {
-    public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/themes/Clean/css/';
-    public const DYNAMIC_CSS_FILE_NAME = 'variables.css';
+    public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css/';
+    public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.css-variables.css';
     public const CSS_ATTRIBUTE_UNITS = [
         'containerMaxWidth' => 'px',
         'topMenuNavJustifyContent' => '',
@@ -30,6 +30,7 @@ class Configuration extends Model
         'menuBorderColor' => '',
         'textColorHeading' => '',
         'textColorMain' => '',
+        'textColorDefault' => '',
         'textColorSecondary' => '',
         'textColorHighlight' => '',
         'textColorSoft' => '',
@@ -76,6 +77,7 @@ class Configuration extends Model
     public string $menuBorderColor = '#e4eaec';
     public string $textColorHeading = '#37474f';
     public string $textColorMain = '#31414a';
+    public string $textColorDefault = '#4b4b4b';
     public string $textColorSecondary = '#7a7a7a';
     public string $textColorHighlight = '#242424';
     public string $textColorSoft = '#555555';
@@ -137,7 +139,7 @@ class Configuration extends Model
             [['containerMaxWidth', 'fontSize', 'phFontSize', 'rtFontSize', 'fontWeight', 'phFontWeight', 'panelBorderWidth', 'panelBorderRadius'], 'integer'],
             [['h1FontSize', 'h1RtFontSize', 'h2FontSize', 'h2RtFontSize', 'h3FontSize', 'h4FontSize', 'h5FontSize', 'h6FontSize'], 'number'],
             [['topMenuNavJustifyContent', 'default', 'primary', 'info', 'success', 'warning', 'danger', 'link', 'menuBorderColor', 'textColorHeading',
-                'textColorMain', 'textColorSecondary', 'textColorHighlight', 'textColorSoft', 'textColorSoft2', 'textColorSoft3',
+                'textColorMain', 'textColorDefault', 'textColorSecondary', 'textColorHighlight', 'textColorSoft', 'textColorSoft2', 'textColorSoft3',
                 'textColorContrast', 'backgroundColorMain', 'backgroundColorSecondary', 'backgroundColorPage', 'backgroundColorHighlight', 'fontFamily', 'headingFontFamily', 'panelBorderStyle', 'panelBorderColor', 'panelBoxShadow'], 'string'],
         ];
     }
@@ -160,6 +162,7 @@ class Configuration extends Model
             'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Menu border color'),
             'textColorHeading' => Yii::t('CleanThemeModule.config', 'Heading text color'),
             'textColorMain' => Yii::t('CleanThemeModule.config', 'Main text color'),
+            'textColorDefault' => Yii::t('CleanThemeModule.config', 'Default text color'),
             'textColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary text color'),
             'textColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight text color'),
             'textColorSoft' => Yii::t('CleanThemeModule.config', 'Soft text color'),
@@ -236,6 +239,7 @@ class Configuration extends Model
         $this->menuBorderColor = $this->settingsManager->get('menuBorderColor', $this->menuBorderColor);
         $this->textColorHeading = $this->settingsManager->get('textColorHeading', $this->textColorHeading);
         $this->textColorMain = $this->settingsManager->get('textColorMain', $this->textColorMain);
+        $this->textColorDefault = $this->settingsManager->get('textColorDefault', $this->textColorDefault);
         $this->textColorSecondary = $this->settingsManager->get('textColorSecondary', $this->textColorSecondary);
         $this->textColorHighlight = $this->settingsManager->get('textColorHighlight', $this->textColorHighlight);
         $this->textColorSoft = $this->settingsManager->get('textColorSoft', $this->textColorSoft);
@@ -288,6 +292,7 @@ class Configuration extends Model
         $this->menuBorderColor = $this->menuBorderColor ?: $defaultConfiguration->menuBorderColor;
         $this->textColorHeading = $this->textColorHeading ?: $defaultConfiguration->textColorHeading;
         $this->textColorMain = $this->textColorMain ?: $defaultConfiguration->textColorMain;
+        $this->textColorDefault = $this->textColorDefault ?: $defaultConfiguration->textColorDefault;
         $this->textColorSecondary = $this->textColorSecondary ?: $defaultConfiguration->textColorSecondary;
         $this->textColorHighlight = $this->textColorHighlight ?: $defaultConfiguration->textColorHighlight;
         $this->textColorSoft = $this->textColorSoft ?: $defaultConfiguration->textColorSoft;
@@ -329,6 +334,7 @@ class Configuration extends Model
         $this->settingsManager->set('menuBorderColor', $this->menuBorderColor);
         $this->settingsManager->set('textColorHeading', $this->textColorHeading);
         $this->settingsManager->set('textColorMain', $this->textColorMain);
+        $this->settingsManager->set('textColorDefault', $this->textColorDefault);
         $this->settingsManager->set('textColorSecondary', $this->textColorSecondary);
         $this->settingsManager->set('textColorHighlight', $this->textColorHighlight);
         $this->settingsManager->set('textColorSoft', $this->textColorSoft);
@@ -361,6 +367,7 @@ class Configuration extends Model
         $this->settingsManager->set('panelBoxShadow', $this->panelBoxShadow);
 
         $this->generateDynamicCSSFile();
+        Yii::$app->assetManager->clear();
 
         return true;
     }

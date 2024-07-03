@@ -1,28 +1,13 @@
-//************************************************************************************************
-//
-// Only modify paths to @HUMHUB and @ENTERPRISE in this file - do not add custom styles here.
-// This file is only used to build your theme by calling 'lessc -x build.less ../css/theme.css'
-//
-//************************************************************************************************
+@STATIC_FOR_CSS_VARIABLES: "../../../resources/static-for-css-variables"; // Files in this folder are auto-generated with `php yii clean-theme/rebuild`
 
-// Edit this if your theme folder resides outside of your humhub/themes directory.
-@HUMHUB: "../../../../../../static/less";
+@import "@{STATIC_FOR_CSS_VARIABLES}/less/variables";
+@import "variables"; // LESS variables which contains CSS variables
+@import "@{STATIC_FOR_CSS_VARIABLES}/special-colors-for-humhub-css-variables"; // LESS variables which contains special CSS variables
 
-//************************************************************************************************
-
-// Import default variables and mixins
-@import "@{HUMHUB}/variables";
-@import "@{HUMHUB}/mixins";
-
-// Overwrite default variables and mixins here
-@import "variables";
+@import "@{STATIC_FOR_CSS_VARIABLES}/less/mixins";
 @import "mixins";
 
-// Import fonts
 @import "fonts";
 
-// Import default less
-@import "@{HUMHUB}/humhub";
-
-// Import Clean theme less
+@import "@{STATIC_FOR_CSS_VARIABLES}/less/humhub";
 @import "theme";

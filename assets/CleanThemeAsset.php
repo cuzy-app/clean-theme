@@ -25,6 +25,12 @@ class CleanThemeAsset extends AssetBundle
     /**
      * @inheritdoc
      */
+    public $css = [
+        'css/humhub.clean-theme.css-variables.css',
+    ];
+    /**
+     * @inheritdoc
+     */
     public $js = [
         'js/humhub.clean.theme.js',
     ];

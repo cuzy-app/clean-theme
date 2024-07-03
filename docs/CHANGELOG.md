@@ -10,6 +10,7 @@ TODO:
 - ZIP example
 - Remove the 2 other themes and update Modules.php
 - Screenshots
+- `Configuration::attributeLabels()`: use texts from `variables.less` comments
 - Translations
 
 Important notice: this version 2 merges the 3 themes to a unique CleanTheme theme. Please check the new module configuration. If you have created a custom child theme, update it to the new CleanTheme parent theme.
