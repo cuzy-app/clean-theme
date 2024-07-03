@@ -17,6 +17,7 @@ use humhub\widgets\TopMenuRightStack;
 
 /** @var Module $module */
 $module = Yii::$app->getModule('clean-theme');
+$googleFontsCss2UrlParams = $module->configuration->getGoogleFontsCss2UrlParams();
 
 AppAsset::register($this);
 CleanThemeAsset::register($this);
@@ -37,6 +38,13 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
           content="width=device-width, initial-scale=1, viewport-fit=cover">
     <?php $this->head() ?>
     <?= $this->render('head') ?>
+
+    <?php if ($googleFontsCss2UrlParams) : ?>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css2?<?= $googleFontsCss2UrlParams ?>">
+    <?php endif; ?>
 </head>
 <body<?= Yii::$app->user->isGuest ? ' class="is-guest"' : '' ?>>
 <?php $this->beginBody() ?>

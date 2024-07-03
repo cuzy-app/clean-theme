@@ -4,6 +4,7 @@ Changelog
 2.0.0 (unreleased - !! the current branch is version-2 !! - Release in beta for a start)
 --------------------
 TODO:
+- Test when enabling module for the first time (with no settings)
 - migration to switch theme from clean-base, clean-contrasted and clean-border to CleanTheme
 - select the corresponding options in the module configuration
 - README

@@ -85,6 +85,7 @@ $module = Yii::$app->getModule('clean-theme');
         <?= $form->field($model, 'backgroundColorSecondary')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
         <?= $form->field($model, 'backgroundColorPage')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
         <?= $form->field($model, 'backgroundColorHighlight')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
+        <?= $form->field($model, 'backgroundColorHighlightSoft')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
         <?= $form->endCollapsibleFields() ?>
 
         <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Fonts')) ?>
@@ -115,6 +116,13 @@ $module = Yii::$app->getModule('clean-theme');
         <?= $form->field($model, 'panelBorderRadius')->textInput(['type' => 'number', 'step' => 1, 'min' => 1]) ?>
         <?= $form->field($model, 'panelBoxShadow')->textInput() ?>
         <?= $form->endCollapsibleFields() ?>
+
+        <?= Button::asLink(Yii::t('CleanThemeModule.config', 'Reset everything to default'))
+            ->link(['reset-all-to-default'])
+            ->icon('undo')
+            ->cssClass('text-danger')
+            ->confirm()
+            ->right() ?>
 
         <?= Button::save()->submit() ?>
         <?php ActiveForm::end(); ?>

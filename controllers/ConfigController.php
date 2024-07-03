@@ -9,6 +9,7 @@
 namespace humhub\modules\cleanTheme\controllers;
 
 use humhub\modules\admin\components\Controller;
+use humhub\modules\cleanTheme\models\Configuration;
 use humhub\modules\cleanTheme\Module;
 use Yii;
 
@@ -31,5 +32,23 @@ class ConfigController extends Controller
         return $this->render('index', [
             'model' => $model
         ]);
+    }
+
+    /**
+     * @return void
+     */
+    public function actionResetAllToDefault()
+    {
+        /** @var Module $module */
+        $module = $this->module;
+        $configuration = $module->getConfiguration();
+
+        foreach (Configuration::CSS_ATTRIBUTE_UNITS as $name => $unit) {
+            $configuration->$name = '';
+        }
+        $configuration->save();
+
+        $this->view->success(Yii::t('CleanThemeModule.config', 'Reset successful!'));
+        return $this->render('reset-all-to-default'); // Refresh all page an redirect to index
     }
 }
