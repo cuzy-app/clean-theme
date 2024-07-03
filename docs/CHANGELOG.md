@@ -12,6 +12,7 @@ TODO:
 - Screenshots
 - `Configuration::attributeLabels()`: use texts from `variables.less` comments
 - Translations
+- Test Dark Mode
 
 Important notice: this version 2 merges the 3 themes to a unique CleanTheme theme. Please check the new module configuration. If you have created a custom child theme, update it to the new CleanTheme parent theme.
 

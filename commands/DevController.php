@@ -8,6 +8,7 @@
 
 namespace humhub\modules\cleanTheme\commands;
 
+use humhub\modules\cleanTheme\models\Configuration;
 use Yii;
 use yii\console\Controller;
 use yii\console\ExitCode;
@@ -16,18 +17,14 @@ use yii\helpers\FileHelper;
 
 class DevController extends Controller
 {
-    public const STATIC_WITH_CSS_VARIABLES = '@clean-theme/resources/static-for-css-variables';
-    public const SPECIAL_COLORS_LESS_FILE_NAME = 'special-colors-for-humhub-css-variables.less';
-    public const SUPPORTED = ['darken', 'lighten', 'fade', 'fadein', 'fadeout'];
-    public const UNSUPPORTED = ['saturate', 'desaturate', 'spin'];
     public array $specialColors = [];
     public array $unsupportedLines = [];
 
-    public function actionRebuild()
+    public function actionCreateStaticLessFilesForCssVariables()
     {
         // Copy HumHub LESS files
         $src = Yii::getAlias('@webroot/static/less');
-        $dst = Yii::getAlias(self::STATIC_WITH_CSS_VARIABLES . '/less');
+        $dst = Yii::getAlias(Configuration::STATIC_WITH_CSS_VARIABLES . '/less');
         FileHelper::copyDirectory($src, $dst);
         $this->message("Copied $src to $dst", 'success');
 
@@ -46,12 +43,6 @@ class DevController extends Controller
 
         // Output special colors array for manually updating AbstractColorSettings.php
         $this->message("\nSuccessfully rebuilt theme files", 'success');
-        $this->message('*** Special colors to be copied:', 'warning');
-        $this->message('    const SPECIAL_COLORS = [', 'no-break');
-        foreach ($this->specialColors as $color) {
-            $this->message("'" . $color . "',", 'no-break');
-        }
-        $this->message("];\n");
 
         // Warning about unsupported lines
         if ($this->unsupportedLines !== []) {
@@ -95,7 +86,7 @@ class DevController extends Controller
             return $line;
         }
 
-        foreach (self::UNSUPPORTED as $less_function) {
+        foreach (Configuration::UNSUPPORTED_LESS_FUNCTIONS as $less_function) {
             // Do not change lines with unsupported function but display a warning
             if (str_contains($line, $less_function . '(')) {
                 $this->message("Manual correction required!\nUnsupported function in line ++$lineNumber in $file", 'warning');
@@ -106,7 +97,7 @@ class DevController extends Controller
                 return $line;
             }
         }
-        foreach (self::SUPPORTED as $less_function) {
+        foreach (Configuration::SUPPORTED_LESS_FUNCTIONS as $less_function) {
             // Replace lines with supported function
             while ($pos = str_contains($line, $less_function . '(')) {
 
@@ -128,11 +119,11 @@ class DevController extends Controller
                 // Line ending (e.g. "!important;")
                 $end = $rest[1];
 
-                $special_color = str_replace('-', '_', $color) . '__' . $less_function . '__' . $amount;
+                $specialColor = $color . '-' . $less_function . '-' . $amount;
 
-                $this->specialColors[$special_color] = $special_color;
+                $this->specialColors[$specialColor] = $specialColor;
 
-                $line = $first . '@' . str_replace(['__', '_'], '-', $special_color) . $end;
+                $line = $first . '@' . $specialColor . $end;
             }
         }
 
@@ -142,19 +133,17 @@ class DevController extends Controller
     /*
      * Creates the file special-colors.less
      * LESS variables referring to CSS variables
-     * e.g. @primary-darken-5: var(--primary--darken--5);
+     * e.g. @primary-darken-5: var(-primary-darken-5);
      */
     private function createSpecialColorsLess(): void
     {
         $content = '';
 
         foreach ($this->specialColors as $color) {
-            $colorAsLessVar = '@' . str_replace(['__', '_'], '-', $color);
-            $color = str_replace('_', '-', $color);
-            $content .= $colorAsLessVar . ': var(--' . $color . ');' . PHP_EOL;
+            $content .= '@' . $color . ': var(--' . $color . ');' . PHP_EOL;
         }
 
-        $file = Yii::getAlias(self::STATIC_WITH_CSS_VARIABLES . '/' . self::SPECIAL_COLORS_LESS_FILE_NAME);
+        $file = Yii::getAlias(Configuration::STATIC_WITH_CSS_VARIABLES . '/' . Configuration::SPECIAL_COLORS_LESS_FILE_NAME);
         file_put_contents($file, $content);
         $this->message("Rebuilt file: $file", 'success');
     }
@@ -196,7 +185,7 @@ class DevController extends Controller
     {
         // Copy files
         $src = Yii::getAlias('@webroot/static/css/select2Theme');
-        $dst = Yii::getAlias(self::STATIC_WITH_CSS_VARIABLES . '/css/select2Theme');
+        $dst = Yii::getAlias(Configuration::STATIC_WITH_CSS_VARIABLES . '/css/select2Theme');
         FileHelper::copyDirectory($src, $dst);
         $this->message("Copied $src to $dst", 'success');
 
