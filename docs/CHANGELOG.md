@@ -7,12 +7,14 @@ TODO:
 - Test when enabling module for the first time (with no settings)
 - migration to switch theme from clean-base, clean-contrasted and clean-border to CleanTheme
 - README
-- ZIP example
+- ZIP example (update README)
 - Screenshots
 - Translations
 - Test Dark Mode
+- Find a solution not to upload a custom `humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
+- Replace `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css` (including README) with the GitHub URL
 
-Important notice: this version 2 merges the 3 themes to a unique CleanTheme theme. Please check the new module configuration. If you have created a custom child theme, update it to the new `Clean` parent theme.
+Important notice: this version 2 merges the 3 themes to a unique CleanTheme theme. Please check the new module configuration. If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`
 
 1.8.1 (June 19, 2024)
 --------------------

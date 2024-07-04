@@ -33,7 +33,9 @@ If it's useful to you, please consider [making a donation](https://www.cuzy.app/
 
 See [Documentation here](https://docs.humhub.org/docs/theme/overview) and [Wiki here](https://community.humhub.com/s/theming-appearance/wiki/52/Theme+creation).
 
-You can start with [this empty template](https://github.com/cuzy-app/clean-theme/blob/master/docs/clean-theme-contrasted-child.zip), which is a child theme of the "contrasted" theme.
+You can start with [this empty template](https://github.com/cuzy-app/clean-theme/blob/master/docs/clean-theme-contrasted-child.zip), which is a child theme of the `Clean` theme.
+
+Use CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`.
 
 Unzip it in the `/themes` root folder (not in `protected`).
 
