@@ -111,9 +111,9 @@ class Module extends \humhub\components\Module
             }
         }
 
-        $theme = ThemeHelper::getThemeByName('Clean');
-        if ($theme !== null) {
-            $theme->activate();
+        $cleanTheme = ThemeHelper::getThemeByName('Clean');
+        if ($cleanTheme !== null) {
+            $cleanTheme->activate();
             DynamicConfig::rewrite();
         }
     }

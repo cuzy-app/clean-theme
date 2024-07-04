@@ -11,7 +11,10 @@ namespace humhub\modules\cleanTheme\models;
 use humhub\components\SettingsManager;
 use humhub\modules\cleanTheme\helpers\ColorHelper;
 use humhub\widgets\Button;
+use ScssPhp\ScssPhp\Compiler;
+use ScssPhp\ScssPhp\Exception\SassException;
 use Yii;
+use yii\base\Exception;
 use yii\base\Model;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
@@ -116,7 +119,8 @@ class Configuration extends Model
     public string $panelBorderStyle = 'solid';
     public string $panelBorderColor = '#c7c9e7';
     public string $panelBorderRadius = '4';
-    public ?string $panelBoxShadow = '0 1px 10px #00000019';
+    public string $panelBoxShadow = '0 1px 10px #00000019';
+    public string $scss = '';
 
     public static function getJustifyContentOptions(): array
     {
@@ -149,12 +153,10 @@ class Configuration extends Model
      */
     public function rules()
     {
+        $stringAttributes = array_keys(static::CSS_ATTRIBUTE_UNITS);
+        $stringAttributes[] = 'scss';
         return [
-            [['containerMaxWidth', 'fontSize', 'phFontSize', 'menuFontSize', 'fontWeight', 'phFontWeight', 'panelBorderWidth', 'panelBorderRadius'], 'integer'],
-            [['h1FontSize', 'h1StreamFontSize', 'h2FontSize', 'h2StreamFontSize', 'h3FontSize', 'h4FontSize', 'h5FontSize', 'h6FontSize'], 'number'],
-            [['topMenuNavJustifyContent', 'default', 'primary', 'info', 'success', 'warning', 'danger', 'link', 'menuBorderColor', 'textColorHeading',
-                'textColorMain', 'textColorDefault', 'textColorSecondary', 'textColorHighlight', 'textColorSoft', 'textColorSoft2', 'textColorSoft3',
-                'textColorContrast', 'backgroundColorMain', 'backgroundColorSecondary', 'backgroundColorPage', 'backgroundColorHighlight', 'backgroundColorHighlightSoft', 'fontFamily', 'headingFontFamily', 'panelBorderStyle', 'panelBorderColor', 'panelBoxShadow'], 'string'],
+            [$stringAttributes, 'string'],
         ];
     }
 
@@ -208,6 +210,7 @@ class Configuration extends Model
             'panelBorderColor' => Yii::t('CleanThemeModule.config', 'Panel border color'),
             'panelBorderRadius' => Yii::t('CleanThemeModule.config', 'Panel border radius'),
             'panelBoxShadow' => Yii::t('CleanThemeModule.config', 'Panel box shadow'),
+            'scss' => Yii::t('CleanThemeModule.config', 'Custom CSS'),
         ];
     }
 
@@ -250,16 +253,21 @@ class Configuration extends Model
                 'cssValue2' => '<code>none</code>',
                 'documentation' => '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank">' . Yii::t('CleanThemeModule.config', 'documentation') . '</a>',
             ]),
+            'scss' => Yii::t('CleanThemeModule.config', 'Use Sassy CSS syntax (SCSS)'),
         ];
     }
 
     public function loadBySettings(): void
     {
-        foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
+        foreach (array_keys(self::CSS_ATTRIBUTE_UNITS) as $name) {
             $this->$name = $this->settingsManager->get($name, $this->$name);
         }
+        $this->scss = $this->settingsManager->get('scss', $this->scss);
     }
 
+    /**
+     * @throws Exception
+     */
     public function save(): bool
     {
         if (!$this->validate()) {
@@ -268,7 +276,7 @@ class Configuration extends Model
 
         // If empty value, reset to default value (only for attributes which cannot be empty)
         $defaultConfiguration = new Configuration();
-        foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
+        foreach (array_keys(self::CSS_ATTRIBUTE_UNITS) as $name) {
             $this->$name = $this->$name ?: $defaultConfiguration->$name;
             if (static::isFontAttribute($name)) {
                 // Remove + in case the URL of the font was entered
@@ -276,12 +284,16 @@ class Configuration extends Model
             }
             $this->settingsManager->set($name, $this->$name);
         }
+        $this->settingsManager->set('scss', $this->scss);
 
         $this->generateDynamicCSSFile();
 
         return true;
     }
 
+    /**
+     * @throws Exception
+     */
     public function generateDynamicCSSFile(): void
     {
         $css =
@@ -318,6 +330,10 @@ class Configuration extends Model
 
         $css .= '}' . PHP_EOL;
 
+        if ($this->scss) {
+            $css .= PHP_EOL . $this->getCssFromScss() . PHP_EOL;
+        }
+
         // Write file
         $dynamicCssFile = Yii::getAlias(self::DYNAMIC_CSS_FILE_PATH . self::DYNAMIC_CSS_FILE_NAME);
         file_put_contents($dynamicCssFile, $css);
@@ -353,5 +369,23 @@ class Configuration extends Model
         $regexPattern = '/var\((.*?)\)/';
         preg_match_all($regexPattern, $specialColors, $matches);
         return $matches[1];
+    }
+
+    /**
+     * @throws Exception
+     */
+    private function getCssFromScss(): string
+    {
+        // Generate custom CSS from SCSS
+        if (!class_exists('Compiler')) {
+            require_once Yii::getAlias('@clean-theme/vendor/autoload.php');
+        }
+        $compiler = new Compiler();
+        $scss = str_replace(['<style>', '<style type="text/css">', '</style>'], ['', '', ''], $this->scss);
+        try {
+            return $compiler->compileString($scss)->getCss();
+        } catch (SassException $e) {
+            throw new Exception(Yii::t('CleanThemeModule.config', 'Cannot compile SCSS to CSS code. Error message:') . ' ' . $e->getMessage());
+        }
     }
 }

@@ -6,17 +6,13 @@ Changelog
 TODO:
 - Test when enabling module for the first time (with no settings)
 - migration to switch theme from clean-base, clean-contrasted and clean-border to CleanTheme
-- select the corresponding options in the module configuration
 - README
 - ZIP example
-- Remove the 2 other themes and update Modules.php
-- Add SaaS field
 - Screenshots
-- `Configuration::attributeLabels()`: use texts from `variables.less` comments
 - Translations
 - Test Dark Mode
 
-Important notice: this version 2 merges the 3 themes to a unique CleanTheme theme. Please check the new module configuration. If you have created a custom child theme, update it to the new CleanTheme parent theme.
+Important notice: this version 2 merges the 3 themes to a unique CleanTheme theme. Please check the new module configuration. If you have created a custom child theme, update it to the new `Clean` parent theme.
 
 1.8.1 (June 19, 2024)
 --------------------

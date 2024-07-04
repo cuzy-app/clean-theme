@@ -117,6 +117,10 @@ $module = Yii::$app->getModule('clean-theme');
         <?= $form->field($model, 'panelBoxShadow')->textInput() ?>
         <?= $form->endCollapsibleFields() ?>
 
+        <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Custom code')) ?>
+        <?= $form->field($model, 'scss')->textarea(['rows' => 20]) ?>
+        <?= $form->endCollapsibleFields() ?>
+
         <?= Button::asLink(Yii::t('CleanThemeModule.config', 'Reset everything to default'))
             ->link(['reset-all-to-default'])
             ->icon('undo')
