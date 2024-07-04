@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.0 (unreleased - !! the current branch is version-2 !! - Release in beta for a start)
+2.0-beta.1 (unreleased - !! the current branch is version-2 !! - Release in beta for a start)
 --------------------
 TODO:
 - Test when enabling module for the first time (with no settings)
@@ -9,6 +9,8 @@ TODO:
 - README
 - ZIP example (update README)
 - Screenshots
+- Don't translate "Clean Theme"
+- Translations issues in configuration
 - Translations
 - Test Dark Mode
 - Find a solution not to upload a custom `humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
