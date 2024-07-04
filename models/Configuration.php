@@ -306,8 +306,8 @@ class Configuration extends Model
                 '"' . $this->$name . '"' :
                 $this->$name;
 
-            // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px;`
-            $css .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+            // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px; !important`
+            $css .= '    ' . $cssVarName . ': ' . $value . $unit . ' !important;' . PHP_EOL;
         }
 
         $css .= PHP_EOL;

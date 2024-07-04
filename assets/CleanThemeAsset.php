@@ -17,7 +17,7 @@ class CleanThemeAsset extends AssetBundle
     /**
      * @inheritdoc
      */
-    public $jsOptions = ['position' => View::POS_END];
+    public $jsPosition = View::POS_END;
     /**
      * @inheritdoc
      */
@@ -32,6 +32,6 @@ class CleanThemeAsset extends AssetBundle
      * @inheritdoc
      */
     public $js = [
-        'js/humhub.clean.theme.js',
+        'js/humhub.cleanTheme.js',
     ];
 }
