@@ -18,14 +18,6 @@ use humhub\widgets\TopMenuRightStack;
 /** @var Module $module */
 $module = Yii::$app->getModule('clean-theme');
 $googleFontsCss2UrlParams = $module->configuration->getGoogleFontsCss2UrlParams();
-
-AppAsset::register($this);
-CleanThemeAsset::register($this);
-CleanThemeTopNavigationAsset::register($this);
-$this->registerJsConfig('cleanTheme.topNavigation', [
-    'hideTopMenuOnScrollDown' => (bool)$module?->hideTopMenuOnScrollDown,
-    'hideBottomMenuOnScrollDown' => (bool)$module?->hideBottomMenuOnScrollDown,
-]);
 ?>
 
 <?php $this->beginPage() ?>
@@ -38,6 +30,16 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
           content="width=device-width, initial-scale=1, viewport-fit=cover">
     <?php $this->head() ?>
     <?= $this->render('head') ?>
+
+    <?php
+    AppAsset::register($this);
+    CleanThemeAsset::register($this);
+    CleanThemeTopNavigationAsset::register($this);
+    $this->registerJsConfig('cleanTheme.topNavigation', [
+        'hideTopMenuOnScrollDown' => (bool)$module?->hideTopMenuOnScrollDown,
+        'hideBottomMenuOnScrollDown' => (bool)$module?->hideBottomMenuOnScrollDown,
+    ]);
+    ?>
 
     <?php if ($googleFontsCss2UrlParams) : ?>
         <link rel="preconnect" href="https://fonts.googleapis.com">
