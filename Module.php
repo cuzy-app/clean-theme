@@ -12,6 +12,7 @@ use humhub\libs\DynamicConfig;
 use humhub\modules\cleanTheme\models\Configuration;
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
+use yii\base\Exception;
 use yii\helpers\Url;
 
 /**
@@ -83,6 +84,18 @@ class Module extends \humhub\components\Module
             return true;
         }
         return false;
+    }
+
+    public function update()
+    {
+        parent::update();
+
+        // Recreate dynamic CSS file because it was removed by module update
+        try {
+            $this->configuration->generateDynamicCSSFile();
+        } catch (Exception $e) {
+            Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'cleanTheme');
+        }
     }
 
     /**

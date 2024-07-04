@@ -336,6 +336,9 @@ class Configuration extends Model
 
         // Write file
         $dynamicCssFile = Yii::getAlias(self::DYNAMIC_CSS_FILE_PATH . self::DYNAMIC_CSS_FILE_NAME);
+        if (!file_exists(dirname($dynamicCssFile))) {
+            mkdir(dirname($dynamicCssFile), 0765, true);
+        }
         file_put_contents($dynamicCssFile, $css);
 
         // Clear cache
