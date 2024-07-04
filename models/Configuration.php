@@ -53,11 +53,11 @@ class Configuration extends Model
         'headingFontFamily' => '',
         'fontSize' => 'px',
         'phFontSize' => 'px',
-        'rtFontSize' => 'px',
+        'menuFontSize' => 'px',
         'h1FontSize' => 'em',
-        'h1RtFontSize' => 'em',
+        'h1StreamFontSize' => 'em',
         'h2FontSize' => 'em',
-        'h2RtFontSize' => 'em',
+        'h2StreamFontSize' => 'em',
         'h3FontSize' => 'em',
         'h4FontSize' => 'em',
         'h5FontSize' => 'em',
@@ -101,22 +101,22 @@ class Configuration extends Model
     public string $headingFontFamily = 'Open Sans';
     public string $fontSize = '13';
     public string $phFontSize = '16'; // Panel Heading
-    public string $rtFontSize = '13'; // Reach Text
+    public string $menuFontSize = '12';
     public string $h1FontSize = '1.7';
-    public string $h1RtFontSize = '1.45';
+    public string $h1StreamFontSize = '1.45';
     public string $h2FontSize = '1.5';
-    public string $h2RtFontSize = '1.3';
+    public string $h2StreamFontSize = '1.3';
     public string $h3FontSize = '1.2';
     public string $h4FontSize = '1.1';
     public string $h5FontSize = '1.0';
     public string $h6FontSize = '0.85';
     public string $fontWeight = '400';
-    public string $phFontWeight = '700';
+    public string $phFontWeight = '700'; // Panel Heading
     public string $panelBorderWidth = '1';
     public string $panelBorderStyle = 'solid';
     public string $panelBorderColor = '#c7c9e7';
     public string $panelBorderRadius = '4';
-    public ?string $panelBoxShadow = 'none';
+    public ?string $panelBoxShadow = '0 1px 10px #00000019';
 
     public static function getJustifyContentOptions(): array
     {
@@ -150,8 +150,8 @@ class Configuration extends Model
     public function rules()
     {
         return [
-            [['containerMaxWidth', 'fontSize', 'phFontSize', 'rtFontSize', 'fontWeight', 'phFontWeight', 'panelBorderWidth', 'panelBorderRadius'], 'integer'],
-            [['h1FontSize', 'h1RtFontSize', 'h2FontSize', 'h2RtFontSize', 'h3FontSize', 'h4FontSize', 'h5FontSize', 'h6FontSize'], 'number'],
+            [['containerMaxWidth', 'fontSize', 'phFontSize', 'menuFontSize', 'fontWeight', 'phFontWeight', 'panelBorderWidth', 'panelBorderRadius'], 'integer'],
+            [['h1FontSize', 'h1StreamFontSize', 'h2FontSize', 'h2StreamFontSize', 'h3FontSize', 'h4FontSize', 'h5FontSize', 'h6FontSize'], 'number'],
             [['topMenuNavJustifyContent', 'default', 'primary', 'info', 'success', 'warning', 'danger', 'link', 'menuBorderColor', 'textColorHeading',
                 'textColorMain', 'textColorDefault', 'textColorSecondary', 'textColorHighlight', 'textColorSoft', 'textColorSoft2', 'textColorSoft3',
                 'textColorContrast', 'backgroundColorMain', 'backgroundColorSecondary', 'backgroundColorPage', 'backgroundColorHighlight', 'backgroundColorHighlightSoft', 'fontFamily', 'headingFontFamily', 'panelBorderStyle', 'panelBorderColor', 'panelBoxShadow'], 'string'],
@@ -173,7 +173,7 @@ class Configuration extends Model
             'warning' => Yii::t('CleanThemeModule.config', 'Warning main color'),
             'danger' => Yii::t('CleanThemeModule.config', 'Danger main color'),
             'link' => Yii::t('CleanThemeModule.config', 'Link main color'),
-            'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Menu border color'),
+            'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Menu border color (tab and dropdown menus)'),
             'textColorHeading' => Yii::t('CleanThemeModule.config', 'Heading text color'),
             'textColorMain' => Yii::t('CleanThemeModule.config', 'Default body text color'),
             'textColorDefault' => Yii::t('CleanThemeModule.config', 'Default text color for default icons and buttons etc.'),
@@ -191,12 +191,12 @@ class Configuration extends Model
             'fontFamily' => Yii::t('CleanThemeModule.config', 'Font family'),
             'headingFontFamily' => Yii::t('CleanThemeModule.config', 'Heading font family'),
             'fontSize' => Yii::t('CleanThemeModule.config', 'Font size'),
+            'menuFontSize' => Yii::t('CleanThemeModule.config', 'Menu font size'),
             'phFontSize' => Yii::t('CleanThemeModule.config', 'Panel heading font size'),
-            'rtFontSize' => Yii::t('CleanThemeModule.config', 'Reach text font size'),
             'h1FontSize' => Yii::t('CleanThemeModule.config', 'H1 font size'),
-            'h1RtFontSize' => Yii::t('CleanThemeModule.config', 'H1 reach text font size'),
+            'h1StreamFontSize' => Yii::t('CleanThemeModule.config', 'H1 font size in stream'),
             'h2FontSize' => Yii::t('CleanThemeModule.config', 'H2 font size'),
-            'h2RtFontSize' => Yii::t('CleanThemeModule.config', 'H2 reach text font size'),
+            'h2StreamFontSize' => Yii::t('CleanThemeModule.config', 'H2 font size in stream'),
             'h3FontSize' => Yii::t('CleanThemeModule.config', 'H3 font size'),
             'h4FontSize' => Yii::t('CleanThemeModule.config', 'H4 font size'),
             'h5FontSize' => Yii::t('CleanThemeModule.config', 'H5 font size'),
@@ -234,19 +234,20 @@ class Configuration extends Model
             'headingFontFamily' => $googleFonts,
             'fontSize' => $inPx,
             'phFontSize' => $inPx,
-            'rtFontSize' => $inPx,
+            'menuFontSize' => $inPx,
             'h1FontSize' => $inEm,
-            'h1RtFontSize' => $inEm,
+            'h1StreamFontSize' => $inEm,
             'h2FontSize' => $inEm,
-            'h2RtFontSize' => $inEm,
+            'h2StreamFontSize' => $inEm,
             'h3FontSize' => $inEm,
             'h4FontSize' => $inEm,
             'h5FontSize' => $inEm,
             'h6FontSize' => $inEm,
             'panelBorderWidth' => $inPx,
             'panelBorderRadius' => $inPx,
-            'panelBoxShadow' => Yii::t('CleanThemeModule.config', 'CSS value (e.g. {cssValue}, see {documentation})', [
-                'cssValue' => '<code>2px 1px 1px #333;</code>',
+            'panelBoxShadow' => Yii::t('CleanThemeModule.config', 'CSS value (e.g. {cssValue1} or {cssValue2}, see {documentation})', [
+                'cssValue1' => '<code>0 1px 10px #00000019;</code>',
+                'cssValue2' => '<code>none</code>',
                 'documentation' => '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank">' . Yii::t('CleanThemeModule.config', 'documentation') . '</a>',
             ]),
         ];

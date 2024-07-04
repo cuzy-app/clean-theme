@@ -10,6 +10,7 @@ TODO:
 - README
 - ZIP example
 - Remove the 2 other themes and update Modules.php
+- Add SaaS field
 - Screenshots
 - `Configuration::attributeLabels()`: use texts from `variables.less` comments
 - Translations

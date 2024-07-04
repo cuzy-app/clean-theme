@@ -61,10 +61,11 @@
   background-color: @background-color-main;
   top: 0;
   z-index: 1030;
-  -webkit-box-shadow: 0 1px 10px #00000019;
-  -moz-box-shadow: 0 1px 10px #00000019;
-  box-shadow: 0 1px 10px #00000019;
   overflow: unset;
+  border-bottom-width: var(--panel-border-width);
+  border-bottom-style: var(--panel-border-style);
+  border-bottom-color: var(--panel-border-color);
+  box-shadow: var(--panel-box-shadow);
 
   > .container {
     display: flex;

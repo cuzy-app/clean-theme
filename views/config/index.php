@@ -93,16 +93,16 @@ $module = Yii::$app->getModule('clean-theme');
         <?= $form->field($model, 'headingFontFamily')->textInput() ?>
         <?= $form->field($model, 'fontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
         <?= $form->field($model, 'fontWeight')->textInput() ?>
-        <?= $form->field($model, 'rtFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
+        <?= $form->field($model, 'menuFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
         <?= $form->endCollapsibleFields() ?>
 
         <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Heading fonts')) ?>
         <?= $form->field($model, 'phFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
         <?= $form->field($model, 'phFontWeight')->textInput() ?>
         <?= $form->field($model, 'h1FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
-        <?= $form->field($model, 'h1RtFontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
+        <?= $form->field($model, 'h1StreamFontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
         <?= $form->field($model, 'h2FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
-        <?= $form->field($model, 'h2RtFontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
+        <?= $form->field($model, 'h2StreamFontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
         <?= $form->field($model, 'h3FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
         <?= $form->field($model, 'h4FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
         <?= $form->field($model, 'h5FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
