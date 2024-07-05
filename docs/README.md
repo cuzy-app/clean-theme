@@ -5,8 +5,8 @@ Clean theme for HumHub based on the Community theme.
 ## Overview
 
 - Modern, smooth and uncluttered theme
-- Module configuration to customize colors, fonts, borders sizes and to add custom SCSS code
-- On large screens: the 2 top menu bars of the default theme are merged
+- Module configuration to customize colors, fonts, borders sizes and to add custom SCSS code (with upload/download functionality)
+- On large screens: the two top menu bars of the default theme are merged
 - On small screens:
     - the second menu becomes a bottom menu bar
     - on scrolling down, the top and bottom menus are hidden

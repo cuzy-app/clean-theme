@@ -143,6 +143,13 @@ class Configuration extends Model
         ];
     }
 
+    public static function getAllAttributeNames()
+    {
+        $attributeNames = array_keys(static::CSS_ATTRIBUTE_UNITS);
+        $attributeNames[] = 'scss';
+        return $attributeNames;
+    }
+
     private static function isFontAttribute($attributeName): bool
     {
         return str_ends_with($attributeName, 'ontFamily');
@@ -153,10 +160,8 @@ class Configuration extends Model
      */
     public function rules()
     {
-        $stringAttributes = array_keys(static::CSS_ATTRIBUTE_UNITS);
-        $stringAttributes[] = 'scss';
         return [
-            [$stringAttributes, 'string'],
+            [static::getAllAttributeNames(), 'string'],
         ];
     }
 
@@ -259,10 +264,9 @@ class Configuration extends Model
 
     public function loadBySettings(): void
     {
-        foreach (array_keys(self::CSS_ATTRIBUTE_UNITS) as $name) {
-            $this->$name = $this->settingsManager->get($name, $this->$name);
+        foreach (static::getAllAttributeNames() as $attributeName) {
+            $this->$attributeName = $this->settingsManager->get($attributeName, $this->$attributeName);
         }
-        $this->scss = $this->settingsManager->get('scss', $this->scss);
     }
 
     /**
@@ -274,17 +278,16 @@ class Configuration extends Model
             return false;
         }
 
-        // If empty value, reset to default value (only for attributes which cannot be empty)
         $defaultConfiguration = new Configuration();
-        foreach (array_keys(self::CSS_ATTRIBUTE_UNITS) as $name) {
-            $this->$name = $this->$name ?: $defaultConfiguration->$name;
-            if (static::isFontAttribute($name)) {
+        foreach (static::getAllAttributeNames() as $attributeName) {
+            // If empty value, reset to default value
+            $this->$attributeName = $this->$attributeName ?: $defaultConfiguration->$attributeName;
+            if (static::isFontAttribute($attributeName)) {
                 // Remove + in case the URL of the font was entered
-                $this->$name = str_replace('+', ' ', $this->$name);
+                $this->$attributeName = str_replace('+', ' ', $this->$attributeName);
             }
-            $this->settingsManager->set($name, $this->$name);
+            $this->settingsManager->set($attributeName, $this->$attributeName);
         }
-        $this->settingsManager->set('scss', $this->scss);
 
         $this->generateDynamicCSSFile();
 
