@@ -228,7 +228,7 @@ class Configuration extends Model
         $inEm = Yii::t('CleanThemeModule.config', 'Relative size (em)');
         $googleFonts =
             Yii::t('CleanThemeModule.config', 'Google Font name') . ' ' .
-            Button::info(Yii::t('CleanThemeModule.config', 'Google Font name'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->xs() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>' .
+            Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->xs() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>' .
             Yii::t('CleanThemeModule.config', 'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})', [
                 'googleFontsDownloadUrl' => Html::tag('code', 'https://fonts.gstatic.com'),
                 'ContentSecurityPolicy' => Html::tag('code', 'Content-Security-Policy'),
