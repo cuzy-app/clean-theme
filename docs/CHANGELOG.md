@@ -4,24 +4,24 @@ Changelog
 2.0-beta.1 (unreleased - !! the current branch is version-2 !! - Release in beta for a start)
 --------------------
 TODO:
-- Test when enabling module for the first time (with no settings)
-- migration to switch theme from clean-base, clean-contrasted and clean-border to CleanTheme
-- README
 - ZIP example (update README)
 - Screenshots
-- Don't translate "Clean Theme"
 - Translations issues in configuration
 - Translations
 - Test Dark Mode
 - Find a solution not to upload a custom `humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
 - Replace `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css` (including README) with the GitHub URL
 
-Important notice: this version 2 merges the 3 themes to a unique CleanTheme theme. Please check the new module configuration. If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`
+Important notice: this version 2 merges the 3 themes to a unique "Clean" theme. Please check the new module configuration. If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`
+
+- Enh: Add module configuration to define colors, fonts, borders and other CSS parameters of the theme (Thanks to @felixhahnweilheim for the code generating CSS variable color variations from his [Flex Theme](https://github.com/felixhahnweilheim/humhub-flex-theme))
+- Chg: Remove `clean-base`, `clean-contrasted` and `clean-bordered` themes and replace them with the new `Clean` theme
+- Chg: CSS compiled for HumHub 1.16.1
 
 1.8.1 (June 19, 2024)
 --------------------
 - Enh: Remove the top arrow of the new search dropdown modal box
-- Enh: CSS compiled for HumHub 1.16.0
+- Chg: CSS compiled for HumHub 1.16.0
 
 1.8.0 (May 11, 2024)
 --------------------

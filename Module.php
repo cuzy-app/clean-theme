@@ -49,12 +49,15 @@ class Module extends \humhub\components\Module
 
     public function getName()
     {
-        return Yii::t('CleanThemeModule.config', 'Clean theme');
+        return 'Clean Theme';
     }
 
     public function getDescription()
     {
-        return Yii::t('CleanThemeModule.config', 'Clean theme for HumHub based on the Community theme');
+        return Yii::t('CleanThemeModule.config', '"{Clean}" theme based on the community "{HumHub}" theme', [
+            'Clean' => 'Clean',
+            'CommunityHumHub' => 'HumHub',
+        ]);
     }
 
     /**

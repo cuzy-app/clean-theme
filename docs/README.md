@@ -1,6 +1,6 @@
 # Clean Theme
 
-Clean theme for HumHub based on the Community theme.
+"Clean" theme based on the community "HumHub" theme.
 
 ## Overview
 
