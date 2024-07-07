@@ -83,6 +83,12 @@ class Module extends \humhub\components\Module
     public function enable()
     {
         if (parent::enable()) {
+            try {
+                $this->configuration->generateDynamicCSSFile();
+            } catch (Exception $e) {
+                Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'clean-theme');
+                return false;
+            }
             $this->enableTheme();
             return true;
         }
@@ -97,7 +103,7 @@ class Module extends \humhub\components\Module
         try {
             $this->configuration->generateDynamicCSSFile();
         } catch (Exception $e) {
-            Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'cleanTheme');
+            Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'clean-theme');
         }
     }
 

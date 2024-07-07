@@ -4,13 +4,10 @@ Changelog
 2.0-beta.1 (unreleased - !! the current branch is version-2 !! - Release in beta for a start)
 --------------------
 TODO:
-- ZIP example (update README)
 - Screenshots
-- Translations issues in configuration
-- Translations
-- Test Dark Mode
 - Find a solution not to upload a custom `humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
 - Replace `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css` (including README) with the GitHub URL
+- Comment on https://github.com/humhub/humhub/issues/7099 to explain what was done with this Version 2
 
 Important notice: this version 2 merges the 3 themes to a unique "Clean" theme. Please check the new module configuration. If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`
 

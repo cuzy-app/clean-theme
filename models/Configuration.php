@@ -21,11 +21,11 @@ use yii\helpers\Inflector;
 
 class Configuration extends Model
 {
-    public const STATIC_WITH_CSS_VARIABLES = '@clean-theme/resources/static-for-css-variables';
+    public const SOURCES_WITH_CSS_VARIABLES = '@clean-theme/resources/sources-for-css-variables';
     public const SPECIAL_COLORS_LESS_FILE_NAME = 'special-colors-for-humhub-css-variables.less';
     public const SUPPORTED_LESS_FUNCTIONS = ['darken', 'lighten', 'fade', 'fadein', 'fadeout'];
     public const UNSUPPORTED_LESS_FUNCTIONS = ['saturate', 'desaturate', 'spin'];
-    public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css/';
+    public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css';
     public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
     public const CSS_ATTRIBUTE_UNITS = [
         'containerMaxWidth' => 'px',
@@ -125,21 +125,21 @@ class Configuration extends Model
     public static function getJustifyContentOptions(): array
     {
         return [
-            'center' => Yii::t('CleanThemeModule.config', 'Items centered along the line'),
-            'flex-start' => Yii::t('CleanThemeModule.config', 'Items packed toward the start line'),
-            'flex-end' => Yii::t('CleanThemeModule.config', 'Items packed toward to end line'),
-            'space-between' => Yii::t('CleanThemeModule.config', 'Items are evenly distributed in the line; first item is on the start line, last item on the end line'),
-            'space-around' => Yii::t('CleanThemeModule.config', 'Items are evenly distributed in the line with equal space around them'),
+            'center' => Yii::t('CleanThemeModule.config', 'Items centered'),
+            'flex-start' => Yii::t('CleanThemeModule.config', 'Items grouped on the left'),
+            'flex-end' => Yii::t('CleanThemeModule.config', 'Items grouped on the right'),
+            'space-between' => Yii::t('CleanThemeModule.config', 'Items are evenly distributed; first item is on the left, last item on the right'),
+            'space-around' => Yii::t('CleanThemeModule.config', 'Items are evenly distributed with equal space around them'),
         ];
     }
 
     public static function getBorderStyleOptions()
     {
         return [
-            'solid' => Yii::t('CleanThemeModule.config', 'Solid'),
-            'none' => Yii::t('CleanThemeModule.config', 'None'),
-            'inset' => Yii::t('CleanThemeModule.config', 'Inset'),
-            'outset' => Yii::t('CleanThemeModule.config', 'Outset'),
+            'none' => 'None',
+            'solid' => 'Solid',
+            'inset' => 'Inset',
+            'outset' => 'Outset',
         ];
     }
 
@@ -171,50 +171,50 @@ class Configuration extends Model
     public function attributeLabels()
     {
         return [
-            'containerMaxWidth' => Yii::t('CleanThemeModule.config', 'Container max width'),
+            'containerMaxWidth' => Yii::t('CleanThemeModule.config', 'Main content container width'),
             'topMenuNavJustifyContent' => Yii::t('CleanThemeModule.config', 'Top menu navigation alignment'),
-            'default' => Yii::t('CleanThemeModule.config', 'Default main color'),
-            'primary' => Yii::t('CleanThemeModule.config', 'Primary main color'),
-            'info' => Yii::t('CleanThemeModule.config', 'Info main color'),
-            'success' => Yii::t('CleanThemeModule.config', 'Success main color'),
-            'warning' => Yii::t('CleanThemeModule.config', 'Warning main color'),
-            'danger' => Yii::t('CleanThemeModule.config', 'Danger main color'),
-            'link' => Yii::t('CleanThemeModule.config', 'Link main color'),
+            'default' => Yii::t('CleanThemeModule.config', 'Main default color'),
+            'primary' => Yii::t('CleanThemeModule.config', 'Main "Primary" color'),
+            'info' => Yii::t('CleanThemeModule.config', 'Main "Info" color'),
+            'success' => Yii::t('CleanThemeModule.config', 'Main "Success" color'),
+            'warning' => Yii::t('CleanThemeModule.config', 'Main "Warning" color'),
+            'danger' => Yii::t('CleanThemeModule.config', 'Main "Danger" color'),
+            'link' => Yii::t('CleanThemeModule.config', 'Main color for links'),
             'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Menu border color (tab and dropdown menus)'),
-            'textColorHeading' => Yii::t('CleanThemeModule.config', 'Heading text color'),
-            'textColorMain' => Yii::t('CleanThemeModule.config', 'Default body text color'),
-            'textColorDefault' => Yii::t('CleanThemeModule.config', 'Default text color for default icons and buttons etc.'),
-            'textColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary text color for some icons and buttons etc.'),
-            'textColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight text color for text like some active links hovered links etc.'),
+            'textColorHeading' => Yii::t('CleanThemeModule.config', 'Headings text color'),
+            'textColorMain' => Yii::t('CleanThemeModule.config', 'Main text color'),
+            'textColorDefault' => Yii::t('CleanThemeModule.config', 'Default text color for icons, buttons, etc.'),
+            'textColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary text color for some icons, buttons, etc.'),
+            'textColorHighlight' => Yii::t('CleanThemeModule.config', 'Text highlight color for some active links, hover links, etc.'),
             'textColorSoft' => Yii::t('CleanThemeModule.config', 'Soft text color for side information like dates, placeholder, some dropdown headers'),
-            'textColorSoft2' => Yii::t('CleanThemeModule.config', 'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms etc.'),
-            'textColorSoft3' => Yii::t('CleanThemeModule.config', 'Soft text color 3 for gridview summary and installer'),
-            'textColorContrast' => Yii::t('CleanThemeModule.config', 'Contrast text color for @primary, @info, @success, @warning, @danger buttons etc.'),
+            'textColorSoft2' => Yii::t('CleanThemeModule.config', 'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.'),
+            'textColorSoft3' => Yii::t('CleanThemeModule.config', 'Soft text color 3 for grid view summary, etc.'),
+            'textColorContrast' => Yii::t('CleanThemeModule.config', 'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.'),
             'backgroundColorMain' => Yii::t('CleanThemeModule.config', 'Main background color which should be in contrast with main, secondary and other text colors'),
-            'backgroundColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary background color used beside others for tabs'),
-            'backgroundColorPage' => Yii::t('CleanThemeModule.config', 'Page background color for other ui components as comment box etc.'),
-            'backgroundColorHighlight' => Yii::t('CleanThemeModule.config', 'Informative highlighting background color (e.g. Comment Permalink, Shared Item, Calendar CurDay, Wiki Active Page Nav, Mail Module Speech Bubble)'),
-            'backgroundColorHighlightSoft' => Yii::t('CleanThemeModule.config', 'Informative soft highlighting background color (e.g. Wiki Active Category)'),
-            'fontFamily' => Yii::t('CleanThemeModule.config', 'Font family'),
-            'headingFontFamily' => Yii::t('CleanThemeModule.config', 'Heading font family'),
-            'fontSize' => Yii::t('CleanThemeModule.config', 'Font size'),
+            'backgroundColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary background color used for tabs, etc.'),
+            'backgroundColorPage' => Yii::t('CleanThemeModule.config', 'Page background color for other UI components such as comment box, etc.'),
+            'backgroundColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight color for informative backgrounds (e.g. Comment Permalinks, Shared items, Wiki active page navigation, Messenger bubbles)'),
+            'backgroundColorHighlightSoft' => Yii::t('CleanThemeModule.config', 'Soft highlight color for informative backgrounds (e.g. Wiki active category)'),
+            'fontFamily' => Yii::t('CleanThemeModule.config', 'Base font family'),
+            'headingFontFamily' => Yii::t('CleanThemeModule.config', 'Headings font family'),
+            'fontSize' => Yii::t('CleanThemeModule.config', 'Base font size'),
             'menuFontSize' => Yii::t('CleanThemeModule.config', 'Menu font size'),
-            'phFontSize' => Yii::t('CleanThemeModule.config', 'Panel heading font size'),
-            'h1FontSize' => Yii::t('CleanThemeModule.config', 'H1 font size'),
-            'h1StreamFontSize' => Yii::t('CleanThemeModule.config', 'H1 font size in stream'),
-            'h2FontSize' => Yii::t('CleanThemeModule.config', 'H2 font size'),
-            'h2StreamFontSize' => Yii::t('CleanThemeModule.config', 'H2 font size in stream'),
-            'h3FontSize' => Yii::t('CleanThemeModule.config', 'H3 font size'),
-            'h4FontSize' => Yii::t('CleanThemeModule.config', 'H4 font size'),
-            'h5FontSize' => Yii::t('CleanThemeModule.config', 'H5 font size'),
-            'h6FontSize' => Yii::t('CleanThemeModule.config', 'H6 font size'),
-            'fontWeight' => Yii::t('CleanThemeModule.config', 'Font weight'),
-            'phFontWeight' => Yii::t('CleanThemeModule.config', 'Panel heading font weight'),
-            'panelBorderWidth' => Yii::t('CleanThemeModule.config', 'Panel border width'),
-            'panelBorderStyle' => Yii::t('CleanThemeModule.config', 'Panel border style'),
-            'panelBorderColor' => Yii::t('CleanThemeModule.config', 'Panel border color'),
-            'panelBorderRadius' => Yii::t('CleanThemeModule.config', 'Panel border radius'),
-            'panelBoxShadow' => Yii::t('CleanThemeModule.config', 'Panel box shadow'),
+            'phFontSize' => Yii::t('CleanThemeModule.config', 'Panels heading font size'),
+            'h1FontSize' => Yii::t('CleanThemeModule.config', '1st level header font size'),
+            'h1StreamFontSize' => Yii::t('CleanThemeModule.config', '1st level header font size in stream'),
+            'h2FontSize' => Yii::t('CleanThemeModule.config', '2nd level header font size'),
+            'h2StreamFontSize' => Yii::t('CleanThemeModule.config', '2nd level header font size in stream'),
+            'h3FontSize' => Yii::t('CleanThemeModule.config', '3rd level header font size'),
+            'h4FontSize' => Yii::t('CleanThemeModule.config', '4th level header font size'),
+            'h5FontSize' => Yii::t('CleanThemeModule.config', '5th level header font size'),
+            'h6FontSize' => Yii::t('CleanThemeModule.config', '6th level header font size'),
+            'fontWeight' => Yii::t('CleanThemeModule.config', 'Base font weight'),
+            'phFontWeight' => Yii::t('CleanThemeModule.config', 'Panels heading font weight'),
+            'panelBorderWidth' => Yii::t('CleanThemeModule.config', 'Panels border width'),
+            'panelBorderStyle' => Yii::t('CleanThemeModule.config', 'Panels border style'),
+            'panelBorderColor' => Yii::t('CleanThemeModule.config', 'Panels border color'),
+            'panelBorderRadius' => Yii::t('CleanThemeModule.config', 'Panels border radius'),
+            'panelBoxShadow' => Yii::t('CleanThemeModule.config', 'Panels box shadow'),
             'scss' => Yii::t('CleanThemeModule.config', 'Custom CSS'),
         ];
     }
@@ -225,7 +225,7 @@ class Configuration extends Model
     public function attributeHints()
     {
         $inPx = Yii::t('CleanThemeModule.config', 'In pixel');
-        $inEm = Yii::t('CleanThemeModule.config', 'Relative size (em)');
+        $inEm = Yii::t('CleanThemeModule.config', 'In relative size (em)');
         $googleFonts =
             Yii::t('CleanThemeModule.config', 'Google Font name') . ' ' .
             Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->xs() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>' .
@@ -338,11 +338,15 @@ class Configuration extends Model
         }
 
         // Write file
-        $dynamicCssFile = Yii::getAlias(self::DYNAMIC_CSS_FILE_PATH . self::DYNAMIC_CSS_FILE_NAME);
-        if (!file_exists(dirname($dynamicCssFile))) {
-            mkdir(dirname($dynamicCssFile), 0765, true);
+        $dynamicCssPath = Yii::getAlias(self::DYNAMIC_CSS_FILE_PATH);
+        if (
+            !is_dir($dynamicCssPath)
+            && !mkdir($dynamicCssPath, 0765)
+            && !is_dir($dynamicCssPath)
+        ) {
+            throw new Exception(sprintf('Directory "%s" was not created', $dynamicCssPath));
         }
-        file_put_contents($dynamicCssFile, $css);
+        file_put_contents($dynamicCssPath . '/' . self::DYNAMIC_CSS_FILE_NAME, $css);
 
         // Clear cache
         Yii::$app->assetManager->clear();
@@ -370,7 +374,7 @@ class Configuration extends Model
     private function getSpecialColorCssVariables(): array
     {
         $specialColors = file_get_contents(
-            Yii::getAlias(static::STATIC_WITH_CSS_VARIABLES . '/' . static::SPECIAL_COLORS_LESS_FILE_NAME)
+            Yii::getAlias(static::SOURCES_WITH_CSS_VARIABLES . '/' . static::SPECIAL_COLORS_LESS_FILE_NAME)
         );
         $regexPattern = '/var\((.*?)\)/';
         preg_match_all($regexPattern, $specialColors, $matches);

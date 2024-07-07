@@ -54,15 +54,15 @@ $module = Yii::$app->getModule('clean-theme');
         </div>
 
         <div id="clean-theme-configuration-import-export">
-            <h4><strong><?= Yii::t('CleanThemeModule.config', 'Upload / Download configuration file') ?></strong></h4>
+            <h5><strong><?= Yii::t('CleanThemeModule.config', 'Import/Export the configuration') ?></strong></h5>
             <div style="display: flex; justify-content: space-between">
                 <?php $form = ActiveForm::begin([
                     'layout' => 'inline',
                 ]); ?>
                 <?= $form->field($uploadModel, 'jsonConfigurationFile')->fileInput(['class' => 'btn btn-primary']) ?>
-                <?= Button::save(Yii::t('CleanThemeModule.config', 'Upload'))->icon('upload')->confirm(null, Yii::t('CleanThemeModule.config', 'This will overwrite your current configuration'))->submit() ?>
+                <?= Button::save(Yii::t('CleanThemeModule.config', 'Import'))->icon('upload')->confirm(null, Yii::t('CleanThemeModule.config', 'This will overwrite your current configuration'))->submit() ?>
                 <?php ActiveForm::end(); ?>
-                <?= Button::primary(Yii::t('CleanThemeModule.config', 'Download'))->icon('download')->link(['download-json'])->loader(false) ?>
+                <?= Button::primary(Yii::t('CleanThemeModule.config', 'Export'))->icon('download')->link(['download-json'])->loader(false) ?>
             </div>
         </div>
 
@@ -76,37 +76,37 @@ $module = Yii::$app->getModule('clean-theme');
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'General settings')) ?>
             <?= $form->field($model, 'containerMaxWidth')->textInput(['type' => 'number', 'step' => 1, 'min' => 800]) ?>
             <?= $form->field($model, 'topMenuNavJustifyContent')->dropDownList(Configuration::getJustifyContentOptions()) ?>
-            <?= $form->field($model, 'menuBorderColor')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'menuBorderColor')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Main colors')) ?>
-            <?= $form->field($model, 'default')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'primary')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'info')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'success')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'warning')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'danger')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'link')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'default')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'primary')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'info')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'success')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'warning')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'danger')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'link')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Text colors')) ?>
-            <?= $form->field($model, 'textColorHeading')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'textColorMain')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'textColorDefault')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'textColorSecondary')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'textColorHighlight')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'textColorSoft')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'textColorSoft2')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'textColorSoft3')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'textColorContrast')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorHeading')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorMain')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorDefault')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorSecondary')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorHighlight')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorSoft')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorSoft2')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorSoft3')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'textColorContrast')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Background colors')) ?>
-            <?= $form->field($model, 'backgroundColorMain')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'backgroundColorSecondary')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'backgroundColorPage')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'backgroundColorHighlight')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
-            <?= $form->field($model, 'backgroundColorHighlightSoft')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'backgroundColorMain')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'backgroundColorSecondary')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'backgroundColorPage')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'backgroundColorHighlight')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'backgroundColorHighlightSoft')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Fonts')) ?>
@@ -117,7 +117,7 @@ $module = Yii::$app->getModule('clean-theme');
             <?= $form->field($model, 'menuFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
             <?= $form->endCollapsibleFields() ?>
 
-            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Heading fonts')) ?>
+            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Headings fonts')) ?>
             <?= $form->field($model, 'phFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
             <?= $form->field($model, 'phFontWeight')->textInput() ?>
             <?= $form->field($model, 'h1FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
@@ -130,10 +130,10 @@ $module = Yii::$app->getModule('clean-theme');
             <?= $form->field($model, 'h6FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
             <?= $form->endCollapsibleFields() ?>
 
-            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Panel borders')) ?>
+            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Panels borders')) ?>
             <?= $form->field($model, 'panelBorderWidth')->textInput(['type' => 'number', 'step' => 1, 'min' => 1]) ?>
             <?= $form->field($model, 'panelBorderStyle')->dropDownList(Configuration::getBorderStyleOptions()) ?>
-            <?= $form->field($model, 'panelBorderColor')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.admin', 'Select color ...')]]) ?>
+            <?= $form->field($model, 'panelBorderColor')->widget(ColorInput::class, ['options' => ['placeholder' => Yii::t('CleanThemeModule.config', 'Select color ...')]]) ?>
             <?= $form->field($model, 'panelBorderRadius')->textInput(['type' => 'number', 'step' => 1, 'min' => 1]) ?>
             <?= $form->field($model, 'panelBoxShadow')->textInput() ?>
             <?= $form->endCollapsibleFields() ?>
@@ -142,7 +142,7 @@ $module = Yii::$app->getModule('clean-theme');
             <?= $form->field($model, 'scss')->textarea(['rows' => 20]) ?>
             <?= $form->endCollapsibleFields() ?>
 
-            <?= Button::asLink(Yii::t('CleanThemeModule.config', 'Reset everything to default'))
+            <?= Button::asLink(Yii::t('CleanThemeModule.config', 'Reset everything to default values'))
                 ->link(['reset-all-to-default'])
                 ->icon('undo')
                 ->cssClass('text-danger')

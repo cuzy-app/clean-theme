@@ -1,11 +1,11 @@
 // Import Clean theme
 @import "../build.less";
 
-@STATIC_FOR_CSS_VARIABLES: "../../../../resources/static-for-css-variables"; // Files in this folder are auto-generated with `php yii clean-theme/rebuild`
+@DARK_MODE_MODULE: "../../../../../dark-mode/resources/DarkHumHub/less";
+@STATIC_FOR_CSS_VARIABLES: "../../../../resources/sources-for-css-variables"; // Files in this folder are auto-generated with `php yii clean-theme/rebuild`
 
-@import "variables";
-@import "../variables";
-@import "@{STATIC_FOR_CSS_VARIABLES}/special-colors-for-humhub-css-variables";
-
-@import "clean-dark";
+@import "@{DARK_MODE_MODULE}/variables.less";
+@import "@{STATIC_FOR_CSS_VARIABLES}/less/dark-mode"; // Copied from DevController::DARK_MODE_MODULE_LESS_FILE_PATH
 @import "clean-dark-colors";
+@import "variables";
+@import "clean-dark";

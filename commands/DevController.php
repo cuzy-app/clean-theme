@@ -17,6 +17,7 @@ use yii\helpers\FileHelper;
 
 class DevController extends Controller
 {
+    public const DARK_MODE_MODULE_LESS_FILE_PATH = '@dark-mode/resources/DarkHumHub/less/theme.less';
     public array $specialColors = [];
     public array $unsupportedLines = [];
 
@@ -24,9 +25,12 @@ class DevController extends Controller
     {
         // Copy HumHub LESS files
         $src = Yii::getAlias('@webroot/static/less');
-        $dst = Yii::getAlias(Configuration::STATIC_WITH_CSS_VARIABLES . '/less');
+        $dst = Yii::getAlias(Configuration::SOURCES_WITH_CSS_VARIABLES . '/less');
         FileHelper::copyDirectory($src, $dst);
-        $this->message("Copied $src to $dst", 'success');
+
+        // Copy Dark Mode module LESS theme file
+        $src = Yii::getAlias(static::DARK_MODE_MODULE_LESS_FILE_PATH);
+        copy($src, $dst . '/dark-mode.less');
 
         // Check and correct copied files
         $files = FileHelper::findFiles($dst);
@@ -61,8 +65,6 @@ class DevController extends Controller
      */
     private function checkAndCorrectFile($file, bool $isVariableFile = false): void
     {
-        //$this->message("Going through: $file");
-
         $lines = file($file, FILE_IGNORE_NEW_LINES);
         foreach ($lines as $key => $line) {
             if (!$isVariableFile) {
@@ -143,7 +145,7 @@ class DevController extends Controller
             $content .= '@' . $color . ': var(--' . $color . ');' . PHP_EOL;
         }
 
-        $file = Yii::getAlias(Configuration::STATIC_WITH_CSS_VARIABLES . '/' . Configuration::SPECIAL_COLORS_LESS_FILE_NAME);
+        $file = Yii::getAlias(Configuration::SOURCES_WITH_CSS_VARIABLES . '/' . Configuration::SPECIAL_COLORS_LESS_FILE_NAME);
         file_put_contents($file, $content);
         $this->message("Rebuilt file: $file", 'success');
     }
@@ -180,12 +182,11 @@ class DevController extends Controller
         return $line;
     }
 
-
     private function handleSelect2(): void
     {
         // Copy files
         $src = Yii::getAlias('@webroot/static/css/select2Theme');
-        $dst = Yii::getAlias(Configuration::STATIC_WITH_CSS_VARIABLES . '/css/select2Theme');
+        $dst = Yii::getAlias(Configuration::SOURCES_WITH_CSS_VARIABLES . '/css/select2Theme');
         FileHelper::copyDirectory($src, $dst);
         $this->message("Copied $src to $dst", 'success');
 

@@ -1,20 +1,21 @@
 <?php
 
-use humhub\modules\cleanTheme\Module;
+use humhub\modules\ecommerce\Module;
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use yii\db\Migration;
 
 /**
- * Class m240703_142612_generate_dynamic_css_file
+ * Class m240706_073409_getVersion1ThemeConfiguration
  */
-class m240703_142612_generate_dynamic_css_file extends Migration
+class m240706_073409_getVersion1ThemeConfiguration extends Migration
 {
     /**
      * {@inheritdoc}
-     * @throws \yii\base\Exception
      */
     public function safeUp()
     {
+        // TODO: later, remove this migration
+
         /** @var Module $module */
         $module = Yii::$app->getModule('clean-theme');
         $configuration = $module->getConfiguration();
@@ -44,8 +45,6 @@ class m240703_142612_generate_dynamic_css_file extends Migration
             $configuration->save();
             $cleanTheme = ThemeHelper::getThemeByName('Clean');
             $cleanTheme?->activate();
-        } else {
-            $configuration->generateDynamicCSSFile();
         }
     }
 
@@ -54,23 +53,8 @@ class m240703_142612_generate_dynamic_css_file extends Migration
      */
     public function safeDown()
     {
-        echo "m240703_142612_generate_dynamic_css_file cannot be reverted.\n";
+        echo "m240706_073409_getVersion1ThemeConfiguration cannot be reverted.\n";
 
         return false;
     }
-
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m240703_142612_generate_dynamic_css_file cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }
