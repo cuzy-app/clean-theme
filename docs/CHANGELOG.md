@@ -5,8 +5,10 @@ Changelog
 --------------------
 TODO:
 - Screenshots
-- Find a solution not to upload a custom `humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
-- Replace `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css` (including README) with the GitHub URL
+- Find a solution not to upload `resources/sources-for-css-variables` and `resources/css/humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
+- Upload on the Marketplace in beta version and test:
+    - migration from old Theme
+    - new install
 - Comment on https://github.com/humhub/humhub/issues/7099 to explain what was done with this Version 2
 
 Important notice: this version 2 merges the 3 themes to a unique "Clean" theme. Please check the new module configuration. If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`
