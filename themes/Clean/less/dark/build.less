@@ -9,10 +9,11 @@
 // Import Clean theme
 @import "../build";
 
-@STATIC_FOR_CSS_VARIABLES: "../../../resources/sources-for-css-variables"; // Files in this folder are auto-generated with `php yii clean-theme/rebuild`
-
+// Import Dark theme
 @import "@{DARK_MODE_MODULE}/variables.less";
 @import "@{STATIC_FOR_CSS_VARIABLES_FROM_DARK}/less/dark-mode"; // Copied from DevController::DARK_MODE_MODULE_LESS_FILE_PATH
+
+// Import Dark values for Clean Theme
 @import "clean-dark-colors";
 @import "variables";
 @import "clean-dark";

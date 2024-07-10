@@ -1,14 +1,21 @@
 /** Only for colors (no var) **/
 
 // Top Bar
-#topbar > .container > .nav > li > a,
-#topbar > .container .notifications .btn-group > a {
-  color: var(--text-color-heading);
-}
+#topbar {
+  background-color: var(--top-menu-text-color);
+  color: var(--top-menu-background-color);
 
-#topbar > .container .btn-group > a:hover {
-  background-color: var(--text-color-heading);
-  color: var(--text-color-contrast);
+  > .container {
+    > .nav > li > a,
+    .notifications .btn-group > a {
+      color: var(--top-menu-text-color);
+    }
+  }
+
+  .btn-group > a:hover {
+    background-color: var(--top-menu-text-color);
+    color: var(--top-menu-background-color);
+  }
 }
 
 a.list-group-item:hover, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus,
