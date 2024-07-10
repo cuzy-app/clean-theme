@@ -19,6 +19,12 @@ use yii\base\Model;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
 
+/**
+ *
+ * @property-read string $googleFontsCss2UrlParams
+ * @property-read string $cssFromScss
+ * @property-read array $specialColorCssVariables
+ */
 class Configuration extends Model
 {
     public const SOURCES_WITH_CSS_VARIABLES = '@clean-theme/resources/sources-for-css-variables';
@@ -29,7 +35,6 @@ class Configuration extends Model
     public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
     public const CSS_ATTRIBUTE_UNITS = [
         'containerMaxWidth' => 'px',
-        'topMenuNavJustifyContent' => '',
         'default' => '',
         'primary' => '',
         'info' => '',
@@ -72,12 +77,18 @@ class Configuration extends Model
         'panelBorderColor' => '',
         'panelBorderRadius' => 'px',
         'panelBoxShadow' => '',
+        'topBarHeight' => 'px',
+        'topBarFontSize' => 'px',
+        'topMenuNavJustifyContent' => '',
+        'topMenuBackgroundColor' => '',
+        'topMenuTextColor' => '',
+        'topMenuButtonHoverBackgroundColor' => '',
+        'topMenuButtonHoverTextColor' => '',
     ];
 
     public SettingsManager $settingsManager;
 
     public string $containerMaxWidth = '1600';
-    public string $topMenuNavJustifyContent = 'center';
     public string $default = '#f3f3f3';
     public string $primary = '#31414a';
     public string $info = '#1A808E';
@@ -120,6 +131,13 @@ class Configuration extends Model
     public string $panelBorderColor = '#c7c9e7';
     public string $panelBorderRadius = '4';
     public string $panelBoxShadow = '0 1px 10px #00000019';
+    public string $topBarHeight = '50';
+    public string $topBarFontSize = '10';
+    public string $topMenuNavJustifyContent = 'center';
+    public string $topMenuBackgroundColor = '#ffffff';
+    public string $topMenuTextColor = '#31414a';
+    public string $topMenuButtonHoverBackgroundColor = '#f7f7f7';
+    public string $topMenuButtonHoverTextColor = '#242424';
     public string $scss = '';
 
     public static function getJustifyContentOptions(): array
@@ -172,7 +190,6 @@ class Configuration extends Model
     {
         return [
             'containerMaxWidth' => Yii::t('CleanThemeModule.config', 'Main content container width'),
-            'topMenuNavJustifyContent' => Yii::t('CleanThemeModule.config', 'Top menu navigation alignment'),
             'default' => Yii::t('CleanThemeModule.config', 'Main default color'),
             'primary' => Yii::t('CleanThemeModule.config', 'Main "Primary" color'),
             'info' => Yii::t('CleanThemeModule.config', 'Main "Info" color'),
@@ -215,6 +232,13 @@ class Configuration extends Model
             'panelBorderColor' => Yii::t('CleanThemeModule.config', 'Panels border color'),
             'panelBorderRadius' => Yii::t('CleanThemeModule.config', 'Panels border radius'),
             'panelBoxShadow' => Yii::t('CleanThemeModule.config', 'Panels box shadow'),
+            'topBarHeight' => Yii::t('CleanThemeModule.config', 'Top bar height'),
+            'topBarFontSize' => Yii::t('CleanThemeModule.config', 'Button font size'),
+            'topMenuNavJustifyContent' => Yii::t('CleanThemeModule.config', 'Navigation alignment'),
+            'topMenuBackgroundColor' => Yii::t('CleanThemeModule.config', 'Background color'),
+            'topMenuTextColor' => Yii::t('CleanThemeModule.config', 'Text color'),
+            'topMenuButtonHoverBackgroundColor' => Yii::t('CleanThemeModule.config', 'Button background color on hover'),
+            'topMenuButtonHoverTextColor' => Yii::t('CleanThemeModule.config', 'Button text color on hover'),
             'scss' => Yii::t('CleanThemeModule.config', 'Custom CSS'),
         ];
     }
@@ -258,6 +282,8 @@ class Configuration extends Model
                 'cssValue2' => '<code>none</code>',
                 'documentation' => '<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow" target="_blank">' . Yii::t('CleanThemeModule.config', 'documentation') . '</a>',
             ]),
+            'topBarHeight' => $inPx,
+            'topBarFontSize' => $inPx,
             'scss' => Yii::t('CleanThemeModule.config', 'Use Sassy CSS syntax (SCSS)'),
         ];
     }
@@ -278,10 +304,16 @@ class Configuration extends Model
             return false;
         }
 
+        if ($this->panelBorderStyle === 'none') {
+            $this->panelBorderWidth = '0';
+        }
+
         $defaultConfiguration = new Configuration();
         foreach (static::getAllAttributeNames() as $attributeName) {
             // If empty value, reset to default value
-            $this->$attributeName = $this->$attributeName ?: $defaultConfiguration->$attributeName;
+            if (($this->$attributeName === '')) {
+                $this->$attributeName = $defaultConfiguration->$attributeName;
+            }
             if (static::isFontAttribute($attributeName)) {
                 // Remove + in case the URL of the font was entered
                 $this->$attributeName = str_replace('+', ' ', $this->$attributeName);
@@ -309,8 +341,8 @@ class Configuration extends Model
                 '"' . $this->$name . '"' :
                 $this->$name;
 
-            // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px; !important`
-            $css .= '    ' . $cssVarName . ': ' . $value . $unit . ' !important;' . PHP_EOL;
+            // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px;`
+            $css .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
         }
 
         $css .= PHP_EOL;

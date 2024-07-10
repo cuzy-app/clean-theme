@@ -132,7 +132,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         if (isMobileView()) {
             return $topMenuNavOrBottomMenu.outerWidth() > $topMenu.outerWidth();
         }
-        return $topMenuContainer[0].offsetHeight > $topMenu[0].offsetHeight;
+        return $topMenuContainer[0].scrollWidth > ($topMenuContainer[0].clientWidth + 1);
     };
 
     /**

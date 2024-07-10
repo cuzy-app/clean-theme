@@ -33,14 +33,14 @@
   }
 
   li > a:hover {
-    background-color: @background-color-secondary;
+    background-color: var(--background-color-secondary);
   }
 
   li.active > a, li.active > a:hover, li.active > a:focus {
     padding-top: 14px;
-    background-color: @primary;
-    color: @text-color-contrast;
+    background-color: var(--primary);
+    color: var(--text-color-contrast);
     border: none !important;
-    border-bottom: 1px solid @primary !important;
+    border-bottom: 1px solid var(--primary) !important;
   }
 }

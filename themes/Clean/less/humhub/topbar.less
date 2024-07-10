@@ -5,7 +5,7 @@
 
 .topbar {
   position: fixed;
-  height: @topBarHeight;
+  height: var(--top-bar-height);
   width: 100%;
   padding-left: 0;
   padding-right: 0;
@@ -21,7 +21,7 @@
   ul.nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
-    line-height: 20px;
+    line-height: normal;
   }
 
   .dropdown-footer {
@@ -33,7 +33,7 @@
     padding: 3px 10px;
     margin-bottom: 10px;
     font-weight: 300;
-    color: @text-color-soft;
+    color: var(--text-color-soft);
 
     .arrow {
       display: none !important;
@@ -45,7 +45,7 @@
       right: 10px;
 
       a {
-        color: @link !important;
+        color: var(--link) !important;
         font-size: 12px;
         font-weight: normal;
       }
@@ -53,12 +53,12 @@
   }
 
   .dropdown-header:hover {
-    color: @text-color-soft;
+    color: var(--text-color-soft);
   }
 }
 
 #topbar {
-  background-color: @background-color-main;
+  background-color: var(--top-menu-background-color);
   top: 0;
   z-index: 1030;
   overflow: unset;
@@ -70,17 +70,19 @@
   > .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: calc(var(--top-bar-height) - var(--panel-border-width));
 
     &:before, &:after {
       content: none;
     }
 
     a.navbar-brand {
-      height: @topBarHeight;
-      padding: 5px 5px 5px 0;
+      padding: 0 5px 0 0;
+      height: auto;
 
       img#img-logo {
-        max-height: 40px;
+        max-height: calc(var(--top-bar-height) - 10px);
       }
 
     }
@@ -93,12 +95,6 @@
       font-weight: bold;
     }
 
-    #top-menu-nav {
-      flex: 1; // The space must be between the main menu items and the search button
-      display: flex;
-      justify-content: var(--top-menu-nav-justify-content);
-    }
-
     > :first-child {
       margin-right: 13px;
     }
@@ -107,17 +103,9 @@
       margin-left: 13px;
     }
 
-    .nav > li > a:hover,
-    .nav > .open > a {
-      background-color: @background-color-secondary;
-      color: @text-color-highlight;
-    }
-
     .nav > .account {
-      height: @topBarHeight;
-
       .dropdown-toggle {
-        padding: 8px 0 5px 5px;
+        padding: 0;
         line-height: 1.1em;
         text-align: left;
 
@@ -127,6 +115,10 @@
 
         span {
           font-size: 12px;
+
+          &.has-online-status {
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -139,6 +131,17 @@
     .topbar-actions {
       position: relative;
       z-index: 3;
+    }
+
+    #top-menu-nav {
+      flex: 1; // The space must be between the main menu items and the search button
+      display: flex;
+      justify-content: var(--top-menu-nav-justify-content);
+
+      > li > a:hover {
+        background-color: var(--top-menu-button-hover-background-color);
+        color: var(--top-menu-button-hover-text-color);
+      }
     }
 
     .notifications {
@@ -155,13 +158,22 @@
       }
 
       .btn-group > a {
-        color: @primary;
+        color: var(--top-menu-text-color);
         padding: 5px 10px;
         margin: 10px 2px;
         display: inline-block;
         border-radius: 2px;
         text-decoration: none;
         text-align: left;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: var(--top-menu-button-hover-background-color);
+          color: var(--top-menu-button-hover-text-color);
+          text-decoration: none;
+          border-bottom: none;
+        }
       }
 
       .btn-group > .label {
@@ -221,41 +233,41 @@
 
     .btn-group {
       > a:hover {
-        background-color: @background-color-secondary;
+        background-color: var(--background-color-secondary);
       }
 
       > a:active,
       &.open > a,
       &.open .dropdown-toggle {
-        background-color: @primary-lighten-5;
-        color: @text-color-contrast;
+        background-color: var(--primary-lighten-5);
+        color: var(--text-color-contrast);
       }
     }
 
     .btn-enter {
-      background-color: @primary-lighten-5;
+      background-color: var(--primary-lighten-5);
       margin: 6px 0;
     }
 
     .btn-enter:hover {
-      background-color: @primary-lighten-8;
+      background-color: var(--primary-lighten-8);
     }
 
     .media-list {
       a {
-        color: @text-color-highlight;
+        color: var(--text-color-highlight);
         padding: 0;
       }
 
       li {
-        color: @text-color-highlight;
+        color: var(--text-color-highlight);
 
         i.accepted {
-          color: @link !important;
+          color: var(--link) !important;
         }
 
         i.declined {
-          color: @danger !important;
+          color: var(--danger) !important;
         }
       }
 
@@ -318,61 +330,85 @@
 
     #search-menu {
       display: inline-block;
-      min-height: auto;
+      height: auto;
       padding: 5px 10px;
       margin: 10px 2px;
+      color: var(--top-menu-text-color);
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: var(--top-menu-button-hover-background-color);
+        color: var(--top-menu-button-hover-text-color);
+        text-decoration: none;
+        border-bottom: none;
+      }
+    }
+
+
+    .nav > li > a {
+      color: var(--top-menu-text-color);
     }
 
     > .nav {
       > li > a {
-        color: @primary;
-        padding: 7px 13px 0;
+        color: var(--top-menu-text-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 13px;
         text-decoration: none;
         text-shadow: none;
         font-weight: 600;
-        font-size: 10px;
-        min-height: @topBarHeight;
+        font-size: var(--top-bar-font-size);
+        height: calc(var(--top-bar-height) - var(--panel-border-width));
         text-transform: uppercase;
         text-align: center;
         transition: .25s;
+        white-space: nowrap;
+
+        > br {
+          display: none;
+        }
 
         &:hover,
         &:active,
         &:focus {
-          background-color: @background-color-secondary;
-          color: @text-color-highlight;
+          background-color: var(--top-menu-button-hover-background-color);
+          color: var(--top-menu-button-hover-text-color);
           text-decoration: none;
+          border-bottom: none;
         }
 
         i {
           font-size: 14px;
+          margin-bottom: 5px;
         }
 
         .caret {
-          border-top-color: @text-color-secondary;
+          border-top-color: var(--text-color-secondary);
         }
       }
 
       > li.active > a, > li.hover > a {
-        min-height: @topBarHeight;
-        background-color: @primary;
-        color: @text-color-contrast;
+        background-color: var(--top-menu-text-color);
+        color: var(--top-menu-background-color);
         text-decoration: none;
       }
 
       > li > ul > li > a {
-        background-color: @text-color-contrast;
-        color: @text-color-highlight;
+        background-color: var(--text-color-contrast);
+        color: var(--text-color-highlight);
       }
 
       > li > ul > li > a:hover, > li > ul > li > a.active {
-        background-color: @primary;
-        color: @text-color-contrast;
+        background-color: var(--primary);
+        color: var(--text-color-contrast);
       }
 
       > li > a:not(.active):hover {
-        background-color: @background-color-secondary;
-        color: @text-color-highlight;
+        background-color: var(--background-color-secondary);
+        color: var(--text-color-highlight);
       }
 
       > li.active > a:hover, > li.active > a:focus {
@@ -381,7 +417,7 @@
     }
 
     #space-menu-dropdown li > ul > li > a > .media .media-body p {
-      color: @text-color-soft;
+      color: var(--text-color-soft);
       font-size: 11px;
       margin: 0;
       font-weight: 400;
@@ -389,8 +425,8 @@
 
     // For JS communitee.theme.updateBtnStatus()
     .btn-group.active > a {
-      background-color: @primary-lighten-5;
-      color: @text-color-contrast;
+      background-color: var(--top-menu-text-color);
+      color: var(--top-menu-background-color);
     }
   }
 }

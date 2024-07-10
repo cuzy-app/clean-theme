@@ -11,7 +11,7 @@
 }
 
 a.list-group-item {
-  color: @text-color-main;
+  color: var(--text-color-main);
 }
 
 a.list-group-item:hover,
@@ -19,11 +19,11 @@ a.list-group-item.active,
 a.list-group-item.active:hover,
 a.list-group-item.active:focus {
   border-left: none !important;
-  background-color: @primary;
-  color: @text-color-contrast;
+  background-color: var(--primary);
+  color: var(--text-color-contrast);
 }
 
 a.list-group-item:hover {
-  background-color: @background-color-secondary;
-  color: @text-color-highlight;
+  background-color: var(--background-color-secondary);
+  color: var(--text-color-highlight);
 }
