@@ -8,6 +8,11 @@
 }
 
 // Hide misplaced arrow
-#topbar > .container .notifications .arrow::after {
-  display: none;
+#topbar {
+  background-color: var(--top-menu-text-color);
+  color: var(--top-menu-background-color);
+
+  > .container .notifications .arrow::after {
+    display: none;
+  }
 }
