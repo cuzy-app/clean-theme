@@ -6,10 +6,13 @@ Changelog
 
 **Important notice: this version 2 merges the three themes to a unique "Clean" theme.**
 
-Please check the new module configuration in Administration -> Modules -> Clean Theme -> Configuration.
+After updating to version 2:
+- Check the new module configuration in Administration -> Modules -> Clean Theme -> Configuration.
+- Select the new “Clean” theme in Administration -> Settings -> Appearance.
 
 If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`.
 
+Changelog:
 - Enh: Add module configuration to define colors, fonts, borders and other CSS parameters of the theme (Thanks to @felixhahnweilheim for the code generating CSS variable color variations from his [Flex Theme](https://github.com/felixhahnweilheim/humhub-flex-theme))
 - Enh: Use CSS variables instead of LESS variables
 - Chg: Remove `clean-base`, `clean-contrasted` and `clean-bordered` themes and replace them with the new `Clean` theme
