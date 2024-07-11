@@ -1,19 +1,17 @@
 Changelog
 =========
 
-2.0-beta.1 (unreleased - !! the current branch is version-2 !! - Release in beta for a start)
+2.0.0-beta.1 (July 11, 2024)
 --------------------
-TODO:
-- Screenshots
-- Find a solution not to upload `resources/less/humhub.modified` and `resources/css/humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
-- Upload on the Marketplace in beta version and test:
-    - migration from old Theme
-    - new install
-- Comment on https://github.com/humhub/humhub/issues/7099 to explain what was done with this Version 2
 
-Important notice: this version 2 merges the 3 themes to a unique "Clean" theme. Please check the new module configuration. If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`
+**Important notice: this version 2 merges the three themes to a unique "Clean" theme.**
+
+Please check the new module configuration in Administration -> Modules -> Clean Theme -> Configuration.
+
+If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`.
 
 - Enh: Add module configuration to define colors, fonts, borders and other CSS parameters of the theme (Thanks to @felixhahnweilheim for the code generating CSS variable color variations from his [Flex Theme](https://github.com/felixhahnweilheim/humhub-flex-theme))
+- Enh: Use CSS variables instead of LESS variables
 - Chg: Remove `clean-base`, `clean-contrasted` and `clean-bordered` themes and replace them with the new `Clean` theme
 - Chg: CSS compiled for HumHub 1.16.1
 
