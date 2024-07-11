@@ -56,7 +56,7 @@ class Module extends \humhub\components\Module
     {
         return Yii::t('CleanThemeModule.config', '"{Clean}" theme based on the community "{HumHub}" theme', [
             'Clean' => 'Clean',
-            'CommunityHumHub' => 'HumHub',
+            'HumHub' => 'HumHub',
         ]);
     }
 

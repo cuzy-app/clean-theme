@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: media panels (such as right panels) font size
+
 2.0.0-beta.1 (July 11, 2024)
 --------------------
 
