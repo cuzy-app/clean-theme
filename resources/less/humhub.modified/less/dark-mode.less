@@ -1,0 +1,546 @@
+/**
+ * Define or overwrite your theme selectors within this file.
+ **/
+.heading {
+    background-color: @background-color-main;
+}
+.bg-warning {
+    background-color: @background-color-warning;
+}
+// Dropdown Menus
+.dropdown-menu {
+    background-color: @background-color-page;
+    border-color: var(--text-color-highlight-fade-15);
+    box-shadow: 0 6px 12px @background-color-page;
+}
+.dropdown-menu > li > a, .dropdown-menu > li > a:hover {
+    color: @text-color-main;
+}
+.dropdown-menu > li > a:hover {
+    background: @background3;
+}
+.modal .dropdown-menu li, .panel .dropdown-menu li, .nav-tabs .dropdown-menu li {
+    border-color: transparent;
+}
+// Forms, textarea
+.form-control, textarea {
+    color: @text-color-highlight !important;
+    background-color: @background-color-secondary !important;
+}
+::placeholder {
+    color: @text-color-soft !important;
+}
+.form-collapsible-fields {
+    background-color: @background3;
+}
+// Disabled form control
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control
+{
+    background-color: @background4;
+    border-color: @background4;
+}
+// Select2 (HumHub)
+// for Bootstrap Select2 see below
+.select2-container--humhub .select2-selection, .select2-container--humhub .select2-selection--single .select2-selection__rendered {
+    color: @text-color-highlight;
+    background-color: @background3;
+}
+.select2-dropdown {
+    background-color: @background3 !important;
+}
+.select2-container--humhub .select2-results__option[aria-selected=true] {
+    background-color: @background-color-secondary;
+    color: @text-color-highlight;
+}
+.select2-container--humhub .select2-search--dropdown .select2-search__field {
+    background-color: @background-color-main;
+    color: @text-color-main;
+}
+// Disabled Select2
+.select2-container--humhub.select2-container--disabled .select2-selection, .select2-container--humhub.select2-container--disabled .select2-selection--multiple .select2-selection__choice, .select2-container--humhub.select2-container--disabled .select2-selection__rendered
+{
+    background-color: @background4;
+    border-color: @background4;
+}
+// Top Bar
+#topbar-first {
+    background-color: @background-color-page;
+    
+    .nav > li > a:hover,
+    .nav > .open > a {
+        background-color: var(--background-color-page-lighten-10);
+    }
+    
+    .account .user-title {
+        span {
+            color: @text-color-soft;
+        }
+    }
+    
+    .dropdown.account > a,
+    .dropdown.account.open > a {
+        background-color: transparent;
+    }
+    .dropdown.account > a:hover,
+    .dropdown.account.open > a:hover {
+        background-color: @background-color-page;
+    }
+    
+    .btn-group > a {
+        background-color: var(--background-color-page-lighten-20);
+    }
+    .btn-enter {
+        background-color: var(--background-color-page-lighten-20);
+    }
+    .btn-enter:hover {
+        background-color: var(--background-color-page-lighten-30);
+    }
+    .caret {
+        border-top-color: @text-color-highlight;
+    }
+}
+#topbar-second {
+    background-color: @background-color-secondary;
+    box-shadow: 0 1px 10px var(--text-color-highlight-fade-30);
+    border-bottom-color: @background3;
+    .nav > li > a:hover, .nav > li.active {
+        background-color: @background3;
+    }
+    
+    .nav > li > ul > li > a {
+        background-color: @background-color-page;
+        border-left-color: transparent;
+    }
+    .nav > li > a#space-menu {
+        border-right: 1px solid @background4;
+    }
+}
+// List group item (e.g. admin sidebar, account sidebar)
+.list-group-item {
+    background-color: @background-color-main;
+    border-color: transparent !important;
+}
+a.list-group-item, button.list-group-item {
+    color: @text-color-main;
+}
+// Active/Hovered list group item (e.g. in account menu)
+a.list-group-item:focus, a.list-group-item:hover, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus, button.list-group-item:focus, button.list-group-item:hover {
+    color: @text-color-highlight;
+    background-color: @background4;
+}
+// Status bar (e.g. "Saved" message)
+.status-bar-body {
+    background-color: var(--background4-fade-50);
+}
+// Cards
+.container-cards {
+    .card {
+        .card-panel {
+            background-color: @background3;
+        }
+	.card-header .card-image-link {
+            border-color: @background-color-page;
+	}
+        .card-body {
+            .card-details {
+                color: @text-color-soft;
+            }
+        }
+        .card-bg-image {
+            background-color: @background4;
+        }
+    }
+    .form-search .form-button-search {
+        color: @text-color-main;
+    }
+}
+// Buttons primary
+.btn-primary {
+    color: @text-color-highlight !important;
+}
+// Buttons active
+.btn-default.active, .btn-default:active, .open > .dropdown-toggle.btn-default {
+    background-color: @background3;
+}
+.btn-info:active, .btn-info.active, .btn-primary:active, .btn-primary.active {
+    background: @background-color-secondary !important;
+}
+.btn-primary.active, .btn-primary:active {
+    border-color: var(--primary-lighten-10);
+    color: var(--primary-lighten-10) !important;
+}
+.container-module-updates .btn.active {
+    background-color: #fff !important;
+}
+// Buttons disabled
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: @background4;
+}
+// Buttons focus
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {
+    background-color: @background4;
+}
+// Badges
+.badge {
+    background-color: @background4;
+}
+// Modal Windows
+.modal-content {
+    background-color: @background-color-secondary;
+}
+.modal-content .modal-header .close {
+    color: @text-color-highlight;
+}
+// Popover (e.g. Introduction Tour)
+.popover {
+    background-color: @background3;
+}
+// Input group addon (e.g. Spaces button in My Spaces dropdown)
+.input-group-addon {
+    background-color: var(--background4-lighten-16);
+}
+// My Spaces dropdown divider
+.dropdown-menu .divider {
+    background-color: @background4;
+}
+// e.g. second top bar "My Spaces" button
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: @background-color-secondary;
+}
+// Horizontal Line
+hr {
+    border-color: @background3;
+}
+// Code
+code {
+    background-color: #000;
+}
+.hljs-keyword, .hljs-selector-tag, .hljs-subst {
+    color: @text-color-highlight;
+}
+.markdown-render code, [data-ui-markdown] code, [data-ui-richtext] code {
+    color: @link;
+    background-color: @background-color-highlight;
+}
+// Media List
+.media-list li {
+    border-color: @background3;
+}
+.media-list {
+    li.new {
+        border-left: 3px solid @info;
+        background-color: var(--info-darken-27);
+    }
+}
+// Nav Tabs
+.nav-tabs, .tab-menu .nav-tabs li > a, .nav-tabs > li > a:hover, .tab-menu .nav-tabs li > a:focus, .tab-menu .nav-tabs li > a:hover {
+    border-color: @background4;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color: @background-color-main;
+    border-color: @background4 @background4 transparent;
+}
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: @background-color-secondary;
+}
+// Panel 
+.panel {
+    box-shadow: 0 0 3px var(--background4-lighten-10);
+}
+// Panel body (especially for Calendar filter in space)
+.panel .panel-body {
+    background-color: @background-color-main !important;
+}
+// Wall Entries
+.wall-entry .wall-entry-header {
+    border-bottom-color: @background3;
+}
+// Wall Stream filters
+#wall-stream-filter-nav .wall-stream-filter-head {
+    border-bottom-color: @background4;
+}
+#wall-stream-filter-nav .wall-stream-filter-body {
+    border-color: @background4;
+}
+// e.g. comment section
+.well {
+    background-color: var(--background-color-main-darken-10);
+}
+// At Who / Mention
+.atwho-view {
+    color: @text-color-main;
+    background-color: @background-color-main;
+    border-color: @background4;
+}
+// Show more in stream
+.load-suppressed a {
+    background-color: @background-color-secondary;
+    border-color: @background4;
+}
+// Table
+.table-hover > tbody > tr:hover {
+    background-color: @background3;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: @background-color-secondary;
+}
+// Additional post types in post form
+#contentFormMenu .nav-tabs > li > a, #contentFormMenu .nav-tabs > li.active > a, #contentFormMenu .content-create-menu-more > i  {
+    background: @background-color-secondary;
+    border-color: @background-color-main;
+}
+#contentFormMenu .nav-tabs > li > a:hover, #contentFormMenu .nav-tabs > li.active > a:hover, #contentFormMenu .nav-tabs > li > a.active, #contentFormMenu .nav-tabs > li.active > a.active {
+    color: @text-color-main;
+    background-color: @background-color-main;
+}
+#contentFormMenu .nav-tabs > li > a, #contentFormMenu .nav-tabs > li.active > a {
+    color: @text-color-secondary;
+}
+#contentFormMenu .content-create-menu-more > i:hover {
+    background: @background-color-main;
+    color: @text-color-main;
+}
+#contentFormMenu .content-create-menu-more .dropdown-menu {
+    border-color: @background4;
+}
+// Prosemirror Editor
+.ProseMirror hr {
+    border-color: @background4;
+}
+.ProsemirrorEditor.plainMenu .ProseMirror-menubar {
+    color: @text-color-main;
+}
+.ProseMirror-prompt {
+    background: @background-color-main;
+    border-color: @background4;
+}
+.ProseMirror-invalid {
+    color: #000 !important;
+}
+.ProsemirrorEditor .ProseMirror-menu-active {
+    background: @background4;
+}
+.ProsemirrorEditor.focusMenu .ProseMirror-menubar, .ProsemirrorEditor.plainMenu .ProseMirror-menubar {
+    background-color: @background-color-secondary;
+    border-color: @background4;
+}
+// Container Profile Header
+.panel-profile {
+    .panel-profile-header, .panel-profile-header .profile-user-photo-container .profile-user-photo {
+        border-color: @background-color-page;
+    }
+}
+.profile-banner-image-container .img-profile-header-background {
+    filter: brightness(50%);
+}
+// Pagination
+.pagination > li > a, .pagination > li > span, .pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
+    background-color: @background-color-secondary;
+    border-color: @background4;
+}
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    background-color: @background4;
+    border-color: @background4;
+}
+// Module cards (e.g. in space administration)
+.container-modules .card-module .card-panel > div:not(.card-status) {
+    background-color: @background-color-secondary;
+}
+.container-modules .card-module .card-title {
+    color: @text-color-main;
+}
+// Sidebar background (especially for mobile)
+.layout-sidebar-container {
+    background-color: @background-color-page !important;
+}
+// Breadcrumb (e.g. top of cfiles page in space)
+.breadcrumb {
+    background-color: @background3;
+}
+// Checkbox
+input[type="checkbox"], input[type="radio"] {
+    background: @background3;
+}
+// Jumbotron (Admin -> Information)
+.jumbotron {
+    background-color: @background-color-secondary;
+}
+// Alert info (e.g. Admin -> Information)
+.alert-info {
+    background-color: #323a3f;
+}
+// Color picker (e.g. Space settings)
+.hexInput {
+    background: @background-color-secondary;
+}
+// Date Picker (e.g. Birthday in profile)
+.ui-datepicker-month, .ui-datepicker-year {
+    background-color: @background-color-secondary;
+    border-color: @background3;
+}
+// --------------
+// USER auth
+// --------------
+.or-container hr {
+    border-color: @text-color-soft3 !important;
+}
+.or-container div {
+    background-color: @background-color-secondary !important;
+}
+.or-container {
+    color: @text-color-highlight !important;
+}
+// ------------------
+// Bootstrap
+// ------------------
+// Bootstrap Timepicker
+.bootstrap-timepicker-widget table td a:hover {
+    background-color: @background-color-secondary !important;
+    border-color: @background-color-secondary !important;
+}
+.select2-container--bootstrap {
+    .select2-selection {
+        border-color: @background4 !important;
+    }
+    .select2-selection, .select2-selection--single .select2-selection__rendered {
+        color: @text-color-highlight !important;
+        background-color: @background3 !important;
+    }
+    .select2-search--dropdown .select2-search__field {
+        background-color: @background-color-main !important;
+        color: @text-color-main !important;
+    }
+}
+.select2-hidden-accessible option[selected] {
+    background-color: @background4 !important;
+    color: @text-color-highlight !important;
+}
+// -------------------------------------
+// Styles for External Modules
+// -------------------------------------
+// Wiki
+// -----
+// Wiki compare
+.layout-content-container .wiki-content.wiki-page-diff del, .layout-content-container .wiki-content.wiki-page-diff ins {
+    color: #000 !important;
+}
+// Messenger / Mail
+// -----
+// Dropdown
+#dropdown-messages .dropdown-header {
+    color: @text-color-main !important;
+}
+// Scroll down arrow
+.conversation-scroll-down-button {
+    background: @background-color-secondary;
+    box-shadow: 1px 1px 2px @background-color-page;
+}
+// manage Tags Button
+.message-tag-filter-group .manage-tags-link {
+    border-color: @background4 !important;
+}
+// Calendar
+// -----
+// Calendar borders
+.table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+    border-color: @background4 !important;
+}
+.fc-day-header {
+    border-color: @background4 !important;
+}
+// Calendar list
+.fc-list-heading {
+    background-color: @background3 !important;
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th,
+.fc-content, .fc-divider, .fc-list-heading td, .fc-list-view, .fc-popover, .fc-row, tbody, td, th, thead {
+    border-color: @background4 !important;
+}
+// Calendar heading
+.fc-header-toolbar h2 {
+    color: @text-color-main !important;
+}
+// External Calendar´
+// -----
+// External Calendar textarea
+.external-calendar-overview td textarea {
+    background-color: @background-color-main !important;
+}
+// Custom Pages
+// -----
+.target-page-list-head {
+    background-color: @background4 !important;
+}
+.target-page-list-grid {
+    border-color: @background4 !important;
+}
+// Gallery
+// -----
+// Gallery Heading
+#gallery-container > .panel-heading {
+    background-color: @background4 !important;
+}
+// Tasks
+// -----
+// Tasks checkbox
+.task-checklist label.item-finished input[type="checkbox"]:checked::after {
+    color: @background-color-page !important;
+}
+.task-checklist .task-item:hover {
+    background: @background4 !important
+}
+.task-list-header > .panel-body {
+    background-color: @background3 !important;
+}
+.task-list-header h4 {
+    color: @text-color-main !important;
+}
+.task-list-header.panel .help-block, .task-list-header .help-block:hover {
+    color: @text-color-soft2 !important;
+}
+.task-list-li, .task-list-items .task-list-task-completed-show-more {
+    background-color: @background-color-main !important;
+}
+.task-list-li .closed-task-lists-container, .task-list .pagination-container, #task-container .panel-heading {
+    background-color: @background-color-main !important;
+}
+.task-list-li, .task-list .pagination-container {
+    border-color: @background4 !important;
+}
+.task-list-li.task-list-li-collapsed .task-toggled-color, .task-overview label {
+    color: @text-color-main !important;
+}
+.task-overview #task-filter-nav, .task-overview #filter-tasks-list .media-list li, .task-overview #filter-tasks-list .media-list .empty {
+    background: @background-color-secondary !important;
+    color: @text-color-secondary !important;
+}
+// Tasks Hover
+.task-list-container .task-list-title-bar > div:hover,
+.task-list-items .task-list-item .task-list-task-title-bar > div:hover {
+    background: @background-color-secondary !important;
+}
+// body is just added to make the rule more specific to overwrite an !important rule
+body .closed-task-list-view li:hover {
+    background-color: #4d443b !important;
+}
+// Different Border Colors
+#task-space-menu {
+    border-bottom-color: @background3 !important;
+    li a {
+        border-color: @background3 !important;
+    }
+}
+#task-container .panel-heading .task-header-panel {
+    border-color: @background3 !important;
+}
+.task-list-items .task-list-item, .task-list-title-bar, .task-controls {
+    border-color: @background4 !important;
+}
+// Sort by drag and drop
+.task-list-items .task-list-item .task-list-task-title-bar.highlighter, .task-list-state-highlight, .task-state-highlight {
+    background-color: @background-color-highlight !important;
+}
+.ui-sortable-helper {
+    background-color: @background-color-highlight !important;
+    border-color: @background-color-secondary !important;
+}

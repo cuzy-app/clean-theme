@@ -1,7 +1,11 @@
-@STATIC_FOR_CSS_VARIABLES: "../../../resources/sources-for-css-variables"; // Files in this folder are auto-generated with `php yii clean-theme/rebuild`
+@MODIFIED_HUMHUB: "../../../resources/less/humhub.modified"; // Files in this folder are auto-generated with `php yii clean-theme/rebuild`
 
-@import "variables"; // LESS variables which contains CSS variables
-@import "@{STATIC_FOR_CSS_VARIABLES}/special-colors-for-humhub-css-variables"; // LESS variables which contains special CSS variables
+// Import HumHub theme
+@import "@{MODIFIED_HUMHUB}/less/variables";
+@import "@{MODIFIED_HUMHUB}/less/mixins";
+@import "@{MODIFIED_HUMHUB}/less/humhub"; // includes select2
+
+@import "variables";
 @import "mixins";
 @import "fonts";
 @import "theme";

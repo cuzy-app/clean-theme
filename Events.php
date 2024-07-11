@@ -10,7 +10,7 @@ namespace humhub\modules\cleanTheme;
 
 
 use humhub\components\console\Application;
-use humhub\modules\cleanTheme\commands\DevController;
+use humhub\modules\cleanTheme\commands\DeveloperController;
 
 class Events
 {
@@ -18,6 +18,6 @@ class Events
     {
         /** @var Application $application */
         $application = $event->sender;
-        $application->controllerMap['clean-theme'] = DevController::class;
+        $application->controllerMap['clean-theme'] = DeveloperController::class;
     }
 }

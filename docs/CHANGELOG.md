@@ -5,7 +5,7 @@ Changelog
 --------------------
 TODO:
 - Screenshots
-- Find a solution not to upload `resources/sources-for-css-variables` and `resources/css/humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
+- Find a solution not to upload `resources/less/humhub.modified` and `resources/css/humhub.clean-theme.dynamic.css` when uploading the module to the marketplace
 - Upload on the Marketplace in beta version and test:
     - migration from old Theme
     - new install

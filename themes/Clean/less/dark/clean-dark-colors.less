@@ -8,13 +8,20 @@
   > .container {
     > .nav > li > a,
     .notifications .btn-group > a {
-      color: var(--top-menu-text-color);
+      color: var(--top-menu-background-color);
     }
   }
 
   .btn-group > a:hover {
     background-color: var(--top-menu-text-color);
     color: var(--top-menu-background-color);
+  }
+}
+
+// Bottom Menu
+@media (max-width: 570px) {
+  #topbar > .container #top-menu-nav {
+    background-color: var(--top-menu-text-color);
   }
 }
 

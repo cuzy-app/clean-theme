@@ -1,8 +1,9 @@
 #!/bin/bash
+# shellcheck disable=SC2164
 
-# Create static LESS files for CSS variables
+# Create files in resources/less/humhub.modified with special colors
 cd ../..
-php yii clean-theme/create-static-less-files-for-css-variables
+php yii clean-theme/build-modified-sources
 
 # Compile CSS
 cd modules/clean-theme/themes/Clean
