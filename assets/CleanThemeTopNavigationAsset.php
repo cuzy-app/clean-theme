@@ -19,6 +19,6 @@ class CleanThemeTopNavigationAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/humhub.clean.theme.topNavigation.js',
+        'js/humhub.cleanTheme.topNavigation.js',
     ];
 }

@@ -9,7 +9,15 @@
 namespace humhub\modules\cleanTheme;
 
 
+use humhub\components\console\Application;
+use humhub\modules\cleanTheme\commands\DeveloperController;
+
 class Events
 {
-
+    public static function onConsoleApplicationInit($event)
+    {
+        /** @var Application $application */
+        $application = $event->sender;
+        $application->controllerMap['clean-theme'] = DeveloperController::class;
+    }
 }

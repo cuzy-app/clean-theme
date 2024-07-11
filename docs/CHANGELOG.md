@@ -1,14 +1,28 @@
 Changelog
 =========
 
+2.0.0-beta.1 (July 11, 2024)
+--------------------
+
+**Important notice: this version 2 merges the three themes to a unique "Clean" theme.**
+
+Please check the new module configuration in Administration -> Modules -> Clean Theme -> Configuration.
+
+If you have created a custom child theme, update it to the new `Clean` parent theme and replace the colors to the new CSS variables available in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`.
+
+- Enh: Add module configuration to define colors, fonts, borders and other CSS parameters of the theme (Thanks to @felixhahnweilheim for the code generating CSS variable color variations from his [Flex Theme](https://github.com/felixhahnweilheim/humhub-flex-theme))
+- Enh: Use CSS variables instead of LESS variables
+- Chg: Remove `clean-base`, `clean-contrasted` and `clean-bordered` themes and replace them with the new `Clean` theme
+- Chg: CSS compiled for HumHub 1.16.1
+
 1.8.1 (June 19, 2024)
 --------------------
 - Enh: Remove the top arrow of the new search dropdown modal box
-- Enh: CSS compiled for HumHub 1.16.0
+- Chg: CSS compiled for HumHub 1.16.0
 
 1.8.0 (May 11, 2024)
 --------------------
-- Chg: CSS compiled for Humhub 1.16-beta.2
+- Chg: CSS compiled for HumHub 1.16-beta.2
 - Enh: Make the view files work even if the module is disabled
 
 1.7.5 (April 6, 2024)
@@ -74,20 +88,20 @@ Changelog
 
 1.5.2 (Nov 10, 2023)
 --------------------
-- Chg: CSS compiled for Humhub 1.15.0
+- Chg: CSS compiled for HumHub 1.15.0
 - Fix #8: Dark Themes: remove css maps for the dark stylesheets, according to https://github.com/felixhahnweilheim/humhub-dark-mode/pull/16 and CSS recompiled with fix https://github.com/felixhahnweilheim/humhub-dark-mode/pull/17 (thanks @felixhahnweilheim)
 
 1.5.1 (Sept 9, 2023)
 --------------------
 - Fix #6: Mobile: top bar issues with added items in the notifications block such as the night mode button
 - Enh #7: Dark CSS for the [Dark mode](https://marketplace.humhub.com/module/dark-mode/description) module (thanks @felixhahnweilheim)
-- Chg: CSS compiled for Humhub 1.15.0-beta.2 (changed online indicator position in the people directory)
+- Chg: CSS compiled for HumHub 1.15.0-beta.2 (changed online indicator position in the people directory)
 - Fix: Position of the online status indicator because of rounded profile image on this theme
 
 1.5.0 (August 1, 2023)
 --------------------
-- Chg: CSS compiled for Humhub 1.15
-- Chg: The minimal Humhub version is now 1.15
+- Chg: CSS compiled for HumHub 1.15
+- Chg: The minimal HumHub version is now 1.15
 - Chg: Colors on the Contrasted theme are more contrasted to meet visually impaired requirements (tested on https://www.whocanuse.com/)
 
 1.4.2 (May 24, 2023)
@@ -105,8 +119,8 @@ Changelog
 
 1.4.0 (March 11, 2023)
 --------------------
-- Chg: CSS compiled for Humhub 1.14
-- Chg: Minimal Humhub version is now 1.14
+- Chg: CSS compiled for HumHub 1.14
+- Chg: Minimal HumHub version is now 1.14
 - Fix: Removed the gap between the content and the top menu on mobile view (thanks @Eladnarlea)
 
 1.3.1 (February 10, 2023)
@@ -125,8 +139,8 @@ Changelog
 
 1.2.0 (January 3, 2023)
 --------------------
-- Chg: CSS compiled for Humhub 1.13
-- Chg: Minimal Humhub version is now 1.13
+- Chg: CSS compiled for HumHub 1.13
+- Chg: Minimal HumHub version is now 1.13
 
 1.1.1 (September 27, 2022)
 --------------------
@@ -144,7 +158,7 @@ Changelog
 0.3 (August 26, 2022)
 --------------------
 - Fix: Added compatibility with Theme Builder module (for `clean-base` theme)
-- Chg: Compiled for Humhub 1.12
+- Chg: Compiled for HumHub 1.12
 
 0.2 (August 23, 2022)
 --------------------

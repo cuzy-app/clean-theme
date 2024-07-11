@@ -1,12 +1,12 @@
 # Clean Theme
 
-Clean theme for Humhub based on the Community theme.
+"Clean" theme based on the community "HumHub" theme.
 
 ## Overview
 
 - Modern, smooth and uncluttered theme
-- Variants: Contrasted and Bordered
-- On large screens: the 2 top menu bars of the default theme are merged
+- Module configuration to customize colors, fonts, borders sizes and to add custom SCSS code (with upload/download functionality)
+- On large screens: the two top menu bars of the default theme are merged
 - On small screens:
     - the second menu becomes a bottom menu bar
     - on scrolling down, the top and bottom menus are hidden
@@ -15,7 +15,7 @@ Clean theme for Humhub based on the Community theme.
 - Adds the profile's header in the user's account pages
 - Compatible with the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode/description)
 - Possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
-- You can create a child theme to customize colors, fonts, etc. (see instructions below) or use the [Theme Builder module](https://marketplace.humhub.com/module/theme-builder) (works only on the `clean-base` theme).
+- You can create a child theme manually (see instructions below) or using the [Theme Builder module](https://marketplace.humhub.com/module/theme-builder)
 
 ## Configuration
 
@@ -31,13 +31,13 @@ If it's useful to you, please consider [making a donation](https://www.cuzy.app/
 
 ## Child themes
 
-To customize colors, fonts, etc., create a child theme (don't forget to copy img and ico folders).
-
 See [Documentation here](https://docs.humhub.org/docs/theme/overview) and [Wiki here](https://community.humhub.com/s/theming-appearance/wiki/52/Theme+creation).
 
-You can start with [this empty template](https://github.com/cuzy-app/clean-theme/blob/master/docs/clean-theme-contrasted-child.zip), which is a child theme of the "contrasted" theme.
+You can start with [this empty template](https://github.com/cuzy-app/clean-theme/blob/master/docs/Clean-Child.zip), which is a child theme of the `Clean` theme.
 
-Simply unzip it in the `/themes` root folder (not in `protected`).
+Use available CSS variables in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`.
+
+Unzip it in the `/themes` root folder (not in `protected`).
 
 ## Repository
 

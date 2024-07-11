@@ -6,10 +6,17 @@
  * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
-/** @noinspection MissedFieldInspection */
+use humhub\components\console\Application;
+use humhub\modules\cleanTheme\Events;
+
 return [
     'id' => 'clean-theme',
     'class' => humhub\modules\cleanTheme\Module::class,
     'namespace' => 'humhub\modules\cleanTheme',
-    'events' => []
+    'events' => [
+        [
+            'class' => Application::class,
+            'event' => Application::EVENT_ON_INIT,
+            'callback' => [Events::class, 'onConsoleApplicationInit']],
+    ]
 ];

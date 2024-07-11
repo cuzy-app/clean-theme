@@ -19,6 +19,6 @@ class CleanThemeLeftNavigationAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/humhub.clean.theme.leftNavigation.js',
+        'js/humhub.cleanTheme.leftNavigation.js',
     ];
 }

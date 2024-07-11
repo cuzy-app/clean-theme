@@ -9,18 +9,19 @@
 namespace humhub\modules\cleanTheme;
 
 use humhub\libs\DynamicConfig;
+use humhub\modules\cleanTheme\models\Configuration;
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
+use yii\base\Exception;
 use yii\helpers\Url;
 
+/**
+ *
+ * @property-read mixed $configUrl
+ * @property-read Configuration $configuration
+ */
 class Module extends \humhub\components\Module
 {
-    public const THEME_NAMES = [
-        'clean-base',
-        'clean-bordered',
-        'clean-contrasted',
-    ];
-
     /**
      * @inheridoc
      */
@@ -35,16 +36,28 @@ class Module extends \humhub\components\Module
     public bool $hideBottomMenuOnScrollDown = true; // On small screens only
     public bool $hideTextInBottomMenuItems = true; // On small screens only
     public bool $collapsibleLeftNavigation = false;
+    private ?Configuration $_configuration = null;
 
+    public function getConfiguration(): Configuration
+    {
+        if ($this->_configuration === null) {
+            $this->_configuration = new Configuration(['settingsManager' => $this->settings]);
+            $this->_configuration->loadBySettings();
+        }
+        return $this->_configuration;
+    }
 
     public function getName()
     {
-        return Yii::t('CleanThemeModule.config', 'Clean theme');
+        return 'Clean Theme';
     }
 
     public function getDescription()
     {
-        return Yii::t('CleanThemeModule.config', 'Clean theme for Humhub based on the Community theme');
+        return Yii::t('CleanThemeModule.config', '"{Clean}" theme based on the community "{HumHub}" theme', [
+            'Clean' => 'Clean',
+            'CommunityHumHub' => 'HumHub',
+        ]);
     }
 
     /**
@@ -65,29 +78,47 @@ class Module extends \humhub\components\Module
     }
 
     /**
-     * @return void
-     */
-    private function disableTheme()
-    {
-        foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if (in_array($theme->name, self::THEME_NAMES, true)) {
-                $ceTheme = ThemeHelper::getThemeByName('HumHub');
-                $ceTheme->activate();
-                break;
-            }
-        }
-    }
-
-    /**
      * @inheritdoc
      */
     public function enable()
     {
         if (parent::enable()) {
+            try {
+                $this->configuration->generateDynamicCSSFile();
+            } catch (Exception $e) {
+                Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'clean-theme');
+                return false;
+            }
             $this->enableTheme();
             return true;
         }
         return false;
+    }
+
+    public function update()
+    {
+        parent::update();
+
+        // Recreate dynamic CSS file because it was removed by module update
+        try {
+            $this->configuration->generateDynamicCSSFile();
+        } catch (Exception $e) {
+            Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'clean-theme');
+        }
+    }
+
+    /**
+     * @return void
+     */
+    private function disableTheme()
+    {
+        foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
+            if ($theme->name === 'Clean') {
+                $ceTheme = ThemeHelper::getThemeByName('HumHub');
+                $ceTheme->activate();
+                break;
+            }
+        }
     }
 
     /**
@@ -97,23 +128,15 @@ class Module extends \humhub\components\Module
     {
         // Check if already active
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if (in_array($theme->name, self::THEME_NAMES, true)) {
+            if ($theme->name === 'Clean') {
                 return;
             }
         }
 
-        $theme = ThemeHelper::getThemeByName($this->getBaseThemeName());
-        if ($theme !== null) {
-            $theme->activate();
+        $cleanTheme = ThemeHelper::getThemeByName('Clean');
+        if ($cleanTheme !== null) {
+            $cleanTheme->activate();
             DynamicConfig::rewrite();
         }
-    }
-
-    /**
-     * The base theme is the first of the list
-     */
-    public function getBaseThemeName(): string
-    {
-        return self::THEME_NAMES[0];
     }
 }

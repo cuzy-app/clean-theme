@@ -1,0 +1,29 @@
+//
+// List-Group
+// --------------------------------------------------
+
+// Remove left line
+.list-group-item {
+  border-left: none !important;
+  padding: 10px 15px;
+  transition: .25s;
+  font-size: var(--menu-font-size);
+}
+
+a.list-group-item {
+  color: var(--text-color-main);
+}
+
+a.list-group-item:hover,
+a.list-group-item.active,
+a.list-group-item.active:hover,
+a.list-group-item.active:focus {
+  border-left: none !important;
+  background-color: var(--primary);
+  color: var(--text-color-contrast);
+}
+
+a.list-group-item:hover {
+  background-color: var(--background-color-secondary);
+  color: var(--text-color-highlight);
+}

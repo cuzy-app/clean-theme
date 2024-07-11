@@ -1,9 +1,9 @@
 {
   "id": "clean-theme",
   "name": "Clean Theme",
-  "description": "Clean theme for Humhub based on the Community theme",
+  "description": "Clean theme based on the community HumHub theme",
   "keywords": [],
-  "version": "1.8.1",
+  "version": "2.0-beta.1",
   "humhub": {
     "minVersion": "1.16"
   },
@@ -19,6 +19,8 @@
     "resources/screen_1.png",
     "resources/screen_2.png",
     "resources/screen_3.png",
-    "resources/screen_4.png"
+    "resources/screen_4.png",
+    "resources/screen_5.png",
+    "resources/screen_6.png"
   ]
 }
