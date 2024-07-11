@@ -17,10 +17,12 @@ This will create the files in `resources/less`. Then, save the module configurat
 
 ## Upload to the Marketplace
 
+Reset module configuration to default.
+
 The ZIP file mustn't contain:
-- build-modified-less-and-css.sh
 - .gitignore
+- .git
 - composer.lock
 - composer.phar
+- build-modified-less-and-css.sh
 - resources/less/humhub.modified
-- resources/css/humhub.clean-theme.dynamic.css
