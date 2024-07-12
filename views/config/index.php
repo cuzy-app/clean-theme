@@ -58,7 +58,7 @@ $colorInputWidgetOptions = ['options' => ['placeholder' => Yii::t('CleanThemeMod
 
         <div id="clean-theme-configuration-import-export">
             <h5><strong><?= Yii::t('CleanThemeModule.config', 'Import/Export the configuration') ?></strong></h5>
-            <div style="display: flex; justify-content: space-between">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <?php $form = ActiveForm::begin([
                     'layout' => 'inline',
                 ]); ?>
