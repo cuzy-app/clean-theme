@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.0-beta.2 (Unreleased)
+2.0.0-beta.2 (July 12, 2024)
 --------------------
 - Fix: media panels (such as right panels) font size
 - Fix: remove panel borders if in another panel
