@@ -1,9 +1,11 @@
 Changelog
 =========
 
-Unreleased
+2.0.0-beta.2 (Unreleased)
 --------------------
 - Fix: media panels (such as right panels) font size
+- Fix: remove panel borders if in another panel
+- Fix #21: top bar height affects bottom menu and scrolling bug
 
 2.0.0-beta.1 (July 11, 2024)
 --------------------
