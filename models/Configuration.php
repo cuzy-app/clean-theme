@@ -33,6 +33,10 @@ class Configuration extends Model
     public const UNSUPPORTED_LESS_FUNCTIONS = ['saturate', 'desaturate', 'spin'];
     public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css';
     public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
+
+    /**
+     * This list must contain all CSS attribute names
+     */
     public const CSS_ATTRIBUTE_UNITS = [
         'containerMaxWidth' => 'px',
         'default' => '',
@@ -139,6 +143,9 @@ class Configuration extends Model
     public string $topMenuButtonHoverBackgroundColor = '#f7f7f7';
     public string $topMenuButtonHoverTextColor = '#242424';
     public string $scss = '';
+    public string|bool $hideTopMenuOnScrollDown = true;
+    public string|bool $hideBottomMenuOnScrollDown = true;
+    public string|bool $hideTextInBottomMenuItems = true;
 
     public static function getJustifyContentOptions(): array
     {
@@ -161,11 +168,19 @@ class Configuration extends Model
         ];
     }
 
+    public static function getCssAttributeNames()
+    {
+        return array_keys(static::CSS_ATTRIBUTE_UNITS);
+    }
+
     public static function getAllAttributeNames()
     {
-        $attributeNames = array_keys(static::CSS_ATTRIBUTE_UNITS);
-        $attributeNames[] = 'scss';
-        return $attributeNames;
+        return array_merge(static::getCssAttributeNames(), [
+            'scss',
+            'hideTopMenuOnScrollDown',
+            'hideBottomMenuOnScrollDown',
+            'hideTextInBottomMenuItems',
+        ]);
     }
 
     private static function isFontAttribute($attributeName): bool
@@ -179,7 +194,8 @@ class Configuration extends Model
     public function rules()
     {
         return [
-            [static::getAllAttributeNames(), 'string'],
+            [array_merge(static::getCssAttributeNames(), ['scss']), 'string'],
+            [['hideTopMenuOnScrollDown', 'hideBottomMenuOnScrollDown', 'hideTextInBottomMenuItems'], 'boolean'],
         ];
     }
 
@@ -240,6 +256,9 @@ class Configuration extends Model
             'topMenuButtonHoverBackgroundColor' => Yii::t('CleanThemeModule.config', 'Button background color on hover'),
             'topMenuButtonHoverTextColor' => Yii::t('CleanThemeModule.config', 'Button text color on hover'),
             'scss' => Yii::t('CleanThemeModule.config', 'Custom CSS'),
+            'hideTopMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the top menu on scroll down'),
+            'hideBottomMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the bottom menu on scroll down'),
+            'hideTextInBottomMenuItems' => Yii::t('CleanThemeModule.config', 'Hide the text of the bottom menu buttons'),
         ];
     }
 
@@ -293,6 +312,9 @@ class Configuration extends Model
         foreach (static::getAllAttributeNames() as $attributeName) {
             $this->$attributeName = $this->settingsManager->get($attributeName, $this->$attributeName);
         }
+        $this->hideTopMenuOnScrollDown = (bool)$this->hideTopMenuOnScrollDown;
+        $this->hideBottomMenuOnScrollDown = (bool)$this->hideBottomMenuOnScrollDown;
+        $this->hideTextInBottomMenuItems = (bool)$this->hideTextInBottomMenuItems;
     }
 
     /**
@@ -308,8 +330,9 @@ class Configuration extends Model
             $this->panelBorderWidth = '0';
         }
 
+        // Reset to default value if empty CSS value was entered
         $defaultConfiguration = new Configuration();
-        foreach (static::getAllAttributeNames() as $attributeName) {
+        foreach (static::getCssAttributeNames() as $attributeName) {
             // If empty value, reset to default value
             if (($this->$attributeName === '')) {
                 $this->$attributeName = $defaultConfiguration->$attributeName;
@@ -318,6 +341,10 @@ class Configuration extends Model
                 // Remove + in case the URL of the font was entered
                 $this->$attributeName = str_replace('+', ' ', $this->$attributeName);
             }
+        }
+
+        // Save configuration attributes
+        foreach (static::getAllAttributeNames() as $attributeName) {
             $this->settingsManager->set($attributeName, $this->$attributeName);
         }
 

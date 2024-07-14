@@ -26,15 +26,10 @@ class Module extends \humhub\components\Module
      * @inheridoc
      */
     public string $icon = 'circle-o-notch';
-
     /**
      * @inheridoc
      */
     public $resourcesPath = 'resources';
-
-    public bool $hideTopMenuOnScrollDown = true; // On small screens only
-    public bool $hideBottomMenuOnScrollDown = true; // On small screens only
-    public bool $hideTextInBottomMenuItems = true; // On small screens only
     public bool $collapsibleLeftNavigation = false;
     private ?Configuration $_configuration = null;
 

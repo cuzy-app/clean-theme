@@ -23,8 +23,8 @@ AppAsset::register($this);
 CleanThemeAsset::register($this);
 CleanThemeTopNavigationAsset::register($this);
 $this->registerJsConfig('cleanTheme.topNavigation', [
-    'hideTopMenuOnScrollDown' => (bool)$module?->hideTopMenuOnScrollDown,
-    'hideBottomMenuOnScrollDown' => (bool)$module?->hideBottomMenuOnScrollDown,
+    'hideTopMenuOnScrollDown' => $module->configuration->hideTopMenuOnScrollDown,
+    'hideBottomMenuOnScrollDown' => $module->configuration->hideBottomMenuOnScrollDown,
 ]);
 ?>
 
@@ -56,7 +56,8 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
             <?= SiteLogo::widget() ?>
         </div>
 
-        <ul id="top-menu-nav" class="nav<?= $module?->hideTextInBottomMenuItems ? ' hide-menu-item-texts' : '' ?>">
+        <ul id="top-menu-nav"
+            class="nav<?= $module->configuration->hideTextInBottomMenuItems ? ' hide-menu-item-texts' : '' ?>">
             <!-- load space chooser widget -->
             <?= Chooser::widget() ?>
 

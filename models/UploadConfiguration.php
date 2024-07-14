@@ -41,7 +41,7 @@ class UploadConfiguration extends Model
             $configurationValues = json_decode((string)file_get_contents($this->jsonConfigurationFile->tempName), true);
         }
 
-        if (!$configurationValues) {
+        if (empty($configurationValues)) {
             return false;
         }
 

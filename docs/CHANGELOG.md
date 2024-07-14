@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.0-beta.3 (July 14, 2024)
+--------------------
+- Enh: Move `hideTopMenuOnScrollDown`, `hideBottomMenuOnScrollDown` and `hideTextInBottomMenuItems` `Module` attributes to the module configuration GUI
+
 2.0.0-beta.2 (July 12, 2024)
 --------------------
 - Fix: media panels (such as right panels) font size

@@ -145,6 +145,12 @@ $colorInputWidgetOptions = ['options' => ['placeholder' => Yii::t('CleanThemeMod
             <?= $form->field($model, 'topMenuButtonHoverTextColor')->widget(ColorInput::class, $colorInputWidgetOptions) ?>
             <?= $form->endCollapsibleFields() ?>
 
+            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Menus on small screens')) ?>
+            <?= $form->field($model, 'hideTopMenuOnScrollDown')->checkbox() ?>
+            <?= $form->field($model, 'hideBottomMenuOnScrollDown')->checkbox() ?>
+            <?= $form->field($model, 'hideTextInBottomMenuItems')->checkbox() ?>
+            <?= $form->endCollapsibleFields() ?>
+
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Other settings')) ?>
             <?= $form->field($model, 'containerMaxWidth')->textInput(['type' => 'number', 'step' => 1, 'min' => 800]) ?>
             <?= $form->field($model, 'menuBorderColor')->widget(ColorInput::class, $colorInputWidgetOptions) ?>

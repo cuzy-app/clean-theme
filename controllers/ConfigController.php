@@ -33,9 +33,12 @@ class ConfigController extends Controller
             return $this->refresh();
         }
 
-        if (isset($post['UploadConfiguration']) && $uploadModel->load($post) && $uploadModel->validate() && $uploadModel->save()) {
-            $this->view->saved();
-            return $this->refresh();
+        if (isset($post['UploadConfiguration'])) {
+            if ($uploadModel->load($post) && $uploadModel->validate() && $uploadModel->save()) {
+                $this->view->saved();
+                return $this->refresh();
+            }
+            $this->view->error('Could not upload the configuration: ' . Json::encode($uploadModel->getErrors()));
         }
 
         return $this->render('index', [
@@ -50,13 +53,14 @@ class ConfigController extends Controller
         $module = $this->module;
         $configuration = $module->configuration;
 
+        $defaultConfiguration = new Configuration();
         foreach (Configuration::getAllAttributeNames() as $attributeName) {
-            $configuration->$attributeName = '';
+            $configuration->$attributeName = $defaultConfiguration->$attributeName;
         }
         $configuration->save();
 
         $this->view->success(Yii::t('CleanThemeModule.config', 'Reset successful!'));
-        return $this->render('reset-all-to-default'); // Refresh all page an redirect to index
+        return $this->render('reset-all-to-default'); // Refresh all page and redirect to index
     }
 
     public function actionDownloadJson()
