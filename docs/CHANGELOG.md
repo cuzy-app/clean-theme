@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.0.0-beta.4 (July 14, 2024)
 --------------------
 - Fix: Add missing Clean Theme assets to User layout (the one displayed without the top menu)
 
