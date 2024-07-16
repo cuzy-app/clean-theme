@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: Add missing Clean Theme assets to User layout (the one displayed without the top menu)
+
 2.0.0-beta.3 (July 14, 2024)
 --------------------
 - Enh: Move `hideTopMenuOnScrollDown`, `hideBottomMenuOnScrollDown` and `hideTextInBottomMenuItems` `Module` attributes to the module configuration GUI
