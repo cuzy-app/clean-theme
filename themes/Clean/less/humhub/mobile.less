@@ -94,8 +94,14 @@
           height: auto;
           line-height: 12px !important;
           font-size: 10px;
+          color: var(--primary);
 
-          &:hover {
+          &.active,
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: var(--primary) !important;
+            color: var(--background-color-secondary) !important;
             border-bottom: none !important;
           }
 

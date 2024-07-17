@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.0-beta.5 (July 17, 2024)
+--------------------
+- Fix: When Top Menu colors are changed, don't apply the new colors to the bottom menu on mobile
+
 2.0.0-beta.4 (July 14, 2024)
 --------------------
 - Fix: Add missing Clean Theme assets to User layout (the one displayed without the top menu)
