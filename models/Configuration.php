@@ -118,7 +118,7 @@ class Configuration extends Model
     public string $backgroundColorHighlightSoft = '#f2f9fb';
     public string $fontFamily = 'Open Sans';
     public string $headingFontFamily = 'Open Sans';
-    public string $fontSize = '13';
+    public string $fontSize = '14';
     public string $phFontSize = '16'; // Panel Heading
     public string $menuFontSize = '12';
     public string $h1FontSize = '1.7';

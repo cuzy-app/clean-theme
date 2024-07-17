@@ -4,6 +4,7 @@ Changelog
 Unreleased
 --------------------
 - Enh: Add a rule to display a warning if the SCSS cannot be compiled with the error line
+- Chg: Default font size changed from 13 to 14 pixels for better readability
 
 2.0.0-beta.5 (July 17, 2024)
 --------------------
