@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Ngjyra kryesore e tekstit',
   'Menu border color (tab and dropdown menus)' => 'Ngjyra e kufirit të menysë (menytë e skedës dhe menysë rënëse)',
   'Menu font size' => 'Madhësia e shkronjave të menysë',
+  'Menu text color' => 'Ngjyra e tekstit të menysë',
+  'Menus' => 'Menytë',
   'Menus on small screens' => 'Menutë në ekranet e vogla',
   'Navigation alignment' => 'Shtrirja e navigimit',
   'Other settings' => 'Cilësimet e tjera',

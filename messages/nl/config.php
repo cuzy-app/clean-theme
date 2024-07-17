@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Kleur van de hoofdtekst',
   'Menu border color (tab and dropdown menus)' => 'Kleur van menurand (tabblad- en vervolgkeuzemenu\'s)',
   'Menu font size' => 'Lettergrootte menu',
+  'Menu text color' => 'Kleur menutekst',
+  'Menus' => 'Menu\'s',
   'Menus on small screens' => 'Menu\'s op kleine schermen',
   'Navigation alignment' => 'Uitlijning van de navigatie',
   'Other settings' => 'Andere instellingen',

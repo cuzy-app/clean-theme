@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'لون النص الرئيسي',
   'Menu border color (tab and dropdown menus)' => 'لون حدود القائمة (علامات التبويب والقوائم المنسدلة)',
   'Menu font size' => 'حجم خط القائمة',
+  'Menu text color' => 'لون نص القائمة',
+  'Menus' => 'القوائم',
   'Menus on small screens' => 'القوائم على الشاشات الصغيرة',
   'Navigation alignment' => 'محاذاة الملاحة',
   'Other settings' => 'اعدادات اخرى',

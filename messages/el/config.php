@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Κύριο χρώμα κειμένου',
   'Menu border color (tab and dropdown menus)' => 'Χρώμα περιγράμματος μενού (καρτέλα και αναπτυσσόμενα μενού)',
   'Menu font size' => 'Μέγεθος γραμματοσειράς μενού',
+  'Menu text color' => 'Χρώμα κειμένου μενού',
+  'Menus' => 'Μενού',
   'Menus on small screens' => 'Μενού σε μικρές οθόνες',
   'Navigation alignment' => 'Ευθυγράμμιση πλοήγησης',
   'Other settings' => 'Αλλες ρυθμίσεις',

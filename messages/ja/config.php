@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'メインテキストの色',
   'Menu border color (tab and dropdown menus)' => 'メニューの境界線の色（タブとドロップダウンメニュー）',
   'Menu font size' => 'メニューのフォントサイズ',
+  'Menu text color' => 'メニューテキストの色',
+  'Menus' => 'メニュー',
   'Menus on small screens' => '小さな画面上のメニュー',
   'Navigation alignment' => 'ナビゲーションの配置',
   'Other settings' => 'その他の設定',

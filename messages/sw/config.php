@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Rangi kuu ya maandishi',
   'Menu border color (tab and dropdown menus)' => 'Rangi ya mpaka wa menyu (kichupo na menyu kunjuzi)',
   'Menu font size' => 'Ukubwa wa fonti ya menyu',
+  'Menu text color' => 'Rangi ya maandishi ya menyu',
+  'Menus' => 'Menyu',
   'Menus on small screens' => 'Menyu kwenye skrini ndogo',
   'Navigation alignment' => 'Upangaji wa urambazaji',
   'Other settings' => 'Mipangilio mingine',

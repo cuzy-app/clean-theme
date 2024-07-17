@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Warna teks utama',
   'Menu border color (tab and dropdown menus)' => 'Warna batas menu (menu tab dan dropdown)',
   'Menu font size' => 'Ukuran font menu',
+  'Menu text color' => 'Warna teks menu',
+  'Menus' => 'Menu',
   'Menus on small screens' => 'Menu di layar kecil',
   'Navigation alignment' => 'Penyelarasan navigasi',
   'Other settings' => 'Pengaturan lainnya',

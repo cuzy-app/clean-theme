@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'ዋናው የጽሑፍ ቀለም',
   'Menu border color (tab and dropdown menus)' => 'የምናሌ ድንበር ቀለም (ትር እና ተቆልቋይ ምናሌዎች)',
   'Menu font size' => 'የምናሌ ቅርጸ-ቁምፊ መጠን',
+  'Menu text color' => 'የምናሌ ጽሑፍ ቀለም',
+  'Menus' => 'ምናሌዎች',
   'Menus on small screens' => 'በትንሽ ማያ ገጾች ላይ ምናሌዎች',
   'Navigation alignment' => 'የአሰሳ አሰላለፍ',
   'Other settings' => 'ሌሎች ቅንብሮች',

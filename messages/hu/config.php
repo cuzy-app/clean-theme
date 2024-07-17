@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Fő szöveg színe',
   'Menu border color (tab and dropdown menus)' => 'Menüszegély színe (lap és legördülő menük)',
   'Menu font size' => 'Menü betűmérete',
+  'Menu text color' => 'A menü szövegének színe',
+  'Menus' => 'Menük',
   'Menus on small screens' => 'Menük kis képernyőkön',
   'Navigation alignment' => 'Navigációs igazítás',
   'Other settings' => 'Egyéb beállitások',

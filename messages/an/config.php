@@ -57,6 +57,8 @@ return array (
   'Main text color' => '',
   'Menu border color (tab and dropdown menus)' => '',
   'Menu font size' => '',
+  'Menu text color' => '',
+  'Menus' => '',
   'Menus on small screens' => '',
   'Navigation alignment' => '',
   'Other settings' => '',

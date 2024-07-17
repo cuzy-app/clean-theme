@@ -57,6 +57,8 @@ return array (
   'Main text color' => '主文本颜色',
   'Menu border color (tab and dropdown menus)' => '菜单边框颜色（选项卡和下拉菜单）',
   'Menu font size' => '菜单字体大小',
+  'Menu text color' => '菜单文字颜色',
+  'Menus' => '菜单',
   'Menus on small screens' => '小屏幕上的菜单',
   'Navigation alignment' => '导航对齐',
   'Other settings' => '其他设置',

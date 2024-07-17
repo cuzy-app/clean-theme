@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Asosiy matn rangi',
   'Menu border color (tab and dropdown menus)' => 'Menyu chegarasi rangi (yorliq va ochiladigan menyular)',
   'Menu font size' => 'Menyu shrift o\'lchami',
+  'Menu text color' => 'Menyu matn rangi',
+  'Menus' => 'Menyular',
   'Menus on small screens' => 'Kichik ekranlarda menyular',
   'Navigation alignment' => 'Navigatsiyani tekislash',
   'Other settings' => 'Boshqa sozlamalar',

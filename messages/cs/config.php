@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Barva hlavního textu',
   'Menu border color (tab and dropdown menus)' => 'Barva okraje nabídky (karty a rozbalovací nabídky)',
   'Menu font size' => 'Velikost písma nabídky',
+  'Menu text color' => 'Barva textu nabídky',
+  'Menus' => 'Menu',
   'Menus on small screens' => 'Menu na malých obrazovkách',
   'Navigation alignment' => 'Zarovnání navigace',
   'Other settings' => 'Další nastavení',

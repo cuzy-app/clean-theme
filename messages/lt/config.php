@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Pagrindinė teksto spalva',
   'Menu border color (tab and dropdown menus)' => 'Meniu kraštinės spalva (skirtukas ir išskleidžiamieji meniu)',
   'Menu font size' => 'Meniu šrifto dydis',
+  'Menu text color' => 'Meniu teksto spalva',
+  'Menus' => 'Meniu',
   'Menus on small screens' => 'Meniu mažuose ekranuose',
   'Navigation alignment' => 'Navigacijos lygiavimas',
   'Other settings' => 'Kiti nustatymai',

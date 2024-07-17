@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Màu văn bản chính',
   'Menu border color (tab and dropdown menus)' => 'Màu đường viền menu (tab và menu thả xuống)',
   'Menu font size' => 'Kích thước phông chữ của menu',
+  'Menu text color' => 'Màu văn bản trình đơn',
+  'Menus' => 'Thực đơn',
   'Menus on small screens' => 'Menu trên màn hình nhỏ',
   'Navigation alignment' => 'Căn chỉnh điều hướng',
   'Other settings' => 'Các thiết lập khác',

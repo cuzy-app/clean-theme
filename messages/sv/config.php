@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Huvudtextfärg',
   'Menu border color (tab and dropdown menus)' => 'Menykantfärg (flik och rullgardinsmenyer)',
   'Menu font size' => 'Meny teckenstorlek',
+  'Menu text color' => 'Menytextfärg',
+  'Menus' => 'Menyer',
   'Menus on small screens' => 'Menyer på små skärmar',
   'Navigation alignment' => 'Navigeringsinriktning',
   'Other settings' => 'Andra inställningar',

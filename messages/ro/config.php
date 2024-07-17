@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Culoarea principală a textului',
   'Menu border color (tab and dropdown menus)' => 'Culoarea marginii meniului (filă și meniuri drop-down)',
   'Menu font size' => 'Dimensiunea fontului meniului',
+  'Menu text color' => 'Culoarea textului meniului',
+  'Menus' => 'Meniuri',
   'Menus on small screens' => 'Meniuri pe ecrane mici',
   'Navigation alignment' => 'Alinierea navigației',
   'Other settings' => 'Alte setari',

@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Ana metin rengi',
   'Menu border color (tab and dropdown menus)' => 'Menü kenarlığı rengi (sekme ve açılır menüler)',
   'Menu font size' => 'Menü yazı tipi boyutu',
+  'Menu text color' => 'Menü metni rengi',
+  'Menus' => 'Menüler',
   'Menus on small screens' => 'Küçük ekranlardaki menüler',
   'Navigation alignment' => 'Gezinme hizalaması',
   'Other settings' => 'Diğer ayarlar',

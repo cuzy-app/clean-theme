@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Hovedtekstfarve',
   'Menu border color (tab and dropdown menus)' => 'Menukantfarve (fane- og rullemenuer)',
   'Menu font size' => 'Menuens skriftstørrelse',
+  'Menu text color' => 'Menu tekst farve',
+  'Menus' => 'Menuer',
   'Menus on small screens' => 'Menuer på små skærme',
   'Navigation alignment' => 'Navigationsjustering',
   'Other settings' => 'Andre indstillinger',

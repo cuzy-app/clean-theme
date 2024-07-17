@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Glavna boja teksta',
   'Menu border color (tab and dropdown menus)' => 'Boja obruba izbornika (kartice i padajući izbornici)',
   'Menu font size' => 'Veličina fonta izbornika',
+  'Menu text color' => 'Boja teksta izbornika',
+  'Menus' => 'Izbornici',
   'Menus on small screens' => 'Izbornici na malim ekranima',
   'Navigation alignment' => 'Usklađivanje navigacije',
   'Other settings' => 'Ostale postavke',

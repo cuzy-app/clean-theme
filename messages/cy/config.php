@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Lliw prif destun',
   'Menu border color (tab and dropdown menus)' => 'Lliw ffin y ddewislen (tab a dewislenni)',
   'Menu font size' => 'Maint ffont y ddewislen',
+  'Menu text color' => 'Lliw testun dewislen',
+  'Menus' => 'Bwydlenni',
   'Menus on small screens' => 'Bwydlenni ar sgriniau bach',
   'Navigation alignment' => 'Aliniad llywio',
   'Other settings' => 'Gosodiadau eraill',

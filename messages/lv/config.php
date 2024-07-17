@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Galvenā teksta krāsa',
   'Menu border color (tab and dropdown menus)' => 'Izvēlnes apmales krāsa (cilnes un nolaižamās izvēlnes)',
   'Menu font size' => 'Izvēlnes fonta lielums',
+  'Menu text color' => 'Izvēlnes teksta krāsa',
+  'Menus' => 'Izvēlnes',
   'Menus on small screens' => 'Izvēlnes uz maziem ekrāniem',
   'Navigation alignment' => 'Navigācijas izlīdzināšana',
   'Other settings' => 'Citi iestatījumi',

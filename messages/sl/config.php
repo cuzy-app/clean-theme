@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Glavna barva besedila',
   'Menu border color (tab and dropdown menus)' => 'Barva obrobe menija (zavihek in spustni meniji)',
   'Menu font size' => 'Velikost pisave menija',
+  'Menu text color' => 'Barva besedila menija',
+  'Menus' => 'Meniji',
   'Menus on small screens' => 'Meniji na malih zaslonih',
   'Navigation alignment' => 'Poravnava navigacije',
   'Other settings' => 'Druge nastavitve',

@@ -57,6 +57,8 @@ return array (
   'Main text color' => '본문 색상',
   'Menu border color (tab and dropdown menus)' => '메뉴 테두리 색상(탭 및 드롭다운 메뉴)',
   'Menu font size' => '메뉴 글꼴 크기',
+  'Menu text color' => '메뉴 텍스트 색상',
+  'Menus' => '메뉴',
   'Menus on small screens' => '작은 화면의 메뉴',
   'Navigation alignment' => '탐색 정렬',
   'Other settings' => '다른 설정',

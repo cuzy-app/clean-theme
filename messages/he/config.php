@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'צבע טקסט ראשי',
   'Menu border color (tab and dropdown menus)' => 'צבע גבול התפריט (כרטיסיות ותפריטים נפתחים)',
   'Menu font size' => 'גודל גופן התפריט',
+  'Menu text color' => 'צבע טקסט בתפריט',
+  'Menus' => 'תפריטים',
   'Menus on small screens' => 'תפריטים על מסכים קטנים',
   'Navigation alignment' => 'יישור ניווט',
   'Other settings' => 'הגדרות אחרות',

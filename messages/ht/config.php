@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Koulè tèks prensipal la',
   'Menu border color (tab and dropdown menus)' => 'Koulè fwontyè meni (onglet ak meni deroulant)',
   'Menu font size' => 'Gwosè font meni an',
+  'Menu text color' => 'Koulè tèks meni an',
+  'Menus' => 'Meni yo',
   'Menus on small screens' => 'Meni sou ti ekran',
   'Navigation alignment' => 'Aliyman navigasyon',
   'Other settings' => 'Lòt paramèt',

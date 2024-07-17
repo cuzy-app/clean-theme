@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Testuaren kolore nagusia',
   'Menu border color (tab and dropdown menus)' => 'Menuaren ertzaren kolorea (fitxa eta goitibeherako menuak)',
   'Menu font size' => 'Menuaren letra-tamaina',
+  'Menu text color' => 'Menuaren testuaren kolorea',
+  'Menus' => 'Menuak',
   'Menus on small screens' => 'Menuak pantaila txikietan',
   'Navigation alignment' => 'Nabigazio-lerrokatzea',
   'Other settings' => 'Beste ezarpen batzuk',

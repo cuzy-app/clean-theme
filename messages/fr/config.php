@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Couleur du texte principal',
   'Menu border color (tab and dropdown menus)' => 'Couleur de la bordure de menu (onglets et menus déroulants)',
   'Menu font size' => 'Taille de la police des menus',
+  'Menu text color' => 'Couleur du texte du menu',
+  'Menus' => 'Menus',
   'Menus on small screens' => 'Menus sur petits écrans',
   'Navigation alignment' => 'Alignement de la navigation',
   'Other settings' => 'Autres réglages',

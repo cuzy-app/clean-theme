@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Color del texto principal',
   'Menu border color (tab and dropdown menus)' => 'Color del borde del menú (pestañas y menús desplegables)',
   'Menu font size' => 'Tamaño de fuente del menú',
+  'Menu text color' => 'Color del texto del menú',
+  'Menus' => 'Menús',
   'Menus on small screens' => 'Menús en pantallas pequeñas',
   'Navigation alignment' => 'Alineación de navegación',
   'Other settings' => 'Otros ajustes',

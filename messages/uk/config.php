@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Основний колір тексту',
   'Menu border color (tab and dropdown menus)' => 'Колір рамки меню (вкладки та спадні меню)',
   'Menu font size' => 'Розмір шрифту меню',
+  'Menu text color' => 'Колір тексту меню',
+  'Menus' => 'Меню',
   'Menus on small screens' => 'Меню на маленьких екранах',
   'Navigation alignment' => 'Вирівнювання навігації',
   'Other settings' => 'Інші налаштування',

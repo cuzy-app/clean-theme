@@ -47,7 +47,6 @@ class Configuration extends Model
         'warning' => '',
         'danger' => '',
         'link' => '',
-        'menuBorderColor' => '',
         'textColorHeading' => '',
         'textColorMain' => '',
         'textColorDefault' => '',
@@ -66,7 +65,6 @@ class Configuration extends Model
         'headingFontFamily' => '',
         'fontSize' => 'px',
         'phFontSize' => 'px',
-        'menuFontSize' => 'px',
         'h1FontSize' => 'em',
         'h1StreamFontSize' => 'em',
         'h2FontSize' => 'em',
@@ -82,6 +80,9 @@ class Configuration extends Model
         'panelBorderColor' => '',
         'panelBorderRadius' => 'px',
         'panelBoxShadow' => '',
+        'menuFontSize' => 'px',
+        'menuTextColor' => '',
+        'menuBorderColor' => '',
         'topBarHeight' => 'px',
         'topBarFontSize' => 'px',
         'topMenuNavJustifyContent' => '',
@@ -101,7 +102,6 @@ class Configuration extends Model
     public string $warning = '#AF640E';
     public string $danger = '#EC0426';
     public string $link = '#1A7DB2';
-    public string $menuBorderColor = '#e4eaec';
     public string $textColorHeading = '#37474f';
     public string $textColorMain = '#31414a';
     public string $textColorDefault = '#4b4b4b';
@@ -120,7 +120,6 @@ class Configuration extends Model
     public string $headingFontFamily = 'Open Sans';
     public string $fontSize = '14';
     public string $phFontSize = '16'; // Panel Heading
-    public string $menuFontSize = '12';
     public string $h1FontSize = '1.7';
     public string $h1StreamFontSize = '1.45';
     public string $h2FontSize = '1.5';
@@ -136,6 +135,9 @@ class Configuration extends Model
     public string $panelBorderColor = '#c7c9e7';
     public string $panelBorderRadius = '4';
     public string $panelBoxShadow = '0 1px 10px #00000019';
+    public string $menuFontSize = '12';
+    public string $menuTextColor = '#31414a';
+    public string $menuBorderColor = '#e4eaec';
     public string $topBarHeight = '50';
     public string $topBarFontSize = '10';
     public string $topMenuNavJustifyContent = 'center';
@@ -221,7 +223,6 @@ class Configuration extends Model
             'warning' => Yii::t('CleanThemeModule.config', 'Main "Warning" color'),
             'danger' => Yii::t('CleanThemeModule.config', 'Main "Danger" color'),
             'link' => Yii::t('CleanThemeModule.config', 'Main color for links'),
-            'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Menu border color (tab and dropdown menus)'),
             'textColorHeading' => Yii::t('CleanThemeModule.config', 'Headings text color'),
             'textColorMain' => Yii::t('CleanThemeModule.config', 'Main text color'),
             'textColorDefault' => Yii::t('CleanThemeModule.config', 'Default text color for icons, buttons, etc.'),
@@ -239,7 +240,6 @@ class Configuration extends Model
             'fontFamily' => Yii::t('CleanThemeModule.config', 'Base font family'),
             'headingFontFamily' => Yii::t('CleanThemeModule.config', 'Headings font family'),
             'fontSize' => Yii::t('CleanThemeModule.config', 'Base font size'),
-            'menuFontSize' => Yii::t('CleanThemeModule.config', 'Menu font size'),
             'phFontSize' => Yii::t('CleanThemeModule.config', 'Panels heading font size'),
             'h1FontSize' => Yii::t('CleanThemeModule.config', '1st level header font size'),
             'h1StreamFontSize' => Yii::t('CleanThemeModule.config', '1st level header font size in stream'),
@@ -256,6 +256,9 @@ class Configuration extends Model
             'panelBorderColor' => Yii::t('CleanThemeModule.config', 'Panels border color'),
             'panelBorderRadius' => Yii::t('CleanThemeModule.config', 'Panels border radius'),
             'panelBoxShadow' => Yii::t('CleanThemeModule.config', 'Panels box shadow'),
+            'menuFontSize' => Yii::t('CleanThemeModule.config', 'Menu font size'),
+            'menuTextColor' => Yii::t('CleanThemeModule.config', 'Menu text color'),
+            'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Menu border color (tab and dropdown menus)'),
             'topBarHeight' => Yii::t('CleanThemeModule.config', 'Top bar height'),
             'topBarFontSize' => Yii::t('CleanThemeModule.config', 'Button font size'),
             'topMenuNavJustifyContent' => Yii::t('CleanThemeModule.config', 'Navigation alignment'),

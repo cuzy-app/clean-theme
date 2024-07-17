@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'رنگ متن اصلی',
   'Menu border color (tab and dropdown menus)' => 'رنگ حاشیه منو (برگه و منوهای کشویی)',
   'Menu font size' => 'اندازه فونت منو',
+  'Menu text color' => 'رنگ متن منو',
+  'Menus' => 'منوها',
   'Menus on small screens' => 'منوها روی صفحه نمایش های کوچک',
   'Navigation alignment' => 'تراز ناوبری',
   'Other settings' => 'تنظیمات دیگر',

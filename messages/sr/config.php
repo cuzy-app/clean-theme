@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Боја главног текста',
   'Menu border color (tab and dropdown menus)' => 'Боја ивице менија (картица и падајући менији)',
   'Menu font size' => 'Величина фонта менија',
+  'Menu text color' => 'Боја текста менија',
+  'Menus' => 'Менији',
   'Menus on small screens' => 'Менији на малим екранима',
   'Navigation alignment' => 'Поравнање навигације',
   'Other settings' => 'Остала подешавања',

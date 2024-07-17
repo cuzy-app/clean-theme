@@ -57,6 +57,8 @@ return array (
   'Main text color' => 'Päätekstin väri',
   'Menu border color (tab and dropdown menus)' => 'Valikon reunan väri (välilehti ja avattavat valikot)',
   'Menu font size' => 'Valikon kirjasinkoko',
+  'Menu text color' => 'Valikon tekstin väri',
+  'Menus' => 'Valikot',
   'Menus on small screens' => 'Valikot pienillä näytöillä',
   'Navigation alignment' => 'Navigoinnin kohdistus',
   'Other settings' => 'Muut asetukset',
