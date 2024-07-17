@@ -18,6 +18,7 @@ use yii\base\Exception;
 use yii\base\Model;
 use yii\helpers\Html;
 use yii\helpers\Inflector;
+use yii\web\ServerErrorHttpException;
 
 /**
  *
@@ -196,6 +197,13 @@ class Configuration extends Model
         return [
             [array_merge(static::getCssAttributeNames(), ['scss']), 'string'],
             [['hideTopMenuOnScrollDown', 'hideBottomMenuOnScrollDown', 'hideTextInBottomMenuItems'], 'boolean'],
+            ['scss', function ($attribute, $params, $validator) {
+                try {
+                    $this->getCssFromScss();
+                } catch (ServerErrorHttpException $e) {
+                    $this->addError($attribute, $e->getMessage());
+                }
+            }],
         ];
     }
 
@@ -439,7 +447,8 @@ class Configuration extends Model
     }
 
     /**
-     * @throws Exception
+     * @return string
+     * @throws ServerErrorHttpException
      */
     private function getCssFromScss(): string
     {
@@ -452,7 +461,7 @@ class Configuration extends Model
         try {
             return $compiler->compileString($scss)->getCss();
         } catch (SassException $e) {
-            throw new Exception(Yii::t('CleanThemeModule.config', 'Cannot compile SCSS to CSS code. Error message:') . ' ' . $e->getMessage());
+            throw new ServerErrorHttpException(Yii::t('CleanThemeModule.config', 'Cannot compile SCSS to CSS code. Error message:') . ' ' . $e->getMessage());
         }
     }
 }

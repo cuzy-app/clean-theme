@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: Add a rule to display a warning if the SCSS cannot be compiled with the error line
+
 2.0.0-beta.5 (July 17, 2024)
 --------------------
 - Fix: When Top Menu colors are changed, don't apply the new colors to the bottom menu on mobile
