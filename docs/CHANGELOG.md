@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.0.0-beta.7 (July 17, 2024)
 --------------------
 - Fix: Color of the application name's text in the top bar when no logo image
 - Enh: In the configuration, rename "Fonts" with "Base fonts" section and move the "Headings font family" to the "Heading fonts" section
