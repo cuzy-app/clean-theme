@@ -62,8 +62,9 @@ class Configuration extends Model
         'backgroundColorHighlight' => '',
         'backgroundColorHighlightSoft' => '',
         'fontFamily' => '',
-        'headingFontFamily' => '',
         'fontSize' => 'px',
+        'fontWeight' => '',
+        'headingFontFamily' => '',
         'phFontSize' => 'px',
         'h1FontSize' => 'em',
         'h1StreamFontSize' => 'em',
@@ -73,7 +74,6 @@ class Configuration extends Model
         'h4FontSize' => 'em',
         'h5FontSize' => 'em',
         'h6FontSize' => 'em',
-        'fontWeight' => '',
         'phFontWeight' => '',
         'panelBorderWidth' => 'px',
         'panelBorderStyle' => '',
@@ -116,9 +116,10 @@ class Configuration extends Model
     public string $backgroundColorPage = '#f1f4f5';
     public string $backgroundColorHighlight = '#daf0f3';
     public string $backgroundColorHighlightSoft = '#f2f9fb';
-    public string $fontFamily = 'Open Sans';
-    public string $headingFontFamily = 'Open Sans';
     public string $fontSize = '14';
+    public string $fontFamily = 'Open Sans';
+    public string $fontWeight = '400';
+    public string $headingFontFamily = 'Open Sans';
     public string $phFontSize = '16'; // Panel Heading
     public string $h1FontSize = '1.7';
     public string $h1StreamFontSize = '1.45';
@@ -128,7 +129,6 @@ class Configuration extends Model
     public string $h4FontSize = '1.1';
     public string $h5FontSize = '1.0';
     public string $h6FontSize = '0.85';
-    public string $fontWeight = '400';
     public string $phFontWeight = '700'; // Panel Heading
     public string $panelBorderWidth = '1';
     public string $panelBorderStyle = 'solid';
@@ -237,9 +237,10 @@ class Configuration extends Model
             'backgroundColorPage' => Yii::t('CleanThemeModule.config', 'Page background color for other UI components such as comment box, etc.'),
             'backgroundColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight color for informative backgrounds (e.g. Comment Permalinks, Shared items, Wiki active page navigation, Messenger bubbles)'),
             'backgroundColorHighlightSoft' => Yii::t('CleanThemeModule.config', 'Soft highlight color for informative backgrounds (e.g. Wiki active category)'),
-            'fontFamily' => Yii::t('CleanThemeModule.config', 'Base font family'),
-            'headingFontFamily' => Yii::t('CleanThemeModule.config', 'Headings font family'),
-            'fontSize' => Yii::t('CleanThemeModule.config', 'Base font size'),
+            'fontFamily' => Yii::t('CleanThemeModule.config', 'Font family'),
+            'fontSize' => Yii::t('CleanThemeModule.config', 'Font size'),
+            'fontWeight' => Yii::t('CleanThemeModule.config', 'Font weight'),
+            'headingFontFamily' => Yii::t('CleanThemeModule.config', 'Font family'),
             'phFontSize' => Yii::t('CleanThemeModule.config', 'Panels heading font size'),
             'h1FontSize' => Yii::t('CleanThemeModule.config', '1st level header font size'),
             'h1StreamFontSize' => Yii::t('CleanThemeModule.config', '1st level header font size in stream'),
@@ -249,7 +250,6 @@ class Configuration extends Model
             'h4FontSize' => Yii::t('CleanThemeModule.config', '4th level header font size'),
             'h5FontSize' => Yii::t('CleanThemeModule.config', '5th level header font size'),
             'h6FontSize' => Yii::t('CleanThemeModule.config', '6th level header font size'),
-            'fontWeight' => Yii::t('CleanThemeModule.config', 'Base font weight'),
             'phFontWeight' => Yii::t('CleanThemeModule.config', 'Panels heading font weight'),
             'panelBorderWidth' => Yii::t('CleanThemeModule.config', 'Panels border width'),
             'panelBorderStyle' => Yii::t('CleanThemeModule.config', 'Panels border style'),
@@ -293,8 +293,8 @@ class Configuration extends Model
         return [
             'containerMaxWidth' => $inPx,
             'fontFamily' => $googleFonts,
-            'headingFontFamily' => $googleFonts,
             'fontSize' => $inPx,
+            'headingFontFamily' => $googleFonts,
             'phFontSize' => $inPx,
             'menuFontSize' => $inPx,
             'h1FontSize' => $inEm,

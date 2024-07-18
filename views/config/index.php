@@ -106,14 +106,14 @@ $colorInputWidgetOptions = ['options' => ['placeholder' => Yii::t('CleanThemeMod
             <?= $form->field($model, 'backgroundColorHighlightSoft')->widget(ColorInput::class, $colorInputWidgetOptions) ?>
             <?= $form->endCollapsibleFields() ?>
 
-            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Fonts')) ?>
+            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Base fonts')) ?>
             <?= $form->field($model, 'fontFamily')->textInput() ?>
-            <?= $form->field($model, 'headingFontFamily')->textInput() ?>
             <?= $form->field($model, 'fontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
             <?= $form->field($model, 'fontWeight')->textInput() ?>
             <?= $form->endCollapsibleFields() ?>
 
-            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Headings fonts')) ?>
+            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Heading fonts')) ?>
+            <?= $form->field($model, 'headingFontFamily')->textInput() ?>
             <?= $form->field($model, 'phFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
             <?= $form->field($model, 'phFontWeight')->textInput() ?>
             <?= $form->field($model, 'h1FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
@@ -126,7 +126,7 @@ $colorInputWidgetOptions = ['options' => ['placeholder' => Yii::t('CleanThemeMod
             <?= $form->field($model, 'h6FontSize')->textInput(['type' => 'number', 'step' => 0.01, 'min' => 0.5]) ?>
             <?= $form->endCollapsibleFields() ?>
 
-            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Panels borders')) ?>
+            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Panel borders')) ?>
             <?= $form->field($model, 'panelBorderWidth')->textInput(['type' => 'number', 'step' => 1, 'min' => 0]) ?>
             <?= $form->field($model, 'panelBorderStyle')->dropDownList(Configuration::getBorderStyleOptions()) ?>
             <?= $form->field($model, 'panelBorderColor')->widget(ColorInput::class, $colorInputWidgetOptions) ?>

@@ -4,6 +4,8 @@ Changelog
 Unreleased
 --------------------
 - Fix: Color of the application name's text in the top bar when no logo image
+- Enh: In the configuration, rename "Fonts" with "Base fonts" section and move the "Headings font family" to the "Heading fonts" section
+- Enh: Don't apply the heading font family to the helpers and buttons
 
 2.0.0-beta.6 (July 17, 2024)
 --------------------
