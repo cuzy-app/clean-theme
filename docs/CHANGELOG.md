@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: Color of the application name's text in the top bar when no logo image
+
 2.0.0-beta.6 (July 17, 2024)
 --------------------
 - Enh: Add a rule to display a warning if the SCSS cannot be compiled with the error line
