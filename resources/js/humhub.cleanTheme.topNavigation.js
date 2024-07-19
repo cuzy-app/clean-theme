@@ -169,16 +169,20 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             if (newScrollTop && newScrollTop > 10 && newScrollTop >= lastScrollTop) { // Scrolling down
                 if (hideTopMenuOnScrollDown) {
                     $body.addClass('hide-top-menu');
+                    $(':root').css('--hh-fixed-header-height', '0px');
                 }
                 if (hideBottomMenuOnScrollDown) {
                     $body.addClass('hide-bottom-menu');
+                    $(':root').css('--hh-fixed-footer-height', '0px');
                 }
             } else { // Scrolling up
                 if (hideTopMenuOnScrollDown) {
                     $body.removeClass('hide-top-menu');
+                    $(':root').css('--hh-fixed-header-height', '');
                 }
                 if (hideBottomMenuOnScrollDown) {
                     $body.removeClass('hide-bottom-menu');
+                    $(':root').css('--hh-fixed-footer-height', '');
                 }
             }
 
