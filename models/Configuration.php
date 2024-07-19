@@ -34,6 +34,7 @@ class Configuration extends Model
     public const UNSUPPORTED_LESS_FUNCTIONS = ['saturate', 'desaturate', 'spin'];
     public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css';
     public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
+    public const TOP_BAR_BOTTOM_SPACING = 30;
 
     /**
      * This list must contain all CSS attribute names
@@ -93,7 +94,7 @@ class Configuration extends Model
     ];
 
     /**
-     * CSS attributes specific to the Clean Theme
+     * CSS attributes specific to the Clean Theme which will be prefixed with `hh-ct-`
      */
     public const CLEAN_THEME_CSS_ATTRIBUTES = [
         'containerMaxWidth',
@@ -413,7 +414,7 @@ class Configuration extends Model
 
         // Configuration attributes
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
-            $cssVarName = '--' . (in_array($name, self::CLEAN_THEME_CSS_ATTRIBUTES, true) ? 'ct-' : '') . Inflector::camel2id($name);
+            $cssVarName = '--' . (in_array($name, self::CLEAN_THEME_CSS_ATTRIBUTES, true) ? 'hh-ct-' : '') . Inflector::camel2id($name);
             $value = static::isFontAttribute($name) ?
                 '"' . $this->$name . '"' :
                 $this->$name;
@@ -438,6 +439,11 @@ class Configuration extends Model
                 $css .= '    ' . $cssVariable . ': ' . ColorHelper::$function($this->$colorName, $amount) . ';' . PHP_EOL;
             }
         }
+
+        // Dimensions
+        $css .= '    --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING . 'px;' . PHP_EOL;
+        $css .= '    --hh-fixed-header-height: ' . ((int)$this->topBarHeight + self::TOP_BAR_BOTTOM_SPACING) . 'px;' . PHP_EOL;
+        $css .= '    --hh-fixed-footer-height: 0px;' . PHP_EOL;
 
         // End CSS variables
         $css .= '}' . PHP_EOL;

@@ -5,7 +5,7 @@
 
 .topbar {
   position: fixed;
-  height: var(--ct-top-bar-height);
+  height: var(--hh-ct-top-bar-height);
   width: 100%;
   padding-left: 0;
   padding-right: 0;
@@ -58,23 +58,23 @@
 }
 
 #topbar {
-  background-color: var(--ct-top-menu-background-color);
+  background-color: var(--hh-ct-top-menu-background-color);
   top: 0;
   z-index: 1030;
   overflow: unset;
-  border-bottom-width: var(--ct-panel-border-width);
-  border-bottom-style: var(--ct-panel-border-style);
-  border-bottom-color: var(--ct-panel-border-color);
-  box-shadow: var(--ct-panel-box-shadow);
+  border-bottom-width: var(--hh-ct-panel-border-width);
+  border-bottom-style: var(--hh-ct-panel-border-style);
+  border-bottom-color: var(--hh-ct-panel-border-color);
+  box-shadow: var(--hh-ct-panel-box-shadow);
 
   > .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: calc(var(--ct-top-bar-height) - var(--ct-panel-border-width));
+    height: calc(var(--hh-ct-top-bar-height) - var(--hh-ct-panel-border-width));
 
     #text-logo {
-      color: var(--ct-top-menu-text-color);
+      color: var(--hh-ct-top-menu-text-color);
     }
 
     &:before, &:after {
@@ -86,7 +86,7 @@
       height: auto;
 
       img#img-logo {
-        max-height: calc(var(--ct-top-bar-height) - 10px);
+        max-height: calc(var(--hh-ct-top-bar-height) - 10px);
       }
 
     }
@@ -140,11 +140,11 @@
     #top-menu-nav {
       flex: 1; // The space must be between the main menu items and the search button
       display: flex;
-      justify-content: var(--ct-top-menu-nav-justify-content);
+      justify-content: var(--hh-ct-top-menu-nav-justify-content);
 
       > li > a:hover {
-        background-color: var(--ct-top-menu-button-hover-background-color);
-        color: var(--ct-top-menu-button-hover-text-color);
+        background-color: var(--hh-ct-top-menu-button-hover-background-color);
+        color: var(--hh-ct-top-menu-button-hover-text-color);
       }
     }
 
@@ -162,7 +162,7 @@
       }
 
       .btn-group > a {
-        color: var(--ct-top-menu-text-color);
+        color: var(--hh-ct-top-menu-text-color);
         padding: 5px 10px;
         margin: 10px 2px;
         display: inline-block;
@@ -173,8 +173,8 @@
         &:hover,
         &:active,
         &:focus {
-          background-color: var(--ct-top-menu-button-hover-background-color);
-          color: var(--ct-top-menu-button-hover-text-color);
+          background-color: var(--hh-ct-top-menu-button-hover-background-color);
+          color: var(--hh-ct-top-menu-button-hover-text-color);
           text-decoration: none;
           border-bottom: none;
         }
@@ -337,13 +337,13 @@
       height: auto;
       padding: 5px 10px;
       margin: 10px 2px;
-      color: var(--ct-top-menu-text-color);
+      color: var(--hh-ct-top-menu-text-color);
 
       &:hover,
       &:active,
       &:focus {
-        background-color: var(--ct-top-menu-button-hover-background-color);
-        color: var(--ct-top-menu-button-hover-text-color);
+        background-color: var(--hh-ct-top-menu-button-hover-background-color);
+        color: var(--hh-ct-top-menu-button-hover-text-color);
         text-decoration: none;
         border-bottom: none;
       }
@@ -351,12 +351,12 @@
 
 
     .nav > li > a {
-      color: var(--ct-top-menu-text-color);
+      color: var(--hh-ct-top-menu-text-color);
     }
 
     > .nav {
       > li > a {
-        color: var(--ct-top-menu-text-color);
+        color: var(--hh-ct-top-menu-text-color);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -364,8 +364,8 @@
         text-decoration: none;
         text-shadow: none;
         font-weight: 600;
-        font-size: var(--ct-top-bar-font-size);
-        height: calc(var(--ct-top-bar-height) - var(--ct-panel-border-width));
+        font-size: var(--hh-ct-top-bar-font-size);
+        height: calc(var(--hh-ct-top-bar-height) - var(--hh-ct-panel-border-width));
         text-transform: uppercase;
         text-align: center;
         transition: .25s;
@@ -378,8 +378,8 @@
         &:hover,
         &:active,
         &:focus {
-          background-color: var(--ct-top-menu-button-hover-background-color);
-          color: var(--ct-top-menu-button-hover-text-color);
+          background-color: var(--hh-ct-top-menu-button-hover-background-color);
+          color: var(--hh-ct-top-menu-button-hover-text-color);
           text-decoration: none;
           border-bottom: none;
         }
@@ -395,8 +395,8 @@
       }
 
       > li.active > a, > li.hover > a {
-        background-color: var(--ct-top-menu-text-color);
-        color: var(--ct-top-menu-background-color);
+        background-color: var(--hh-ct-top-menu-text-color);
+        color: var(--hh-ct-top-menu-background-color);
         text-decoration: none;
       }
 
@@ -429,8 +429,8 @@
 
     // For JS cleanTheme.topNavigation.updateBtnStatus()
     .btn-group.active > a {
-      background-color: var(--ct-top-menu-text-color);
-      color: var(--ct-top-menu-background-color);
+      background-color: var(--hh-ct-top-menu-text-color);
+      color: var(--hh-ct-top-menu-background-color);
     }
   }
 }

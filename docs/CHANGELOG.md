@@ -3,8 +3,9 @@ Changelog
 
 Unreleased
 --------------------
-- Enh: Add `ct-` prefix to CSS variables specific for the Clean Theme to avoid conflicts with other modules
+- Enh: Add `hh-ct-` prefix to CSS variables which are specific for the Clean Theme to avoid conflicts with other modules
 - Chg: Change default border color from `#c7c9e7` to `#d2d3e4` (lighter color)
+- Enh: Add the new CSS variables for HumHub 1.17 (see [#7131](https://github.com/humhub/humhub/issues/7131)): `--hh-fixed-header-height` and `--hh-fixed-footer-height`
 
 2.0.0-beta.7 (July 17, 2024)
 --------------------
