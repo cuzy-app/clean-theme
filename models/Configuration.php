@@ -92,6 +92,43 @@ class Configuration extends Model
         'topMenuButtonHoverTextColor' => '',
     ];
 
+    /**
+     * CSS attributes specific to the Clean Theme
+     */
+    public const CLEAN_THEME_CSS_ATTRIBUTES = [
+        'containerMaxWidth',
+        'textColorHeading',
+        'fontFamily',
+        'fontSize',
+        'fontWeight',
+        'headingFontFamily',
+        'phFontSize',
+        'h1FontSize',
+        'h1StreamFontSize',
+        'h2FontSize',
+        'h2StreamFontSize',
+        'h3FontSize',
+        'h4FontSize',
+        'h5FontSize',
+        'h6FontSize',
+        'phFontWeight',
+        'panelBorderWidth',
+        'panelBorderStyle',
+        'panelBorderColor',
+        'panelBorderRadius',
+        'panelBoxShadow',
+        'menuFontSize',
+        'menuTextColor',
+        'menuBorderColor',
+        'topBarHeight',
+        'topBarFontSize',
+        'topMenuNavJustifyContent',
+        'topMenuBackgroundColor',
+        'topMenuTextColor',
+        'topMenuButtonHoverBackgroundColor',
+        'topMenuButtonHoverTextColor',
+    ];
+
     public SettingsManager $settingsManager;
 
     public string $containerMaxWidth = '1600';
@@ -132,7 +169,7 @@ class Configuration extends Model
     public string $phFontWeight = '700'; // Panel Heading
     public string $panelBorderWidth = '1';
     public string $panelBorderStyle = 'solid';
-    public string $panelBorderColor = '#c7c9e7';
+    public string $panelBorderColor = '#d2d3e4';
     public string $panelBorderRadius = '4';
     public string $panelBoxShadow = '0 1px 10px #00000019';
     public string $menuFontSize = '12';
@@ -376,7 +413,7 @@ class Configuration extends Model
 
         // Configuration attributes
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
-            $cssVarName = '--' . Inflector::camel2id($name);
+            $cssVarName = '--' . (in_array($name, self::CLEAN_THEME_CSS_ATTRIBUTES, true) ? 'ct-' : '') . Inflector::camel2id($name);
             $value = static::isFontAttribute($name) ?
                 '"' . $this->$name . '"' :
                 $this->$name;

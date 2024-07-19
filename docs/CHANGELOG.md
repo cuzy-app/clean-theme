@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: Add `ct-` prefix to CSS variables specific for the Clean Theme to avoid conflicts with other modules
+- Chg: Change default border color from `#c7c9e7` to `#d2d3e4` (lighter color)
+
 2.0.0-beta.7 (July 17, 2024)
 --------------------
 - Fix: Color of the application name's text in the top bar when no logo image
