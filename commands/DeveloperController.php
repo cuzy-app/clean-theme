@@ -124,7 +124,7 @@ class DeveloperController extends Controller
         $content = '';
 
         foreach ($this->specialColors as $color) {
-            $content .= '--' . $color . PHP_EOL;
+            $content .= Configuration::CLEAN_THEME_CSS_PREFIX . $color . PHP_EOL;
         }
 
         $file = Yii::getAlias(Configuration::SPECIAL_COLOR_VARIABLES_IN_HUMHUB_MODIFIED_FILE);

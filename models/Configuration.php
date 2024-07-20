@@ -35,6 +35,64 @@ class Configuration extends Model
     public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css';
     public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
     public const TOP_BAR_BOTTOM_SPACING = 30;
+    public const CLEAN_THEME_CSS_PREFIX = '--hh-ct-';
+
+    /**
+     * This list must contain all CSS attribute names
+     */
+    public const CSS_ATTRIBUTE_PREFIXES = [
+        'containerMaxWidth' => self::CLEAN_THEME_CSS_PREFIX,
+        'default' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
+        'primary' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
+        'info' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
+        'success' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
+        'warning' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
+        'danger' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
+        'link' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
+        'textColorHeading' => self::CLEAN_THEME_CSS_PREFIX,
+        'textColorMain' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'textColorDefault' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'textColorSecondary' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'textColorHighlight' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'textColorSoft' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'textColorSoft2' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'textColorSoft3' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'textColorContrast' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'backgroundColorMain' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'backgroundColorSecondary' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'backgroundColorPage' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'backgroundColorHighlight' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'backgroundColorHighlightSoft' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'fontFamily' => self::CLEAN_THEME_CSS_PREFIX,
+        'fontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'fontWeight' => self::CLEAN_THEME_CSS_PREFIX,
+        'headingFontFamily' => self::CLEAN_THEME_CSS_PREFIX,
+        'phFontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'h1FontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'h1StreamFontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'h2FontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'h2StreamFontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'h3FontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'h4FontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'h5FontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'h6FontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'phFontWeight' => self::CLEAN_THEME_CSS_PREFIX,
+        'panelBorderWidth' => self::CLEAN_THEME_CSS_PREFIX,
+        'panelBorderStyle' => self::CLEAN_THEME_CSS_PREFIX,
+        'panelBorderColor' => self::CLEAN_THEME_CSS_PREFIX,
+        'panelBorderRadius' => self::CLEAN_THEME_CSS_PREFIX,
+        'panelBoxShadow' => self::CLEAN_THEME_CSS_PREFIX,
+        'menuFontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'menuTextColor' => self::CLEAN_THEME_CSS_PREFIX,
+        'menuBorderColor' => self::CLEAN_THEME_CSS_PREFIX,
+        'topBarHeight' => self::CLEAN_THEME_CSS_PREFIX,
+        'topBarFontSize' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuNavJustifyContent' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuBackgroundColor' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuTextColor' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuButtonHoverBackgroundColor' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuButtonHoverTextColor' => self::CLEAN_THEME_CSS_PREFIX,
+    ];
 
     /**
      * This list must contain all CSS attribute names
@@ -91,43 +149,6 @@ class Configuration extends Model
         'topMenuTextColor' => '',
         'topMenuButtonHoverBackgroundColor' => '',
         'topMenuButtonHoverTextColor' => '',
-    ];
-
-    /**
-     * CSS attributes specific to the Clean Theme which will be prefixed with `hh-ct-`
-     */
-    public const CLEAN_THEME_CSS_ATTRIBUTES = [
-        'containerMaxWidth',
-        'textColorHeading',
-        'fontFamily',
-        'fontSize',
-        'fontWeight',
-        'headingFontFamily',
-        'phFontSize',
-        'h1FontSize',
-        'h1StreamFontSize',
-        'h2FontSize',
-        'h2StreamFontSize',
-        'h3FontSize',
-        'h4FontSize',
-        'h5FontSize',
-        'h6FontSize',
-        'phFontWeight',
-        'panelBorderWidth',
-        'panelBorderStyle',
-        'panelBorderColor',
-        'panelBorderRadius',
-        'panelBoxShadow',
-        'menuFontSize',
-        'menuTextColor',
-        'menuBorderColor',
-        'topBarHeight',
-        'topBarFontSize',
-        'topMenuNavJustifyContent',
-        'topMenuBackgroundColor',
-        'topMenuTextColor',
-        'topMenuButtonHoverBackgroundColor',
-        'topMenuButtonHoverTextColor',
     ];
 
     public SettingsManager $settingsManager;
@@ -414,7 +435,7 @@ class Configuration extends Model
 
         // Configuration attributes
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
-            $cssVarName = '--' . (in_array($name, self::CLEAN_THEME_CSS_ATTRIBUTES, true) ? 'hh-ct-' : '') . Inflector::camel2id($name);
+            $cssVarName = (self::CSS_ATTRIBUTE_PREFIXES[$name] ?? '--hh-ct-') . Inflector::camel2id($name);
             $value = static::isFontAttribute($name) ?
                 '"' . $this->$name . '"' :
                 $this->$name;
