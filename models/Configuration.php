@@ -35,6 +35,7 @@ class Configuration extends Model
     public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css';
     public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
     public const TOP_BAR_BOTTOM_SPACING = 30;
+    public const HUMHUB_CSS_PREFIX = '--'; // TODO: In HumHub 1.17, replace '--' with '--hh-'
     public const CLEAN_THEME_CSS_PREFIX = '--hh-ct-';
 
     /**
@@ -42,27 +43,27 @@ class Configuration extends Model
      */
     public const CSS_ATTRIBUTE_PREFIXES = [
         'containerMaxWidth' => self::CLEAN_THEME_CSS_PREFIX,
-        'default' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
-        'primary' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
-        'info' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
-        'success' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
-        'warning' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
-        'danger' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
-        'link' => '--', // TODO: In HumHub 1.17, replace '--' with '--bs-'
+        'default' => self::HUMHUB_CSS_PREFIX,
+        'primary' => self::HUMHUB_CSS_PREFIX,
+        'info' => self::HUMHUB_CSS_PREFIX,
+        'success' => self::HUMHUB_CSS_PREFIX,
+        'warning' => self::HUMHUB_CSS_PREFIX,
+        'danger' => self::HUMHUB_CSS_PREFIX,
+        'link' => self::HUMHUB_CSS_PREFIX,
         'textColorHeading' => self::CLEAN_THEME_CSS_PREFIX,
-        'textColorMain' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'textColorDefault' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'textColorSecondary' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'textColorHighlight' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'textColorSoft' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'textColorSoft2' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'textColorSoft3' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'textColorContrast' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'backgroundColorMain' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'backgroundColorSecondary' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'backgroundColorPage' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'backgroundColorHighlight' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
-        'backgroundColorHighlightSoft' => '--', // TODO: In HumHub 1.17, replace '--' with '--hh-'
+        'textColorMain' => self::HUMHUB_CSS_PREFIX,
+        'textColorDefault' => self::HUMHUB_CSS_PREFIX,
+        'textColorSecondary' => self::HUMHUB_CSS_PREFIX,
+        'textColorHighlight' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoft' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoft2' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoft3' => self::HUMHUB_CSS_PREFIX,
+        'textColorContrast' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorMain' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorSecondary' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorPage' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorHighlight' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorHighlightSoft' => self::HUMHUB_CSS_PREFIX,
         'fontFamily' => self::CLEAN_THEME_CSS_PREFIX,
         'fontSize' => self::CLEAN_THEME_CSS_PREFIX,
         'fontWeight' => self::CLEAN_THEME_CSS_PREFIX,
@@ -449,7 +450,7 @@ class Configuration extends Model
         foreach ($this->getSpecialColorCssVariables() as $cssVariable) {
             [$amount, $function] = array_reverse(explode('-', $cssVariable));
             $colorName = lcfirst(Inflector::camelize(
-                substr($cssVariable, 2, strlen($cssVariable) - strlen($function . '-' . $amount) - 3)
+                substr($cssVariable, strlen(self::HUMHUB_CSS_PREFIX), strlen($cssVariable) - strlen($function . '-' . $amount) - strlen(self::HUMHUB_CSS_PREFIX))
             ));
             if (
                 $colorName
