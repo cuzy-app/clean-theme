@@ -7,3 +7,9 @@
 .media-list li.new {
   background-color: var(--info-lighten-50) !important;
 }
+
+@media (max-width: @screen-xs-min) {
+  .conversation-entry-list {
+    max-height: calc(100vh - 335px) !important; // Temporary hack. Must be removed in HumHub 1.17 (see https://github.com/humhub/mail/issues/406)
+  }
+}
