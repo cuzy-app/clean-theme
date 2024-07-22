@@ -8,8 +8,13 @@
   background-color: var(--info-lighten-50) !important;
 }
 
+// TODO: Remove in HumHub 1.17 (see https://github.com/humhub/mail/issues/406)
 @media (max-width: @screen-xs-min) {
   .conversation-entry-list {
-    max-height: calc(100vh - 335px) !important; // Temporary hack. Must be removed in HumHub 1.17 (see https://github.com/humhub/mail/issues/406)
+    max-height: calc(100vh - 60px - var(--hh-fixed-footer-height)) !important;
+  }
+
+  .mail-message-form {
+    bottom: var(--hh-fixed-footer-height) !important;
   }
 }
