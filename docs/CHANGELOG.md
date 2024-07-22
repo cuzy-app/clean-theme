@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.0.0 (July 23, 2024)
 --------------------
 - Enh: Add `hh-ct-` prefix to CSS variables which are specific for the Clean Theme to avoid conflicts with other modules
 - Chg: Change default border color from `#c7c9e7` to `#d2d3e4` (lighter color)
