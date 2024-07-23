@@ -22,13 +22,14 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         $(function () {
 
             // Hide menus on scroll top
-            hideMenusOnScrollTop(module.config.hideTopMenuOnScrollDown, module.config.hideBottomMenuOnScrollDown);
+            hideMenusOnScrollTop();
 
             // Waiting for the end of the resizing and setting up a window resize event listener
             let resizeTimeout;
             $(window).on('resize', function () {
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(fixNavigationOverflow, 100);
+                showMenus();
             });
             setTimeout(fixNavigationOverflow, 100);
 
@@ -143,14 +144,26 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         return $topMenuNavOrBottomMenu.css('position') === 'fixed'; // The bottom menu is displayed
     };
 
-    const hideMenusOnScrollTop = function (hideTopMenuOnScrollDown, hideBottomMenuOnScrollDown) {
+    const showMenus = function () {
+        $body.removeClass('hide-top-menu hide-bottom-menu');
+        $(':root').css('--hh-fixed-header-height', '').css('--hh-fixed-footer-height', '');
+    };
+
+    const hideMenusOnScrollTop = function () {
+        const hideTopMenuOnScrollDown = module.config.hideTopMenuOnScrollDown;
+        const hideBottomMenuOnScrollDown = module.config.hideBottomMenuOnScrollDown;
+        const screenXsMin = parseInt(module.config.screenXsMin || '570px', 10);
         let lastScrollTop = 0;
 
         $(window).on("scroll", function () {
+            // Only on small screens
+            if ($(window).width() > screenXsMin) {
+                return;
+            }
+
             let bodyHeightDiffWithWindow = $('body').height() - $(window).height();
 
             // Prevent freezing when scrolling down if the end of page is in the bottom menu (document height is slightly smaller than the screen height)
-
             if (bodyHeightDiffWithWindow <= 0) {
                 return;
             }

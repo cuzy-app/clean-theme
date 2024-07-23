@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.0.1 (July 23, 2024)
+--------------------
+- Fix: top padding when changing page with ajax on desktop
+- Fix: menu when resizing screen from mobile to desktop
+
 2.0.0 (July 23, 2024)
 --------------------
 - Enh: Add `hh-ct-` prefix to CSS variables which are specific for the Clean Theme to avoid conflicts with other modules

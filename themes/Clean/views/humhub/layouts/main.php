@@ -25,6 +25,7 @@ CleanThemeTopNavigationAsset::register($this);
 $this->registerJsConfig('cleanTheme.topNavigation', [
     'hideTopMenuOnScrollDown' => $module->configuration->hideTopMenuOnScrollDown,
     'hideBottomMenuOnScrollDown' => $module->configuration->hideBottomMenuOnScrollDown,
+    'screenXsMin' => $this->theme->variable('screen-xs-min'),
 ]);
 ?>
 
