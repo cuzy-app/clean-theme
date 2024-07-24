@@ -30,13 +30,17 @@ class Configuration extends Model
 {
     public const HUMHUB_MODIFIED_PATH = '@clean-theme/resources/less/humhub.modified';
     public const SPECIAL_COLOR_VARIABLES_IN_HUMHUB_MODIFIED_FILE = '@clean-theme/resources/less/special-color-variables-in-humhub-modified.txt';
-    public const SUPPORTED_LESS_FUNCTIONS = ['darken', 'lighten', 'fade', 'fadein', 'fadeout'];
-    public const UNSUPPORTED_LESS_FUNCTIONS = ['saturate', 'desaturate', 'spin'];
+    public const THEME_LESS_VARIABLES_FILE = '@clean-theme/themes/Clean/less/variables.less';
     public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css';
     public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
-    public const TOP_BAR_BOTTOM_SPACING = 30;
+    public const SUPPORTED_LESS_FUNCTIONS = ['darken', 'lighten', 'fade', 'fadein', 'fadeout'];
+    public const UNSUPPORTED_LESS_FUNCTIONS = ['saturate', 'desaturate', 'spin'];
     public const HUMHUB_CSS_PREFIX = '--'; // TODO: In HumHub 1.17, replace '--' with '--hh-'
     public const CLEAN_THEME_CSS_PREFIX = '--hh-ct-';
+    public const TOP_BAR_BOTTOM_SPACING = 30;
+    public const TOP_BAR_HEIGHT_SM = 50;
+    public const TOP_BAR_BOTTOM_SPACING_SM = 5;
+    public const BOTTOM_BAR_HEIGHT_XS = 50;
 
     /**
      * This list must contain all CSS attribute names
@@ -469,6 +473,22 @@ class Configuration extends Model
 
         // End CSS variables
         $css .= '}' . PHP_EOL;
+        $css .= PHP_EOL;
+
+        // Mobile CSS variables
+        $css .= '@media (max-width: ' . ($this->getLessVariableValue('@screen-sm-min') ?? '768px') . ') {' . PHP_EOL;
+        $css .= '    :root {' . PHP_EOL;
+        $css .= '        --hh-ct-top-bar-height: ' . self::TOP_BAR_HEIGHT_SM . 'px;' . PHP_EOL;
+        $css .= '        --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING_SM . 'px;' . PHP_EOL;
+        $css .= '        --hh-fixed-header-height: ' . (self::TOP_BAR_HEIGHT_SM + self::TOP_BAR_BOTTOM_SPACING_SM) . 'px;' . PHP_EOL;
+        $css .= '    }' . PHP_EOL;
+        $css .= '}' . PHP_EOL;
+        $css .= PHP_EOL;
+        $css .= '@media (max-width: ' . ($this->getLessVariableValue('@screen-xs-min') ?? '570px') . ') {' . PHP_EOL;
+        $css .= '    :root {' . PHP_EOL;
+        $css .= '        --hh-fixed-footer-height: ' . (self::BOTTOM_BAR_HEIGHT_XS + 2) . 'px;' . PHP_EOL; // + 2px for the bottom border
+        $css .= '    }' . PHP_EOL;
+        $css .= '}' . PHP_EOL;
 
         // Custom CSS
         if ($this->scss) {
@@ -531,5 +551,17 @@ class Configuration extends Model
         } catch (SassException $e) {
             throw new ServerErrorHttpException(Yii::t('CleanThemeModule.config', 'Cannot compile SCSS to CSS code. Error message:') . ' ' . $e->getMessage());
         }
+    }
+
+    private function getLessVariableValue(string $variableName): ?string
+    {
+        $lessVariablesContent = file_get_contents(Yii::getAlias(self::THEME_LESS_VARIABLES_FILE));
+        $pattern = '/' . $variableName . ':\s*(\d+px);/';
+        $matches = [];
+
+        if (preg_match($pattern, $lessVariablesContent, $matches)) {
+            return $matches[1];
+        }
+        return null;
     }
 }

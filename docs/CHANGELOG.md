@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.2 (July 24, 2024)
+--------------------
+- Fix #23: On mobile, when scrolling down, the document can jump if its height is slightly higher than the screen
+
 2.0.1 (July 23, 2024)
 --------------------
 - Fix: top padding when changing page with ajax on desktop
