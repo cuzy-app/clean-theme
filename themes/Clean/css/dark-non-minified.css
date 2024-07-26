@@ -358,6 +358,9 @@ input[type=radio] {
 .alert-info {
   background-color:#323a3f
 }
+.alert-danger {
+  background-color: #423f3f
+}
 .hexInput {
   background:var(--background-color-secondary)
 }
