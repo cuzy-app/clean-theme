@@ -1,7 +1,8 @@
 Changelog
 =========
 
-##TBA
+TBA
+--------------------
 - Fix #24: Dark Mode colors (issue since version 2.0.0)
 
 2.0.2 (July 24, 2024)
