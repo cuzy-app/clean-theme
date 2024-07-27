@@ -13,7 +13,7 @@
 - The left menu is sticky when scrolling vertically
 - The top right icon becomes active when it's the URL of the current page.
 - Adds the profile's header in the user's account pages
-- Compatible with the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode/description)
+- Compatible with the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode/description) (Thanks to @felixhahnweilheim)
 - Possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
 - You can create a child theme manually (see instructions below) or using the [Theme Builder module](https://marketplace.humhub.com/module/theme-builder)
 
