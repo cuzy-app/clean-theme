@@ -6,6 +6,6 @@ php ../../yii clean-theme/build-modified-sources
 
 # Compile CSS
 cd themes/Clean
-lessc less/build.less --clean-css css/theme.css --source-map=css/theme.css.map
+lessc less/build.less css/theme.css --clean-css --source-map=css/theme.css.map
 
 echo "CSS compiled. Save module configuration to generated humhub.clean-theme.dynamic.css file"
