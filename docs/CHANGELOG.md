@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.0.4 (July 29, 2024)
+2.0.4 (July 31, 2024)
 --------------------
 - Fix: Use colors from the module configuration when sending emails
 - Fix: Colors in Dark Mode (see [#57](https://github.com/felixhahnweilheim/humhub-dark-mode/issues/57#issuecomment-2254239308))
