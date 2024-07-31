@@ -344,8 +344,11 @@ code {
     border-color: var(--background-color-page);
 }
 
-.profile-banner-image-container .img-profile-header-background {
-    filter: brightness(50%);
+.panel-profile .panel-profile-header .img-profile-data,
+.panel-profile .panel-profile-header .img-profile-data h1,
+.panel-profile .panel-profile-header .img-profile-data h2 {
+    color: var(--text-color-highlight) !important;
+    text-shadow: 0 0 4px var(--text-color-contrast) !important;
 }
 
 .pagination > .disabled > a,
@@ -621,51 +624,51 @@ body .closed-task-list-view li:hover {
 
     /* Converted from humhub.clean-theme.dynamic.css */
     --background-color-main-lighten-10: #191919;
-    --background-color-page-lighten-5: #1b1817;
+    --background-color-page-lighten-5: #171b1c;
     --background-color-page-darken-10: #000000;
     --background-color-page-darken-20: #000000;
     --background-color-page-darken-30: #000000;
     --background-color-secondary-lighten-2: #0d0d0d;
     --background-color-secondary-lighten-5: #151515;
-    --danger-lighten-10: #45fce1;
-    --danger-lighten-5: #2cfbdd;
-    --danger-darken-20: #0c9c87;
-    --danger-darken-5: #11e3c5;
+    --danger-lighten-10: #450104;
+    --danger-lighten-5: #2c0103;
+    --danger-darken-20: #f9899b;
+    --danger-darken-5: #fb3650;
     --default-lighten-2: #111111;
     --default-lighten-5: #191919;
     --default-darken-2: #070707;
-    --info-lighten-10: #eda69c;
-    --info-lighten-27: #fae8e5;
-    --info-lighten-5: #e99287;
-    --info-darken-25: #905047;
-    --info-darken-30: #7f463e;
-    --info-darken-40: #5c332e;
-    --info-darken-5: #d47669;
-    --info-darken-50: #3a201d;
-    --info-darken-8: #ca7064;
-    --link-lighten-2: #e68856;
-    --link-darken-5: #d27747;
-    --primary-lighten-10: #e2d9d4;
-    --primary-lighten-5: #d8cbc4;
-    --primary-darken-10: #b3a59d;
-    --primary-darken-20: #988c85;
-    --primary-darken-25: #8a7f79;
-    --primary-darken-5: #c0b1a9;
-    --primary-darken-8: #b8aaa2;
-    --success-lighten-10: #c5a3db;
-    --success-lighten-5: #ba90d4;
-    --success-darken-20: #78578e;
-    --success-darken-5: #a174bd;
-    --text-color-highlight-fade-15: #dbdbdbd9;
-    --text-color-highlight-fade-30: #dbdbdbb2;
+    --info-lighten-10: #093339;
+    --info-lighten-27: #010506;
+    --info-lighten-5: #0b3f47;
+    --info-darken-25: #add6dc;
+    --info-darken-30: #bddde2;
+    --info-darken-40: #ddeef0;
+    --info-darken-5: #38a7b7;
+    --info-darken-50: #eef6f7;
+    --info-darken-8: #42aebf;
+    --link-lighten-2: #0e3b54;
+    --link-darken-5: #3794c7;
+    --primary-lighten-10: #0e1316;
+    --primary-lighten-5: #131a1d;
+    --primary-darken-10: #5f6d75;
+    --primary-darken-20: #8a959c;
+    --primary-darken-25: #9ca5ab;
+    --primary-darken-5: #4f5d65;
+    --primary-darken-8: #58666e;
+    --success-lighten-10: #1d2e12;
+    --success-lighten-5: #233715;
+    --success-darken-20: #aec3a0;
+    --success-darken-5: #73a957;
+    --text-color-highlight-fade-15: #24242426;
+    --text-color-highlight-fade-30: #2424244d;
     --text-color-secondary-darken-25: #454545;
-    --warning-lighten-10: #7fb6f5;
-    --warning-lighten-2: #59a0f2;
-    --warning-lighten-5: #68a8f3;
-    --warning-darken-10: #4382cb;
-    --warning-darken-20: #376aa4;
-    --warning-darken-40: #1d3858;
-    --warning-darken-5: #4a8fde;
+    --warning-lighten-10: #402405;
+    --warning-lighten-2: #532f06;
+    --warning-lighten-5: #4b2b06;
+    --warning-darken-10: #d89c55;
+    --warning-darken-20: #e4bc8d;
+    --warning-darken-40: #f1dfc9;
+    --warning-darken-5: #ca8a3a;
     /* END: Converted from humhub.clean-theme.dynamic.css */
 
     --background-color-success: #f7fbf4;

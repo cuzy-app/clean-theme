@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.0.5 (July 31, 2024)
+--------------------
+- Fix: Space and profile banner too dark in dark mode (see post [#16821](https://community.humhub.com/s/cuzyapp/post/post/view?id=16821))
+
 2.0.4 (July 31, 2024)
 --------------------
 - Fix: Use colors from the module configuration when sending emails
