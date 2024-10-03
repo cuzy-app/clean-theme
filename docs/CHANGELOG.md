@@ -4,6 +4,7 @@ Changelog
 Unreleased
 --------------------
 - Fix #25: Dark Mode: fix new message background color (mail module)
+- Enh: Add GitHub HumHub PHP workflows (tests & CS fixer)
 
 2.0.5 (July 31, 2024)
 --------------------

@@ -78,8 +78,8 @@ class ConfigController extends Controller
             'humhub-clean-theme-configuration.json',
             [
                 'mimeType' => 'application/json',
-                'inline' => false
-            ]
+                'inline' => false,
+            ],
         );
     }
 }

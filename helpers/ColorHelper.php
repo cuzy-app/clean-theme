@@ -24,15 +24,15 @@ class ColorHelper
     public static function lighten(string $color, int $amount, bool $relative = false): string
     {
         // split color into its components
-        $color_parts = static::getColorComponents($color);
+        $colorParts = static::getColorComponents($color);
 
         $percentage = $amount / 100;
 
         // By default the LESS lighten() function adds the $amount absolutely to L, not relatively
         if (!$relative) {
             //Converting a RGB color to HSL, the Lightness would be calculated by L = [max(R,G,B) + min(R,G,B)] / (2 * 255)
-            $max = hexdec(max($color_parts));
-            $min = hexdec(min($color_parts));
+            $max = hexdec(max($colorParts));
+            $min = hexdec(min($colorParts));
             if ($max != 0) {
                 $percentage = $percentage / (1 - ($max + $min) / (2 * 255));
             }
@@ -40,11 +40,11 @@ class ColorHelper
 
         $result = '#';
 
-        foreach ($color_parts as $color) {
-            $color = hexdec($color); // Convert to decimal
-            $color = round($color + (255 - $color) * $percentage); // Adjust color
-            $color = max(min($color, 255), 0); // keep between 0 and 255
-            $result .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT); // Make two char hex code
+        foreach ($colorParts as $colorPart) {
+            $colorPart = hexdec($colorPart); // Convert to decimal
+            $colorPart = round($colorPart + (255 - $colorPart) * $percentage); // Adjust color
+            $colorPart = max(min($colorPart, 255), 0); // keep between 0 and 255
+            $result .= str_pad(dechex($colorPart), 2, '0', STR_PAD_LEFT); // Make two char hex code
         }
 
         return $result;
@@ -60,15 +60,15 @@ class ColorHelper
     public static function darken(string $color, int $amount, bool $relative = false): string
     {
         // split color into its components
-        $color_parts = static::getColorComponents($color);
+        $colorParts = static::getColorComponents($color);
 
         $percentage = $amount / 100;
 
         // By default the LESS darken() function substracts the $amount absolutely to L, not relatively
         if (!$relative) {
             //Converting a RGB color to HSL, the Lightness would be calculated by L = [max(R,G,B) + min(R,G,B)] / (2 * 255)
-            $max = hexdec(max($color_parts));
-            $min = hexdec(min($color_parts));
+            $max = hexdec(max($colorParts));
+            $min = hexdec(min($colorParts));
             if ($max !== 0) {
                 $percentage = 2 * 255 * $percentage / ($max + $min);
             }
@@ -76,11 +76,11 @@ class ColorHelper
 
         $result = '#';
 
-        foreach ($color_parts as $color) {
-            $color = hexdec($color); // Convert to decimal
-            $color = round($color * (1 - $percentage)); // Adjust color
-            $color = max(min($color, 255), 0); // keep between 0 and 255
-            $result .= str_pad(dechex($color), 2, '0', STR_PAD_LEFT); // Make two char hex code
+        foreach ($colorParts as $colorPart) {
+            $colorPart = hexdec($colorPart); // Convert to decimal
+            $colorPart = round($colorPart * (1 - $percentage)); // Adjust color
+            $colorPart = max(min($colorPart, 255), 0); // keep between 0 and 255
+            $result .= str_pad(dechex($colorPart), 2, '0', STR_PAD_LEFT); // Make two char hex code
         }
 
         return $result;
