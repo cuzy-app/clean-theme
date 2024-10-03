@@ -11,7 +11,6 @@ namespace humhub\modules\cleanTheme\assets;
 use humhub\components\assets\AssetBundle;
 use yii\web\View;
 
-
 class CleanThemeAsset extends AssetBundle
 {
     /**

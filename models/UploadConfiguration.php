@@ -24,7 +24,7 @@ class UploadConfiguration extends Model
     public function rules()
     {
         return [
-            [['jsonConfigurationFile'], 'file', 'extensions' => 'json']
+            [['jsonConfigurationFile'], 'file', 'extensions' => 'json'],
         ];
     }
 

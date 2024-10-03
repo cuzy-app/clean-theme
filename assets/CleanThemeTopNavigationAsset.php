@@ -10,7 +10,6 @@ namespace humhub\modules\cleanTheme\assets;
 
 use humhub\components\assets\AssetBundle;
 
-
 class CleanThemeTopNavigationAsset extends AssetBundle
 {
     public $sourcePath = '@clean-theme/resources';

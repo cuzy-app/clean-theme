@@ -454,7 +454,7 @@ class Configuration extends Model
         foreach ($this->getSpecialColorCssVariables() as $cssVariable) {
             [$amount, $function] = array_reverse(explode('-', $cssVariable));
             $colorName = lcfirst(Inflector::camelize(
-                substr($cssVariable, strlen(self::HUMHUB_CSS_PREFIX), strlen($cssVariable) - strlen($function . '-' . $amount) - strlen(self::HUMHUB_CSS_PREFIX))
+                substr($cssVariable, strlen(self::HUMHUB_CSS_PREFIX), strlen($cssVariable) - strlen($function . '-' . $amount) - strlen(self::HUMHUB_CSS_PREFIX)),
             ));
             if (
                 $colorName

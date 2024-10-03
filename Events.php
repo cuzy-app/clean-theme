@@ -8,7 +8,6 @@
 
 namespace humhub\modules\cleanTheme;
 
-
 use humhub\components\console\Application;
 use humhub\modules\cleanTheme\commands\DeveloperController;
 
