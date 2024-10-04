@@ -1,10 +1,11 @@
 Changelog
 =========
 
-Unreleased
+2.0.6 (October 4, 2024)
 --------------------
 - Fix #25: Dark Mode: fix new message background color (mail module)
 - Enh: Add GitHub HumHub PHP workflows (tests & CS fixer)
+- Enh: CSS compiled for HumHub 1.16.3
 
 2.0.5 (July 31, 2024)
 --------------------
