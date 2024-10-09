@@ -20,6 +20,7 @@ Reset module configuration to default.
 The ZIP file mustn't contain:
 - .gitignore
 - .git
+- .github
 - composer.lock
 - composer.phar
 - build-modified-less-and-css.sh

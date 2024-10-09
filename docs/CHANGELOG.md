@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: In the module configuration, add syntax highlighting to SCSS code (Custom code section) 
+
 2.0.6 (October 4, 2024)
 --------------------
 - Fix #25: Dark Mode: fix new message background color (mail module)

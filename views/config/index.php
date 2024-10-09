@@ -11,6 +11,7 @@ namespace humhub\modules\cleanTheme\models;
 use humhub\modules\admin\permissions\ManageSettings;
 use humhub\modules\cleanTheme\Module;
 use humhub\modules\ui\form\widgets\ActiveForm;
+use humhub\modules\ui\form\widgets\CodeMirrorInputWidget;
 use humhub\modules\ui\view\components\View;
 use humhub\widgets\Button;
 use kartik\widgets\ColorInput;
@@ -161,7 +162,7 @@ $colorInputWidgetOptions = ['options' => ['placeholder' => Yii::t('CleanThemeMod
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Custom code')) ?>
-            <?= $form->field($model, 'scss')->textarea(['rows' => 20]) ?>
+            <?= $form->field($model, 'scss')->widget(CodeMirrorInputWidget::class, ['mode' => 'text/x-scss']) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= Button::asLink(Yii::t('CleanThemeModule.config', 'Reset everything to default values'))
