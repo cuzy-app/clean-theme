@@ -34,7 +34,10 @@ class ColorHelper
             $max = hexdec(max($colorParts));
             $min = hexdec(min($colorParts));
             if ($max != 0) {
-                $percentage = $percentage / (1 - ($max + $min) / (2 * 255));
+                $divider = (1 - ($max + $min) / (2 * 255));
+                if ($divider) {
+                    $percentage /= (1 - ($max + $min) / (2 * 255));
+                }
             }
         }
 
@@ -70,7 +73,10 @@ class ColorHelper
             $max = hexdec(max($colorParts));
             $min = hexdec(min($colorParts));
             if ($max !== 0) {
-                $percentage = 2 * 255 * $percentage / ($max + $min);
+                $divider = $max + $min;
+                if ($divider) {
+                    $percentage = 2 * 255 * $percentage / $divider;
+                }
             }
         }
 

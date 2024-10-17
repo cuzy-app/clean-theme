@@ -351,7 +351,7 @@ class Configuration extends Model
                 'googleFontsDownloadUrl' => Html::tag('code', 'https://fonts.gstatic.com'),
                 'ContentSecurityPolicy' => Html::tag('code', 'Content-Security-Policy'),
                 'fontSrcSelf' => Html::tag('code', 'font-src \'self\''),
-                'documentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'documentation'))->link('https://docs.humhub.org/docs/admin/security#strict-csp-settings')->options(['target' => '_blank']),
+                'documentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
             ]);
 
         return [
@@ -442,7 +442,7 @@ class Configuration extends Model
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
             $cssVarName = (self::CSS_ATTRIBUTE_PREFIXES[$name] ?? '--hh-ct-') . Inflector::camel2id($name);
             $value = static::isFontAttribute($name) ?
-                '"' . $this->$name . '"' :
+                '"' . $this->$name . '", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' :
                 $this->$name;
 
             // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px;`

@@ -29,16 +29,6 @@ This module is free, but the result of a lot of work for design and maintenance 
 
 If it's useful to you, please consider [making a donation](https://www.cuzy.app/checkout/donate/) or [participating in the code](https://github.com/cuzy-app/clean-theme). Thanks!
 
-## Child themes
-
-See [Documentation here](https://docs.humhub.org/docs/theme/overview) and [Wiki here](https://community.humhub.com/s/theming-appearance/wiki/52/Theme+creation).
-
-You can start with [this empty template](https://github.com/cuzy-app/clean-theme/blob/master/docs/Clean-Child.zip), which is a child theme of the `Clean` theme.
-
-Use available CSS variables in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`.
-
-Unzip it in the `/themes` root folder (not in `protected`).
-
 ## Repository
 
 https://github.com/cuzy-app/clean-theme

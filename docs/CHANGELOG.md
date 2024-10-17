@@ -4,6 +4,8 @@ Changelog
 Unreleased
 --------------------
 - Enh: In the module configuration, add syntax highlighting to SCSS code (Custom code section) 
+- Fix: When using Google fonts, add generic font families as a fallback
+- Enh: Added example of configuration for Google Fonts in the [installation documentation](https://marketplace.humhub.com/module/clean-theme/installation)
 
 2.0.6 (October 4, 2024)
 --------------------
