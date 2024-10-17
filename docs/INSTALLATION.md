@@ -3,7 +3,9 @@ Installation
 
 ## Custom CSP Configuration 
 
-If you plan to use Google Fonts, you need to add the following configuration to the `protected/config/web.php` file: 
+If you plan to use Google Fonts, you need to authorize HumHub to download Google Fonts in the `Content-Security-Policy` headers by adding the `https://fonts.gstatic.com` URL after `font-src 'self'` ([see documentation](https://docs.humhub.org/docs/admin/security#strict-csp-settings)).
+
+Example of configuration for the `protected/config/web.php` file: 
 
 ```php
 return [
