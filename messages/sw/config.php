@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Menyu ya juu',
   'Use Sassy CSS syntax (SCSS)' => 'Tumia sintaksia ya Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Tumia jina katika URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Huenda ukahitaji kuidhinisha HumHub ili kupakua Fonti za Google katika vichwa vya {ContentSecurityPolicy} kwa kuongeza {googleFontsDownloadUrl} URL baada ya {fontSrcSelf} (angalia {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Lazima uidhinishe HumHub kupakua Fonti za Google katika faili ya usanidi: {seeDocumentationLink}',
   'documentation' => 'nyaraka',
+  'see documentation' => 'tazama nyaraka',
 );

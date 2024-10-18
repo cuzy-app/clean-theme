@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Viršutinis meniu',
   'Use Sassy CSS syntax (SCSS)' => 'Naudokite Sassy CSS sintaksę (SCSS)',
   'Use the name in the URL' => 'Naudokite pavadinimą URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Gali reikėti įgalioti „HumHub“ atsisiųsti „Google“ šriftus {ContentSecurityPolicy} antraštėse, pridėdami {googleFontsDownloadUrl} URL po {fontSrcSelf} (žr. {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Turite įgalioti „HumHub“ atsisiųsti „Google“ šriftus konfigūracijos faile: {seeDocumentationLink}',
   'documentation' => 'dokumentacija',
+  'see documentation' => 'žiūrėti dokumentaciją',
 );

@@ -85,6 +85,7 @@ return array (
   'Top menu' => '톱 메뉴',
   'Use Sassy CSS syntax (SCSS)' => 'Sassy CSS 구문(SCSS) 사용',
   'Use the name in the URL' => 'URL에 있는 이름을 사용하세요.',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => '{fontSrcSelf} 뒤에 {googleFontsDownloadUrl} URL을 추가하여 {ContentSecurityPolicy} 헤더에 Google 글꼴을 다운로드하려면 HumHub에 권한을 부여해야 할 수도 있습니다( {documentationLink} 참조).',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'HumHub가 구성 파일에서 Google Fonts를 다운로드하도록 권한을 부여해야 합니다. {seeDocumentationLink}',
   'documentation' => '선적 서류 비치',
+  'see documentation' => '설명서를 참조하세요',
 );

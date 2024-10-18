@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Top meni',
   'Use Sassy CSS syntax (SCSS)' => 'Sèvi ak sentaks Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Sèvi ak non an nan URL la',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Ou ta ka bezwen otorize HumHub pou telechaje Polis Google yo nan tèt {ContentSecurityPolicy} yo lè w ajoute URL {googleFontsDownloadUrl} apre {fontSrcSelf} (gade {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Ou dwe otorize HumHub pou telechaje Google Fonts nan fichye konfigirasyon an: {seeDocumentationLink}',
   'documentation' => 'dokimantasyon',
+  'see documentation' => 'gade dokimantasyon',
 );

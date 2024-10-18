@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Goiko menua',
   'Use Sassy CSS syntax (SCSS)' => 'Erabili Sassy CSS sintaxia (SCSS)',
   'Use the name in the URL' => 'Erabili izena URLan',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Baliteke HumHub-i baimena eman behar izatea {ContentSecurityPolicy} goiburuetan Google Fonts-ak deskargatzeko, {googleFontsDownloadUrl} URL-a gehituz {fontSrcSelf} ondoren (ikus {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'HumHub-i baimena eman behar diozu Google Fonts deskargatzeko konfigurazio fitxategian: {seeDocumentationLink}',
   'documentation' => 'dokumentazioa',
+  'see documentation' => 'ikusi dokumentazioa',
 );

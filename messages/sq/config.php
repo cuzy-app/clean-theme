@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Menuja kryesore',
   'Use Sassy CSS syntax (SCSS)' => 'Përdor sintaksën Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Përdorni emrin në URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Mund t\'ju duhet të autorizoni HumHub për të shkarkuar Fontet e Google në titujt {ContentSecurityPolicy} duke shtuar URL-në {googleFontsDownloadUrl} pas {fontSrcSelf} (shih {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Ju duhet të autorizoni HumHub për të shkarkuar Fontet Google në skedarin e konfigurimit: {seeDocumentationLink}',
   'documentation' => 'dokumentacionin',
+  'see documentation' => 'shih dokumentacionin',
 );

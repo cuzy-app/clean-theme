@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Κορυφαίο μενού',
   'Use Sassy CSS syntax (SCSS)' => 'Χρήση σύνταξης Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Χρησιμοποιήστε το όνομα στη διεύθυνση URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Ίσως χρειαστεί να εξουσιοδοτήσετε το HumHub για τη λήψη των γραμματοσειρών Google στις κεφαλίδες {ContentSecurityPolicy} , προσθέτοντας τη διεύθυνση URL του {googleFontsDownloadUrl} μετά {fontSrcSelf} (δείτε {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Πρέπει να εξουσιοδοτήσετε το HumHub για τη λήψη των γραμματοσειρών Google στο αρχείο διαμόρφωσης: {seeDocumentationLink}',
   'documentation' => 'τεκμηρίωση',
+  'see documentation' => 'δείτε τεκμηρίωση',
 );

@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Yuqori menyu',
   'Use Sassy CSS syntax (SCSS)' => 'Sassy CSS sintaksisidan foydalaning (SCSS)',
   'Use the name in the URL' => 'URL manzilidagi nomdan foydalaning',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'HumHub-ga Google Shriftlarini {ContentSecurityPolicy} sarlavhalarida {fontSrcSelf} keyin {googleFontsDownloadUrl} URL-manzilini qo‘shish orqali yuklab olish uchun ruxsat berishingiz kerak bo‘lishi mumkin (qarang: {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'HumHub-ga Google shriftlarini konfiguratsiya faylida yuklab olish uchun ruxsat berishingiz kerak: {seeDocumentationLink}',
   'documentation' => 'hujjatlar',
+  'see documentation' => 'hujjatlarga qarang',
 );

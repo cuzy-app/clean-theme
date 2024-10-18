@@ -1,11 +1,13 @@
 Changelog
 =========
 
-Unreleased
+2.1.0 (October 18, 2024)
 --------------------
 - Enh: In the module configuration, add syntax highlighting to SCSS code (Custom code section) 
 - Fix: When using Google fonts, add generic font families as a fallback
 - Enh: Added example of configuration for Google Fonts in the [installation documentation](https://marketplace.humhub.com/module/clean-theme/installation)
+- Chg: CSS compiled for HumHub 1.17
+- Chg: Minimal HumHub version is now 1.17
 
 2.0.6 (October 4, 2024)
 --------------------

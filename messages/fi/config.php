@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Päävalikko',
   'Use Sassy CSS syntax (SCSS)' => 'Käytä Sassy CSS -syntaksia (SCSS)',
   'Use the name in the URL' => 'Käytä URL-osoitteessa olevaa nimeä',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Sinun on ehkä valtuutettava HumHub lataamaan Google Fonts {ContentSecurityPolicy} -otsikoissa lisäämällä {googleFontsDownloadUrl} URL {fontSrcSelf} jälkeen (katso {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Sinun on valtuutettava HumHub lataamaan Google Fonts määritystiedostossa: {seeDocumentationLink}',
   'documentation' => 'dokumentointi',
+  'see documentation' => 'katso dokumentaatio',
 );

@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Glavni izbornik',
   'Use Sassy CSS syntax (SCSS)' => 'Koristite Sassy CSS sintaksu (SCSS)',
   'Use the name in the URL' => 'Koristite naziv u URL-u',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Možda ćete morati ovlastiti HumHub za preuzimanje Google Fontova u zaglavljima {ContentSecurityPolicy} dodavanjem URL- {googleFontsDownloadUrl} nakon {fontSrcSelf} (pogledajte {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Morate ovlastiti HumHub za preuzimanje Google Fontova u konfiguracijskoj datoteci: {seeDocumentationLink}',
   'documentation' => 'dokumentacija',
+  'see documentation' => 'pogledajte dokumentaciju',
 );

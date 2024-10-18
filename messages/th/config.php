@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'เมนูยอดนิยม',
   'Use Sassy CSS syntax (SCSS)' => 'ใช้ไวยากรณ์ Sassy CSS (SCSS)',
   'Use the name in the URL' => 'ใช้ชื่อใน URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'คุณอาจต้องอนุญาตให้ HumHub ดาวน์โหลด Google Fonts ในส่วนหัว {ContentSecurityPolicy} โดยเพิ่ม {googleFontsDownloadUrl} URL หลัง {fontSrcSelf} (ดู {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'คุณต้องอนุญาตให้ HumHub ดาวน์โหลด Google Fonts ในไฟล์การกำหนดค่า: {seeDocumentationLink}',
   'documentation' => 'เอกสารประกอบ',
+  'see documentation' => 'ดูเอกสารประกอบ',
 );

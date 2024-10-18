@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Menu teratas',
   'Use Sassy CSS syntax (SCSS)' => 'Gunakan sintaksis Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Gunakan nama di URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Anda mungkin perlu mengotorisasi HumHub untuk mengunduh Google Font di header {ContentSecurityPolicy} dengan menambahkan URL {googleFontsDownloadUrl} setelah {fontSrcSelf} (lihat {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Anda harus mengizinkan HumHub untuk mengunduh Google Fonts dalam file konfigurasi: {seeDocumentationLink}',
   'documentation' => 'dokumentasi',
+  'see documentation' => 'lihat dokumentasi',
 );

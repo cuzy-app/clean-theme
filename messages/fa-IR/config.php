@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'منوی بالا',
   'Use Sassy CSS syntax (SCSS)' => 'استفاده از سینتکس Sassy CSS (SCSS)',
   'Use the name in the URL' => 'از نام در URL استفاده کنید',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'ممکن است لازم باشد HumHub را برای بارگیری فونت‌های Google در سرصفحه‌های {ContentSecurityPolicy} با افزودن URL {googleFontsDownloadUrl} بعد از {fontSrcSelf} مجاز کنید (به {documentationLink} مراجعه کنید)',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'باید به HumHub اجازه دهید تا فونت های Google را در فایل پیکربندی دانلود کند: {seeDocumentationLink}',
   'documentation' => 'مستندات',
+  'see documentation' => 'مستندات را ببینید',
 );

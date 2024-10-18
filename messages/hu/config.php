@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Főmenü',
   'Use Sassy CSS syntax (SCSS)' => 'Sassy CSS szintaxis (SCSS) használata',
   'Use the name in the URL' => 'Használja az URL-ben szereplő nevet',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Előfordulhat, hogy engedélyeznie kell a HumHubot a Google Fonts letöltéséhez a {ContentSecurityPolicy} fejlécekben, ehhez adja hozzá a {googleFontsDownloadUrl} URL-t {fontSrcSelf} után (lásd {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Engedélyeznie kell a HumHubot a Google Fonts letöltéséhez a konfigurációs fájlban: {seeDocumentationLink}',
   'documentation' => 'dokumentáció',
+  'see documentation' => 'lásd a dokumentációt',
 );

@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'トップメニュー',
   'Use Sassy CSS syntax (SCSS)' => 'Sassy CSS構文（SCSS）を使用する',
   'Use the name in the URL' => 'URLに名前を使用する',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => '{ContentSecurityPolicy}ヘッダーで{fontSrcSelf}の後に{googleFontsDownloadUrl} URL を追加して、HumHub が Google Fonts をダウンロードできるように許可する必要がある場合があります ( {documentationLink}を参照)',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => '設定ファイルでHumHubにGoogle Fontsのダウンロードを許可する必要があります: {seeDocumentationLink}',
   'documentation' => 'ドキュメンテーション',
+  'see documentation' => 'ドキュメントを参照',
 );

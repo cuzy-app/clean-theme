@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Meniul de sus',
   'Use Sassy CSS syntax (SCSS)' => 'Utilizați sintaxa Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Utilizați numele din adresa URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Poate fi necesar să autorizați HumHub să descarce fonturi Google în antetele {ContentSecurityPolicy} adăugând adresa URL {googleFontsDownloadUrl} după {fontSrcSelf} (consultați {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Trebuie să autorizați HumHub să descarce fonturi Google în fișierul de configurare: {seeDocumentationLink}',
   'documentation' => 'documentație',
+  'see documentation' => 'vezi documentatia',
 );

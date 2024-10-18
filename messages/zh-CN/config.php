@@ -85,6 +85,7 @@ return array (
   'Top menu' => '顶部菜单',
   'Use Sassy CSS syntax (SCSS)' => '使用 Sassy CSS 语法 (SCSS)',
   'Use the name in the URL' => '在 URL 中使用名称',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => '您可能需要通过在{fontSrcSelf}后添加{googleFontsDownloadUrl} URL 来授权 HumHub 在{ContentSecurityPolicy}标头中下载 Google 字体（请参阅{documentationLink} ）',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => '您必须在配置文件中授权HumHub下载Google字体： {seeDocumentationLink}',
   'documentation' => '文档',
+  'see documentation' => '查看文档',
 );

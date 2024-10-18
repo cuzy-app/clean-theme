@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Dewislen uchaf',
   'Use Sassy CSS syntax (SCSS)' => 'Defnyddiwch gystrawen Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Defnyddiwch yr enw yn yr URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Efallai y bydd angen i chi awdurdodi HumHub i lawrlwytho Google Fonts ym mhenawdau {ContentSecurityPolicy} trwy ychwanegu\'r URL {googleFontsDownloadUrl} ar ôl {fontSrcSelf} (gweler {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Rhaid i chi awdurdodi HumHub i lawrlwytho Google Fonts yn y ffeil ffurfweddu: {seeDocumentationLink}',
   'documentation' => 'dogfennaeth',
+  'see documentation' => 'gweler dogfennaeth',
 );

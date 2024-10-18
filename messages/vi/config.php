@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Thực đơn trên cùng',
   'Use Sassy CSS syntax (SCSS)' => 'Sử dụng cú pháp Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Sử dụng tên trong URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Bạn có thể cần ủy quyền cho HumHub tải xuống Google Fonts trong tiêu đề {ContentSecurityPolicy} bằng cách thêm URL {googleFontsDownloadUrl} sau {fontSrcSelf} (xem {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Bạn phải cho phép HumHub tải xuống Google Fonts trong tệp cấu hình: {seeDocumentationLink}',
   'documentation' => 'tài liệu',
+  'see documentation' => 'xem tài liệu',
 );

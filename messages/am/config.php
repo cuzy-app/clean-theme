@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'ከፍተኛ ምናሌ',
   'Use Sassy CSS syntax (SCSS)' => 'Sassy CSS አገባብ (SCSS) ተጠቀም',
   'Use the name in the URL' => 'በዩአርኤል ውስጥ ስሙን ይጠቀሙ',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'ጉግል ፎንቶችን በ {ContentSecurityPolicy} ራስጌዎች ውስጥ {fontSrcSelf} በኋላ {googleFontsDownloadUrl} URLን በማከል HumHubን መፍቀድ ሊኖርብዎ ይችላል ( {documentationLink} ይመልከቱ)',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'ጉግል ፎንቶችን በማዋቀር ፋይሉ ውስጥ እንዲያወርድ HumHub መፍቀድ አለብህ {seeDocumentationLink}',
   'documentation' => 'ሰነዶች',
+  'see documentation' => 'ሰነዶችን ይመልከቱ',
 );

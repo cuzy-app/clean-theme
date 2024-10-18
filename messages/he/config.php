@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'תפריט עליון',
   'Use Sassy CSS syntax (SCSS)' => 'השתמש בתחביר CSS של Sassy (SCSS)',
   'Use the name in the URL' => 'השתמש בשם בכתובת האתר',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'ייתכן שיהיה עליך לאשר ל-HumHub להוריד גופנים של Google בכותרות {ContentSecurityPolicy} על ידי הוספת כתובת האתר {googleFontsDownloadUrl} אחרי {fontSrcSelf} (ראה {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'עליך לאשר ל-HumHub להוריד גופנים של Google בקובץ התצורה: {seeDocumentationLink}',
   'documentation' => 'תיעוד',
+  'see documentation' => 'ראה תיעוד',
 );

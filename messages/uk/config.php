@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Верхнє меню',
   'Use Sassy CSS syntax (SCSS)' => 'Використовуйте синтаксис Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Використовуйте назву в URL-адресі',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Можливо, вам знадобиться авторизувати HumHub для завантаження шрифтів Google у заголовках {ContentSecurityPolicy} , додавши URL-адресу {googleFontsDownloadUrl} після {fontSrcSelf} (див. {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Ви повинні авторизувати HumHub для завантаження шрифтів Google у файлі конфігурації: {seeDocumentationLink}',
   'documentation' => 'документація',
+  'see documentation' => 'див. документацію',
 );

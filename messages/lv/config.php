@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Augšējā izvēlne',
   'Use Sassy CSS syntax (SCSS)' => 'Izmantojiet Sassy CSS sintaksi (SCSS)',
   'Use the name in the URL' => 'Izmantojiet nosaukumu URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Iespējams, jums būs jāautorizē HumHub, lai lejupielādētu Google fontus {ContentSecurityPolicy} galvenēs, pievienojot {googleFontsDownloadUrl} URL aiz {fontSrcSelf} (skatiet {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Jums ir jāpilnvaro HumHub lejupielādēt Google fontus konfigurācijas failā: {seeDocumentationLink}',
   'documentation' => 'dokumentācija',
+  'see documentation' => 'skatiet dokumentāciju',
 );

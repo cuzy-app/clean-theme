@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Hauptmenü',
   'Use Sassy CSS syntax (SCSS)' => 'Verwenden Sie die Sassy-CSS-Syntax (SCSS).',
   'Use the name in the URL' => 'Den Namen in der URL verwenden',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Möglicherweise müssen Sie HumHub autorisieren, Google Fonts in den {ContentSecurityPolicy} Headern herunterzuladen, indem Sie die URL {googleFontsDownloadUrl} nach {fontSrcSelf} hinzufügen (siehe {documentationLink} ).',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Sie müssen HumHub in der Konfigurationsdatei autorisieren, Google Fonts herunterzuladen: {seeDocumentationLink}',
   'documentation' => 'Dokumentation',
+  'see documentation' => 'siehe Dokumentation',
 );

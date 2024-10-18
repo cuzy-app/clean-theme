@@ -85,6 +85,7 @@ return array (
   'Top menu' => 'Horní menu',
   'Use Sassy CSS syntax (SCSS)' => 'Použít syntaxi Sassy CSS (SCSS)',
   'Use the name in the URL' => 'Použijte název v URL',
-  'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})' => 'Možná budete muset povolit HumHub ke stažení písem Google Fonts v záhlaví {ContentSecurityPolicy} přidáním adresy URL {googleFontsDownloadUrl} za {fontSrcSelf} (viz {documentationLink} )',
+  'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}' => 'Musíte povolit HumHub ke stažení Google Fonts v konfiguračním souboru: {seeDocumentationLink}',
   'documentation' => 'dokumentace',
+  'see documentation' => 'viz dokumentace',
 );

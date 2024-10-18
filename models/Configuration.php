@@ -16,7 +16,6 @@ use ScssPhp\ScssPhp\Exception\SassException;
 use Yii;
 use yii\base\Exception;
 use yii\base\Model;
-use yii\helpers\Html;
 use yii\helpers\Inflector;
 use yii\web\ServerErrorHttpException;
 
@@ -347,11 +346,8 @@ class Configuration extends Model
         $googleFonts =
             Yii::t('CleanThemeModule.config', 'Google Font name') . ' ' .
             Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->xs() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>' .
-            Yii::t('CleanThemeModule.config', 'You might need to authorize HumHub to download Google Fonts in the {ContentSecurityPolicy} headers by adding the {googleFontsDownloadUrl} URL after {fontSrcSelf} (see {documentationLink})', [
-                'googleFontsDownloadUrl' => Html::tag('code', 'https://fonts.gstatic.com'),
-                'ContentSecurityPolicy' => Html::tag('code', 'Content-Security-Policy'),
-                'fontSrcSelf' => Html::tag('code', 'font-src \'self\''),
-                'documentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
+            Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
+                'documentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
             ]);
 
         return [
