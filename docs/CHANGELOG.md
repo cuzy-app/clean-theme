@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: use `--hh-ct-font-size` CSS variable for buttons
+
 2.1.0 (October 18, 2024)
 --------------------
 - Enh: In the module configuration, add syntax highlighting to SCSS code (Custom code section) 
