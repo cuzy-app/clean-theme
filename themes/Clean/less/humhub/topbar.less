@@ -355,50 +355,44 @@
         }
 
         > .nav {
-            > li {
+            > li > a {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 height: calc(var(--hh-ct-top-bar-height) - var(--hh-ct-panel-border-width));
+                color: var(--hh-ct-top-menu-text-color);
+                padding: 0 13px;
+                text-decoration: none;
+                text-shadow: none;
+                font-weight: 600;
+                font-size: var(--hh-ct-top-bar-font-size);
+                text-transform: uppercase;
+                text-align: center;
+                transition: .25s;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
 
-                > a {
-                    display: inline-block;
-                    color: var(--hh-ct-top-menu-text-color);
-                    padding: 0 13px;
+                > br {
+                    display: none;
+                }
+
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: var(--hh-ct-top-menu-button-hover-background-color);
+                    color: var(--hh-ct-top-menu-button-hover-text-color);
                     text-decoration: none;
-                    text-shadow: none;
-                    font-weight: 600;
-                    font-size: var(--hh-ct-top-bar-font-size);
-                    text-transform: uppercase;
-                    text-align: center;
-                    transition: .25s;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
+                    border-bottom: none;
+                }
 
-                    > br,
-                    > div > br {
-                        display: none;
-                    }
+                i {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
 
-                    &:hover,
-                    &:active,
-                    &:focus {
-                        background-color: var(--hh-ct-top-menu-button-hover-background-color);
-                        color: var(--hh-ct-top-menu-button-hover-text-color);
-                        text-decoration: none;
-                        border-bottom: none;
-                    }
-
-                    i {
-                        display: block;
-                        font-size: 14px;
-                        margin-bottom: 5px;
-                    }
-
-                    .caret {
-                        border-top-color: var(--text-color-secondary);
-                    }
+                .caret {
+                    border-top-color: var(--text-color-secondary);
                 }
             }
 
