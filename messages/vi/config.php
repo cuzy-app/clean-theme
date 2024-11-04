@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Chọn màu ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Màu nổi bật nhẹ nhàng cho nền thông tin (ví dụ: danh mục hoạt động Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Màu văn bản mềm 2 dành cho các thông tin phụ khác như liên kết vào tường (thích/bình luận), khối trợ giúp trong biểu mẫu, v.v.',
-  'Soft text color 3 for grid view summary, etc.' => 'Màu văn bản mềm 3 cho tóm tắt chế độ xem lưới, v.v.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Màu văn bản mềm 3 cho chỗ giữ chỗ, tóm tắt chế độ xem lưới, v.v.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Màu văn bản mềm mại cho thông tin phụ như ngày tháng, phần giữ chỗ, một số tiêu đề thả xuống',
   'Text color' => 'Văn bản màu',
   'Text colors' => 'Màu văn bản',

@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Επιλέξτε χρώμα...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Απαλό χρώμα επισήμανσης για ενημερωτικά φόντο (π.χ. ενεργή κατηγορία Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Μαλακό χρώμα κειμένου 2 για άλλες πλευρικές πληροφορίες, όπως συνδέσμους εισόδου τοίχου (μου αρέσει/σχόλιο), μπλοκ βοήθειας σε φόρμες κ.λπ.',
-  'Soft text color 3 for grid view summary, etc.' => 'Απαλό χρώμα κειμένου 3 για περίληψη προβολής πλέγματος κ.λπ.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Απαλό χρώμα κειμένου 3 για σύμβολα κράτησης θέσης, περίληψη προβολής πλέγματος κ.λπ.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Απαλό χρώμα κειμένου για παράπλευρες πληροφορίες όπως ημερομηνίες, σύμβολο κράτησης θέσης, ορισμένες αναπτυσσόμενες κεφαλίδες',
   'Text color' => 'Χρώμα κειμένου',
   'Text colors' => 'Χρώματα κειμένου',

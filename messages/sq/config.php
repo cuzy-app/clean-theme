@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Zgjidhni ngjyrën...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Ngjyra e butë e theksimit për sfonde informative (p.sh. kategoria aktive Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Ngjyra e butë e tekstit 2 për informacione të tjera anësore si lidhjet e hyrjes në mur (pëlqim/koment), blloqe ndihmëse në formularë, etj.',
-  'Soft text color 3 for grid view summary, etc.' => 'Ngjyra e butë e tekstit 3 për përmbledhjen e pamjes së rrjetës, etj.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Ngjyra e butë e tekstit 3 për mbajtësit e vendeve, përmbledhja e pamjes së rrjetës, etj.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Ngjyra e butë e tekstit për informacionin anësor si datat, mbajtëset e vendeve, disa tituj me zbritje',
   'Text color' => 'Ngjyra e tekstit',
   'Text colors' => 'Ngjyrat e tekstit',

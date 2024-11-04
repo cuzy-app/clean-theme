@@ -75,7 +75,7 @@ return array (
   'Select color ...' => '色を選択...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => '情報を伝える背景のソフトハイライトカラー（例：Wiki アクティブ カテゴリ）',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'ウォールのエントリ リンク (いいね/コメント)、フォーム内のヘルプ ブロックなどのその他のサイド情報用のソフト テキスト カラー 2。',
-  'Soft text color 3 for grid view summary, etc.' => 'グリッド ビューの概要などのソフト テキスト カラー 3。',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'プレースホルダー、グリッド ビューの概要などに使用するソフト テキスト カラー 3。',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => '日付、プレースホルダー、一部のドロップダウン ヘッダーなどのサイド情報のテキストの色をソフトにする',
   'Text color' => 'テキストの色',
   'Text colors' => 'テキストの色',

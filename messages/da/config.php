@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Vælg farve...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Blød højlysfarve til informative baggrunde (f.eks. Wiki aktiv kategori)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Blød tekstfarve 2 til anden sideinformation såsom links til vægindgange (synes godt om/kommentere), hjælpeblokke i formularer osv.',
-  'Soft text color 3 for grid view summary, etc.' => 'Blød tekstfarve 3 til oversigt over gittervisning osv.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Blød tekstfarve 3 til pladsholdere, oversigt over gittervisning osv.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Blød tekstfarve til sideoplysninger som datoer, pladsholder, nogle dropdown-overskrifter',
   'Text color' => 'Tekstfarve',
   'Text colors' => 'Tekstfarver',

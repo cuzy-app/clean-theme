@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Izvēlieties krāsu...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Mīksta izcelšanas krāsa informatīviem foniem (piemēram, Wiki aktīvā kategorija)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Mīkstā teksta krāsa 2 citai sānu informācijai, piemēram, sienu ievades saitēm (patīk/komentēt), palīdzības blokiem veidlapās utt.',
-  'Soft text color 3 for grid view summary, etc.' => 'Mīkstā teksta krāsa 3 režģa skata kopsavilkumam utt.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Mīkstā teksta krāsa 3 vietturiem, režģa skata kopsavilkumam utt.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Mīksta teksta krāsa sānu informācijai, piemēram, datumiem, vietturim, dažām nolaižamo izvēlņu galvenēm',
   'Text color' => 'Teksta krāsa',
   'Text colors' => 'Teksta krāsas',

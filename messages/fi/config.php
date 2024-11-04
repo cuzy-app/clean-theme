@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Valitse väri...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Pehmeä korostusväri informatiivisille taustoille (esim. Wikin aktiivinen luokka)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Pehmeä tekstin väri 2 muille sivutiedoille, kuten seinän sisääntulolinkeille (tykkää/kommentoi), lomakkeiden apulohkoille jne.',
-  'Soft text color 3 for grid view summary, etc.' => 'Pehmeän tekstin väri 3 ruudukkonäkymän yhteenvetoon jne.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Pehmeä tekstin väri 3 paikkamerkeillä, ruudukkonäkymän yhteenvedolla jne.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Pehmeä tekstiväri sivutiedoille, kuten päivämäärille, paikkamerkki, alasvetovalikon otsikoille',
   'Text color' => 'Tekstin väri',
   'Text colors' => 'Tekstin värit',

@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'เลือกสี...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'สีไฮไลท์อ่อนสำหรับพื้นหลังที่ให้ข้อมูล (เช่น หมวดหมู่ที่ใช้งาน Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'ข้อความสีอ่อน 2 สำหรับข้อมูลด้านอื่นๆ เช่น ลิงก์เข้าวอลล์ (ไลค์/แสดงความคิดเห็น) บล็อกตัวช่วยในแบบฟอร์ม ฯลฯ',
-  'Soft text color 3 for grid view summary, etc.' => 'สีข้อความอ่อน 3 สำหรับสรุปมุมมองกริด ฯลฯ',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'สีข้อความอ่อน 3 สำหรับตัวแทน สรุปมุมมองตาราง ฯลฯ',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'สีข้อความอ่อนสำหรับข้อมูลด้านข้าง เช่น วันที่ ตัวยึดตำแหน่ง และส่วนหัวแบบเลื่อนลงบางส่วน',
   'Text color' => 'สีข้อความ',
   'Text colors' => 'สีข้อความ',

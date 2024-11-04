@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Rangni tanlang ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Ma\'lumot beruvchi fon uchun yumshoq ta\'kidlash rangi (masalan, Wiki faol toifasi)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Devorga kirish havolalari (like/izoh), shakllardagi yordam bloklari va h.k. kabi boshqa yon ma\'lumotlar uchun yumshoq matn rangi 2.',
-  'Soft text color 3 for grid view summary, etc.' => 'To‘r ko‘rinishi xulosasi uchun yumshoq matn rangi 3 va hokazo.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'To\'ldiruvchilar uchun yumshoq matn rangi 3, to\'r ko\'rinishi xulosasi va boshqalar.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Sana, toʻldiruvchi, ochiladigan sarlavhalar kabi yon maʼlumotlar uchun yumshoq matn rangi',
   'Text color' => 'Matn rangi',
   'Text colors' => 'Matn ranglari',

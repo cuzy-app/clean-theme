@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'בחר צבע ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'צבע הדגשה רך עבור רקע אינפורמטיבי (למשל קטגוריה פעילה של Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'צבע טקסט רך 2 למידע צדדי אחר כמו קישורים לכניסה לקיר (לייק/הערה), חסימות עזרה בטפסים וכו\'.',
-  'Soft text color 3 for grid view summary, etc.' => 'צבע טקסט רך 3 לסיכום תצוגת רשת וכו\'.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'צבע טקסט רך 3 עבור מצייני מיקום, סיכום תצוגת רשת וכו\'.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'צבע טקסט רך עבור מידע צדדי כמו תאריכים, מציין מיקום, כמה כותרות נפתחות',
   'Text color' => 'צבע טקסט',
   'Text colors' => 'צבעי טקסט',

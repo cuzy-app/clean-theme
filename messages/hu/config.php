@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Válassz színt...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Lágy kiemelő szín az informatív hátterekhez (pl. Wiki aktív kategória)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Puha szöveg színe 2 az egyéb oldalsó információkhoz, mint például a falbemeneti linkek (lájkold/hozzászólás), az űrlapokon lévő súgóblokkok stb.',
-  'Soft text color 3 for grid view summary, etc.' => 'Puha szöveg színe 3 a rácsnézet összefoglalójához stb.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Puha szöveg színe 3 helyőrzőkhöz, rácsnézet összefoglalóhoz stb.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Puha szövegszín az oldalsó információkhoz, például dátumokhoz, helyőrzőhöz és néhány legördülő fejléchez',
   'Text color' => 'Szöveg szín',
   'Text colors' => 'Szöveg színei',

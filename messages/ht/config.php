@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Chwazi koulè...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Koulè rekò mou pou orijin enfòmatif (egzanp kategori Wiki aktif)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Koulè tèks mou 2 pou lòt enfòmasyon bò tankou lyen antre miray (tankou / kòmantè), èd blòk nan fòm, elatriye.',
-  'Soft text color 3 for grid view summary, etc.' => 'Koulè tèks mou 3 pou rezime gade kadriyaj, elatriye.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Koulè tèks mou 3 pou placeholders, rezime kadriyaj, elatriye.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Koulè tèks mou pou enfòmasyon sou bò tankou dat, kontenè, kèk headdown dropdown',
   'Text color' => 'Koulè tèks',
   'Text colors' => 'Koulè tèks yo',

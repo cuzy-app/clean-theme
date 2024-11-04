@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Chagua rangi...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Rangi laini ya kuangazia kwa mandharinyuma (km kitengo kinachotumika cha Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Rangi laini ya maandishi 2 kwa maelezo mengine ya upande kama vile viungo vya kuingilia ukutani (kama/maoni), vizuizi vya usaidizi katika fomu, n.k.',
-  'Soft text color 3 for grid view summary, etc.' => 'Rangi ya maandishi laini 3 kwa muhtasari wa mwonekano wa gridi, n.k.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Nakala laini ya rangi 3 kwa vishika nafasi, muhtasari wa mwonekano wa gridi, n.k.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Rangi laini ya maandishi kwa maelezo ya kando kama tarehe, kishika nafasi, baadhi ya vichwa kunjuzi',
   'Text color' => 'Rangi ya maandishi',
   'Text colors' => 'Rangi za maandishi',

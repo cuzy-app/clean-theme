@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Seleziona il colore...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Colore di evidenziazione morbido per sfondi informativi (ad es. Categoria attiva Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Colore testo soft 2 per altre informazioni secondarie come link di accesso alla bacheca (mi piace/commento), blocchi di aiuto nei moduli, ecc.',
-  'Soft text color 3 for grid view summary, etc.' => 'Colore testo soft 3 per riepilogo della visualizzazione griglia, ecc.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Colore del testo soft 3 per segnaposto, riepilogo della vista griglia, ecc.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Colore del testo morbido per informazioni secondarie come date, segnaposto e alcune intestazioni a discesa',
   'Text color' => 'Colore del testo',
   'Text colors' => 'Colori del testo',

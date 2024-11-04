@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Izberite barvo ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Mehka poudarjena barva za informativna ozadja (npr. Wiki aktivna kategorija)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Mehka barva besedila 2 za druge stranske informacije, kot so povezave za vnos na steno (všečkaj/komentiraj), bloki pomoči v obrazcih itd.',
-  'Soft text color 3 for grid view summary, etc.' => 'Mehka barva besedila 3 za povzetek mrežnega pogleda itd.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Mehka barva besedila 3 za ograde, povzetek mrežnega pogleda itd.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Mehka barva besedila za stranske informacije, kot so datumi, ograda, nekaj spustnih glav',
   'Text color' => 'Barva besedila',
   'Text colors' => 'Barve besedila',

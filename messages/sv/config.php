@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Välj färg...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Mjuk markeringsfärg för informativa bakgrunder (t.ex. Wiki aktiv kategori)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Mjuk textfärg 2 för annan sidoinformation som vägglänkar (gilla/kommentera), hjälpblock i formulär, etc.',
-  'Soft text color 3 for grid view summary, etc.' => 'Mjuk textfärg 3 för sammanfattning av rutnätsvy, etc.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Mjuk textfärg 3 för platshållare, sammanfattning av rutnätsvy, etc.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Mjuk textfärg för sidoinformation som datum, platshållare, några rullgardinsrubriker',
   'Text color' => 'Text färg',
   'Text colors' => 'Textfärger',

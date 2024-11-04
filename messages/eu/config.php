@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Hautatu kolorea...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Nabarmendu kolore leuna atzeko plano informatiboetarako (adibidez, Wiki aktiboko kategoria)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Testu bigunaren kolorea 2 alboko beste informaziorako, esate baterako, horman sartzeko estekak (atsegin dut/iruzkinak), inprimakietako laguntza-blokeak, etab.',
-  'Soft text color 3 for grid view summary, etc.' => 'Testu leunaren kolorea 3 sareta-ikuspegiaren laburpenerako, etab.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Testu bigunaren kolorea 3 leku-marketarako, sareta-ikuspegiaren laburpena, etab.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Testu leunaren kolorea alboko informaziorako, hala nola datak, leku-markak, goitibeherako goiburu batzuk',
   'Text color' => 'Testuaren kolorea',
   'Text colors' => 'Testuaren koloreak',

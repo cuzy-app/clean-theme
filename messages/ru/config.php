@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Выберите цвет...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Мягкий цвет выделения для информативного фона (например, активная категория Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Цвет мягкого текста 2 для другой дополнительной информации, такой как ссылки на стены (например, комментарии), блоки помощи в формах и т. д.',
-  'Soft text color 3 for grid view summary, etc.' => 'Цвет мягкого текста 3 для сводки в виде сетки и т. д.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Цвет мягкого текста 3 для заполнителей, сводки в виде сетки и т. д.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Мягкий цвет текста для дополнительной информации, такой как даты, заполнители и некоторые раскрывающиеся заголовки.',
   'Text color' => 'Цвет текста',
   'Text colors' => 'Цвета текста',

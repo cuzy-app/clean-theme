@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Dewiswch liw ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Lliw uchafbwynt meddal ar gyfer cefndiroedd llawn gwybodaeth (ee categori gweithredol Wici)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Lliw testun meddal 2 ar gyfer gwybodaeth ochr arall fel dolenni mynediad wal (fel / sylw), blociau cymorth mewn ffurflenni, ac ati.',
-  'Soft text color 3 for grid view summary, etc.' => 'Lliw testun meddal 3 ar gyfer crynodeb golwg grid, ac ati.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Lliw testun meddal 3 ar gyfer dalfannau, crynodeb golwg grid, ac ati.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Lliw testun meddal ar gyfer gwybodaeth ochr fel dyddiadau, dalfan, rhai penawdau cwymplen',
   'Text color' => 'Lliw testun',
   'Text colors' => 'Lliwiau testun',

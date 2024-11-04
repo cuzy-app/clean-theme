@@ -75,7 +75,7 @@ return array (
   'Select color ...' => '색상 선택 ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => '정보 배경을 위한 부드러운 강조 색상(예: Wiki 활성 카테고리)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => '벽 항목 링크(좋아요/댓글), 양식의 도움말 블록 등과 같은 기타 측면 정보를 위한 소프트 텍스트 색상 2',
-  'Soft text color 3 for grid view summary, etc.' => '그리드 보기 요약 등을 위한 소프트 텍스트 색상 3',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => '플레이스홀더, 그리드 보기 요약 등을 위한 부드러운 텍스트 색상 3.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => '날짜, 자리 표시자, 일부 드롭다운 헤더와 같은 추가 정보를 위한 부드러운 텍스트 색상',
   'Text color' => '텍스트 색상',
   'Text colors' => '텍스트 색상',

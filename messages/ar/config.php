@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'إختر لون ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'لون تمييز ناعم للخلفيات الإعلامية (مثل فئة Wiki النشطة)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'لون النص الناعم 2 للحصول على معلومات جانبية أخرى مثل روابط الدخول إلى الحائط (إعجاب/تعليق)، وكتل المساعدة في النماذج، وما إلى ذلك.',
-  'Soft text color 3 for grid view summary, etc.' => 'لون النص الناعم 3 لملخص عرض الشبكة، وما إلى ذلك.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'لون النص الناعم 3 للعناصر النائبة، وملخص عرض الشبكة، وما إلى ذلك.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'لون نص ناعم للحصول على معلومات جانبية مثل التواريخ والعنصر النائب وبعض رؤوس القائمة المنسدلة',
   'Text color' => 'لون الخط',
   'Text colors' => 'ألوان النص',

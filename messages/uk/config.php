@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Виберіть колір...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'М\'який колір виділення для інформативного фону (наприклад, активна категорія Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'М’який колір тексту 2 для іншої додаткової інформації, як-от посилання для входу на стіну (подобається/коментар), блоки довідки у формах тощо.',
-  'Soft text color 3 for grid view summary, etc.' => 'М’який колір тексту 3 для підсумкової таблиці тощо.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'М’який колір тексту 3 для покажчиків місця заповнення, підсумкового вигляду сітки тощо.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'М’який колір тексту для додаткової інформації, як-от дати, заповнювач, деякі заголовки спадного меню',
   'Text color' => 'Колір тексту',
   'Text colors' => 'Кольори тексту',

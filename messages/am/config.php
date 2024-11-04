@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'ቀለም ይምረጡ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'ለስላሳ የድምቀት ቀለም ለመረጃ ሰጭ ዳራ (ለምሳሌ የዊኪ ንቁ ምድብ)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'ለስላሳ የጽሁፍ ቀለም 2 ለሌላ የጎን መረጃ እንደ ግድግዳ መግቢያ ማያያዣዎች (መውደድ/አስተያየት)፣ በቅጾች ውስጥ እገዛ ማገድ፣ ወዘተ.',
-  'Soft text color 3 for grid view summary, etc.' => 'ለስላሳ የጽሁፍ ቀለም 3 ለግሪድ እይታ ማጠቃለያ ወዘተ',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'ለስላሳ የጽሑፍ ቀለም 3 ለቦታ ያዥ፣ የፍርግርግ እይታ ማጠቃለያ፣ ወዘተ',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'እንደ ቀኖች፣ ቦታ ያዥ፣ አንዳንድ ተቆልቋይ ራስጌዎች ላሉ የጎን መረጃ ለስላሳ የጽሑፍ ቀለም',
   'Text color' => 'የጽሑፍ ቀለም',
   'Text colors' => 'የጽሑፍ ቀለሞች',

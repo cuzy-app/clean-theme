@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Renk seç ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Bilgilendirici arka planlar için yumuşak vurgu rengi (örn. Wiki aktif kategorisi)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Duvar giriş bağlantıları (beğen/yorum), formlardaki yardım blokları vb. gibi diğer yan bilgiler için yumuşak metin rengi 2.',
-  'Soft text color 3 for grid view summary, etc.' => 'Izgara görünümü özeti vb. için yumuşak metin rengi 3.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Yer tutucular, ızgara görünümü özeti vb. için yumuşak metin rengi 3.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Tarihler, yer tutucular ve bazı açılır başlıklar gibi yan bilgiler için yumuşak metin rengi',
   'Text color' => 'Metin rengi',
   'Text colors' => 'Metin renkleri',

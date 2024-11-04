@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Selecteer kleur ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Zachte markeringskleur voor informatieve achtergronden (bijv. Wiki actieve categorie)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Zachte tekstkleur 2 voor overige zij-informatie, zoals links naar toegangspagina\'s (vind ik leuk/commentaar), helpblokken in formulieren, etc.',
-  'Soft text color 3 for grid view summary, etc.' => 'Zachte tekstkleur 3 voor samenvatting van rasterweergave, etc.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Zachte tekstkleur 3 voor tijdelijke aanduidingen, samenvatting in rasterweergave, enz.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Zachte tekstkleur voor zijinformatie zoals datums, tijdelijke aanduiding en enkele vervolgkeuzekoppen',
   'Text color' => 'Tekst kleur',
   'Text colors' => 'Tekstkleuren',

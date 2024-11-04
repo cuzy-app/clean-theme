@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Pilih warna...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Warna highlight lembut untuk latar belakang informatif (misalnya kategori aktif Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Warna teks lembut 2 untuk informasi sampingan lain seperti tautan masuk dinding (suka/komentar), blok bantuan dalam formulir, dll.',
-  'Soft text color 3 for grid view summary, etc.' => 'Warna teks lembut 3 untuk ringkasan tampilan kisi, dll.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Warna teks lunak 3 untuk tempat penampung, ringkasan tampilan kisi, dll.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Warna teks lembut untuk informasi sampingan seperti tanggal, placeholder, beberapa header dropdown',
   'Text color' => 'Warna teks',
   'Text colors' => 'Warna teks',

@@ -209,8 +209,8 @@ class Configuration extends Model
     public string $topMenuButtonHoverBackgroundColor = '#f7f7f7';
     public string $topMenuButtonHoverTextColor = '#242424';
     public string $scss = '';
-    public string|bool $hideTopMenuOnScrollDown = true;
-    public string|bool $hideBottomMenuOnScrollDown = true;
+    public string|bool $hideTopMenuOnScrollDown = false;
+    public string|bool $hideBottomMenuOnScrollDown = false;
     public string|bool $hideTextInBottomMenuItems = true;
 
     public static function getJustifyContentOptions(): array
@@ -293,7 +293,7 @@ class Configuration extends Model
             'textColorHighlight' => Yii::t('CleanThemeModule.config', 'Text highlight color for some active links, hover links, etc.'),
             'textColorSoft' => Yii::t('CleanThemeModule.config', 'Soft text color for side information like dates, placeholder, some dropdown headers'),
             'textColorSoft2' => Yii::t('CleanThemeModule.config', 'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.'),
-            'textColorSoft3' => Yii::t('CleanThemeModule.config', 'Soft text color 3 for grid view summary, etc.'),
+            'textColorSoft3' => Yii::t('CleanThemeModule.config', 'Soft text color 3 for placeholders, grid view summary, etc.'),
             'textColorContrast' => Yii::t('CleanThemeModule.config', 'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.'),
             'backgroundColorMain' => Yii::t('CleanThemeModule.config', 'Main background color which should be in contrast with main, secondary and other text colors'),
             'backgroundColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary background color used for tabs, etc.'),

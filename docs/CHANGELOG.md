@@ -4,6 +4,8 @@ Changelog
 Unreleased
 --------------------
 - Enh: use `--hh-ct-font-size` CSS variable for buttons
+- Chg: "Hide the top and bottom menus on scroll down" features is now disabled by default
+- Fix: Bottom menu on mobile: when "Hide the text of the bottom menu buttons" is enabled, long texts are truncated
 
 2.1.0 (October 18, 2024)
 --------------------

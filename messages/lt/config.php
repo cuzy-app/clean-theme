@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Pasirinkite spalvą...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Švelni paryškinimo spalva informatyviems fonams (pvz., Wiki aktyvi kategorija)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Švelni teksto spalva 2 skirta kitai šoninei informacijai, pvz., sienų įėjimo nuorodoms (patinka / komentuoti), pagalbos blokams formose ir kt.',
-  'Soft text color 3 for grid view summary, etc.' => 'Švelni teksto spalva 3 tinklelio rodinio santraukai ir kt.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => '3 minkšto teksto spalva, skirta vietos žymėtojams, tinklelio rodinio santraukai ir kt.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Švelni teksto spalva, skirta šoninei informacijai, pvz., datoms, rezervuotai vietai, kai kurioms išskleidžiamojo meniu antraštėms',
   'Text color' => 'Teksto spalva',
   'Text colors' => 'Teksto spalvos',

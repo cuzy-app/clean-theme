@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Alege culoarea...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Culoare de evidențiere moale pentru fundaluri informative (de exemplu, categoria activă Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Culoarea textului moale 2 pentru alte informații laterale, cum ar fi link-uri de intrare pe perete (like/comentare), blocuri de ajutor în formulare etc.',
-  'Soft text color 3 for grid view summary, etc.' => 'Culoarea textului moale 3 pentru rezumatul vizualizării grilei etc.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Culoarea textului moale 3 pentru substituenți, rezumatul vizualizării grilei etc.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Culoarea textului moale pentru informații laterale, cum ar fi date, substituent, unele anteturi drop-down',
   'Text color' => 'Culoarea textului',
   'Text colors' => 'Culorile textului',

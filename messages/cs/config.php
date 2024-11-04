@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'Vyberte barvu...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'Jemná barva zvýraznění pro informativní pozadí (např. aktivní kategorie Wiki)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'Barva jemného textu 2 pro další postranní informace, jako jsou odkazy na vstup na zeď (jako/komentář), bloky nápovědy ve formulářích atd.',
-  'Soft text color 3 for grid view summary, etc.' => 'Barva měkkého textu 3 pro souhrn zobrazení mřížky atd.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'Barva měkkého textu 3 pro zástupné symboly, souhrn zobrazení mřížky atd.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'Měkká barva textu pro boční informace, jako jsou data, zástupný symbol, některá rozbalovací záhlaví',
   'Text color' => 'Barva textu',
   'Text colors' => 'Barvy textu',

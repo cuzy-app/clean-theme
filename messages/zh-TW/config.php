@@ -75,7 +75,7 @@ return array (
   'Select color ...' => '選擇顏色 ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => '資訊背景的柔和突出顯示顏色（例如維基活動類別）',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => '軟文字顏色 2 用於其他輔助訊息，例如牆條目連結（按讚/評論）、表單中的幫助區塊等。',
-  'Soft text color 3 for grid view summary, etc.' => '網格視圖摘要等的軟文字顏色 3',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => '用於佔位符、網格視圖摘要等的軟文字顏色 3。',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => '用於日期、佔位符、一些下拉標題等輔助資訊的軟文字顏色',
   'Text color' => '文字顏色',
   'Text colors' => '文字顏色',

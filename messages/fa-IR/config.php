@@ -75,7 +75,7 @@ return array (
   'Select color ...' => 'انتخاب رنگ ...',
   'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => 'رنگ هایلایت ملایم برای پس زمینه های آموزنده (به عنوان مثال دسته فعال ویکی)',
   'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => 'رنگ متن نرم 2 برای سایر اطلاعات جانبی مانند پیوندهای ورودی دیوار (لایک/نظر)، بلوک های راهنما در فرم ها و غیره.',
-  'Soft text color 3 for grid view summary, etc.' => 'رنگ متن نرم 3 برای خلاصه نمای شبکه ای و غیره.',
+  'Soft text color 3 for placeholders, grid view summary, etc.' => 'رنگ متن نرم 3 برای متغیرهایی، خلاصه نمای شبکه و غیره.',
   'Soft text color for side information like dates, placeholder, some dropdown headers' => 'رنگ متن ملایم برای اطلاعات جانبی مانند تاریخ، مکان‌نما، برخی سرصفحه‌های کشویی',
   'Text color' => 'رنگ متن',
   'Text colors' => 'رنگ های متن',
