@@ -211,7 +211,7 @@ class Configuration extends Model
     public string $scss = '';
     public string|bool $hideTopMenuOnScrollDown = false;
     public string|bool $hideBottomMenuOnScrollDown = false;
-    public string|bool $hideTextInBottomMenuItems = true;
+    public string|bool $hideTextInBottomMenuItems = false;
 
     public static function getJustifyContentOptions(): array
     {
