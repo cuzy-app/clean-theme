@@ -139,6 +139,7 @@ $colorInputWidgetOptions = ['options' => ['placeholder' => Yii::t('CleanThemeMod
             <?= $form->field($model, 'menuFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
             <?= $form->field($model, 'menuTextColor')->widget(ColorInput::class, $colorInputWidgetOptions) ?>
             <?= $form->field($model, 'menuBorderColor')->widget(ColorInput::class, $colorInputWidgetOptions) ?>
+            <?= $form->field($model, 'menuStyle')->dropDownList(Configuration::getMenuStyleOptions()) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Top menu')) ?>

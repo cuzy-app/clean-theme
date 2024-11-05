@@ -3,9 +3,11 @@ Changelog
 
 Unreleased
 --------------------
-- Enh: use `--hh-ct-font-size` CSS variable for buttons
+- Enh: Add an option in the module configuration for menus to display a border instead of a background color
+- Chg: The body class `is-guest` is now `hh-ct-is-guest`
 - Chg: "Hide the top and bottom menus on scroll down" and "Hide the text of the bottom menu buttons" features are now disabled by default
 - Fix: Bottom menu on mobile: when "Hide the text of the bottom menu buttons" is enabled, long texts are truncated
+- Enh: use `--hh-ct-font-size` CSS variable for buttons
 
 2.1.0 (October 18, 2024)
 --------------------

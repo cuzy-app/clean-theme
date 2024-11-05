@@ -27,6 +27,11 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
     'hideBottomMenuOnScrollDown' => $module->configuration->hideBottomMenuOnScrollDown,
     'screenXsMin' => $this->theme->variable('screen-xs-min'),
 ]);
+
+$bodyClasses = ['hh-ct-menu-style-' . $module->configuration->menuStyle];
+if (Yii::$app->user->isGuest) {
+    $bodyClasses[] = 'hh-ct-is-guest';
+}
 ?>
 
 <?php $this->beginPage() ?>
@@ -45,7 +50,7 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?<?= $googleFontsCss2UrlParams ?>">
     <?php endif; ?>
 </head>
-<body<?= Yii::$app->user->isGuest ? ' class="is-guest"' : '' ?>>
+<body class="<?= implode(' ', $bodyClasses) ?>">
 <?php $this->beginBody() ?>
 
 <!-- start: top navigation bar -->

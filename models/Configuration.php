@@ -41,6 +41,9 @@ class Configuration extends Model
     public const TOP_BAR_BOTTOM_SPACING_SM = 5;
     public const BOTTOM_BAR_HEIGHT_XS = 50;
 
+    public const MENU_STYLE_BACKGROUND = 'background';
+    public const MENU_STYLE_BORDERED = 'bordered';
+
     /**
      * This list must contain all CSS attribute names
      */
@@ -201,6 +204,7 @@ class Configuration extends Model
     public string $menuFontSize = '12';
     public string $menuTextColor = '#31414a';
     public string $menuBorderColor = '#e4eaec';
+    public string $menuStyle = self::MENU_STYLE_BACKGROUND;
     public string $topBarHeight = '50';
     public string $topBarFontSize = '10';
     public string $topMenuNavJustifyContent = 'center';
@@ -234,6 +238,14 @@ class Configuration extends Model
         ];
     }
 
+    public static function getMenuStyleOptions()
+    {
+        return [
+            self::MENU_STYLE_BACKGROUND => Yii::t('CleanThemeModule.config', 'Full primary color background for active items'),
+            self::MENU_STYLE_BORDERED => Yii::t('CleanThemeModule.config', 'Distinct border link color for active items'),
+        ];
+    }
+
     public static function getCssAttributeNames()
     {
         return array_keys(static::CSS_ATTRIBUTE_UNITS);
@@ -242,10 +254,11 @@ class Configuration extends Model
     public static function getAllAttributeNames()
     {
         return array_merge(static::getCssAttributeNames(), [
-            'scss',
+            'menuStyle',
             'hideTopMenuOnScrollDown',
             'hideBottomMenuOnScrollDown',
             'hideTextInBottomMenuItems',
+            'scss',
         ]);
     }
 
@@ -260,7 +273,7 @@ class Configuration extends Model
     public function rules()
     {
         return [
-            [array_merge(static::getCssAttributeNames(), ['scss']), 'string'],
+            [array_merge(static::getCssAttributeNames(), ['menuStyle', 'scss']), 'string'],
             [['hideTopMenuOnScrollDown', 'hideBottomMenuOnScrollDown', 'hideTextInBottomMenuItems'], 'boolean'],
             ['scss', function ($attribute, $params, $validator) {
                 try {
@@ -322,6 +335,7 @@ class Configuration extends Model
             'menuFontSize' => Yii::t('CleanThemeModule.config', 'Font size'),
             'menuTextColor' => Yii::t('CleanThemeModule.config', 'Text color'),
             'menuBorderColor' => Yii::t('CleanThemeModule.config', 'Border color (tab and dropdown menus)'),
+            'menuStyle' => Yii::t('CleanThemeModule.config', 'Menu style'),
             'topBarHeight' => Yii::t('CleanThemeModule.config', 'Top bar height'),
             'topBarFontSize' => Yii::t('CleanThemeModule.config', 'Button font size'),
             'topMenuNavJustifyContent' => Yii::t('CleanThemeModule.config', 'Navigation alignment'),
@@ -329,10 +343,10 @@ class Configuration extends Model
             'topMenuTextColor' => Yii::t('CleanThemeModule.config', 'Text color'),
             'topMenuButtonHoverBackgroundColor' => Yii::t('CleanThemeModule.config', 'Button background color on hover'),
             'topMenuButtonHoverTextColor' => Yii::t('CleanThemeModule.config', 'Button text color on hover'),
-            'scss' => Yii::t('CleanThemeModule.config', 'Custom CSS'),
             'hideTopMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the top menu on scroll down'),
             'hideBottomMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the bottom menu on scroll down'),
             'hideTextInBottomMenuItems' => Yii::t('CleanThemeModule.config', 'Hide the text of the bottom menu buttons'),
+            'scss' => Yii::t('CleanThemeModule.config', 'Custom CSS'),
         ];
     }
 

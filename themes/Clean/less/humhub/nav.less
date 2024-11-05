@@ -2,46 +2,53 @@
 // Navs
 // --------------------------------------------------
 
-// Remove left line
-.nav-pills,
-.nav-tabs,
-.account {
-  .dropdown-menu {
-    li {
-      &, &:hover, &.selected {
-        border-left: none !important;
-      }
+body.hh-ct-menu-style-background {
+    // Remove left line
+    .nav-pills,
+    .nav-tabs,
+    .account {
+        .dropdown-menu {
+            li {
+                &, &:hover, &.selected {
+                    border-left: none !important;
+                }
+            }
+        }
     }
-  }
+
+    // Tab menu: change text color, fill with color active tab, remove background color for others tabs, and remove borders
+    .tab-menu .nav-tabs, ul.tab-menu-settings {
+        li > a {
+            color: var(--hh-ct-menu-text-color);
+            padding-top: 14px;
+            border: none;
+            border-bottom: 1px solid var(--hh-ct-menu-border-color);
+            background-color: transparent;
+            max-height: 41px;
+            outline: none;
+            transition: .25s;
+
+            &:not(.active):hover, &:not(.active):focus {
+                padding-top: 14px;
+                border-top: none !important;
+                background-color: var(--background-color-secondary);
+            }
+        }
+
+        li.active > a, li.active > a:hover, li.active > a:focus {
+            padding-top: 14px;
+            background-color: var(--primary);
+            color: var(--text-color-contrast);
+            border: none !important;
+            border-bottom: 1px solid var(--primary) !important;
+        }
+    }
 }
 
-// Tab menu: change text color, fill with color active tab, remove background color for others tabs, and remove borders
-.tab-menu .nav-tabs, ul.tab-menu-settings {
-  li > a {
-    color: var(--hh-ct-menu-text-color);
-    padding-top: 14px;
-    border: none;
-    border-bottom: 1px solid var(--hh-ct-menu-border-color);
-    background-color: transparent;
-    max-height: 41px;
-    outline: none;
-    transition: .25s;
-  }
-
-  li > a:hover, li > a:focus {
-    padding-top: 14px;
-    border-top: none !important;
-  }
-
-  li > a:hover {
-    background-color: var(--background-color-secondary);
-  }
-
-  li.active > a, li.active > a:hover, li.active > a:focus {
-    padding-top: 14px;
-    background-color: var(--primary);
-    color: var(--text-color-contrast);
-    border: none !important;
-    border-bottom: 1px solid var(--primary) !important;
-  }
+body.hh-ct-menu-style-bordered {
+    .tab-menu .nav-tabs, ul.tab-menu-settings {
+        li.active > a, li.active > a:hover, li.active > a:focus {
+            border-top-color: var(--link);
+        }
+    }
 }

@@ -2,28 +2,35 @@
 // List-Group
 // --------------------------------------------------
 
-// Remove left line
-.list-group-item {
-  border-left: none !important;
-  padding: 10px 15px;
-  transition: .25s;
-  font-size: var(--hh-ct-menu-font-size);
-}
-
 a.list-group-item {
-  color: var(--hh-ct-menu-text-color);
+    padding: 10px 15px;
+    transition: .25s;
+    font-size: var(--hh-ct-menu-font-size);
+    color: var(--hh-ct-menu-text-color);
+
+    &:hover {
+        background-color: var(--background-color-secondary);
+        color: var(--text-color-highlight);
+    }
 }
 
-a.list-group-item:hover,
-a.list-group-item.active,
-a.list-group-item.active:hover,
-a.list-group-item.active:focus {
-  border-left: none !important;
-  background-color: var(--primary);
-  color: var(--text-color-contrast);
+body.hh-ct-menu-style-background {
+    a.list-group-item {
+        border-left: none !important;
+
+        &:hover,
+        &.active,
+        &.active:hover,
+        &.active:focus {
+            background-color: var(--primary);
+            color: var(--text-color-contrast);
+            border-left: none !important;
+        }
+    }
 }
 
-a.list-group-item:hover {
-  background-color: var(--background-color-secondary);
-  color: var(--text-color-highlight);
+body.hh-ct-menu-style-bordered {
+    a.list-group-item {
+        border-top-color: var(--link);
+    }
 }

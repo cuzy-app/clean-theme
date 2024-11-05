@@ -141,11 +141,6 @@
             flex: 1; // The space must be between the main menu items and the search button
             display: flex;
             justify-content: var(--hh-ct-top-menu-nav-justify-content);
-
-            > li > a:hover {
-                background-color: var(--hh-ct-top-menu-button-hover-background-color);
-                color: var(--hh-ct-top-menu-button-hover-text-color);
-            }
         }
 
         .notifications {
@@ -377,15 +372,6 @@
                     display: none;
                 }
 
-                &:hover,
-                &:active,
-                &:focus {
-                    background-color: var(--hh-ct-top-menu-button-hover-background-color);
-                    color: var(--hh-ct-top-menu-button-hover-text-color);
-                    text-decoration: none;
-                    border-bottom: none;
-                }
-
                 i {
                     font-size: 14px;
                     margin-bottom: 5px;
@@ -397,9 +383,18 @@
             }
 
             > li.active > a, > li.hover > a {
-                background-color: var(--hh-ct-top-menu-text-color);
-                color: var(--hh-ct-top-menu-background-color);
                 text-decoration: none;
+            }
+
+            > li:not(.active) {
+                > a:hover,
+                > a:focus,
+                > a:active {
+                    background-color: var(--hh-ct-top-menu-button-hover-background-color);
+                    color: var(--hh-ct-top-menu-button-hover-text-color);
+                    text-decoration: none;
+                    border-bottom: none;
+                }
             }
 
             > li > ul > li > a {
@@ -410,15 +405,6 @@
             > li > ul > li > a:hover, > li > ul > li > a.active {
                 background-color: var(--primary);
                 color: var(--text-color-contrast);
-            }
-
-            > li > a:not(.active):hover {
-                background-color: var(--background-color-secondary);
-                color: var(--text-color-highlight);
-            }
-
-            > li.active > a:hover, > li.active > a:focus {
-                border-bottom: none;
             }
         }
 
@@ -433,6 +419,25 @@
         .btn-group.active > a {
             background-color: var(--hh-ct-top-menu-text-color);
             color: var(--hh-ct-top-menu-background-color);
+        }
+    }
+}
+
+body.hh-ct-menu-style-background {
+    #topbar > .container > .nav {
+        > li.active > a {
+            background-color: var(--hh-ct-top-menu-text-color);
+            color: var(--hh-ct-top-menu-background-color);
+            border-bottom: none;
+        }
+    }
+}
+
+body.hh-ct-menu-style-bordered {
+    #topbar > .container > .nav {
+        > li.active > a {
+            padding-top: 3px;
+            border-bottom: 3px solid var(--link);
         }
     }
 }
