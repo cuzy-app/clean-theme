@@ -31,6 +31,10 @@ body.hh-ct-menu-style-background {
 
 body.hh-ct-menu-style-bordered {
     a.list-group-item {
-        border-top-color: var(--link);
+        border-left-color: var(--link);
+
+        &:not(.active):hover {
+            border-left-color: transparent !important;
+        }
     }
 }
