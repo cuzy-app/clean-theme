@@ -9,6 +9,8 @@ Unreleased
 - Fix: Bottom menu on mobile: when "Hide the text of the bottom menu buttons" is enabled, long texts are truncated
 - Enh: use `--hh-ct-font-size` CSS variable for buttons
 - Fix: Border radius of top left and right cards
+- Fix: Vertical alignment of the search button in the top menu
+- Fix: Ensure that the notification and messenger unread counter is round when it contains only one digit
 
 2.1.0 (October 18, 2024)
 --------------------

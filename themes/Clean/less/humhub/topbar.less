@@ -179,6 +179,8 @@
                 position: absolute;
                 top: 4px;
                 right: -2px;
+                padding: 4px;
+                min-width: 18px; // Insure that the label is round when only 1 digit
             }
 
             .dropdown-menu {
@@ -328,10 +330,9 @@
         }
 
         #search-menu {
-            display: inline-block;
+            display: block;
             height: auto;
-            padding: 5px 10px;
-            margin: 10px 2px;
+            padding: 8px 10px;
             color: var(--hh-ct-top-menu-text-color);
 
             &:hover,
@@ -341,6 +342,10 @@
                 color: var(--hh-ct-top-menu-button-hover-text-color);
                 text-decoration: none;
                 border-bottom: none;
+            }
+
+            i {
+                margin-bottom: 0;
             }
         }
 
