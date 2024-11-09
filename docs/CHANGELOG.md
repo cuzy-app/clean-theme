@@ -11,6 +11,7 @@ Unreleased
 - Fix: Border radius of top left and right cards
 - Fix: Vertical alignment of the search button in the top menu
 - Fix: Ensure that the notification and messenger unread counter is round when it contains only one digit
+- Fix: In forms, images should not have rounded corners
 
 2.1.0 (October 18, 2024)
 --------------------
