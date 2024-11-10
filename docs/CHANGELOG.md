@@ -13,6 +13,7 @@ Unreleased
 - Fix: Ensure that the notification and messenger unread counter is round when it contains only one digit
 - Fix: In forms, images should not have rounded corners
 - Fix: Top bar when no logo or when the logo aspect ratio is very different from 1:1
+- Fix: Space menu width on mobile
 
 2.1.0 (October 18, 2024)
 --------------------

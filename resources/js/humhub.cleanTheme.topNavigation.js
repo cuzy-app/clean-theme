@@ -210,17 +210,18 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
                 return;
             }
 
+            // Reset
             $(window).off('scroll', switchFixedPanels);
             removeLeftNavFixed();
+            $leftNav.css("width", "");
 
-            $topBarHeight = $('#topbar').height();
+            // Get new values
+            $topBarHeight = parseInt($('#topbar').css('top')) + $('#topbar').height();
             $leftNavTop = $leftNav.offset().top;
 
-            // Force width to keep the same when position is fixed
-            $leftNav.css("width", "");
-            $leftNav.width($leftNav.width());
-
             if ($leftNav.parent().css('float') === 'left') {
+                // Force width to keep the same when position when fixed
+                $leftNav.width($leftNav.width());
                 const availableHeightForSidebar = $(window).height() - $topBarHeight - leftNavDistFromTopBar;
                 if ($leftNav.height() < availableHeightForSidebar) {
                     switchFixedPanels();
