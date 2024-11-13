@@ -2,14 +2,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
     module.initOnPjaxLoad = true;
 
-    let $leftNav;
-    let $topBarHeight;
-    let $leftNavTop;
-    let $leftNavIsFixed = false; // Only to improve performance while scrolling
-    let resizeTimeout;
-
-    const leftNavDistFromTopBar = 15;
-
     const $body = $('body');
     const $topMenu = $('#topbar');
     const $topMenuContainer = $('#topbar > .container');
@@ -38,12 +30,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             updateBtnStatus('icon-notifications', 'notification', 'overview');
             updateBtnStatus('icon-messages', 'mail', 'mail');
             updateBtnStatus('icon-activity-web-summary', 'activity-web-summary', 'latest');
-
-            // Make the left menu fixed when scrolling down
-            $leftNav = $('.left-navigation');
-            handelWindowSize();
-            $(window).off('resize', handelWindowSize);
-            $(window).on('resize', handelWindowSize);
         });
     };
 
@@ -201,64 +187,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
             lastScrollTop = newScrollTop;
         });
-    };
-
-    function handelWindowSize() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(function () {
-            if (!$leftNav.length) {
-                return;
-            }
-
-            // Reset
-            $(window).off('scroll', switchFixedPanels);
-            removeLeftNavFixed();
-            $leftNav.css("width", "");
-
-            // Get new values
-            $topBarHeight = parseInt($('#topbar').css('top')) + $('#topbar').height();
-            $leftNavTop = $leftNav.offset().top;
-
-            if ($leftNav.parent().css('float') === 'left') {
-                // Force width to keep the same when position when fixed
-                $leftNav.width($leftNav.width());
-                const availableHeightForSidebar = $(window).height() - $topBarHeight - leftNavDistFromTopBar;
-                if ($leftNav.height() < availableHeightForSidebar) {
-                    switchFixedPanels();
-                    $(window).on('scroll', switchFixedPanels);
-                }
-            }
-        }, 100);
-    }
-
-    const switchFixedPanels = function () {
-        const $scrollTop = $(window).scrollTop();
-        const distanceFromTopBar = $leftNavTop - $scrollTop - $topBarHeight;
-        if (distanceFromTopBar < leftNavDistFromTopBar) {
-            addLeftNavFixed();
-        } else {
-            removeLeftNavFixed();
-        }
-    };
-
-    const addLeftNavFixed = function () {
-        if (!$leftNavIsFixed) {
-            $leftNav.css({
-                'position': 'fixed',
-                'top': ($topBarHeight + leftNavDistFromTopBar) + 'px'
-            });
-            $leftNavIsFixed = true;
-        }
-    };
-
-    const removeLeftNavFixed = function () {
-        if ($leftNavIsFixed) {
-            $leftNav.css({
-                'position': 'static',
-                'top': 'auto'
-            });
-            $leftNavIsFixed = false;
-        }
     };
 
     /**

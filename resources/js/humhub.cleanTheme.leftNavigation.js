@@ -2,6 +2,10 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
 
     module.initOnPjaxLoad = true;
 
+    const leftNavDistFromTopBar = 15;
+
+    let $topBarHeight;
+    let resizeTimeout;
     let $menu;
     let $collapseBtn;
     let $expandBtn;
@@ -11,6 +15,9 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     let navContainerColNb;
     let contentContainerColNb;
     let isReady = false;
+    let $leftNav;
+    let $leftNavTop;
+    let $leftNavIsFixed = false; // Only to improve performance while scrolling
 
     const init = function () {
         $(function () {
@@ -34,6 +41,12 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
             });
 
             isReady = true;
+
+            // Make the left menu fixed when scrolling down
+            $leftNav = $('.left-navigation');
+            handelWindowSize();
+            $(window).off('resize', handelWindowSize);
+            $(window).on('resize', handelWindowSize);
         });
     };
 
@@ -83,6 +96,65 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
         }
 
         waitForInit();
+    };
+
+    function handelWindowSize() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function () {
+            if (!$leftNav.length) {
+                return;
+            }
+
+            // Reset
+            $(window).off('scroll', switchFixedPanels);
+            removeLeftNavFixed();
+            $leftNav.css("width", "");
+
+            // Get new values
+            const $topBar = $('#topbar');
+            $topBarHeight = parseInt($topBar.css('top')) + $topBar.height();
+            $leftNavTop = $leftNav.offset().top;
+
+            if ($leftNav.parent().css('float') === 'left') {
+                // Force width to keep the same when position when fixed
+                $leftNav.width($leftNav.width());
+                const availableHeightForSidebar = $(window).height() - $topBarHeight - leftNavDistFromTopBar;
+                if ($leftNav.height() < availableHeightForSidebar) {
+                    switchFixedPanels();
+                    $(window).on('scroll', switchFixedPanels);
+                }
+            }
+        }, 100);
+    }
+
+    const switchFixedPanels = function () {
+        const $scrollTop = $(window).scrollTop();
+        const distanceFromTopBar = $leftNavTop - $scrollTop - $topBarHeight;
+        if (distanceFromTopBar < leftNavDistFromTopBar) {
+            addLeftNavFixed();
+        } else {
+            removeLeftNavFixed();
+        }
+    };
+
+    const addLeftNavFixed = function () {
+        if (!$leftNavIsFixed) {
+            $leftNav.css({
+                'position': 'fixed',
+                'top': ($topBarHeight + leftNavDistFromTopBar) + 'px'
+            });
+            $leftNavIsFixed = true;
+        }
+    };
+
+    const removeLeftNavFixed = function () {
+        if ($leftNavIsFixed) {
+            $leftNav.css({
+                'position': 'static',
+                'top': 'auto'
+            });
+            $leftNavIsFixed = false;
+        }
     };
 
     module.export({
