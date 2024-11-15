@@ -14,6 +14,7 @@ Unreleased
 - Fix: In forms, images should not have rounded corners
 - Fix: Top bar when no logo or when the logo aspect ratio is very different from 1:1
 - Fix: Space menu width on mobile
+- Fix: Top bar notification items
 
 2.1.0 (October 18, 2024)
 --------------------
