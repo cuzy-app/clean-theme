@@ -15,6 +15,7 @@ Unreleased
 - Fix: Top bar when no logo or when the logo aspect ratio is very different from 1:1
 - Fix: Space menu width on mobile
 - Fix: Top bar notification items
+- Chg: Force some fonts to 14px (instead of the value in the configuration)
 
 2.1.0 (October 18, 2024)
 --------------------
