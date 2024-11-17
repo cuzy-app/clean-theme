@@ -16,6 +16,7 @@ Unreleased
 - Fix: Space menu width on mobile
 - Fix: Top bar notification items
 - Chg: Force some fonts to 14px (instead of the value in the configuration)
+- Chg: Font size and weight in Profile header to match the Space header one, and smaller font size on mobile screens
 
 2.1.0 (October 18, 2024)
 --------------------

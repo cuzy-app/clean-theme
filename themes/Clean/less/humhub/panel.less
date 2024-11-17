@@ -89,9 +89,14 @@
             }
 
             h1 {
-                font-weight: 600 !important;
-                font-size: 150% !important;
                 margin-bottom: 0;
+                a {
+                    font-weight: 700;
+                    font-size: 30px;
+                    @media (max-width: @screen-xs-min) {
+                        font-size: 20px;
+                    }
+                }
             }
 
             h2.space {
