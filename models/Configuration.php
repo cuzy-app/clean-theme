@@ -310,7 +310,7 @@ class Configuration extends Model
             'textColorContrast' => Yii::t('CleanThemeModule.config', 'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.'),
             'backgroundColorMain' => Yii::t('CleanThemeModule.config', 'Main background color which should be in contrast with main, secondary and other text colors'),
             'backgroundColorSecondary' => Yii::t('CleanThemeModule.config', 'Secondary background color used for tabs, etc.'),
-            'backgroundColorPage' => Yii::t('CleanThemeModule.config', 'Page background color for other UI components such as comment box, etc.'),
+            'backgroundColorPage' => Yii::t('CleanThemeModule.config', 'Background color for page body and UI components such as comment box, etc.'),
             'backgroundColorHighlight' => Yii::t('CleanThemeModule.config', 'Highlight color for informative backgrounds (e.g. Comment Permalinks, Shared items, Wiki active page navigation, Messenger bubbles)'),
             'backgroundColorHighlightSoft' => Yii::t('CleanThemeModule.config', 'Soft highlight color for informative backgrounds (e.g. Wiki active category)'),
             'fontFamily' => Yii::t('CleanThemeModule.config', 'Font family'),
