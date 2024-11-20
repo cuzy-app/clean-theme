@@ -17,6 +17,7 @@ Unreleased
 - Fix: Top bar notification items
 - Chg: Force some fonts to 14px (instead of the value in the configuration)
 - Chg: Font size and weight in Profile header to match the Space header one, and smaller font size on mobile screens
+- Enh: Add `clean-theme/generate-dynamic-css-file` command to generate the CSS file if the module is installed by cloning the GitHub repository
 
 2.1.0 (October 18, 2024)
 --------------------

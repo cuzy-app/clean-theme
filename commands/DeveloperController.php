@@ -9,6 +9,7 @@
 namespace humhub\modules\cleanTheme\commands;
 
 use humhub\modules\cleanTheme\models\Configuration;
+use humhub\modules\cleanTheme\Module;
 use Yii;
 use yii\console\Controller;
 use yii\console\ExitCode;
@@ -16,6 +17,12 @@ use yii\helpers\BaseConsole;
 use yii\helpers\FileHelper;
 use yii\helpers\Inflector;
 
+/**
+ * The `DeveloperController` class is responsible for building and modifying the sources of the Clean Theme module.
+ * It handles tasks such as copying HumHub LESS files, copying the Dark Mode module LESS theme file, modifying HumHub sources with new special color variables, and modifying Select2 sources with new special color variables.
+ * The class also includes helper functions for message output, fixing variable files, and correcting the Select2 build and theme files.
+ * Additionally, it provides an action to generate a dynamic CSS file for the Clean Theme module.
+ */
 class DeveloperController extends Controller
 {
     public const DARK_MODE_MODULE_LESS_FILE_PATH = '@dark-mode/resources/DarkHumHub/less/theme.less';
@@ -230,5 +237,17 @@ class DeveloperController extends Controller
 
         $data = implode(PHP_EOL, $lines);
         file_put_contents($file, $data);
+    }
+
+    /**
+     * Generate dynamic CSS file
+     * Usage: php yii clean-theme/generate-dynamic-css-file
+     * Can be used after installing the module by cloning the GitHub repository
+     */
+    public function actionGenerateDynamicCSSFile()
+    {
+        /** @var Module $module */
+        $module = Yii::$app->getModule('clean-theme');
+        $module->configuration->generateDynamicCSSFile();
     }
 }
