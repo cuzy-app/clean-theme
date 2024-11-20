@@ -244,7 +244,7 @@ class DeveloperController extends Controller
      * Usage: php yii clean-theme/generate-dynamic-css-file
      * Can be used after installing the module by cloning the GitHub repository
      */
-    public function actionGenerateDynamicCSSFile()
+    public function actionGenerateDynamicCssFile()
     {
         /** @var Module $module */
         $module = Yii::$app->getModule('clean-theme');
