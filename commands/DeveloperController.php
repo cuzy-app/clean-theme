@@ -11,6 +11,7 @@ namespace humhub\modules\cleanTheme\commands;
 use humhub\modules\cleanTheme\models\Configuration;
 use humhub\modules\cleanTheme\Module;
 use Yii;
+use yii\base\Exception;
 use yii\console\Controller;
 use yii\console\ExitCode;
 use yii\helpers\BaseConsole;
@@ -241,13 +242,22 @@ class DeveloperController extends Controller
 
     /**
      * Generate dynamic CSS file
+     *
      * Usage: php yii clean-theme/generate-dynamic-css-file
+     *
      * Can be used after installing the module by cloning the GitHub repository
      */
     public function actionGenerateDynamicCssFile()
     {
         /** @var Module $module */
         $module = Yii::$app->getModule('clean-theme');
-        $module->configuration->generateDynamicCSSFile();
+        try {
+            $module->configuration->generateDynamicCSSFile();
+        } catch (Exception $e) {
+            $this->message('Could not generate dynamic CSS file: ' . $e->getMessage(), 'error');
+            return ExitCode::UNSPECIFIED_ERROR;
+        }
+        $this->message("\nSuccessfully generated dynamic CSS file", 'success');
+        return ExitCode::OK;
     }
 }
