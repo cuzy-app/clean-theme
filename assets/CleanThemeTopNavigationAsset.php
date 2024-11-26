@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Clean Theme
  * @link https://github.com/cuzy-app/clean-theme
