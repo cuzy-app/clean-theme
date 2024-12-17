@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased (wait for DeviceDetectorHelper::getBodyClasses() to be available)
+--------------------
+- Enh: Add body classes from the new `DeviceDetectorHelper` in 1.17
+
 2.2.0 (November 26, 2024)
 --------------------
 - Enh: Add an option in the module configuration for menus to display a border instead of a background color
