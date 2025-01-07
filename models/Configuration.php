@@ -10,8 +10,7 @@
 namespace humhub\modules\cleanTheme\models;
 
 use humhub\components\SettingsManager;
-use humhub\modules\cleanTheme\helpers\ColorHelper;
-use humhub\widgets\Button;
+use humhub\widgets\bootstrap\Button;
 use ScssPhp\ScssPhp\Compiler;
 use ScssPhp\ScssPhp\Exception\SassException;
 use Yii;
@@ -28,20 +27,15 @@ use yii\web\ServerErrorHttpException;
  */
 class Configuration extends Model
 {
-    public const HUMHUB_MODIFIED_PATH = '@clean-theme/resources/less/humhub.modified';
-    public const SPECIAL_COLOR_VARIABLES_IN_HUMHUB_MODIFIED_FILE = '@clean-theme/resources/less/special-color-variables-in-humhub-modified.txt';
-    public const THEME_LESS_VARIABLES_FILE = '@clean-theme/themes/Clean/less/variables.less';
     public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css';
     public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
-    public const SUPPORTED_LESS_FUNCTIONS = ['darken', 'lighten', 'fade', 'fadein', 'fadeout'];
-    public const UNSUPPORTED_LESS_FUNCTIONS = ['saturate', 'desaturate', 'spin'];
-    public const HUMHUB_CSS_PREFIX = '--'; // TODO: In HumHub 1.17, replace '--' with '--hh-'
+    public const BOOTSTRAP_CSS_PREFIX = '--bs-';
+    public const HUMHUB_CSS_PREFIX = '--hh-';
     public const CLEAN_THEME_CSS_PREFIX = '--hh-ct-';
     public const TOP_BAR_BOTTOM_SPACING = 30;
     public const TOP_BAR_HEIGHT_SM = 50;
     public const TOP_BAR_BOTTOM_SPACING_SM = 5;
     public const BOTTOM_BAR_HEIGHT_XS = 50;
-
     public const MENU_STYLE_BACKGROUND = 'background';
     public const MENU_STYLE_BORDERED = 'bordered';
 
@@ -50,13 +44,13 @@ class Configuration extends Model
      */
     public const CSS_ATTRIBUTE_PREFIXES = [
         'containerMaxWidth' => self::CLEAN_THEME_CSS_PREFIX,
-        'default' => self::HUMHUB_CSS_PREFIX,
-        'primary' => self::HUMHUB_CSS_PREFIX,
-        'info' => self::HUMHUB_CSS_PREFIX,
-        'success' => self::HUMHUB_CSS_PREFIX,
-        'warning' => self::HUMHUB_CSS_PREFIX,
-        'danger' => self::HUMHUB_CSS_PREFIX,
-        'link' => self::HUMHUB_CSS_PREFIX,
+        'default' => self::BOOTSTRAP_CSS_PREFIX,
+        'primary' => self::BOOTSTRAP_CSS_PREFIX,
+        'info' => self::BOOTSTRAP_CSS_PREFIX,
+        'success' => self::BOOTSTRAP_CSS_PREFIX,
+        'warning' => self::BOOTSTRAP_CSS_PREFIX,
+        'danger' => self::BOOTSTRAP_CSS_PREFIX,
+        'link' => self::BOOTSTRAP_CSS_PREFIX,
         'textColorHeading' => self::CLEAN_THEME_CSS_PREFIX,
         'textColorMain' => self::HUMHUB_CSS_PREFIX,
         'textColorDefault' => self::HUMHUB_CSS_PREFIX,
@@ -461,22 +455,6 @@ class Configuration extends Model
         }
         $css .= PHP_EOL;
 
-        // Special colors (darkened, lightened and faded colors from the on selected in the configuration)
-        foreach ($this->getSpecialColorCssVariables() as $cssVariable) {
-            [$amount, $function] = array_reverse(explode('-', $cssVariable));
-            $colorName = lcfirst(Inflector::camelize(
-                substr($cssVariable, strlen(self::HUMHUB_CSS_PREFIX), strlen($cssVariable) - strlen($function . '-' . $amount) - strlen(self::HUMHUB_CSS_PREFIX)),
-            ));
-            if (
-                $colorName
-                && isset($this->$colorName)
-                && $amount
-                && in_array($function, static::SUPPORTED_LESS_FUNCTIONS, true)
-            ) {
-                $css .= '    ' . $cssVariable . ': ' . ColorHelper::$function($this->$colorName, $amount) . ';' . PHP_EOL;
-            }
-        }
-
         // Dimensions
         $css .= '    --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING . 'px;' . PHP_EOL;
         $css .= '    --hh-fixed-header-height: ' . ((int)$this->topBarHeight + self::TOP_BAR_BOTTOM_SPACING) . 'px;' . PHP_EOL;
@@ -487,7 +465,7 @@ class Configuration extends Model
         $css .= PHP_EOL;
 
         // Mobile CSS variables
-        $css .= '@media (max-width: ' . ($this->getLessVariableValue('@screen-sm-min') ?? '768px') . ') {' . PHP_EOL;
+        $css .= '@media (max-width: var(--bs-breakpoint-md)) {' . PHP_EOL;
         $css .= '    :root {' . PHP_EOL;
         $css .= '        --hh-ct-top-bar-height: ' . self::TOP_BAR_HEIGHT_SM . 'px;' . PHP_EOL;
         $css .= '        --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING_SM . 'px;' . PHP_EOL;
@@ -495,7 +473,7 @@ class Configuration extends Model
         $css .= '    }' . PHP_EOL;
         $css .= '}' . PHP_EOL;
         $css .= PHP_EOL;
-        $css .= '@media (max-width: ' . ($this->getLessVariableValue('@screen-xs-min') ?? '570px') . ') {' . PHP_EOL;
+        $css .= '@media (max-width: var(--bs-breakpoint-sm)) {' . PHP_EOL;
         $css .= '    :root {' . PHP_EOL;
         $css .= '        --hh-fixed-footer-height: ' . (self::BOTTOM_BAR_HEIGHT_XS + 2) . 'px;' . PHP_EOL; // + 2px for the bottom border
         $css .= '    }' . PHP_EOL;
@@ -540,11 +518,6 @@ class Configuration extends Model
         return implode('&', $fontsEncoded);
     }
 
-    private function getSpecialColorCssVariables(): array
-    {
-        return file(Yii::getAlias(static::SPECIAL_COLOR_VARIABLES_IN_HUMHUB_MODIFIED_FILE), FILE_IGNORE_NEW_LINES);
-    }
-
     /**
      * @return string
      * @throws ServerErrorHttpException
@@ -562,17 +535,5 @@ class Configuration extends Model
         } catch (SassException $e) {
             throw new ServerErrorHttpException(Yii::t('CleanThemeModule.config', 'Cannot compile SCSS to CSS code. Error message:') . ' ' . $e->getMessage());
         }
-    }
-
-    private function getLessVariableValue(string $variableName): ?string
-    {
-        $lessVariablesContent = file_get_contents(Yii::getAlias(self::THEME_LESS_VARIABLES_FILE));
-        $pattern = '/' . $variableName . ':\s*(\d+px);/';
-        $matches = [];
-
-        if (preg_match($pattern, $lessVariablesContent, $matches)) {
-            return $matches[1];
-        }
-        return null;
     }
 }

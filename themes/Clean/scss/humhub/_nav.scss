@@ -31,16 +31,16 @@ body.hh-ct-menu-style-background {
             &:not(.active):hover, &:not(.active):focus {
                 padding-top: 14px;
                 border-top: none !important;
-                background-color: var(--background-color-secondary);
+                background-color: var(--hh-background-color-secondary);
             }
         }
 
         li.active > a, li.active > a:hover, li.active > a:focus {
             padding-top: 14px;
-            background-color: var(--primary);
-            color: var(--text-color-contrast);
+            background-color: var(--bs-primary);
+            color: var(--hh-text-color-contrast);
             border: none !important;
-            border-bottom: 1px solid var(--primary) !important;
+            border-bottom: 1px solid var(--bs-primary) !important;
         }
     }
 }
@@ -48,7 +48,7 @@ body.hh-ct-menu-style-background {
 body.hh-ct-menu-style-bordered {
     .tab-menu .nav-tabs, ul.tab-menu-settings {
         li.active > a, li.active > a:hover, li.active > a:focus {
-            border-top-color: var(--link);
+            border-top-color: var(--bs-link-color);
         }
     }
 }

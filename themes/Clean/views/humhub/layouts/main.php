@@ -5,7 +5,7 @@
 
 use humhub\assets\AppAsset;
 use humhub\helpers\DeviceDetectorHelper;
-use humhub\libs\Html;
+use humhub\helpers\Html;
 use humhub\modules\cleanTheme\assets\CleanThemeAsset;
 use humhub\modules\cleanTheme\assets\CleanThemeTopNavigationAsset;
 use humhub\modules\cleanTheme\Module;
@@ -60,7 +60,7 @@ if (Yii::$app->user->isGuest) {
         <!-- start: top navigation bar -->
         <div id="topbar" class="topbar navbar">
             <div class="container">
-                <div class="topbar-brand hidden-xs">
+                <div class="topbar-brand d-none d-sm-block">
                     <?= SiteLogo::widget() ?>
                 </div>
 

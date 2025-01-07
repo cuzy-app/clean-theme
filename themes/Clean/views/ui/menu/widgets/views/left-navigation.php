@@ -1,9 +1,9 @@
 <?php
 
-use humhub\libs\Html;
+use humhub\helpers\Html;
 use humhub\modules\cleanTheme\assets\CleanThemeLeftNavigationAsset;
 use humhub\modules\cleanTheme\Module;
-use humhub\widgets\Button;
+use humhub\widgets\bootstrap\Button;
 
 /* @var $this \humhub\modules\ui\view\components\View */
 /* @var $menu \humhub\modules\ui\menu\widgets\LeftNavigation */
@@ -28,14 +28,14 @@ if ($module?->collapsibleLeftNavigation && empty($options['id'])) {
 ?>
 
 <?= $module?->collapsibleLeftNavigation ?
-    Button::defaultType()->icon('bars')->id($expandBtn)->cssClass('hidden')->sm()->loader(false) :
+    Button::light()->icon('bars')->id($expandBtn)->cssClass('hidden')->sm()->loader(false) :
     '' ?>
 <?= Html::beginTag('div', $options) ?>
 <?php if (!empty($menu->panelTitle)) : ?>
     <div class="panel-heading">
         <?= $menu->panelTitle ?>
         <?= $module?->collapsibleLeftNavigation ?
-            Button::defaultType()->icon('chevron-left')->id($collapseBtn)->right()->sm()->loader(false) :
+            Button::light()->icon('chevron-left')->id($collapseBtn)->right()->sm()->loader(false) :
             '' ?>
     </div>
 <?php endif; ?>

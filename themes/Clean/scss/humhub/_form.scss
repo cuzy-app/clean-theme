@@ -3,10 +3,14 @@
 // --------------------------------------------------
 
 .form-control {
-  border-radius: 25px;
+    border-radius: 25px;
+
+    &:focus {
+        border: 1px solid var(--bs-info);
+    }
 }
 
 // Not for creating a new publication
 #contentForm_message .form-control {
-  border-radius: var(--hh-ct-panel-border-radius);
+    border-radius: var(--hh-ct-panel-border-radius);
 }

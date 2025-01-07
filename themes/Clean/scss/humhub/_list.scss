@@ -1,0 +1,16 @@
+//
+// List
+// --------------------------------------------------
+
+// Remove left line
+.hh-list {
+    > div, > a {
+        &,
+        &:hover,
+        &.selected,
+        &.new,
+        &.placeholder:hover {
+            border-left: none;
+        }
+    }
+}

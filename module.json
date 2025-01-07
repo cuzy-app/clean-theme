@@ -5,7 +5,7 @@
     "keywords": [],
     "version": "2.2.0",
     "humhub": {
-        "minVersion": "1.17"
+        "minVersion": "1.18"
     },
     "homepage": "https://cuzy.app",
     "authors": [

@@ -1,6 +1,6 @@
 <?php
 
-use humhub\libs\Html;
+use humhub\helpers\Html;
 use humhub\modules\ui\menu\MenuEntry;
 use humhub\modules\ui\view\components\View;
 use humhub\widgets\TopMenu;
@@ -17,12 +17,11 @@ use humhub\widgets\TopMenu;
 <?php endforeach; ?>
 
 <li id="top-menu-sub" class="dropdown" style="display:none;">
-    <a href="#" id="top-dropdown-menu" class="dropdown-toggle" data-toggle="dropdown">
+    <a href="#" id="top-dropdown-menu" class="dropdown-toggle" data-bs-toggle="dropdown">
         <i class="fa fa-align-justify"></i><br>
-        <?= Yii::t('base', 'Menu'); ?>
-        <b class="caret"></b>
+        <?= Yii::t('base', 'Menu') ?>
     </a>
-    <ul id="top-menu-sub-dropdown" class="dropdown-menu dropdown-menu-right">
+    <ul id="top-menu-sub-dropdown" class="dropdown-menu dropdown-menu-end">
 
     </ul>
 </li>

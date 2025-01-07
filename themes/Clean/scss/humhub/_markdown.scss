@@ -1,0 +1,25 @@
+.markdown-render, [data-ui-markdown], [data-ui-richtext] {
+    h1 {
+        font-size: var(--hh-ct-h1-font-size);
+    }
+
+    h2 {
+        font-size: var(--hh-ct-h2-font-size);
+    }
+
+    h3 {
+        font-size: var(--hh-ct-h3-font-size);
+    }
+
+    h4 {
+        font-size: var(--hh-ct-h4-font-size);
+    }
+
+    h5 {
+        font-size: var(--hh-ct-h5-font-size);
+    }
+
+    h6 {
+        font-size: var(--hh-ct-h6-font-size);
+    }
+}

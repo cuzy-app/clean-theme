@@ -1,0 +1,50 @@
+body {
+    padding-top: calc(var(--hh-ct-top-bar-height) + var(--hh-ct-top-bar-bottom-spacing)); // Don't replace with --hh-fixed-header-height as it value changes to zero on mobile scroll down which creates a jump
+    padding-bottom: var(--hh-fixed-footer-height);
+    font-family: var(--hh-ct-font-family);
+    font-size: var(--hh-ct-font-size);
+    font-weight: var(--hh-ct-font-weight);
+}
+
+.container {
+    @include media-breakpoint-up(md) {
+        width: calc(100% - 0);
+    }
+    @include media-breakpoint-up(lg) {
+        width: calc(100% - 15px);
+    }
+    @include media-breakpoint-up(xl) {
+        width: calc(100% - 45px);
+        max-width: var(--hh-ct-container-max-width);
+    }
+}
+
+@media print {
+    #topbar {
+        display: none;
+    }
+}
+
+h1 {
+    font-size: var(--hh-ct-h1-font-size);
+}
+
+h2 {
+    font-size: var(--hh-ct-h2-font-size);
+}
+
+h3 {
+    font-size: var(--hh-ct-h3-font-size);
+}
+
+h4 {
+    font-size: var(--hh-ct-h4-font-size);
+}
+
+h5 {
+    font-size: var(--hh-ct-h5-font-size);
+}
+
+h6 {
+    font-size: var(--hh-ct-h6-font-size);
+}

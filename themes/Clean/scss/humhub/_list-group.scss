@@ -9,8 +9,8 @@ a.list-group-item {
     color: var(--hh-ct-menu-text-color);
 
     &:hover {
-        background-color: var(--background-color-secondary);
-        color: var(--text-color-highlight);
+        background-color: var(--hh-background-color-secondary);
+        color: var(--hh-text-color-highlight);
     }
 }
 
@@ -22,8 +22,8 @@ body.hh-ct-menu-style-background {
         &.active,
         &.active:hover,
         &.active:focus {
-            background-color: var(--primary);
-            color: var(--text-color-contrast);
+            background-color: var(--bs-primary);
+            color: var(--hh-text-color-contrast);
             border-left: none !important;
         }
     }
@@ -31,7 +31,7 @@ body.hh-ct-menu-style-background {
 
 body.hh-ct-menu-style-bordered {
     a.list-group-item {
-        border-left-color: var(--link);
+        border-left-color: var(--bs-link-color);
 
         &:not(.active):hover {
             border-left-color: transparent !important;

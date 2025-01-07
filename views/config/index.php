@@ -10,10 +10,10 @@ namespace humhub\modules\cleanTheme\models;
 
 use humhub\modules\admin\permissions\ManageSettings;
 use humhub\modules\cleanTheme\Module;
-use humhub\modules\ui\form\widgets\ActiveForm;
 use humhub\modules\ui\form\widgets\CodeMirrorInputWidget;
 use humhub\modules\ui\view\components\View;
-use humhub\widgets\Button;
+use humhub\widgets\bootstrap\Button;
+use humhub\widgets\form\ActiveForm;
 use kartik\widgets\ColorInput;
 use Yii;
 
@@ -31,13 +31,13 @@ $colorInputWidgetOptions = ['options' => ['placeholder' => Yii::t('CleanThemeMod
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <?= Yii::$app->user->can(ManageSettings::class) ? Button::defaultType(Yii::t('CleanThemeModule.config', 'Choose the theme'))
+        <?= Yii::$app->user->can(ManageSettings::class) ? Button::light(Yii::t('CleanThemeModule.config', 'Choose the theme'))
             ->link(['/admin/setting/design'])
             ->style('margin-left: 6px;')
             ->right()
             ->sm() : '' ?>
         <strong><?= $module->getName() ?></strong>
-        <div class="help-block"><?= $module->getDescription() ?></div>
+        <div class="text-body-secondary"><?= $module->getDescription() ?></div>
     </div>
 
     <div class="panel-body">

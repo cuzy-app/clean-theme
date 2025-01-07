@@ -1,6 +1,6 @@
 <?php
 
-use humhub\libs\Html;
+use humhub\helpers\Html;
 use humhub\modules\user\widgets\ProfileHeader;
 
 $user = Yii::$app->user->identity;

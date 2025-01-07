@@ -1,5 +1,4 @@
 vendor/
 composer.lock
 composer.phar
-resources/less/humhub.modified
 resources/css/humhub.clean-theme.dynamic.css

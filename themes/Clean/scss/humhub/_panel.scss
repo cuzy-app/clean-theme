@@ -84,8 +84,8 @@
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.4) 100%);
 
             &, h1, h2 {
-                color: var(--text-color-contrast);
-                text-shadow: 0 0 4px var(--text-color-highlight); // For a better visibility on an image
+                color: var(--hh-text-color-contrast);
+                text-shadow: 0 0 4px var(--hh-text-color-highlight); // For a better visibility on an image
             }
 
             h1 {
@@ -93,7 +93,7 @@
                 a {
                     font-weight: 700;
                     font-size: 30px;
-                    @media (max-width: @screen-xs-min) {
+                    @include media-breakpoint-down(sm) {
                         font-size: 20px;
                     }
                 }
@@ -108,7 +108,7 @@
 
         // If no image
         img.img-profile-header-background[src$="/img/default_banner.jpg"] + .img-profile-data {
-            background: var(--primary);
+            background: var(--bs-primary);
 
             &, h1, h2 {
                 text-shadow: none !important;
@@ -130,9 +130,4 @@
     .panel-body {
         min-height: 50px; // In case there is no button
     }
-}
-
-// Sidebar
-.layout-sidebar-container .media .media-body {
-    font-size: 14px;
 }
