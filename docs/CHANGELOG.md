@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased (wait for DeviceDetectorHelper::getBodyClasses() to be available)
+2.2.1 (January 13, 2025)
 --------------------
 - Enh: Add body classes from the new `DeviceDetectorHelper` in 1.17
 - Enh: Change color of wall entry footer links (comment and like icons) to "Link" color
