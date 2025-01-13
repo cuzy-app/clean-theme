@@ -4,6 +4,9 @@ Changelog
 Unreleased (wait for DeviceDetectorHelper::getBodyClasses() to be available)
 --------------------
 - Enh: Add body classes from the new `DeviceDetectorHelper` in 1.17
+- Enh: Change color of wall entry footer links (comment and like icons) to "Link" color
+- Enh: Remplace wall entry footer calendar links to icons
+- Chg: CSS compiled for HumHub 1.17.0
 
 2.2.0 (November 26, 2024)
 --------------------
