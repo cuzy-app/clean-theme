@@ -9,58 +9,98 @@
 }
 
 
-// Replace the Comment text with an icon
-.wall-entry-controls a[data-action-click="comment.toggleComment"] {
-    font-size: 0;
-
-    .comment-count {
-        font-size: 11px;
+.wall-entry-controls {
+    a {
+        color: var(--bs-link-color);
     }
 
-    &:before {
-        font: normal normal normal 14px/1 FontAwesome;
-        -webkit-font-smoothing: antialiased;
-        font-size: 18px;
-        content: "\f0e5"; // https://fontawesome.com/v4/icon/comment-o
-        display: inline-block;
-    }
-}
+    // Replace the Comment text with an icon
+    a[data-action-click="comment.toggleComment"] {
+        font-size: 0;
 
-// Replace the Like text with an icon
-.wall-entry-controls a[data-action-click="like.toggleLike"] {
-    font-size: 0;
+        .comment-count {
+            font-size: 11px;
+        }
 
-    .comment-count {
-        font-size: 11px;
-    }
-
-    &:before {
-        font: normal normal normal 14px/1 FontAwesome;
-        -webkit-font-smoothing: antialiased;
-        font-size: 18px;
-        content: "\f087"; // https://fontawesome.com/v4/icon/thumbs-o-up
-        display: inline-block;
-        margin-right: 3px;
+        &:before {
+            font: normal normal normal 14px/1 FontAwesome;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            content: "\f0e5"; // https://fontawesome.com/v4/icon/comment-o
+            display: inline-block;
+        }
     }
 
-    &.unlike:before {
-        content: "\f164"; // https://fontawesome.com/v4/icon/thumbs-up
+    // Replace the Like text with an icon
+    a[data-action-click="like.toggleLike"] {
+        font-size: 0;
+
+        .comment-count {
+            font-size: 11px;
+        }
+
+        &:before {
+            font: normal normal normal 14px/1 FontAwesome;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            content: "\f087"; // https://fontawesome.com/v4/icon/thumbs-o-up
+            display: inline-block;
+            margin-right: 3px;
+        }
+
+        &.unlike:before {
+            content: "\f164"; // https://fontawesome.com/v4/icon/thumbs-up
+        }
     }
-}
 
-// Replace the Calendar Event text with an icon
-.wall-entry-controls a[data-action-click="comment.toggleComment"] {
-    font-size: 0;
+    // Replace the Calendar Event text with an icon
+    a[data-action-click="comment.toggleComment"] {
+        font-size: 0;
 
-    .comment-count {
-        font-size: 11px;
+        .comment-count {
+            font-size: 11px;
+        }
+
+        &:before {
+            font: normal normal normal 14px/1 FontAwesome;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            content: "\f0e5"; // https://fontawesome.com/v4/icon/comment-o
+            display: inline-block;
+        }
     }
 
-    &:before {
-        font: normal normal normal 14px/1 FontAwesome;
-        -webkit-font-smoothing: antialiased;
-        font-size: 18px;
-        content: "\f0e5"; // https://fontawesome.com/v4/icon/comment-o
-        display: inline-block;
+    // Replace the Calendar Event text with an icon
+    span.calendar-entry-ics-download a {
+        font-size: 0;
+
+        .comment-count {
+            font-size: 11px;
+        }
+
+        &:before {
+            font: normal normal normal 14px/1 FontAwesome;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            content: "\f271"; // https://fontawesome.com/v4/icon/calendar-plus-o
+            display: inline-block;
+        }
+    }
+
+    // Replace the Calendar Event text with an icon
+    span.calendar-entry-reminder a {
+        font-size: 0;
+
+        .comment-count {
+            font-size: 11px;
+        }
+
+        &:before {
+            font: normal normal normal 14px/1 FontAwesome;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            content: "\f0a2"; // https://fontawesome.com/v4/icon/bell-o
+            display: inline-block;
+        }
     }
 }
