@@ -7,6 +7,7 @@ Unreleased (wait for DeviceDetectorHelper::getBodyClasses() to be available)
 - Chg: SCSS instead of LESS
 - Chg: Remove the modification of the HumHub SCSS colors variables (we assume all colors are now CSS variables) 
 - Enh: Add body classes from the new `DeviceDetectorHelper` in 1.17
+- Enh: Topbar brand text not centered vertically
 
 2.2.0 (November 26, 2024)
 --------------------
