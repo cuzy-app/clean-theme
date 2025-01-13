@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: Topbar brand text not centered vertically
+
 2.2.1 (January 13, 2025)
 --------------------
 - Enh: Add body classes from the new `DeviceDetectorHelper` in 1.17
