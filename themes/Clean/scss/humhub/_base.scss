@@ -8,10 +8,7 @@ body {
 
 .container {
     @include media-breakpoint-up(md) {
-        width: calc(100% - 0);
-    }
-    @include media-breakpoint-up(lg) {
-        width: calc(100% - 15px);
+        width: 100%;
     }
     @include media-breakpoint-up(xl) {
         width: calc(100% - 45px);
