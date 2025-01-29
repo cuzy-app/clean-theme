@@ -6,6 +6,7 @@ Unreleased
 - Enh: Topbar brand text not centered vertically
 - Fix: Panel border radius when configured to more than 4px
 - Fix: [Fade with 3 digits colors](https://github.com/felixhahnweilheim/humhub-flex-theme/pull/43) and [division by zero](https://github.com/felixhahnweilheim/humhub-flex-theme/pull/42) (thanks @felixhahnweilheim)
+- Fix: Incorrect topbar brand left alignment 
 
 2.2.1 (January 13, 2025)
 --------------------
