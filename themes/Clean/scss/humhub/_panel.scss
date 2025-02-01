@@ -19,8 +19,7 @@
     }
 
     .panel-heading {
-        border-top-left-radius: var(--hh-ct-panel-border-radius);
-        border-top-right-radius: var(--hh-ct-panel-border-radius);
+        border-radius: var(--hh-ct-panel-border-radius);
         font-size: var(--hh-ct-ph-font-size);
         font-weight: var(--hh-ct-ph-font-weight);
     }
@@ -53,6 +52,10 @@
     h6 {
         font-size: var(--hh-ct-h6-font-size);
     }
+}
+
+.panel-group .panel {
+    border-radius: var(--hh-ct-panel-border-radius);
 }
 
 // Space and User profile banner

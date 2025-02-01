@@ -2,20 +2,20 @@
 // Navs
 // --------------------------------------------------
 
-body.hh-ct-menu-style-background {
-    // Remove left line
-    .nav-pills,
-    .nav-tabs,
-    .account {
-        .dropdown-menu {
-            li {
-                &, &:hover, &.selected {
-                    border-left: none !important;
-                }
+// Remove left line
+.nav-pills,
+.nav-tabs,
+.account {
+    .dropdown-menu {
+        li {
+            &, &:hover, &.selected {
+                border-left: none !important;
             }
         }
     }
+}
 
+body.hh-ct-menu-style-background {
     // Tab menu: change text color, fill with color active tab, remove background color for others tabs, and remove borders
     .tab-menu .nav-tabs, ul.tab-menu-settings {
         li > a {

@@ -1,0 +1,253 @@
+//
+// Buttons
+// --------------------------------------------------
+.btn {
+    float: none;
+    border: none;
+    box-shadow: none;
+    background-image: none;
+    text-shadow: none;
+    border-radius: 3px;
+    outline: none !important;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    &:not(.btn-icon-only) {
+        i.fa {
+            margin-right: 4px;
+        }
+    }
+}
+.input.btn {
+    outline: none;
+}
+.btn.btn-lg {
+    padding: 16px 28px;
+    &:active, &.active {
+        padding: 15px 27px;
+    }
+}
+.btn-sm {
+    padding: 4px 8px;
+    font-size: 12px;
+    i {
+        font-size: 14px;
+    }
+}
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+}
+.btn-default {
+    background: @default;
+    color: @text-color-default !important;
+    &:hover,
+    &:focus {
+        background: var(--default-darken-2);
+        color: @text-color-default;
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background: var(--default-darken-5);
+    }
+}
+.btn-default[disabled],
+.btn-default.disabled {
+    background: var(--default-lighten-2);
+    &:hover,
+    &:focus {
+        background: var(--default-lighten-2);
+    }
+    &:active,
+    &.active {
+        background: var(--default-lighten-2);
+    }
+}
+.btn-primary {
+    background: @primary;
+    color: @text-color-contrast !important;
+    &:hover,
+    &:focus {
+        background: var(--primary-darken-5);
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        border: 1px solid @primary;
+        padding: 7px 15px;
+        color: @primary !important;
+        background: @text-color-contrast !important;
+        box-shadow: none;
+        &.btn-sm {
+            padding: 3px 7px;
+        }
+        &.btn-xs {
+            padding: 0 4px;
+        }
+    }
+    &.active:hover,
+    &.active:focus {
+        border: 1px solid var(--primary-darken-5);
+        color: var(--primary-darken-5) !important;
+    }
+}
+.btn-primary[disabled],
+.btn-primary.disabled {
+    background: var(--primary-lighten-5);
+    &:hover,
+    &:focus {
+        background: var(--primary-lighten-5);
+    }
+    &:active,
+    &.active {
+        background: var(--primary-lighten-5) !important;
+    }
+}
+.btn-info {
+    background: @info;
+    color: @text-color-contrast !important;
+    &:hover,
+    &:focus {
+        background: var(--info-darken-5) !important;
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        border: 1px solid @info;
+        padding: 7px 15px;
+        color: @info !important;
+        background: @text-color-contrast !important;
+        box-shadow: none;
+        &.btn-sm {
+            padding: 3px 7px;
+        }
+        &.btn-xs {
+            padding: 0 4px;
+        }
+    }
+    &.active:hover,
+    &.active:focus {
+        border: 1px solid var(--info-darken-5);
+        color: var(--info-darken-5) !important;
+    }
+}
+.btn-info[disabled],
+.btn-info.disabled {
+    background: var(--info-lighten-5);
+    &:hover,
+    &:focus {
+        background: var(--info-lighten-5);
+    }
+    &:active,
+    &.active {
+        background: var(--info-lighten-5) !important;
+    }
+}
+.btn-danger {
+    background: @danger;
+    color: @text-color-contrast !important;
+    &:hover,
+    &:focus {
+        background: var(--danger-darken-5);
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background: var(--danger-darken-5) !important;
+    }
+}
+.btn-danger[disabled],
+.btn-danger.disabled {
+    background: var(--danger-lighten-5);
+    &:hover,
+    &:focus {
+        background: var(--danger-lighten-5);
+    }
+    &:active,
+    &.active {
+        background: var(--danger-lighten-5) !important;
+    }
+}
+.btn-success {
+    background: @success;
+    color: @text-color-contrast !important;
+    &:hover,
+    &:focus {
+        background: var(--success-darken-5);
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background: var(--success-darken-5) !important;
+    }
+}
+.btn-success[disabled],
+.btn-success.disabled {
+    background: var(--success-lighten-5);
+    &:hover,
+    &:focus {
+        background: var(--success-lighten-5);
+    }
+    &:active,
+    &.active {
+        background: var(--success-lighten-5) !important;
+    }
+}
+.btn-warning {
+    background: @warning;
+    color: @text-color-contrast !important;
+    &:hover,
+    &:focus {
+        background: var(--warning-darken-2);
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        background: var(--warning-darken-2) !important;
+    }
+}
+.btn-warning[disabled],
+.btn-warning.disabled {
+    background: var(--warning-lighten-5);
+    &:hover,
+    &:focus {
+        background: var(--warning-lighten-5);
+    }
+    &:active,
+    &.active {
+        background: var(--warning-lighten-5) !important;
+    }
+}
+.btn-link {
+    color: @link !important;
+    &:hover,
+    &:focus {
+        color: var(--link-darken-2);
+        text-decoration: none;
+    }
+    &:active,
+    &.active {
+        outline: 0;
+        color: var(--link-darken-2) !important;
+    }
+}
+.btn-link[disabled],
+.btn-link.disabled {
+    color: var(--link-lighten-5);
+    &:hover,
+    &:focus {
+        color: var(--link-lighten-5);
+    }
+    &:active,
+    &.active {
+        color: var(--link-lighten-5) !important;
+    }
+}
