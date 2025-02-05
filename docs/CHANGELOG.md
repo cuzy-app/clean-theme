@@ -8,6 +8,7 @@ Unreleased
 - Fix: [Fade with 3 digits colors](https://github.com/felixhahnweilheim/humhub-flex-theme/pull/43) and [division by zero](https://github.com/felixhahnweilheim/humhub-flex-theme/pull/42) (thanks @felixhahnweilheim)
 - Fix: Incorrect topbar brand left alignment 
 - Fix: Dropdown menu left border when "Menu style" is configured to "Distinct borer link color for active items" 
+- Fix: Sometimes, "Cancel" "Choose" buttons are displayed at the top left of the screen (cause by https://github.com/humhub/humhub-internal/issues/528, fixed with CSS)
 
 2.2.1 (January 13, 2025)
 --------------------
