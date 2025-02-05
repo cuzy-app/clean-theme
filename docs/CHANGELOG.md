@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.2.2 (February 5, 2025)
 --------------------
 - Enh: Topbar brand text not centered vertically
 - Fix: Panel border radius when configured to more than 4px
