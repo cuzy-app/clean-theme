@@ -24,4 +24,3 @@ The ZIP file mustn't contain:
 - composer.lock
 - composer.phar
 - build-modified-less-and-css.sh
-- resources/less/humhub.modified
