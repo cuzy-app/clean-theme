@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix #27: A file attachment in a comment showed with light background color and light text color (thanks @felixhahnweilheim)
+
 2.2.2 (February 5, 2025)
 --------------------
 - Enh: Topbar brand text not centered vertically
