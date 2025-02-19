@@ -4,6 +4,7 @@ Changelog
 Unreleased
 --------------------
 - Fix #27: A file attachment in a comment showed with light background color and light text color (thanks @felixhahnweilheim)
+- Enh: Add `clean-theme` class to the `body` element
 
 2.2.2 (February 5, 2025)
 --------------------
