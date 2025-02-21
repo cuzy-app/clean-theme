@@ -1,6 +1,8 @@
 @media (max-width: @screen-sm-min) {
     // Layout Contents: Adjusting the content to fit perfectly on mobile devices
     #layout-content {
+        overflow-x: auto; // In case of long content, not to have part of the topbar hidden
+
         // Layout Space: Space navigation
         .left-navigation {
             .list-group {
@@ -86,6 +88,7 @@
                     height: auto;
                     line-height: 12px !important;
                     font-size: 10px;
+                    color: var(--primary);
 
                     &.active,
                     &:hover,

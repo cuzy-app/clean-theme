@@ -1,10 +1,12 @@
 Changelog
 =========
 
-Unreleased
+2.2.3 (February 21, 2025)
 --------------------
 - Fix #27: A file attachment in a comment showed with light background color and light text color (thanks @felixhahnweilheim)
 - Enh: Add `clean-theme` class to the `body` element
+- Fix: Use primary color for the bottom menu element texts and icons
+- Fix: On mobile, if the content in the container is too large, part of the top menu is hidden
 
 2.2.2 (February 5, 2025)
 --------------------
