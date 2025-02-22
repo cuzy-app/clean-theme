@@ -31,6 +31,7 @@ $this->registerJsConfig('cleanTheme.topNavigation', [
 ]);
 
 $bodyClasses = DeviceDetectorHelper::getBodyClasses();
+$bodyClasses[] = 'clean-theme';
 $bodyClasses[] = 'hh-ct-menu-style-' . $module->configuration->menuStyle;
 if (Yii::$app->user->isGuest) {
     $bodyClasses[] = 'hh-ct-is-guest';

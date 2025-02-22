@@ -22,3 +22,8 @@
 @import "modules/mail";
 @import "modules/clean-theme";
 @import "modules/sharebetween";
+
+// Temporary fix to https://github.com/humhub/humhub-internal/issues/528
+body > .sp-container.sp-hidden {
+    display: none;
+}
