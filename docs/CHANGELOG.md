@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: Enable Clean Theme on module enabled
+
 2.2.3 (February 21, 2025)
 --------------------
 - Fix #27: A file attachment in a comment showed with light background color and light text color (thanks @felixhahnweilheim)

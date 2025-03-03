@@ -78,7 +78,7 @@ class Module extends \humhub\components\Module
      */
     public function enable()
     {
-        if (parent::enable()) {
+        if (parent::enable() !== false) {
             try {
                 $this->configuration->generateDynamicCSSFile();
             } catch (Exception $e) {
