@@ -1,6 +1,12 @@
 TODOS
 =====
 
+TODO BS5:
+- Check migration
+- To migration, add Theme recompile
+- 
+
+
 Generate a `variables.scss` file from the theme configuration and compile the theme, instead of generating the `humhub.clean-theme.dynamic.css` file.
 
 - Theme configuration presets

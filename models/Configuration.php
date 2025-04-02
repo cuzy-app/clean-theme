@@ -11,13 +11,10 @@ namespace humhub\modules\cleanTheme\models;
 
 use humhub\components\SettingsManager;
 use humhub\widgets\bootstrap\Button;
-use ScssPhp\ScssPhp\Compiler;
-use ScssPhp\ScssPhp\Exception\SassException;
 use Yii;
 use yii\base\Exception;
 use yii\base\Model;
 use yii\helpers\Inflector;
-use yii\web\ServerErrorHttpException;
 
 /**
  *
@@ -207,7 +204,6 @@ class Configuration extends Model
     public string $topMenuTextColor = '#31414a';
     public string $topMenuButtonHoverBackgroundColor = '#f7f7f7';
     public string $topMenuButtonHoverTextColor = '#242424';
-    public string $scss = '';
     public string|bool $hideTopMenuOnScrollDown = false;
     public string|bool $hideBottomMenuOnScrollDown = false;
     public string|bool $hideTextInBottomMenuItems = false;
@@ -253,7 +249,6 @@ class Configuration extends Model
             'hideTopMenuOnScrollDown',
             'hideBottomMenuOnScrollDown',
             'hideTextInBottomMenuItems',
-            'scss',
         ]);
     }
 
@@ -268,15 +263,8 @@ class Configuration extends Model
     public function rules()
     {
         return [
-            [array_merge(static::getCssAttributeNames(), ['menuStyle', 'scss']), 'string'],
+            [array_merge(static::getCssAttributeNames(), ['menuStyle']), 'string'],
             [['hideTopMenuOnScrollDown', 'hideBottomMenuOnScrollDown', 'hideTextInBottomMenuItems'], 'boolean'],
-            ['scss', function ($attribute, $params, $validator) {
-                try {
-                    $this->getCssFromScss();
-                } catch (ServerErrorHttpException $e) {
-                    $this->addError($attribute, $e->getMessage());
-                }
-            }],
         ];
     }
 
@@ -341,7 +329,6 @@ class Configuration extends Model
             'hideTopMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the top menu on scroll down'),
             'hideBottomMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the bottom menu on scroll down'),
             'hideTextInBottomMenuItems' => Yii::t('CleanThemeModule.config', 'Hide the text of the bottom menu buttons'),
-            'scss' => Yii::t('CleanThemeModule.config', 'Custom CSS'),
         ];
     }
 
@@ -383,7 +370,6 @@ class Configuration extends Model
             ]),
             'topBarHeight' => $inPx,
             'topBarFontSize' => $inPx,
-            'scss' => Yii::t('CleanThemeModule.config', 'Use Sassy CSS syntax (SCSS)'),
         ];
     }
 
@@ -479,11 +465,6 @@ class Configuration extends Model
         $css .= '    }' . PHP_EOL;
         $css .= '}' . PHP_EOL;
 
-        // Custom CSS
-        if ($this->scss) {
-            $css .= PHP_EOL . $this->getCssFromScss() . PHP_EOL;
-        }
-
         // Write file
         $dynamicCssPath = Yii::getAlias(self::DYNAMIC_CSS_FILE_PATH);
         if (
@@ -516,24 +497,5 @@ class Configuration extends Model
             $fontsEncoded[] = 'family=' . urlencode($font);
         }
         return implode('&', $fontsEncoded);
-    }
-
-    /**
-     * @return string
-     * @throws ServerErrorHttpException
-     */
-    private function getCssFromScss(): string
-    {
-        // Generate custom CSS from SCSS
-        if (!class_exists('Compiler')) {
-            require_once Yii::getAlias('@clean-theme/vendor/autoload.php');
-        }
-        $compiler = new Compiler();
-        $scss = str_replace(['<style>', '<style type="text/css">', '</style>'], ['', '', ''], $this->scss);
-        try {
-            return $compiler->compileString($scss)->getCss();
-        } catch (SassException $e) {
-            throw new ServerErrorHttpException(Yii::t('CleanThemeModule.config', 'Cannot compile SCSS to CSS code. Error message:') . ' ' . $e->getMessage());
-        }
     }
 }
