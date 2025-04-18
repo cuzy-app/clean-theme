@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.2.4 (April 18, 2025)
 --------------------
 - Fix: Enable Clean Theme on module enabled
 - Enh: On mobile, if the menu is too long, make it horizontally scrollable
