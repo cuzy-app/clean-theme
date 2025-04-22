@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.2.5 (April 22, 2025)
+--------------------
+- Fix: Cannot compile CSS file when saving the module configuration (missing vendor folder for the Marketplace version)
+
 2.2.4 (April 18, 2025)
 --------------------
 - Fix: Enable Clean Theme on module enabled
