@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: When hovering a User or Space, add a black translucent overlay to make the white text visible if the image is light
+
 2.2.5 (April 22, 2025)
 --------------------
 - Fix: Cannot compile CSS file when saving the module configuration (missing vendor folder for the Marketplace version)
