@@ -4,6 +4,7 @@ Changelog
 Unreleased
 --------------------
 - Enh: When hovering a User or Space, add a black translucent overlay to make the white text visible if the image is light
+- Fix: Topbar bottom border overlayed when hovering a menu item
 
 2.2.5 (April 22, 2025)
 --------------------
