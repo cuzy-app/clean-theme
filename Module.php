@@ -9,9 +9,9 @@
 
 namespace humhub\modules\cleanTheme;
 
+use humhub\helpers\ThemeHelper;
 use humhub\libs\DynamicConfig;
 use humhub\modules\cleanTheme\models\Configuration;
-use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 use yii\base\Exception;
 use yii\helpers\Url;

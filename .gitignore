@@ -2,3 +2,4 @@ vendor/
 composer.lock
 composer.phar
 resources/css/humhub.clean-theme.dynamic.css
+themes/Clean/resources/css/*

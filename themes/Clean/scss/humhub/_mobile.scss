@@ -1,13 +1,6 @@
 @include media-breakpoint-down(md) {
     // Layout Contents: Adjusting the content to fit perfectly on mobile devices
     #layout-content {
-        // Layout Space: Space navigation
-        .left-navigation {
-            .list-group {
-                white-space: normal;
-            }
-        }
-
         .panel-profile .panel-profile-header .img-profile-header-background {
             min-height: 65px !important;
         }

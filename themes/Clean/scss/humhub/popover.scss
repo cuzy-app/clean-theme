@@ -1,0 +1,10 @@
+//
+// popover
+// --------------------------------------------------
+
+// When hovering a User or Space, add a black translucent overlay to make the white text visible if the image is light
+.popover .popover-content .vcardHeader .headerContent {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.36);
+    text-shadow: 0 0 4px var(--text-color-highlight);
+}
