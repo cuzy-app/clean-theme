@@ -19,7 +19,6 @@ use yii\helpers\Inflector;
 /**
  *
  * @property-read string $googleFontsCss2UrlParams
- * @property-read string $cssFromScss
  * @property-read array $specialColorCssVariables
  */
 class Configuration extends Model
@@ -41,13 +40,7 @@ class Configuration extends Model
      */
     public const CSS_ATTRIBUTE_PREFIXES = [
         'containerMaxWidth' => self::CLEAN_THEME_CSS_PREFIX,
-        'default' => self::BOOTSTRAP_CSS_PREFIX,
-        'primary' => self::BOOTSTRAP_CSS_PREFIX,
-        'info' => self::BOOTSTRAP_CSS_PREFIX,
-        'success' => self::BOOTSTRAP_CSS_PREFIX,
-        'warning' => self::BOOTSTRAP_CSS_PREFIX,
-        'danger' => self::BOOTSTRAP_CSS_PREFIX,
-        'link' => self::BOOTSTRAP_CSS_PREFIX,
+        'linkColor' => self::BOOTSTRAP_CSS_PREFIX,
         'textColorHeading' => self::CLEAN_THEME_CSS_PREFIX,
         'textColorMain' => self::HUMHUB_CSS_PREFIX,
         'textColorDefault' => self::HUMHUB_CSS_PREFIX,
@@ -98,13 +91,7 @@ class Configuration extends Model
      */
     public const CSS_ATTRIBUTE_UNITS = [
         'containerMaxWidth' => 'px',
-        'default' => '',
-        'primary' => '',
-        'info' => '',
-        'success' => '',
-        'warning' => '',
-        'danger' => '',
-        'link' => '',
+        'linkColor' => '',
         'textColorHeading' => '',
         'textColorMain' => '',
         'textColorDefault' => '',
@@ -153,13 +140,7 @@ class Configuration extends Model
     public SettingsManager $settingsManager;
 
     public string $containerMaxWidth = '1600';
-    public string $default = '#f3f3f3';
-    public string $primary = '#31414a';
-    public string $info = '#1A808E';
-    public string $success = '#518132';
-    public string $warning = '#AF640E';
-    public string $danger = '#EC0426';
-    public string $link = '#1A7DB2';
+    public string $linkColor = '#1A7DB2';
     public string $textColorHeading = '#37474f';
     public string $textColorMain = '#31414a';
     public string $textColorDefault = '#4b4b4b';
@@ -275,13 +256,7 @@ class Configuration extends Model
     {
         return [
             'containerMaxWidth' => Yii::t('CleanThemeModule.config', 'Main content container width'),
-            'default' => Yii::t('CleanThemeModule.config', 'Main default color'),
-            'primary' => Yii::t('CleanThemeModule.config', 'Main "Primary" color'),
-            'info' => Yii::t('CleanThemeModule.config', 'Main "Info" color'),
-            'success' => Yii::t('CleanThemeModule.config', 'Main "Success" color'),
-            'warning' => Yii::t('CleanThemeModule.config', 'Main "Warning" color'),
-            'danger' => Yii::t('CleanThemeModule.config', 'Main "Danger" color'),
-            'link' => Yii::t('CleanThemeModule.config', 'Main color for links'),
+            'linkColor' => Yii::t('CleanThemeModule.config', 'Main color for links'),
             'textColorHeading' => Yii::t('CleanThemeModule.config', 'Headings text color'),
             'textColorMain' => Yii::t('CleanThemeModule.config', 'Main text color'),
             'textColorDefault' => Yii::t('CleanThemeModule.config', 'Default text color for icons, buttons, etc.'),

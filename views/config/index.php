@@ -55,12 +55,18 @@ $module = Yii::$app->getModule('clean-theme');
 
         <div id="clean-theme-configuration-import-export">
             <h5><strong><?= Yii::t('CleanThemeModule.config', 'Import/Export the configuration') ?></strong></h5>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                <?php $form = ActiveForm::begin([
-                    'layout' => 'inline',
-                ]); ?>
-                <?= $form->field($uploadModel, 'jsonConfigurationFile')->fileInput(['class' => 'btn btn-primary']) ?>
-                <?= Button::save(Yii::t('CleanThemeModule.config', 'Import'))->icon('upload')->confirm(null, Yii::t('CleanThemeModule.config', 'This will overwrite your current configuration'))->submit() ?>
+            <div class="d-flex justify-content-between align-items-start">
+                <?php $form = ActiveForm::begin(); ?>
+                <div class="input-group">
+                    <?= $form->field($uploadModel, 'jsonConfigurationFile')
+                        ->fileInput(['class' => 'btn btn-primary', 'style' => 'height: 40px; padding: 8px;'])
+                        ->label(false) ?>
+                    <?= Button::save(Yii::t('CleanThemeModule.config', 'Import'))
+                        ->icon('upload')
+                        ->confirm(null, Yii::t('CleanThemeModule.config', 'This will overwrite your current configuration'))
+                        ->submit()
+                        ->options(['style' => 'height: 40px;']) ?>
+                </div>
                 <?php ActiveForm::end(); ?>
                 <?= Button::primary(Yii::t('CleanThemeModule.config', 'Export'))->icon('download')->link(['download-json'])->loader(false) ?>
             </div>
@@ -73,17 +79,8 @@ $module = Yii::$app->getModule('clean-theme');
 //                'acknowledge' => true, // Comment because doesn't work well (warn even if no change)
             ]); ?>
 
-            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Main colors')) ?>
-            <?= $form->field($model, 'default')->colorInput() ?>
-            <?= $form->field($model, 'primary')->colorInput() ?>
-            <?= $form->field($model, 'info')->colorInput() ?>
-            <?= $form->field($model, 'success')->colorInput() ?>
-            <?= $form->field($model, 'warning')->colorInput() ?>
-            <?= $form->field($model, 'danger')->colorInput() ?>
-            <?= $form->field($model, 'link')->colorInput() ?>
-            <?= $form->endCollapsibleFields() ?>
-
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Text colors')) ?>
+            <?= $form->field($model, 'linkColor')->colorInput() ?>
             <?= $form->field($model, 'textColorHeading')->colorInput() ?>
             <?= $form->field($model, 'textColorMain')->colorInput() ?>
             <?= $form->field($model, 'textColorDefault')->colorInput() ?>
