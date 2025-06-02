@@ -7,6 +7,7 @@ Unreleased
 - Fix: Topbar bottom border overlayed when hovering a menu item
 - Fix: Email template button centering
 - Enh: Load all Google Font weights
+- Enh: Add configuration for Bold font (to allow changing the weight)
 
 2.2.5 (April 22, 2025)
 --------------------
