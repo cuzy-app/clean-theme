@@ -10,6 +10,7 @@ Unreleased (wait for DeviceDetectorHelper::getBodyClasses() to be available)
 - Enh: Add body classes from the new `DeviceDetectorHelper` in 1.17
 - Enh: Topbar brand text not centered vertically
 - Enh: When hovering a User or Space, add a black translucent overlay to make the white text visible if the image is light
+- Enh: Load all Google Font weights
 
 2.2.0 (November 26, 2024)
 --------------------

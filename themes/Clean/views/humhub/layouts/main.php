@@ -51,7 +51,7 @@ if (Yii::$app->user->isGuest) {
         <?php if ($googleFontsCss2UrlParams) : ?>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?<?= $googleFontsCss2UrlParams ?>">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?<?= $googleFontsCss2UrlParams ?>:wght@100..900&display=swap">
         <?php endif; ?>
     </head>
 
