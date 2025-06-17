@@ -66,7 +66,7 @@
             #top-menu-nav {
                 position: fixed;
                 bottom: 0;
-                padding-bottom: env(safe-area-inset-bottom, var(--hh-mobile-app-safe-area-inset-bottom)); // for the web view space (safe area) on mobile devices
+                padding-bottom: var(--hh-mobile-app-safe-area-inset-bottom, env(safe-area-inset-bottom)); // for the web view space (safe area) on mobile devices
                 background-color: var(--background-color-secondary);
                 width: auto;
                 min-width: 100%;
