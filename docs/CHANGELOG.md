@@ -8,6 +8,7 @@ Unreleased
 - Fix: Email template button centering
 - Enh: Load all Google Font weights
 - Enh: Add configuration for Bold font (to allow changing the weight)
+- Fix: Safe area padding on mobile app
 
 2.2.5 (April 22, 2025)
 --------------------
