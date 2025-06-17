@@ -19,4 +19,14 @@
         border-top-left-radius: var(--hh-ct-panel-border-radius);
         border-top-right-radius: var(--hh-ct-panel-border-radius);
     }
+
+    .card-status {
+        font-weight: var(--hh-ct-font-bold-weight);
+    }
+
+    .card-body {
+        .card-title {
+            font-weight: bold;
+        }
+    }
 }

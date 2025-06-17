@@ -4,7 +4,7 @@
 
 /* Fonts */
 .heading {
-    font-weight: 400;
+    font-weight: var(--hh-ct-font-family);
     font-family: var(--hh-ct-heading-font-family);
     color: var(--hh-ct-text-color-heading);
 

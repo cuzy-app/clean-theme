@@ -58,6 +58,7 @@ class Configuration extends Model
         'fontFamily' => self::CLEAN_THEME_CSS_PREFIX,
         'fontSize' => self::CLEAN_THEME_CSS_PREFIX,
         'fontWeight' => self::CLEAN_THEME_CSS_PREFIX,
+        'fontBoldWeight' => self::CLEAN_THEME_CSS_PREFIX,
         'headingFontFamily' => self::CLEAN_THEME_CSS_PREFIX,
         'phFontSize' => self::CLEAN_THEME_CSS_PREFIX,
         'h1FontSize' => self::CLEAN_THEME_CSS_PREFIX,
@@ -109,6 +110,7 @@ class Configuration extends Model
         'fontFamily' => '',
         'fontSize' => 'px',
         'fontWeight' => '',
+        'fontBoldWeight' => '',
         'headingFontFamily' => '',
         'phFontSize' => 'px',
         'h1FontSize' => 'em',
@@ -158,6 +160,7 @@ class Configuration extends Model
     public string $fontSize = '14';
     public string $fontFamily = 'Open Sans';
     public string $fontWeight = '400';
+    public string $fontBoldWeight = '700';
     public string $headingFontFamily = 'Open Sans';
     public string $phFontSize = '16'; // Panel Heading
     public string $h1FontSize = '1.7';
@@ -274,6 +277,7 @@ class Configuration extends Model
             'fontFamily' => Yii::t('CleanThemeModule.config', 'Font family'),
             'fontSize' => Yii::t('CleanThemeModule.config', 'Font size'),
             'fontWeight' => Yii::t('CleanThemeModule.config', 'Font weight'),
+            'fontBoldWeight' => Yii::t('CleanThemeModule.config', 'Bold font weight'),
             'headingFontFamily' => Yii::t('CleanThemeModule.config', 'Font family'),
             'phFontSize' => Yii::t('CleanThemeModule.config', 'Panels heading font size'),
             'h1FontSize' => Yii::t('CleanThemeModule.config', '1st level header font size'),

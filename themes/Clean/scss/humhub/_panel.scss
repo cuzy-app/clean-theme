@@ -94,7 +94,7 @@
             h1 {
                 margin-bottom: 0;
                 a {
-                    font-weight: 700;
+                    font-weight: var(--hh-ct-font-bold-weight);
                     font-size: 30px;
                     @include media-breakpoint-down(sm) {
                         font-size: 20px;
@@ -103,7 +103,7 @@
             }
 
             h2.space {
-                font-weight: 400;
+                font-weight: var(--hh-ct-font-family);
                 margin-bottom: 0;
                 line-height: 16px;
             }
