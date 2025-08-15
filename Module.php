@@ -10,7 +10,6 @@
 namespace humhub\modules\cleanTheme;
 
 use humhub\helpers\ThemeHelper;
-use humhub\libs\DynamicConfig;
 use humhub\modules\cleanTheme\models\Configuration;
 use Yii;
 use yii\base\Exception;
@@ -30,9 +29,10 @@ class Module extends \humhub\components\Module
     /**
      * @inheridoc
      */
-    public $resourcesPath = 'resources';
     public bool $collapsibleLeftNavigation = false;
     private ?Configuration $_configuration = null;
+
+    public const THEME_NAME = 'Clean';
 
     public function getConfiguration(): Configuration
     {
@@ -78,7 +78,7 @@ class Module extends \humhub\components\Module
      */
     public function enable()
     {
-        if (parent::enable()) {
+        if (parent::enable() !== false) {
             try {
                 $this->configuration->generateDynamicCSSFile();
             } catch (Exception $e) {
@@ -109,9 +109,9 @@ class Module extends \humhub\components\Module
     private function disableTheme()
     {
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === 'Clean') {
+            if ($theme->name === self::THEME_NAME) {
                 $ceTheme = ThemeHelper::getThemeByName('HumHub');
-                $ceTheme->activate();
+                $ceTheme?->activate();
                 break;
             }
         }
@@ -124,15 +124,12 @@ class Module extends \humhub\components\Module
     {
         // Check if already active
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === 'Clean') {
+            if ($theme->name === self::THEME_NAME) {
                 return;
             }
         }
 
-        $cleanTheme = ThemeHelper::getThemeByName('Clean');
-        if ($cleanTheme !== null) {
-            $cleanTheme->activate();
-            DynamicConfig::rewrite();
-        }
+        $cleanTheme = ThemeHelper::getThemeByName(self::THEME_NAME);
+        $cleanTheme?->activate();
     }
 }

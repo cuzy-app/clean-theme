@@ -1,7 +1,7 @@
 <?php
 
+use humhub\components\View;
 use humhub\modules\cleanTheme\assets\CleanThemeAsset;
-use humhub\modules\ui\view\components\View;
 
 /* @var $this View */
 /* @var $content string */

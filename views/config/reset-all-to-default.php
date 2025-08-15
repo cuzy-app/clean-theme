@@ -6,9 +6,9 @@
  * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
+use humhub\components\View;
 use humhub\helpers\Html;
 use humhub\modules\cleanTheme\models\Configuration;
-use humhub\modules\ui\view\components\View;
 use yii\helpers\Url;
 
 /**

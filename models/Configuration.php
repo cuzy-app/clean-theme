@@ -320,9 +320,9 @@ class Configuration extends Model
         $inEm = Yii::t('CleanThemeModule.config', 'In relative size (em)');
         $googleFonts =
             Yii::t('CleanThemeModule.config', 'Google Font name') . ' ' .
-            Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->xs() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>' .
+            Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->sm() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>' .
             Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
-                'documentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
+                'seeDocumentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
             ]);
 
         return [

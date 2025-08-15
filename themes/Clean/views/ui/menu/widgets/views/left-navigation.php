@@ -5,7 +5,7 @@ use humhub\modules\cleanTheme\assets\CleanThemeLeftNavigationAsset;
 use humhub\modules\cleanTheme\Module;
 use humhub\widgets\bootstrap\Button;
 
-/* @var $this \humhub\modules\ui\view\components\View */
+/* @var $this \humhub\components\View */
 /* @var $menu \humhub\modules\ui\menu\widgets\LeftNavigation */
 /* @var $entries \humhub\modules\ui\menu\MenuEntry[] */
 /* @var $options [] */

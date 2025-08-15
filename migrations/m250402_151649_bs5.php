@@ -1,5 +1,6 @@
 <?php
 
+use humhub\helpers\ThemeHelper;
 use humhub\modules\cleanTheme\Module;
 use yii\db\Migration;
 
@@ -10,6 +11,7 @@ class m250402_151649_bs5 extends Migration
      */
     public function safeUp()
     {
+        // Migration from 1.17 to 1.18 (Bootstrap 5)
         /** @var Module $module */
         $module = Yii::$app->getModule('clean-theme');
         $moduleSettingsManager = $module?->configuration?->settingsManager;
@@ -18,6 +20,7 @@ class m250402_151649_bs5 extends Migration
         }
 
         $coreSettingsManager = Yii::$app->settings;
+        $rebuildCss = false;
 
         $scss = $moduleSettingsManager->get('scss');
         if ($scss) {
@@ -27,36 +30,72 @@ class m250402_151649_bs5 extends Migration
             }
             $coreSettingsManager->set('themeCustomScss', $scss);
             $moduleSettingsManager->delete('scss');
+            $rebuildCss = true;
         }
 
-        $coreSettingsManager->set('themePrimaryColor', $moduleSettingsManager->get('primary', '#31414a'));
-        $coreSettingsManager->set('useDefaultThemePrimaryColor', false);
-        $moduleSettingsManager->delete('primary');
+        $primary = $moduleSettingsManager->get('primary');
+        if ($primary && $primary !== '#31414a') {
+            $coreSettingsManager->set('themePrimaryColor', $primary);
+            $coreSettingsManager->set('useDefaultThemePrimaryColor', false);
+            $moduleSettingsManager->delete('primary');
+            $rebuildCss = true;
+        }
 
-        $coreSettingsManager->set('themeSuccessColor', $moduleSettingsManager->get('success', '#518132'));
-        $coreSettingsManager->set('useDefaultThemeSuccessColor', false);
-        $moduleSettingsManager->delete('success');
+        $success = $moduleSettingsManager->get('success');
+        if ($success && $success !== '#518132') {
+            $coreSettingsManager->set('themeSuccessColor', $success);
+            $coreSettingsManager->set('useDefaultThemeSuccessColor', false);
+            $moduleSettingsManager->delete('success');
+            $rebuildCss = true;
+        }
 
-        $coreSettingsManager->set('themeDangerColor', $moduleSettingsManager->get('danger', '#EC0426'));
-        $coreSettingsManager->set('useDefaultThemeDangerColor', false);
-        $moduleSettingsManager->delete('danger');
+        $danger = $moduleSettingsManager->get('danger');
+        if ($danger && $danger !== '#EC0426') {
+            $coreSettingsManager->set('themeDangerColor', $danger);
+            $coreSettingsManager->set('useDefaultThemeDangerColor', false);
+            $moduleSettingsManager->delete('danger');
+            $rebuildCss = true;
+        }
 
-        $coreSettingsManager->set('themeWarningColor', $moduleSettingsManager->get('warning', '#AF640E'));
-        $coreSettingsManager->set('useDefaultThemeWarningColor', false);
-        $moduleSettingsManager->delete('warning');
+        $warning = $moduleSettingsManager->get('warning');
+        if ($warning && $warning !== '#AF640E') {
+            $coreSettingsManager->set('themeWarningColor', $warning);
+            $coreSettingsManager->set('useDefaultThemeWarningColor', false);
+            $moduleSettingsManager->delete('warning');
+            $rebuildCss = true;
+        }
 
-        $coreSettingsManager->set('themeInfoColor', $moduleSettingsManager->get('info', '#1A808E'));
-        $coreSettingsManager->set('useDefaultThemeInfoColor', false);
-        $moduleSettingsManager->delete('info');
+        $info = $moduleSettingsManager->get('info');
+        if ($info && $info !== '#1A808E') {
+            $coreSettingsManager->set('themeInfoColor', $info);
+            $coreSettingsManager->set('useDefaultThemeInfoColor', false);
+            $moduleSettingsManager->delete('info');
+            $rebuildCss = true;
+        }
 
-        $coreSettingsManager->set('themeLightColor', $moduleSettingsManager->get('default', '#f3f3f3'));
-        $coreSettingsManager->set('useDefaultThemeLightColor', false);
-        $moduleSettingsManager->delete('default'); // Default becomes Light
+        $default = $moduleSettingsManager->get('default');
+        if ($default && $default !== '#f3f3f3') {
+            $coreSettingsManager->set('themeLightColor', $default);
+            $coreSettingsManager->set('useDefaultThemeLightColor', false);
+            $moduleSettingsManager->delete('default'); // Default becomes Light
+            $rebuildCss = true;
+        }
 
         $link = $moduleSettingsManager->get('link');
         if ($link) {
             $moduleSettingsManager->set('linkColor', $link);
             $moduleSettingsManager->delete('link');
+            $rebuildCss = true;
+        }
+
+        if ($rebuildCss) {
+            // If the current theme is "Clean", rebuild CSS
+            foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
+                if ($theme->name === Module::THEME_NAME) {
+                    ThemeHelper::buildCss($theme);
+                    break;
+                }
+            }
         }
     }
 

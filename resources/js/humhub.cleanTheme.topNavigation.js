@@ -138,12 +138,15 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     const hideMenusOnScrollTop = function () {
         const hideTopMenuOnScrollDown = module.config.hideTopMenuOnScrollDown;
         const hideBottomMenuOnScrollDown = module.config.hideBottomMenuOnScrollDown;
-        const screenXsMin = parseInt(module.config.screenXsMin || '570px', 10);
+        const smBreakpoint = parseInt(
+            getComputedStyle(document.documentElement)
+                .getPropertyValue('--bs-breakpoint-sm')
+        ) || 576; // fallback to 576px
         let lastScrollTop = 0;
 
         $(window).on("scroll", function () {
             // Only on small screens
-            if ($(window).width() > screenXsMin) {
+            if (window.innerWidth > smBreakpoint) {
                 return;
             }
 

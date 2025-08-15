@@ -1,18 +1,54 @@
 Changelog
 =========
 
-Unreleased (wait for DeviceDetectorHelper::getBodyClasses() to be available)
+Unreleased
 --------------------
 - Cgh: Minimal HumHub version is now 1.18
 - Chg: SCSS instead of LESS
 - Chg: Remove Custom SCSS field (a migration copies the values to the new HumHub core Appearance form)
-- Chg: Remove the modification of the HumHub SCSS colors variables (we assume all colors are now CSS variables) 
-- Enh: Add body classes from the new `DeviceDetectorHelper` in 1.17
-- Enh: Topbar brand text not centered vertically
+- Chg: Remove the modification of the HumHub SCSS colors variables (we assume all colors are now CSS variables)
+- Enh: Use the new `DeviceDetectorHelper::getBodyClasses()`
+
+2.2.6 (June 18, 2025)
+--------------------
 - Enh: When hovering a User or Space, add a black translucent overlay to make the white text visible if the image is light
+- Fix: Topbar bottom border overlayed when hovering a menu item
+- Fix: Email template button centering
 - Enh: Load all Google Font weights
 - Enh: Add configuration for Bold font (to allow changing the weight)
 - Fix: Safe area padding on mobile app
+
+2.2.5 (April 22, 2025)
+--------------------
+- Fix: Cannot compile CSS file when saving the module configuration (missing vendor folder for the Marketplace version)
+
+2.2.4 (April 18, 2025)
+--------------------
+- Fix: Enable Clean Theme on module enabled
+- Enh: On mobile, if the menu is too long, make it horizontally scrollable
+
+2.2.3 (February 21, 2025)
+--------------------
+- Fix #27: A file attachment in a comment showed with light background color and light text color (thanks @felixhahnweilheim)
+- Enh: Add `clean-theme` class to the `body` element
+- Fix: Use primary color for the bottom menu element texts and icons
+- Fix: On mobile, if the content in the container is too large, part of the top menu is hidden
+
+2.2.2 (February 5, 2025)
+--------------------
+- Enh: Topbar brand text not centered vertically
+- Fix: Panel border radius when configured to more than 4px
+- Fix: [Fade with 3 digits colors](https://github.com/felixhahnweilheim/humhub-flex-theme/pull/43) and [division by zero](https://github.com/felixhahnweilheim/humhub-flex-theme/pull/42) (thanks @felixhahnweilheim)
+- Fix: Incorrect topbar brand left alignment
+- Fix: Dropdown menu left border when "Menu style" is configured to "Distinct borer link color for active items"
+- Fix: Sometimes, "Cancel" "Choose" buttons are displayed at the top left of the screen (cause by https://github.com/humhub/humhub-internal/issues/528, fixed with CSS)
+
+2.2.1 (January 13, 2025)
+--------------------
+- Enh: Add body classes from the new `DeviceDetectorHelper` in 1.17
+- Enh: Change color of wall entry footer links (comment and like icons) to "Link" color
+- Enh: Remplace wall entry footer calendar links to icons
+- Chg: CSS compiled for HumHub 1.17.0
 
 2.2.0 (November 26, 2024)
 --------------------

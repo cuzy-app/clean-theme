@@ -8,9 +8,9 @@
 
 namespace humhub\modules\cleanTheme\models;
 
+use humhub\components\View;
 use humhub\modules\admin\permissions\ManageSettings;
 use humhub\modules\cleanTheme\Module;
-use humhub\modules\ui\view\components\View;
 use humhub\widgets\bootstrap\Button;
 use humhub\widgets\form\ActiveForm;
 use Yii;
@@ -75,9 +75,7 @@ $module = Yii::$app->getModule('clean-theme');
         <br>
 
         <div id="clean-theme-configuration-form">
-            <?php $form = ActiveForm::begin([
-//                'acknowledge' => true, // Comment because doesn't work well (warn even if no change)
-            ]); ?>
+            <?php $form = ActiveForm::begin(); ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Text colors')) ?>
             <?= $form->field($model, 'linkColor')->colorInput() ?>
