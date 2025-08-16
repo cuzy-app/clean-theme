@@ -80,9 +80,9 @@ class Module extends \humhub\components\Module
     {
         if (parent::enable() !== false) {
             try {
-                $this->configuration->generateDynamicCSSFile();
+                $this->configuration->generateScssRootFile();
             } catch (Exception $e) {
-                Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'clean-theme');
+                Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
                 return false;
             }
             $this->enableTheme();
@@ -95,11 +95,11 @@ class Module extends \humhub\components\Module
     {
         parent::update();
 
-        // Recreate dynamic CSS file because it was removed by module update
+        // Recreate SCSS root file because it was removed by module update
         try {
-            $this->configuration->generateDynamicCSSFile();
+            $this->configuration->generateScssRootFile();
         } catch (Exception $e) {
-            Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'clean-theme');
+            Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
         }
     }
 

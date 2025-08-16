@@ -33,22 +33,24 @@ body.hh-ct-menu-style-background {
                 border-top: none !important;
                 background-color: var(--hh-background-color-secondary);
             }
-        }
 
-        li.active > a, li.active > a:hover, li.active > a:focus {
-            padding-top: 14px;
-            background-color: var(--bs-primary);
-            color: var(--hh-text-color-contrast);
-            border: none !important;
-            border-bottom: 1px solid var(--bs-primary) !important;
+            &.active, &:hover, &:focus {
+                padding-top: 14px;
+                background-color: var(--bs-primary);
+                color: var(--hh-text-color-contrast);
+                border: none !important;
+                border-bottom: 1px solid var(--bs-primary) !important;
+            }
         }
     }
 }
 
 body.hh-ct-menu-style-bordered {
     .tab-menu .nav-tabs, ul.tab-menu-settings {
-        li.active > a, li.active > a:hover, li.active > a:focus {
-            border-top-color: var(--bs-link-color);
+        li > a {
+            &.active, &:hover, &:focus {
+                border-top-color: var(--bs-link-color);
+            }
         }
     }
 }

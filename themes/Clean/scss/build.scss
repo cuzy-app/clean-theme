@@ -1,7 +1,8 @@
-// Variables are imported separately by the ThemeHelper class
+// Variables are imported separately by the \humhub\helpers\ThemeHelper class
 
 // Define mixins
 @import "mixins";
+@import "config-generated-root";
 
 // Overwrite HumHub values
 @import "humhub/base";

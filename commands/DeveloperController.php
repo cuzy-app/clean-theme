@@ -18,23 +18,23 @@ use yii\console\ExitCode;
 class DeveloperController extends Controller
 {
     /**
-     * Generate dynamic CSS file
+     * Generate SCSS root file
      *
-     * Usage: php yii clean-theme/generate-dynamic-css-file
+     * Usage: php yii clean-theme/generate-scss-root-file
      *
      * Can be used after installing the module by cloning the GitHub repository
      */
-    public function actionGenerateDynamicCssFile()
+    public function actionGenerateScssRootFile()
     {
         /** @var Module $module */
         $module = Yii::$app->getModule('clean-theme');
         try {
-            $module->configuration->generateDynamicCSSFile();
+            $module->configuration->generateScssRootFile();
         } catch (Exception $e) {
-            $this->message('Could not generate dynamic CSS file: ' . $e->getMessage(), 'error');
+            $this->message('Could not generate SCSS root file: ' . $e->getMessage(), 'error');
             return ExitCode::UNSPECIFIED_ERROR;
         }
-        $this->message("\nSuccessfully generated dynamic CSS file", 'success');
+        $this->message("\nSuccessfully generated SCSS root file", 'success');
         return ExitCode::OK;
     }
 }

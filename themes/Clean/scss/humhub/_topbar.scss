@@ -170,12 +170,12 @@
                 }
             }
 
-            .btn-group > .label {
+            .btn-group > .badge {
                 position: absolute;
                 top: 4px;
                 right: -2px;
                 padding: 4px;
-                min-width: 18px; // Insure that the label is round when only 1 digit
+                min-width: 18px; // Insure that the badge is round when only 1 digit
             }
 
             .dropdown-menu {
@@ -340,8 +340,8 @@
             color: var(--hh-ct-top-menu-text-color);
         }
 
-        > .nav {
-            > li > a {
+        > .nav > li.nav-link {
+             > a {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -367,29 +367,29 @@
                     font-size: 14px;
                     margin-bottom: 5px;
                 }
+
+                 > &.active, > &:hover {
+                     text-decoration: none;
+                 }
+
+                 > &:not(.active) {
+                     > &:hover,
+                     > &:focus,
+                     > &:active {
+                         background-color: var(--hh-ct-top-menu-button-hover-background-color);
+                         color: var(--hh-ct-top-menu-button-hover-text-color);
+                         text-decoration: none;
+                         border-bottom: none;
+                     }
+                 }
             }
 
-            > li.active > a, > li.hover > a {
-                text-decoration: none;
-            }
-
-            > li:not(.active) {
-                > a:hover,
-                > a:focus,
-                > a:active {
-                    background-color: var(--hh-ct-top-menu-button-hover-background-color);
-                    color: var(--hh-ct-top-menu-button-hover-text-color);
-                    text-decoration: none;
-                    border-bottom: none;
-                }
-            }
-
-            > li > ul > li > a {
+            > ul > li > a {
                 background-color: var(--hh-text-color-contrast);
                 color: var(--hh-text-color-highlight);
             }
 
-            > li > ul > li > a:hover, > li > ul > li > a.active {
+            > ul > li > a:hover, > li > ul > li > a.active {
                 background-color: var(--bs-primary);
                 color: var(--hh-text-color-contrast);
             }
@@ -403,7 +403,7 @@
         }
 
         // For JS cleanTheme.topNavigation.updateBtnStatus()
-        .btn-group.active > a {
+        .btn-group > a.active {
             background-color: var(--hh-ct-top-menu-text-color);
             color: var(--hh-ct-top-menu-background-color);
         }
@@ -412,7 +412,7 @@
 
 body.hh-ct-menu-style-background {
     #topbar > .container > .nav {
-        > li.active > a {
+        > li > a.active {
             background-color: var(--hh-ct-top-menu-text-color);
             color: var(--hh-ct-top-menu-background-color);
             border-bottom: none;
@@ -422,7 +422,7 @@ body.hh-ct-menu-style-background {
 
 body.hh-ct-menu-style-bordered {
     #topbar > .container > .nav {
-        > li.active > a {
+        > li > a.active {
             padding-top: 3px;
             border-bottom: 3px solid var(--bs-link-color);
             color: var(--bs-link-color);

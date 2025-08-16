@@ -134,7 +134,7 @@
         #topbar > .container > #top-menu-nav {
             border-top: solid 2px #CCC;
 
-            > li.active > a {
+            > li > a.active {
                 background-color: var(--bs-primary) !important;
                 color: var(--hh-background-color-secondary) !important;
             }
@@ -145,7 +145,7 @@
         #topbar > .container > #top-menu-nav {
             border-top: solid 3px #ccc;
 
-            > li.active > a {
+            > li > a.active {
                 margin-top: -3px;
                 border-top: 3px solid var(--bs-link-color);
             }

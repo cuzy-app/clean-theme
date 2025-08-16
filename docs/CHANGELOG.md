@@ -7,6 +7,7 @@ Unreleased
 - Chg: SCSS instead of LESS
 - Chg: Remove Custom SCSS field (a migration copies the values to the new HumHub core Appearance form)
 - Chg: Remove the modification of the HumHub SCSS colors variables (we assume all colors are now CSS variables)
+- Chg: Change the command line to generate the SCSS root file to `php yii clean-theme/generate-scss-root-file`
 - Enh: Use the new `DeviceDetectorHelper::getBodyClasses()`
 
 2.2.6 (June 18, 2025)
