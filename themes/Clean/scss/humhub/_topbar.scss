@@ -2,6 +2,11 @@
 // Topbar
 // --------------------------------------------------
 
+.navbar.topbar {
+    --bs-navbar-padding-x: 0;
+    --bs-navbar-padding-y: 0;
+}
+
 .topbar {
     position: fixed;
     height: var(--hh-ct-top-bar-height);
@@ -25,24 +30,26 @@
 
     .dropdown-header {
         font-size: 16px;
-        padding: 3px 10px;
+        padding: 6px 16px;
         margin-bottom: 10px;
-        font-weight: var(--hh-ct-font-family);
+        font-weight: var(--hh-ct-ph-font-weight);
         color: var(--hh-text-color-soft);
 
         .arrow {
             display: none !important;
         }
 
-        .dropdown-header-link {
-            position: absolute;
-            top: 2px;
-            right: 10px;
+        .dropdown-header-actions {
+            float: right;
 
-            a {
-                color: var(--bs-link-color) !important;
-                font-size: 12px;
-                font-weight: var(--hh-ct-font-family);
+            a, button {
+                &:hover {
+                    background: var(--bs-light);
+                }
+
+                i {
+                    margin: 0;
+                }
             }
         }
     }
@@ -54,6 +61,7 @@
 
 #topbar {
     background-color: var(--hh-ct-top-menu-background-color);
+    padding: 0;
     top: 0;
     z-index: 1030;
     overflow: unset;
@@ -64,11 +72,6 @@
     box-shadow: var(--hh-ct-panel-box-shadow);
 
     > .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: calc(var(--hh-ct-top-bar-height) - var(--hh-ct-panel-border-width));
-
         #text-logo {
             color: var(--hh-ct-top-menu-text-color);
         }
@@ -104,6 +107,7 @@
 
         .nav > .account {
             .dropdown-toggle {
+                display: block;
                 padding: 0;
                 line-height: 1.1em;
                 text-align: left;
@@ -122,19 +126,8 @@
             }
         }
 
-        .topbar-brand {
-            position: relative;
-            z-index: 2;
-        }
-
-        .topbar-actions {
-            position: relative;
-            z-index: 3;
-        }
-
         #top-menu-nav {
             flex: 1; // The space must be between the main menu items and the search button
-            display: flex;
             justify-content: var(--hh-ct-top-menu-nav-justify-content);
         }
 
@@ -154,7 +147,7 @@
             .btn-group > a {
                 color: var(--hh-ct-top-menu-text-color);
                 padding: 5px 10px;
-                margin: 10px 2px;
+                margin: 0 2px;
                 display: inline-block;
                 border-radius: 2px;
                 text-decoration: none;
@@ -172,7 +165,7 @@
 
             .btn-group > .badge {
                 position: absolute;
-                top: 4px;
+                top: -3px;
                 right: -2px;
                 padding: 4px;
                 min-width: 18px; // Insure that the badge is round when only 1 digit
@@ -183,11 +176,11 @@
                 left: auto;
                 right: -70px;
 
-                div.hh-list {
+                .hh-list {
                     max-height: 400px;
                     overflow: auto;
 
-                    a.d-flex {
+                    > div.d-flex, > a.d-flex {
                         position: relative;
 
                         i.approval {
@@ -203,16 +196,6 @@
 
                         i.declined {
                             color: #d9534f;
-                        }
-
-                        > div {
-                            position: relative;
-
-                            .img-space {
-                                position: absolute;
-                                top: 14px;
-                                left: 14px;
-                            }
                         }
 
                         &.new {
@@ -255,16 +238,38 @@
         }
 
         .hh-list {
-            a {
+            > div, > a {
                 color: var(--hh-text-color-highlight);
-                padding: 0;
-            }
+                padding: 8px 16px;
+                border-bottom: none;
 
-            > div {
-                color: var(--hh-text-color-highlight);
+                &.new {
+                    border: none;
+                    background: none;
+
+                    &:hover {
+                        background-color: var(--hh-background-color-secondary) !important;
+                    }
+
+                    time {
+                        color: var(--bs-info);
+                    }
+                }
+
+                &:hover {
+                    border-left: 3px solid transparent;
+                }
+
+                &.placeholder {
+                    border-bottom: none;
+                }
+
+                time {
+                    font-size: 10px;
+                }
 
                 i.accepted {
-                    color: var(--bs-link-color) !important;
+                    color: var(--bs-success) !important;
                 }
 
                 i.declined {
@@ -274,7 +279,7 @@
         }
 
         .account .user-title {
-            display: none;
+            display: none !important;
         }
 
         .dropdown.account > a,
@@ -340,8 +345,8 @@
             color: var(--hh-ct-top-menu-text-color);
         }
 
-        > .nav > li.nav-link {
-             > a {
+        > .nav > li {
+            > a {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -354,10 +359,24 @@
                 font-size: var(--hh-ct-top-bar-font-size);
                 text-transform: uppercase;
                 text-align: center;
-                transition: 25s;
                 white-space: nowrap;
                 text-overflow: ellipsis;
                 overflow: hidden;
+
+                &.active, &:hover {
+                    text-decoration: none;
+                }
+
+                &:not(.active) {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        background-color: var(--hh-ct-top-menu-button-hover-background-color);
+                        color: var(--hh-ct-top-menu-button-hover-text-color);
+                        text-decoration: none;
+                        border-bottom: none;
+                    }
+                }
 
                 > br {
                     display: none;
@@ -367,21 +386,6 @@
                     font-size: 14px;
                     margin-bottom: 5px;
                 }
-
-                 > &.active, > &:hover {
-                     text-decoration: none;
-                 }
-
-                 > &:not(.active) {
-                     > &:hover,
-                     > &:focus,
-                     > &:active {
-                         background-color: var(--hh-ct-top-menu-button-hover-background-color);
-                         color: var(--hh-ct-top-menu-button-hover-text-color);
-                         text-decoration: none;
-                         border-bottom: none;
-                     }
-                 }
             }
 
             > ul > li > a {
@@ -400,6 +404,11 @@
             font-size: 11px;
             margin: 0;
             font-weight: var(--hh-ct-font-family);
+        }
+
+        // Remove caret icon from dropdown toggle
+        .dropdown-toggle::after {
+            display: none;
         }
 
         // For JS cleanTheme.topNavigation.updateBtnStatus()

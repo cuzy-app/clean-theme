@@ -9,7 +9,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     const $topMenuSub = $('#top-menu-sub');
     const $topMenuDropdown = $('#top-menu-sub-dropdown');
 
-
     const init = function () {
         $(function () {
 
@@ -56,7 +55,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             }
         }
 
-        // If drop-down submenu has items
+        // If dropdown submenu has items
         if ($topMenuDropdown.children('.top-menu-item').length > 0) {
             $topMenuSub.find('.dropdown-toggle').dropdown();
             $topMenuNavOrBottomMenu.append($topMenuSub); // Move the dropdown submenu to the end
@@ -117,9 +116,10 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      */
     const isOverflow = function () {
         if (isMobileView()) {
-            return $topMenuNavOrBottomMenu.outerWidth() > $topMenu.outerWidth();
+            // The bottom menu container height is greater than the height of the first item
+            return $topMenuNavOrBottomMenu.height() > $topMenuNavOrBottomMenu.find('.nav-item:first-of-type').outerHeight();
         }
-        return $topMenuContainer[0].scrollWidth > ($topMenuContainer[0].clientWidth + 1);
+        return $topMenuContainer.height() > $topMenu.height();
     };
 
     /**
