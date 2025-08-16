@@ -115,14 +115,13 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
             $topBarHeight = parseInt($topBar.css('top')) + $topBar.height();
             $leftNavTop = $leftNav.offset().top;
 
-            if ($leftNav.parent().css('float') === 'left') {
-                // Force width to keep the same when position when fixed
-                $leftNav.width($leftNav.width());
-                const availableHeightForSidebar = $(window).height() - $topBarHeight - leftNavDistFromTopBar;
-                if ($leftNav.height() < availableHeightForSidebar) {
-                    switchFixedPanels();
-                    $(window).on('scroll', switchFixedPanels);
-                }
+            // Force width to keep the same when position when fixed
+            $leftNav.width($leftNav.width());
+
+            const availableHeightForSidebar = $(window).height() - $topBarHeight - leftNavDistFromTopBar;
+            if ($leftNav.height() < availableHeightForSidebar) {
+                switchFixedPanels();
+                $(window).on('scroll', switchFixedPanels);
             }
         }, 100);
     }

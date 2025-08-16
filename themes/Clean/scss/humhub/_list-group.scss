@@ -18,13 +18,19 @@ body.hh-ct-menu-style-background {
     a.list-group-item {
         border-left: none !important;
 
-        &:hover,
-        &.active,
-        &.active:hover,
-        &.active:focus {
-            background-color: var(--bs-primary);
-            color: var(--hh-text-color-contrast);
-            border-left: none !important;
+        &:not(.active) {
+            &:hover, &:focus {
+                background-color: var(--hh-background-color-secondary);
+                border-left: none !important;
+            }
+        }
+
+        &.active {
+            &, &:hover, &:focus {
+                background-color: var(--bs-primary);
+                color: var(--hh-text-color-contrast);
+                border-left: none !important;
+            }
         }
     }
 }

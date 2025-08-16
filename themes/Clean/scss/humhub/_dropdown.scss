@@ -1,11 +1,16 @@
 // In dropdown menu, remove left vertical bar
-.modal .dropdown-menu li,
-.nav-tabs .dropdown-menu li,
-.panel .dropdown-menu li {
-  &,
-  &.selected {
-    border-left: none;
-  }
+.modal .dropdown-menu,
+.panel .dropdown-menu,
+.nav-tabs .dropdown-menu,
+ul.contextMenu {
+    li {
+        border-left: none;
+
+        &:hover,
+        &.selected {
+            border-left: none;
+        }
+    }
 }
 
 .dropdown-menu {
