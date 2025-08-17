@@ -3,7 +3,7 @@ Changelog
 
 2.3.0 (August 17, 2025)
 --------------------
-- Enh: Updated for Bootstrap 5.3
+- Enh #35: Updated for Bootstrap 5.3 and HumHub 1.18
 - Cgh: The minimal HumHub version is now 1.18
 - Chg: Remove Dark Mode integration (the new [Dark Mode module](https://marketplace.humhub.com/module/dark-mode) doesn't need it anymore)
 - Chg: Use SCSS instead of LESS
