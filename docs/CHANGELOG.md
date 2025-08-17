@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Enh: Add dark mode color variations in the module configuration (requires the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode))
+
 2.3.0 (August 17, 2025)
 --------------------
 - Enh #35: Updated for Bootstrap 5.3 and HumHub 1.18 (Thanks to [Transition Network International](https://transitionnetwork.org/) for the funding)

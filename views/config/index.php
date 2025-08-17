@@ -26,6 +26,8 @@ use Yii;
 $module = Yii::$app->getModule('clean-theme');
 
 $colorInputOptions = ['options' => ['class' => 'd-flex flex-row-reverse justify-content-end align-items-center gap-2 mb-2']];
+$darkColorInputOptions = $colorInputOptions;
+$darkColorInputOptions['options']['class'] .= ' ms-5';
 $colorInputLabelOptions = ['class' => 'm-0'];
 ?>
 
@@ -85,23 +87,38 @@ $colorInputLabelOptions = ['class' => 'm-0'];
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Text colors')) ?>
             <?= $form->field($model, 'linkColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'linkColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorHeading', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorHeadingDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorMain', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorMainDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorDefault', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorDefaultDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorSecondary', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorSecondaryDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorHighlight', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorHighlightDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorSoft', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorSoftDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorSoft2', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorSoft2Dark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorSoft3', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorSoft3Dark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'textColorContrast', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'textColorContrastDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Background colors')) ?>
             <?= $form->field($model, 'backgroundColorMain', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'backgroundColorMainDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'backgroundColorSecondary', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'backgroundColorSecondaryDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'backgroundColorPage', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'backgroundColorPageDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'backgroundColorHighlight', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'backgroundColorHighlightDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'backgroundColorHighlightSoft', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'backgroundColorHighlightSoftDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Base fonts')) ?>
@@ -129,6 +146,7 @@ $colorInputLabelOptions = ['class' => 'm-0'];
             <?= $form->field($model, 'panelBorderWidth')->textInput(['type' => 'number', 'step' => 1, 'min' => 0]) ?>
             <?= $form->field($model, 'panelBorderStyle')->dropDownList(Configuration::getBorderStyleOptions()) ?>
             <?= $form->field($model, 'panelBorderColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'panelBorderColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'panelBorderRadius')->textInput(['type' => 'number', 'step' => 1, 'min' => 1]) ?>
             <?= $form->field($model, 'panelBoxShadow')->textInput() ?>
             <?= $form->endCollapsibleFields() ?>
@@ -136,7 +154,9 @@ $colorInputLabelOptions = ['class' => 'm-0'];
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Menus')) ?>
             <?= $form->field($model, 'menuFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 6]) ?>
             <?= $form->field($model, 'menuTextColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'menuTextColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'menuBorderColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'menuBorderColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'menuStyle')->dropDownList(Configuration::getMenuStyleOptions()) ?>
             <?= $form->endCollapsibleFields() ?>
 
@@ -145,9 +165,13 @@ $colorInputLabelOptions = ['class' => 'm-0'];
             <?= $form->field($model, 'topBarFontSize')->textInput(['type' => 'number', 'step' => 1, 'min' => 4]) ?>
             <?= $form->field($model, 'topMenuNavJustifyContent')->dropDownList(Configuration::getJustifyContentOptions()) ?>
             <?= $form->field($model, 'topMenuBackgroundColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'topMenuBackgroundColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'topMenuTextColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'topMenuTextColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'topMenuButtonHoverBackgroundColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'topMenuButtonHoverBackgroundColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'topMenuButtonHoverTextColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'topMenuButtonHoverTextColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Menus on small screens')) ?>

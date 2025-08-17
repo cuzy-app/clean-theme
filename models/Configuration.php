@@ -87,6 +87,30 @@ class Configuration extends Model
         'topMenuTextColor' => self::CLEAN_THEME_CSS_PREFIX,
         'topMenuButtonHoverBackgroundColor' => self::CLEAN_THEME_CSS_PREFIX,
         'topMenuButtonHoverTextColor' => self::CLEAN_THEME_CSS_PREFIX,
+
+        // Dark mode colors
+        'linkColorDark' => self::BOOTSTRAP_CSS_PREFIX,
+        'textColorHeadingDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'textColorMainDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorDefaultDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorSecondaryDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorHighlightDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoftDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoft2Dark' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoft3Dark' => self::HUMHUB_CSS_PREFIX,
+        'textColorContrastDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorMainDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorSecondaryDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorPageDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorHighlightDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorHighlightSoftDark' => self::HUMHUB_CSS_PREFIX,
+        'panelBorderColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'menuTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'menuBorderColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuBackgroundColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuButtonHoverBackgroundColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuButtonHoverTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
     ];
 
     /**
@@ -139,6 +163,30 @@ class Configuration extends Model
         'topMenuTextColor' => '',
         'topMenuButtonHoverBackgroundColor' => '',
         'topMenuButtonHoverTextColor' => '',
+
+        // Dark mode colors
+        'linkColorDark' => '',
+        'textColorHeadingDark' => '',
+        'textColorMainDark' => '',
+        'textColorDefaultDark' => '',
+        'textColorSecondaryDark' => '',
+        'textColorHighlightDark' => '',
+        'textColorSoftDark' => '',
+        'textColorSoft2Dark' => '',
+        'textColorSoft3Dark' => '',
+        'textColorContrastDark' => '',
+        'backgroundColorMainDark' => '',
+        'backgroundColorSecondaryDark' => '',
+        'backgroundColorPageDark' => '',
+        'backgroundColorHighlightDark' => '',
+        'backgroundColorHighlightSoftDark' => '',
+        'panelBorderColorDark' => '',
+        'menuTextColorDark' => '',
+        'menuBorderColorDark' => '',
+        'topMenuBackgroundColorDark' => '',
+        'topMenuTextColorDark' => '',
+        'topMenuButtonHoverBackgroundColorDark' => '',
+        'topMenuButtonHoverTextColorDark' => '',
     ];
 
     public SettingsManager $settingsManager;
@@ -193,6 +241,31 @@ class Configuration extends Model
     public string|bool $hideTopMenuOnScrollDown = false;
     public string|bool $hideBottomMenuOnScrollDown = false;
     public string|bool $hideTextInBottomMenuItems = false;
+
+    // Dark mode colors
+    public string $linkColorDark = '#88c5e8'; // Based on mix(white, $primary, 10%)
+    public string $textColorHeadingDark = '#e0e3e5'; // Lighter version of textColorHeading
+    public string $textColorMainDark = '#dddddd'; // From $text-color-main-dark
+    public string $textColorDefaultDark = '#f0f0f0'; // From $text-color-default-dark
+    public string $textColorSecondaryDark = '#bbbbbb'; // From $text-color-secondary-dark
+    public string $textColorHighlightDark = '#ffffff'; // From $text-color-highlight-dark
+    public string $textColorSoftDark = '#dddddd'; // From $text-color-soft-dark
+    public string $textColorSoft2Dark = '#cccccc'; // From $text-color-soft2-dark
+    public string $textColorSoft3Dark = '#7b7773'; // From $text-color-soft3-dark
+    public string $textColorContrastDark = '#ffffff'; // From $text-color-contrast-dark
+    public string $backgroundColorMainDark = '#222222'; // From $background-color-main-dark
+    public string $backgroundColorSecondaryDark = '#333333'; // From $background-color-secondary-dark
+    public string $backgroundColorPageDark = '#000000'; // From $background-color-page-dark
+    public string $backgroundColorHighlightDark = '#054254'; // Based on rgba($info, 0.2)
+    public string $backgroundColorHighlightSoftDark = '#1a2326'; // Based on darken(desaturate(adjust-hue($info, 6), 16), 55)
+    // Add these properties
+    public string $panelBorderColorDark = '#1f2225'; // From $input-border-color-dark
+    public string $menuTextColorDark = '#dddddd'; // From $text-color-main-dark
+    public string $menuBorderColorDark = '#333333'; // Darker version of menuBorderColor
+    public string $topMenuBackgroundColorDark = '#222222'; // From $background-color-main-dark
+    public string $topMenuTextColorDark = '#dddddd'; // From $text-color-main-dark
+    public string $topMenuButtonHoverBackgroundColorDark = '#333333'; // From $background-color-secondary-dark
+    public string $topMenuButtonHoverTextColorDark = '#ffffff'; // From $text-color-highlight-dark
 
     public static function getJustifyContentOptions(): array
     {
@@ -259,6 +332,8 @@ class Configuration extends Model
      */
     public function attributeLabels()
     {
+        $variantForDarkModeLabel = Yii::t('CleanThemeModule.config', 'Variant for dark mode');
+
         return [
             'containerMaxWidth' => Yii::t('CleanThemeModule.config', 'Main content container width'),
             'linkColor' => Yii::t('CleanThemeModule.config', 'Main color for links'),
@@ -310,6 +385,30 @@ class Configuration extends Model
             'hideTopMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the top menu on scroll down'),
             'hideBottomMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the bottom menu on scroll down'),
             'hideTextInBottomMenuItems' => Yii::t('CleanThemeModule.config', 'Hide the text of the bottom menu buttons'),
+
+            // Dark mode colors
+            'linkColorDark' => $variantForDarkModeLabel,
+            'textColorHeadingDark' => $variantForDarkModeLabel,
+            'textColorMainDark' => $variantForDarkModeLabel,
+            'textColorDefaultDark' => $variantForDarkModeLabel,
+            'textColorSecondaryDark' => $variantForDarkModeLabel,
+            'textColorHighlightDark' => $variantForDarkModeLabel,
+            'textColorSoftDark' => $variantForDarkModeLabel,
+            'textColorSoft2Dark' => $variantForDarkModeLabel,
+            'textColorSoft3Dark' => $variantForDarkModeLabel,
+            'textColorContrastDark' => $variantForDarkModeLabel,
+            'backgroundColorMainDark' => $variantForDarkModeLabel,
+            'backgroundColorSecondaryDark' => $variantForDarkModeLabel,
+            'backgroundColorPageDark' => $variantForDarkModeLabel,
+            'backgroundColorHighlightDark' => $variantForDarkModeLabel,
+            'backgroundColorHighlightSoftDark' => $variantForDarkModeLabel,
+            'panelBorderColorDark' => $variantForDarkModeLabel,
+            'menuTextColorDark' => $variantForDarkModeLabel,
+            'menuBorderColorDark' => $variantForDarkModeLabel,
+            'topMenuBackgroundColorDark' => $variantForDarkModeLabel,
+            'topMenuTextColorDark' => $variantForDarkModeLabel,
+            'topMenuButtonHoverBackgroundColorDark' => $variantForDarkModeLabel,
+            'topMenuButtonHoverTextColorDark' => $variantForDarkModeLabel,
         ];
     }
 
@@ -407,11 +506,14 @@ class Configuration extends Model
     {
         $scss = '/** This file is auto-generated by the Clean Theme configuration. Do not edit the file directly. */' . PHP_EOL . PHP_EOL;
 
-        // Start CSS variables
+        // Start root variables
         $scss .= ':root {' . PHP_EOL;
 
-        // Configuration attributes
+        // Configuration attributes (skip dark colors)
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
+            if (static::isDarkColorAttribute($name)) {
+                continue;
+            }
             $cssVarName = (self::CSS_ATTRIBUTE_PREFIXES[$name] ?? '--hh-ct-') . Inflector::camel2id($name);
             $value = static::isFontAttribute($name)
                 ? '"' . $this->$name . '", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
@@ -427,7 +529,23 @@ class Configuration extends Model
         $scss .= '    --hh-fixed-header-height: ' . ((int)$this->topBarHeight + self::TOP_BAR_BOTTOM_SPACING) . 'px;' . PHP_EOL;
         $scss .= '    --hh-fixed-footer-height: 0px;' . PHP_EOL;
 
-        // End CSS variables
+        // End root variables
+        $scss .= '}' . PHP_EOL;
+        $scss .= PHP_EOL;
+
+        // Dark mode configuration attributes
+        $scss .= '@if $enable-dark-mode {' . PHP_EOL;
+        $scss .= '    @include color-mode(dark, true) {' . PHP_EOL;
+        foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
+            if (!static::isDarkColorAttribute($name)) {
+                continue;
+            }
+            $cssVarName = (self::CSS_ATTRIBUTE_PREFIXES[$name] ?? '--hh-ct-') . Inflector::camel2id($name);
+            $cssVarName = preg_replace('/-dark$/', '', $cssVarName); // Remove the -dark suffix
+            $value = $this->$name;
+            $scss .= '        ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+        }
+        $scss .= '    }' . PHP_EOL;
         $scss .= '}' . PHP_EOL;
         $scss .= PHP_EOL;
 
@@ -486,5 +604,10 @@ class Configuration extends Model
             $fontsEncoded[] = 'family=' . urlencode($font);
         }
         return implode('&', $fontsEncoded);
+    }
+
+    public static function isDarkColorAttribute(string $name): bool
+    {
+        return str_ends_with($name, 'Dark');
     }
 }
