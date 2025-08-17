@@ -50,10 +50,7 @@ class Module extends \humhub\components\Module
 
     public function getDescription()
     {
-        return Yii::t('CleanThemeModule.config', '"{Clean}" theme based on the community "{HumHub}" theme', [
-            'Clean' => 'Clean',
-            'HumHub' => 'HumHub',
-        ]);
+        return Yii::t('CleanThemeModule.config', 'Modern, smooth and uncluttered theme');
     }
 
     /**
@@ -108,12 +105,9 @@ class Module extends \humhub\components\Module
      */
     private function disableTheme()
     {
-        foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === self::THEME_NAME) {
-                $ceTheme = ThemeHelper::getThemeByName('HumHub');
-                $ceTheme?->activate();
-                break;
-            }
+        if (static::isThemeBasedActive()) {
+            $ceTheme = ThemeHelper::getThemeByName('HumHub');
+            $ceTheme?->activate();
         }
     }
 
@@ -122,14 +116,22 @@ class Module extends \humhub\components\Module
      */
     private function enableTheme()
     {
-        // Check if already active
+        if (!static::isThemeBasedActive()) {
+            $cleanTheme = ThemeHelper::getThemeByName(self::THEME_NAME);
+            $cleanTheme?->activate();
+        }
+    }
+
+    /**
+     * Checks if the Clean Theme, or a child theme of it, is currently active
+     */
+    public static function isThemeBasedActive(): bool
+    {
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
             if ($theme->name === self::THEME_NAME) {
-                return;
+                return true;
             }
         }
-
-        $cleanTheme = ThemeHelper::getThemeByName(self::THEME_NAME);
-        $cleanTheme?->activate();
+        return false;
     }
 }

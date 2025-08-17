@@ -1,13 +1,16 @@
 Changelog
 =========
 
-Unreleased
+2.3.0 (August 17, 2025)
 --------------------
-- Cgh: Minimal HumHub version is now 1.18
-- Chg: SCSS instead of LESS
+- Enh: Updated for Bootstrap 5.3
+- Cgh: The minimal HumHub version is now 1.18
+- Chg: Remove Dark Mode integration (the new [Dark Mode module](https://marketplace.humhub.com/module/dark-mode) doesn't need it anymore)
+- Chg: Use SCSS instead of LESS
 - Chg: Remove Custom SCSS field (a migration copies the values to the new HumHub core Appearance form)
 - Chg: Remove the modification of the HumHub SCSS colors variables (we assume all colors are now CSS variables)
 - Chg: Change the command line to generate the SCSS root file to `php yii clean-theme/generate-scss-root-file`
+- Enh: README.md and INSTALLATION.md
 - Enh: Use the new `DeviceDetectorHelper::getBodyClasses()`
 
 2.2.6 (June 18, 2025)

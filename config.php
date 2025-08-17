@@ -8,6 +8,7 @@
  */
 
 use humhub\components\console\Application;
+use humhub\components\View;
 use humhub\modules\cleanTheme\Events;
 
 return [
@@ -18,6 +19,12 @@ return [
         [
             'class' => Application::class,
             'event' => Application::EVENT_ON_INIT,
-            'callback' => [Events::class, 'onConsoleApplicationInit']],
+            'callback' => [Events::class, 'onConsoleApplicationInit'],
+        ],
+        [
+            'class' => View::class,
+            'event' => View::EVENT_BEFORE_RENDER,
+            'callback' => [Events::class, 'onViewBeforeRender'],
+        ],
     ],
 ];

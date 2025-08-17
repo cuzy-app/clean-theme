@@ -11,7 +11,7 @@ class m250402_151649_bs5 extends Migration
      */
     public function safeUp()
     {
-        // Migration from 1.17 to 1.18 (Bootstrap 5)
+        // Migration from 1.17 to 1.18
         /** @var Module $module */
         $module = Yii::$app->getModule('clean-theme');
         $moduleSettingsManager = $module?->configuration?->settingsManager;
@@ -88,14 +88,9 @@ class m250402_151649_bs5 extends Migration
             $rebuildCss = true;
         }
 
-        if ($rebuildCss) {
-            // If the current theme is "Clean", rebuild CSS
-            foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-                if ($theme->name === Module::THEME_NAME) {
-                    ThemeHelper::buildCss($theme);
-                    break;
-                }
-            }
+        // If the current theme is "Clean", rebuild CSS
+        if ($rebuildCss && Module::isThemeBasedActive()) {
+            ThemeHelper::buildCss();
         }
     }
 

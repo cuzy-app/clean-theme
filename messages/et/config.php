@@ -1,7 +1,6 @@
 <?php
 
 return [
-    '"{Clean}" theme based on the community "{HumHub}" theme' => '',
     '1st level header font size' => '',
     '1st level header font size in stream' => '',
     '2nd level header font size' => '',
@@ -14,6 +13,7 @@ return [
     'Background color for page body and UI components such as comment box, etc.' => '',
     'Background colors' => '',
     'Base fonts' => '',
+    'Bold font weight' => '',
     'Border color (tab and dropdown menus)' => '',
     'Browse fonts' => '',
     'Button background color on hover' => '',
@@ -52,8 +52,8 @@ return [
     'Menu style' => '',
     'Menus' => '',
     'Menus on small screens' => '',
+    'Modern, smooth and uncluttered theme' => '',
     'Navigation alignment' => '',
-    'Other settings' => '',
     'Panel borders' => '',
     'Panels border color' => '',
     'Panels border radius' => '',

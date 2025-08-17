@@ -461,7 +461,7 @@ class Configuration extends Model
         }
 
         // Rebuild CSS
-        if (Yii::$app->view->theme->name === Module::THEME_NAME) {
+        if (Module::isThemeBasedActive()) {
             $buildResult = ThemeHelper::buildCss();
             if ($buildResult !== true) {
                 throw new Exception('Theme CSS could not be rebuilt: ' . $buildResult);

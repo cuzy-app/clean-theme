@@ -200,12 +200,12 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      */
     const updateBtnStatus = function (btnId, moduleId, controllerId) {
         const state = humhub.modules.ui.view.getState();
-        const searchBtn = $('#' + btnId);
-        if (searchBtn.length) {
+        const $btn = $('#' + btnId);
+        if ($btn.length) {
             if (state.moduleId === moduleId && state.controllerId === controllerId) {
-                searchBtn.addClass('active');
+                $btn.addClass('active');
             } else {
-                searchBtn.removeClass('active');
+                $btn.removeClass('active');
             }
         }
     };

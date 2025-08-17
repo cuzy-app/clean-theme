@@ -28,21 +28,24 @@ if ($module?->collapsibleLeftNavigation && empty($options['id'])) {
 ?>
 
 <?= $module?->collapsibleLeftNavigation ?
-    Button::light()->icon('bars')->id($expandBtn)->cssClass('hidden')->sm()->loader(false) :
+    Button::light()->icon('bars')->id($expandBtn)->cssClass('d-none')->sm()->loader(false) :
     '' ?>
-<?= Html::beginTag('div', $options) ?>
-<?php if (!empty($menu->panelTitle)) : ?>
-    <div class="panel-heading">
-        <?= $menu->panelTitle ?>
-        <?= $module?->collapsibleLeftNavigation ?
-            Button::light()->icon('chevron-left')->id($collapseBtn)->right()->sm()->loader(false) :
-            '' ?>
-    </div>
-<?php endif; ?>
 
-<div class="list-group">
-    <?php foreach ($entries as $entry): ?>
-        <?= $entry->render(['class' => 'list-group-item']) ?>
-    <?php endforeach; ?>
-</div>
+<?= Html::beginTag('div', $options) ?>
+
+    <?php if (!empty($menu->panelTitle)) : ?>
+        <div class="panel-heading">
+            <?= $menu->panelTitle ?>
+            <?= $module?->collapsibleLeftNavigation ?
+                Button::light()->icon('chevron-left')->id($collapseBtn)->right()->sm()->loader(false) :
+                '' ?>
+        </div>
+    <?php endif; ?>
+
+    <div class="list-group list-group-horizontal list-group-vertical-lg">
+        <?php foreach ($entries as $entry): ?>
+            <?= $entry->render(['class' => 'list-group-item']) ?>
+        <?php endforeach; ?>
+    </div>
+
 <?= Html::endTag('div') ?>

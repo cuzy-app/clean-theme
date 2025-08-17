@@ -1,9 +1,9 @@
 {
     "id": "clean-theme",
     "name": "Clean Theme",
-    "description": "Clean theme based on the community HumHub theme",
+    "description": "Modern, smooth and uncluttered theme.",
     "keywords": [],
-    "version": "2.2.0",
+    "version": "2.3.0",
     "humhub": {
         "minVersion": "1.18"
     },

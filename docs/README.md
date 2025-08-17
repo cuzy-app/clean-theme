@@ -1,27 +1,22 @@
 # Clean Theme
 
-"Clean" theme based on the community "HumHub" theme.
+Modern, smooth and uncluttered theme.
 
 ## Overview
 
-- Modern, smooth and uncluttered theme
-- Module configuration to customize colors, fonts, borders sizes and to add custom SCSS code (with upload/download functionality)
-- On large screens: the two top menu bars of the default theme are merged
-- On small screens:
-    - the second menu becomes a bottom menu bar
-    - on scrolling down, the top and bottom menus are hidden
-- The left menu is sticky when scrolling vertically
-- The top right icon becomes active when it's the URL of the current page.
-- Adds the profile's header in the user's account pages
-- Compatible with the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode/description) (Thanks to @felixhahnweilheim)
-- Possibility to collapse the left navigation menu (in a space, profile, account and admin menu) with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
-- You can create a child theme manually (see instructions below) or using the [Theme Builder module](https://marketplace.humhub.com/module/theme-builder)
-
-## Configuration
-
-1. Administration -> Modules: install and activate the module
-2. Administration -> Settings -> Appearance: select the theme
-3. Advanced configuration: See available public properties in [the `Module.php` file](https://github.com/cuzy-app/clean-theme/blob/master/Module.php) and [the Module configuration documentation](https://docs.humhub.org/docs/admin/advanced-configuration#module-configurations)
+- Module configuration: customize colors, fonts, borders, main container width, etc. (with upload/download a file config feature)
+- Top bar:
+  - Large screens: the 2 top menu bars are merged into one
+  - Small screens:
+    - The second menu becomes a bottom menu bar.
+    - On scrolling down, the top and bottom menus can be hidden.
+  - The search, notifications and messages buttons are marked active when browsing the corresponding pages.
+- User's account pages: the profile's header (with "My profile" button) is added
+- Active menu item: The top or left border can be replaced with a background color
+- Left navigation menu: 
+  - Sticky when scrolling vertically.
+  - Can be collapsable via the `collapsibleLeftNavigation` property ([see doc](https://docs.humhub.org/docs/admin/advanced-configuration)).
+- You can create a Child theme ([see doc](https://marketplace.humhub.com/module/clean-theme/installation))
 
 ## Pricing
 

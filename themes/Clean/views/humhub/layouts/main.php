@@ -7,8 +7,6 @@ use humhub\assets\AppAsset;
 use humhub\components\View;
 use humhub\helpers\DeviceDetectorHelper;
 use humhub\helpers\Html;
-use humhub\modules\cleanTheme\assets\CleanThemeAsset;
-use humhub\modules\cleanTheme\assets\CleanThemeTopNavigationAsset;
 use humhub\modules\cleanTheme\models\Configuration;
 use humhub\modules\cleanTheme\Module;
 use humhub\modules\space\widgets\Chooser;
@@ -23,12 +21,6 @@ $module = Yii::$app->getModule('clean-theme');
 $googleFontsCss2UrlParams = $module?->configuration->getGoogleFontsCss2UrlParams();
 
 AppAsset::register($this);
-CleanThemeAsset::register($this);
-CleanThemeTopNavigationAsset::register($this);
-$this->registerJsConfig('cleanTheme.topNavigation', [
-    'hideTopMenuOnScrollDown' => $module?->configuration->hideTopMenuOnScrollDown ?? false,
-    'hideBottomMenuOnScrollDown' => $module?->configuration->hideBottomMenuOnScrollDown ?? false,
-]);
 
 $bodyClasses = DeviceDetectorHelper::getBodyClasses();
 $bodyClasses[] = 'clean-theme';
