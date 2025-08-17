@@ -320,10 +320,10 @@ class Configuration extends Model
     {
         $inPx = Yii::t('CleanThemeModule.config', 'In pixel');
         $inEm = Yii::t('CleanThemeModule.config', 'In relative size (em)');
-        $googleFonts =
-            Yii::t('CleanThemeModule.config', 'Google Font name') . ' ' .
-            Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->sm() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>' .
-            Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
+        $googleFonts
+            = Yii::t('CleanThemeModule.config', 'Google Font name') . ' '
+            . Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->sm() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>'
+            . Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
                 'seeDocumentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
             ]);
 
@@ -413,9 +413,9 @@ class Configuration extends Model
         // Configuration attributes
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
             $cssVarName = (self::CSS_ATTRIBUTE_PREFIXES[$name] ?? '--hh-ct-') . Inflector::camel2id($name);
-            $value = static::isFontAttribute($name) ?
-                '"' . $this->$name . '", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' :
-                $this->$name;
+            $value = static::isFontAttribute($name)
+                ? '"' . $this->$name . '", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+                : $this->$name;
 
             // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px;`
             $scss .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
