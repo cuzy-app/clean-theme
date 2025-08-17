@@ -131,7 +131,7 @@
 
     body.hh-ct-menu-style-background {
         #topbar > .container > #top-menu-nav {
-            border-top: solid 2px #CCC;
+            border-top: solid 2px var(--hh-background4);
 
             > li > a.active {
                 background-color: var(--bs-primary) !important;
@@ -142,7 +142,7 @@
 
     body.hh-ct-menu-style-bordered {
         #topbar > .container > #top-menu-nav {
-            border-top: solid 3px #ccc;
+            border-top: solid 3px var(--hh-background4);
 
             > li > a.active {
                 margin-top: -3px;

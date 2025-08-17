@@ -191,11 +191,11 @@
                         }
 
                         i.accepted {
-                            color: #5cb85c;
+                            color: var(--bs-success);
                         }
 
                         i.declined {
-                            color: #d9534f;
+                            color: var(--bs-danger);
                         }
 
                         &.new {
@@ -256,10 +256,6 @@
                     }
                 }
 
-                &:hover {
-                    border-left: 3px solid transparent;
-                }
-
                 &.placeholder {
                     border-bottom: none;
                 }
@@ -310,7 +306,7 @@
 
             .search-reset {
                 position: absolute;
-                color: #BFBFBF;
+                color: var(--hh-text-color-soft3);
                 margin: 7px;
                 top: 0;
                 right: 40px;
