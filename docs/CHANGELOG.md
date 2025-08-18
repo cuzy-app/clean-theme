@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.3.1 (August 18, 2025)
 --------------------
 - Enh: Add dark mode color variations in the module configuration (requires the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode))
 
