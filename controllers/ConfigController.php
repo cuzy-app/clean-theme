@@ -29,11 +29,6 @@ class ConfigController extends Controller
         $uploadModel = new UploadConfiguration();
         $post = Yii::$app->request->post();
 
-        if (isset($post['Configuration']) && $model->load($post) && $model->validate() && $model->save()) {
-            $this->view->saved();
-            return $this->refresh();
-        }
-
         if (isset($post['UploadConfiguration'])) {
             if ($uploadModel->load($post) && $uploadModel->validate() && $uploadModel->save()) {
                 $this->view->saved();
@@ -42,26 +37,28 @@ class ConfigController extends Controller
             $this->view->error('Could not upload the configuration: ' . Json::encode($uploadModel->getErrors()));
         }
 
+        if (isset($post['Configuration']) && $model->load($post) && $model->validate() && $model->save()) {
+            $this->view->saved();
+            return $this->refresh();
+        }
+
+        if ($post['reset'] ?? false) {
+            $defaultConfiguration = new Configuration();
+            foreach (Configuration::getAllAttributeNames() as $attributeName) {
+                $model->$attributeName = $defaultConfiguration->$attributeName;
+            }
+            if ($model->save()) {
+                $this->view->success(Yii::t('CleanThemeModule.config', 'Reset successful!'));
+            } else {
+                $this->view->error('Reset failed! ' . Json::encode($model->getErrors()));
+            }
+            return $this->refresh();
+        }
+
         return $this->render('index', [
             'model' => $model,
             'uploadModel' => $uploadModel,
         ]);
-    }
-
-    public function actionResetAllToDefault()
-    {
-        /** @var Module $module */
-        $module = $this->module;
-        $configuration = $module->configuration;
-
-        $defaultConfiguration = new Configuration();
-        foreach (Configuration::getAllAttributeNames() as $attributeName) {
-            $configuration->$attributeName = $defaultConfiguration->$attributeName;
-        }
-        $configuration->save();
-
-        $this->view->success(Yii::t('CleanThemeModule.config', 'Reset successful!'));
-        return $this->render('reset-all-to-default'); // Refresh all page and redirect to index
     }
 
     public function actionDownloadJson()

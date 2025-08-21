@@ -9,7 +9,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     const $topMenuSub = $('#top-menu-sub');
     const $topMenuDropdown = $('#top-menu-sub-dropdown');
 
-
     const init = function () {
         $(function () {
 
@@ -56,7 +55,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             }
         }
 
-        // If drop-down submenu has items
+        // If dropdown submenu has items
         if ($topMenuDropdown.children('.top-menu-item').length > 0) {
             $topMenuSub.find('.dropdown-toggle').dropdown();
             $topMenuNavOrBottomMenu.append($topMenuSub); // Move the dropdown submenu to the end
@@ -117,9 +116,10 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      */
     const isOverflow = function () {
         if (isMobileView()) {
-            return $topMenuNavOrBottomMenu.outerWidth() > $topMenu.outerWidth();
+            // The bottom menu container height is greater than the height of the first item
+            return $topMenuNavOrBottomMenu.height() > $topMenuNavOrBottomMenu.find('.nav-item:first-of-type').outerHeight();
         }
-        return $topMenuContainer[0].scrollWidth > ($topMenuContainer[0].clientWidth + 1);
+        return $topMenuContainer.height() > $topMenu.height();
     };
 
     /**
@@ -138,12 +138,15 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     const hideMenusOnScrollTop = function () {
         const hideTopMenuOnScrollDown = module.config.hideTopMenuOnScrollDown;
         const hideBottomMenuOnScrollDown = module.config.hideBottomMenuOnScrollDown;
-        const screenXsMin = parseInt(module.config.screenXsMin || '570px', 10);
+        const smBreakpoint = parseInt(
+            getComputedStyle(document.documentElement)
+                .getPropertyValue('--bs-breakpoint-sm')
+        ) || 576; // fallback to 576px
         let lastScrollTop = 0;
 
         $(window).on("scroll", function () {
             // Only on small screens
-            if ($(window).width() > screenXsMin) {
+            if (window.innerWidth > smBreakpoint) {
                 return;
             }
 
@@ -197,12 +200,12 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      */
     const updateBtnStatus = function (btnId, moduleId, controllerId) {
         const state = humhub.modules.ui.view.getState();
-        const searchBtn = $('#' + btnId).parent();
-        if (searchBtn.length) {
+        const $btn = $('#' + btnId);
+        if ($btn.length) {
             if (state.moduleId === moduleId && state.controllerId === controllerId) {
-                searchBtn.addClass('active');
+                $btn.addClass('active');
             } else {
-                searchBtn.removeClass('active');
+                $btn.removeClass('active');
             }
         }
     };

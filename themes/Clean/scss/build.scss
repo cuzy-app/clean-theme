@@ -1,0 +1,35 @@
+// Variables are imported separately by the \humhub\helpers\ThemeHelper class
+
+// Define mixins
+@import "mixins";
+@import "config-generated-root";
+
+// Overwrite HumHub values
+@import "humhub/base";
+@import "humhub/badge";
+@import "humhub/button";
+@import "humhub/cards";
+@import "humhub/dropdown";
+@import "humhub/gridview";
+@import "humhub/form";
+@import "humhub/list-group";
+@import "humhub/list";
+@import "humhub/media";
+@import "humhub/markdown";
+@import "humhub/mobile";
+@import "humhub/popover";
+@import "humhub/nav";
+@import "humhub/panel";
+@import "humhub/richtext";
+@import "humhub/topbar";
+@import "humhub/stream";
+
+// Overwrite modules values
+@import "modules/space";
+@import "modules/clean-theme";
+@import "modules/sharebetween";
+
+// Temporary fix to https://github.com/humhub/humhub-internal/issues/528
+body > .sp-container.sp-hidden {
+    display: none;
+}

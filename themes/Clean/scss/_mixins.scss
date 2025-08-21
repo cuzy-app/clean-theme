@@ -1,0 +1,36 @@
+/**
+ * Define your mixins within this file.
+**/
+
+/* Fonts */
+.heading {
+    font-weight: var(--hh-ct-font-family);
+    font-family: var(--hh-ct-heading-font-family);
+    color: var(--hh-ct-text-color-heading);
+
+    .btn, .text-body-secondary {
+        font-family: var(--hh-ct-font-family);
+    }
+
+    .heading-link {
+        color: var(--bs-link-color) !important;
+    }
+}
+
+//
+// Thumbnails
+// --------------------------------------------------
+.rounded:not(#img-logo) {
+    border-radius: 50%;
+}
+
+.modules-group,
+form {
+    .rounded:not(#img-logo) {
+        border-radius: 0;
+    }
+}
+
+.space-acronym {
+    border-radius: 50% !important;
+}

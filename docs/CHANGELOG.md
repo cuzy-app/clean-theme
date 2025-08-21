@@ -1,6 +1,22 @@
 Changelog
 =========
 
+2.3.1 (August 18, 2025)
+--------------------
+- Enh: Add dark mode color variations in the module configuration (requires the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode))
+
+2.3.0 (August 17, 2025)
+--------------------
+- Enh #35: Updated for Bootstrap 5.3 and HumHub 1.18 (Thanks to [Transition Network International](https://transitionnetwork.org/) for the funding)
+- Cgh: The minimal HumHub version is now 1.18
+- Chg: Remove Dark Mode integration (the new [Dark Mode module](https://marketplace.humhub.com/module/dark-mode) doesn't need it anymore)
+- Chg: Use SCSS instead of LESS
+- Chg: Remove Custom SCSS field (a migration copies the values to the new HumHub core Appearance form)
+- Chg: Remove the modification of the HumHub SCSS colors variables (we assume all colors are now CSS variables)
+- Chg: Change the command line to generate the SCSS root file to `php yii clean-theme/generate-scss-root-file`
+- Enh: README.md and INSTALLATION.md
+- Enh: Use the new `DeviceDetectorHelper::getBodyClasses()`
+
 2.2.6 (June 18, 2025)
 --------------------
 - Enh: When hovering a User or Space, add a black translucent overlay to make the white text visible if the image is light
@@ -31,8 +47,8 @@ Changelog
 - Enh: Topbar brand text not centered vertically
 - Fix: Panel border radius when configured to more than 4px
 - Fix: [Fade with 3 digits colors](https://github.com/felixhahnweilheim/humhub-flex-theme/pull/43) and [division by zero](https://github.com/felixhahnweilheim/humhub-flex-theme/pull/42) (thanks @felixhahnweilheim)
-- Fix: Incorrect topbar brand left alignment 
-- Fix: Dropdown menu left border when "Menu style" is configured to "Distinct borer link color for active items" 
+- Fix: Incorrect topbar brand left alignment
+- Fix: Dropdown menu left border when "Menu style" is configured to "Distinct borer link color for active items"
 - Fix: Sometimes, "Cancel" "Choose" buttons are displayed at the top left of the screen (cause by https://github.com/humhub/humhub-internal/issues/528, fixed with CSS)
 
 2.2.1 (January 13, 2025)

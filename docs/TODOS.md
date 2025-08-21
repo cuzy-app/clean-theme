@@ -1,8 +1,9 @@
 TODOS
 =====
 
-- Theme configuration presets
-- Export configuration to share on the Community
+TODO BS5:
+- Check migration
+- To migration, add Theme recompile
 
 Google Fonts via API and download locally the font on configuration save.
 

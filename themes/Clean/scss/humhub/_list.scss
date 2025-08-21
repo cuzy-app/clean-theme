@@ -1,0 +1,16 @@
+//
+// List
+// --------------------------------------------------
+
+// Remove left line
+.hh-list {
+    > div:not(.stream-end), > a:not(.stream-end) {
+        &,
+        &:hover,
+        &.selected,
+        &.new,
+        &.placeholder:hover {
+            border-left: none;
+        }
+    }
+}

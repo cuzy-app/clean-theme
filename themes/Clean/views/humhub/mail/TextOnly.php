@@ -38,7 +38,7 @@ $configuration = $module->getConfiguration();
                                                 <tr>
                                                     <td style="font-size: 14px; line-height: 22px; font-family: <?= Yii::$app->view->theme->variable('mail-font-family', DefaultMailStyle::DEFAULT_FONT_FAMILY) ?>; color:<?= $configuration->textColorMain ?>; font-weight:300; text-align:left; ">
 
-                                                        <?php echo $message; ?>
+                                                        <?= $message ?>
 
                                                     </td>
                                                 </tr>

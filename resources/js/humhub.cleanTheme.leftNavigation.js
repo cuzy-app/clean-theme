@@ -22,7 +22,7 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     const init = function () {
         $(function () {
             $menu = $('#' + module.config.menuId);
-            if (!$menu.length || $menu.is(':hidden')) {
+            if (!$menu.length || $menu.hasClass('d-none')) {
                 return;
             }
             $collapseBtn = $('#' + module.config.collapseBtn);
@@ -53,7 +53,7 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     const nbColFromClass = function (element) {
         const colNbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
         for (const colNb of colNbs) {
-            if (element.hasClass('col-md-' + colNb)) {
+            if (element.hasClass('col-lg-' + colNb)) {
                 return colNb;
             }
         }
@@ -63,13 +63,13 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     const collapseMenu = function () {
         function waitForInit() {
             if (isReady && $menu.length) {
-                if ($menu.is(':visible')) {
-                    $menu.hide();
-                    navContainer.removeClass('col-md-' + navContainerColNb);
-                    navContainer.addClass('col-md-12');
-                    contentContainer.removeClass('col-md-' + contentContainerColNb);
-                    contentContainer.addClass('col-md-' + (contentContainerColNb + navContainerColNb));
-                    $expandBtn.removeClass('hidden');
+                if (!$menu.hasClass('d-none')) {
+                    $menu.addClass('d-none');
+                    navContainer.removeClass('col-lg-' + navContainerColNb);
+                    navContainer.addClass('col-lg-12');
+                    contentContainer.removeClass('col-lg-' + contentContainerColNb);
+                    contentContainer.addClass('col-lg-' + (contentContainerColNb + navContainerColNb));
+                    $expandBtn.removeClass('d-none');
                 }
             } else {
                 window.setTimeout(waitForInit, 100);
@@ -82,13 +82,13 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     const expandMenu = function () {
         function waitForInit() {
             if (isReady && $menu.length) {
-                if ($menu.is(':hidden')) {
-                    $menu.show();
-                    navContainer.removeClass('col-md-12');
-                    navContainer.addClass('col-md-' + navContainerColNb);
-                    contentContainer.removeClass('col-md-' + (contentContainerColNb + navContainerColNb));
-                    contentContainer.addClass('col-md-' + contentContainerColNb);
-                    $expandBtn.addClass('hidden');
+                if ($menu.hasClass('d-none')) {
+                    $menu.removeClass('d-none');
+                    navContainer.removeClass('col-lg-12');
+                    navContainer.addClass('col-lg-' + navContainerColNb);
+                    contentContainer.removeClass('col-lg-' + (contentContainerColNb + navContainerColNb));
+                    contentContainer.addClass('col-lg-' + contentContainerColNb);
+                    $expandBtn.addClass('d-none');
                 }
             } else {
                 window.setTimeout(waitForInit, 100);
@@ -115,14 +115,13 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
             $topBarHeight = parseInt($topBar.css('top')) + $topBar.height();
             $leftNavTop = $leftNav.offset().top;
 
-            if ($leftNav.parent().css('float') === 'left') {
-                // Force width to keep the same when position when fixed
-                $leftNav.width($leftNav.width());
-                const availableHeightForSidebar = $(window).height() - $topBarHeight - leftNavDistFromTopBar;
-                if ($leftNav.height() < availableHeightForSidebar) {
-                    switchFixedPanels();
-                    $(window).on('scroll', switchFixedPanels);
-                }
+            // Force width to keep the same when position when fixed
+            $leftNav.width($leftNav.width());
+
+            const availableHeightForSidebar = $(window).height() - $topBarHeight - leftNavDistFromTopBar;
+            if ($leftNav.height() < availableHeightForSidebar) {
+                switchFixedPanels();
+                $(window).on('scroll', switchFixedPanels);
             }
         }, 100);
     }

@@ -1,9 +1,0 @@
-{
-  "name": "cuzy-app/clean-theme",
-  "description": "Clean Theme",
-  "minimum-stability": "stable",
-  "type": "library",
-  "require": {
-    "scssphp/scssphp": "^1"
-  }
-}

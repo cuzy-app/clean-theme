@@ -4,13 +4,12 @@
 /* @var $content string */
 
 use humhub\assets\AppAsset;
+use humhub\components\View;
 use humhub\helpers\DeviceDetectorHelper;
-use humhub\libs\Html;
-use humhub\modules\cleanTheme\assets\CleanThemeAsset;
-use humhub\modules\cleanTheme\assets\CleanThemeTopNavigationAsset;
+use humhub\helpers\Html;
+use humhub\modules\cleanTheme\models\Configuration;
 use humhub\modules\cleanTheme\Module;
 use humhub\modules\space\widgets\Chooser;
-use humhub\modules\ui\view\components\View;
 use humhub\modules\user\widgets\AccountTopMenu;
 use humhub\widgets\NotificationArea;
 use humhub\widgets\SiteLogo;
@@ -19,20 +18,13 @@ use humhub\widgets\TopMenuRightStack;
 
 /** @var Module $module */
 $module = Yii::$app->getModule('clean-theme');
-$googleFontsCss2UrlParams = $module->configuration->getGoogleFontsCss2UrlParams();
+$googleFontsCss2UrlParams = $module?->configuration->getGoogleFontsCss2UrlParams();
 
 AppAsset::register($this);
-CleanThemeAsset::register($this);
-CleanThemeTopNavigationAsset::register($this);
-$this->registerJsConfig('cleanTheme.topNavigation', [
-    'hideTopMenuOnScrollDown' => $module->configuration->hideTopMenuOnScrollDown,
-    'hideBottomMenuOnScrollDown' => $module->configuration->hideBottomMenuOnScrollDown,
-    'screenXsMin' => $this->theme->variable('screen-xs-min'),
-]);
 
 $bodyClasses = DeviceDetectorHelper::getBodyClasses();
 $bodyClasses[] = 'clean-theme';
-$bodyClasses[] = 'hh-ct-menu-style-' . $module->configuration->menuStyle;
+$bodyClasses[] = 'hh-ct-menu-style-' . ($module?->configuration->menuStyle ?? Configuration::MENU_STYLE_BACKGROUND);
 if (Yii::$app->user->isGuest) {
     $bodyClasses[] = 'hh-ct-is-guest';
 }
@@ -61,12 +53,12 @@ if (Yii::$app->user->isGuest) {
         <!-- start: top navigation bar -->
         <div id="topbar" class="topbar navbar">
             <div class="container">
-                <div class="topbar-brand hidden-xs">
+                <div class="topbar-brand d-none d-sm-block">
                     <?= SiteLogo::widget() ?>
                 </div>
 
                 <ul id="top-menu-nav"
-                    class="nav<?= $module->configuration->hideTextInBottomMenuItems ? ' hide-menu-item-texts' : '' ?>">
+                    class="nav<?= $module?->configuration->hideTextInBottomMenuItems ? ' hide-menu-item-texts' : '' ?>">
                     <!-- load space chooser widget -->
                     <?= Chooser::widget() ?>
 

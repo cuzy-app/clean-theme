@@ -32,8 +32,4 @@ More information about the CSP configuration can be found in the [HumHub documen
 
 If you want to build a chid-theme over the Clean theme, see [Documentation here](https://docs.humhub.org/docs/theme/overview) and [Wiki here](https://community.humhub.com/s/theming-appearance/wiki/52/Theme+creation).
 
-You can start with [this empty template](https://github.com/cuzy-app/clean-theme/raw/refs/heads/master/docs/Clean-Child.zip), which is a child theme of the `Clean` theme.
-
-Use available CSS variables in `protected/modules/clean-theme/resources/css/humhub.clean-theme.dynamic.css`.
-
-Unzip it in the `/themes` root folder (not in `protected`).
+Use available CSS variables in `protected/modules/clean-theme/themes/Clean/scss/config-generated-root.scss`.

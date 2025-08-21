@@ -9,9 +9,8 @@
 
 namespace humhub\modules\cleanTheme;
 
-use humhub\libs\DynamicConfig;
+use humhub\helpers\ThemeHelper;
 use humhub\modules\cleanTheme\models\Configuration;
-use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 use yii\base\Exception;
 use yii\helpers\Url;
@@ -30,9 +29,10 @@ class Module extends \humhub\components\Module
     /**
      * @inheridoc
      */
-    public $resourcesPath = 'resources';
     public bool $collapsibleLeftNavigation = false;
     private ?Configuration $_configuration = null;
+
+    public const THEME_NAME = 'Clean';
 
     public function getConfiguration(): Configuration
     {
@@ -50,10 +50,7 @@ class Module extends \humhub\components\Module
 
     public function getDescription()
     {
-        return Yii::t('CleanThemeModule.config', '"{Clean}" theme based on the community "{HumHub}" theme', [
-            'Clean' => 'Clean',
-            'HumHub' => 'HumHub',
-        ]);
+        return Yii::t('CleanThemeModule.config', 'Modern, smooth and uncluttered theme');
     }
 
     /**
@@ -80,9 +77,9 @@ class Module extends \humhub\components\Module
     {
         if (parent::enable() !== false) {
             try {
-                $this->configuration->generateDynamicCSSFile();
+                $this->configuration->generateScssRootFile();
             } catch (Exception $e) {
-                Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'clean-theme');
+                Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
                 return false;
             }
             $this->enableTheme();
@@ -95,11 +92,11 @@ class Module extends \humhub\components\Module
     {
         parent::update();
 
-        // Recreate dynamic CSS file because it was removed by module update
+        // Recreate SCSS root file because it was removed by module update
         try {
-            $this->configuration->generateDynamicCSSFile();
+            $this->configuration->generateScssRootFile();
         } catch (Exception $e) {
-            Yii::error('Could not generate dynamic CSS file: ' . $e->getMessage(), 'clean-theme');
+            Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
         }
     }
 
@@ -108,12 +105,9 @@ class Module extends \humhub\components\Module
      */
     private function disableTheme()
     {
-        foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === 'Clean') {
-                $ceTheme = ThemeHelper::getThemeByName('HumHub');
-                $ceTheme->activate();
-                break;
-            }
+        if (static::isThemeBasedActive()) {
+            $ceTheme = ThemeHelper::getThemeByName('HumHub');
+            $ceTheme?->activate();
         }
     }
 
@@ -122,17 +116,22 @@ class Module extends \humhub\components\Module
      */
     private function enableTheme()
     {
-        // Check if already active
+        if (!static::isThemeBasedActive()) {
+            $cleanTheme = ThemeHelper::getThemeByName(self::THEME_NAME);
+            $cleanTheme?->activate();
+        }
+    }
+
+    /**
+     * Checks if the Clean Theme, or a child theme of it, is currently active
+     */
+    public static function isThemeBasedActive(): bool
+    {
         foreach (ThemeHelper::getThemeTree(Yii::$app->view->theme) as $theme) {
-            if ($theme->name === 'Clean') {
-                return;
+            if ($theme->name === self::THEME_NAME) {
+                return true;
             }
         }
-
-        $cleanTheme = ThemeHelper::getThemeByName('Clean');
-        if ($cleanTheme !== null) {
-            $cleanTheme->activate();
-            DynamicConfig::rewrite();
-        }
+        return false;
     }
 }

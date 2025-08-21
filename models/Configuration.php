@@ -10,38 +10,30 @@
 namespace humhub\modules\cleanTheme\models;
 
 use humhub\components\SettingsManager;
-use humhub\modules\cleanTheme\helpers\ColorHelper;
-use humhub\widgets\Button;
-use ScssPhp\ScssPhp\Compiler;
-use ScssPhp\ScssPhp\Exception\SassException;
+use humhub\helpers\ThemeHelper;
+use humhub\modules\cleanTheme\Module;
+use humhub\widgets\bootstrap\Button;
 use Yii;
 use yii\base\Exception;
 use yii\base\Model;
 use yii\helpers\Inflector;
-use yii\web\ServerErrorHttpException;
 
 /**
  *
  * @property-read string $googleFontsCss2UrlParams
- * @property-read string $cssFromScss
  * @property-read array $specialColorCssVariables
  */
 class Configuration extends Model
 {
-    public const HUMHUB_MODIFIED_PATH = '@clean-theme/resources/less/humhub.modified';
-    public const SPECIAL_COLOR_VARIABLES_IN_HUMHUB_MODIFIED_FILE = '@clean-theme/resources/less/special-color-variables-in-humhub-modified.txt';
-    public const THEME_LESS_VARIABLES_FILE = '@clean-theme/themes/Clean/less/variables.less';
-    public const DYNAMIC_CSS_FILE_PATH = '@clean-theme/resources/css';
-    public const DYNAMIC_CSS_FILE_NAME = 'humhub.clean-theme.dynamic.css';
-    public const SUPPORTED_LESS_FUNCTIONS = ['darken', 'lighten', 'fade', 'fadein', 'fadeout'];
-    public const UNSUPPORTED_LESS_FUNCTIONS = ['saturate', 'desaturate', 'spin'];
-    public const HUMHUB_CSS_PREFIX = '--'; // TODO: In HumHub 1.17, replace '--' with '--hh-'
+    public const ROOT_SCSS_FILE_PATH = '@clean-theme/themes/Clean/scss';
+    public const ROOT_SCSS_FILE_NAME = 'config-generated-root.scss';
+    public const BOOTSTRAP_CSS_PREFIX = '--bs-';
+    public const HUMHUB_CSS_PREFIX = '--hh-';
     public const CLEAN_THEME_CSS_PREFIX = '--hh-ct-';
     public const TOP_BAR_BOTTOM_SPACING = 30;
     public const TOP_BAR_HEIGHT_SM = 50;
     public const TOP_BAR_BOTTOM_SPACING_SM = 5;
     public const BOTTOM_BAR_HEIGHT_XS = 50;
-
     public const MENU_STYLE_BACKGROUND = 'background';
     public const MENU_STYLE_BORDERED = 'bordered';
 
@@ -50,13 +42,7 @@ class Configuration extends Model
      */
     public const CSS_ATTRIBUTE_PREFIXES = [
         'containerMaxWidth' => self::CLEAN_THEME_CSS_PREFIX,
-        'default' => self::HUMHUB_CSS_PREFIX,
-        'primary' => self::HUMHUB_CSS_PREFIX,
-        'info' => self::HUMHUB_CSS_PREFIX,
-        'success' => self::HUMHUB_CSS_PREFIX,
-        'warning' => self::HUMHUB_CSS_PREFIX,
-        'danger' => self::HUMHUB_CSS_PREFIX,
-        'link' => self::HUMHUB_CSS_PREFIX,
+        'linkColor' => self::BOOTSTRAP_CSS_PREFIX,
         'textColorHeading' => self::CLEAN_THEME_CSS_PREFIX,
         'textColorMain' => self::HUMHUB_CSS_PREFIX,
         'textColorDefault' => self::HUMHUB_CSS_PREFIX,
@@ -101,6 +87,30 @@ class Configuration extends Model
         'topMenuTextColor' => self::CLEAN_THEME_CSS_PREFIX,
         'topMenuButtonHoverBackgroundColor' => self::CLEAN_THEME_CSS_PREFIX,
         'topMenuButtonHoverTextColor' => self::CLEAN_THEME_CSS_PREFIX,
+
+        // Dark mode colors
+        'linkColorDark' => self::BOOTSTRAP_CSS_PREFIX,
+        'textColorHeadingDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'textColorMainDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorDefaultDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorSecondaryDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorHighlightDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoftDark' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoft2Dark' => self::HUMHUB_CSS_PREFIX,
+        'textColorSoft3Dark' => self::HUMHUB_CSS_PREFIX,
+        'textColorContrastDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorMainDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorSecondaryDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorPageDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorHighlightDark' => self::HUMHUB_CSS_PREFIX,
+        'backgroundColorHighlightSoftDark' => self::HUMHUB_CSS_PREFIX,
+        'panelBorderColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'menuTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'menuBorderColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuBackgroundColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuButtonHoverBackgroundColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'topMenuButtonHoverTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
     ];
 
     /**
@@ -108,13 +118,7 @@ class Configuration extends Model
      */
     public const CSS_ATTRIBUTE_UNITS = [
         'containerMaxWidth' => 'px',
-        'default' => '',
-        'primary' => '',
-        'info' => '',
-        'success' => '',
-        'warning' => '',
-        'danger' => '',
-        'link' => '',
+        'linkColor' => '',
         'textColorHeading' => '',
         'textColorMain' => '',
         'textColorDefault' => '',
@@ -159,18 +163,36 @@ class Configuration extends Model
         'topMenuTextColor' => '',
         'topMenuButtonHoverBackgroundColor' => '',
         'topMenuButtonHoverTextColor' => '',
+
+        // Dark mode colors
+        'linkColorDark' => '',
+        'textColorHeadingDark' => '',
+        'textColorMainDark' => '',
+        'textColorDefaultDark' => '',
+        'textColorSecondaryDark' => '',
+        'textColorHighlightDark' => '',
+        'textColorSoftDark' => '',
+        'textColorSoft2Dark' => '',
+        'textColorSoft3Dark' => '',
+        'textColorContrastDark' => '',
+        'backgroundColorMainDark' => '',
+        'backgroundColorSecondaryDark' => '',
+        'backgroundColorPageDark' => '',
+        'backgroundColorHighlightDark' => '',
+        'backgroundColorHighlightSoftDark' => '',
+        'panelBorderColorDark' => '',
+        'menuTextColorDark' => '',
+        'menuBorderColorDark' => '',
+        'topMenuBackgroundColorDark' => '',
+        'topMenuTextColorDark' => '',
+        'topMenuButtonHoverBackgroundColorDark' => '',
+        'topMenuButtonHoverTextColorDark' => '',
     ];
 
     public SettingsManager $settingsManager;
 
     public string $containerMaxWidth = '1600';
-    public string $default = '#f3f3f3';
-    public string $primary = '#31414a';
-    public string $info = '#1A808E';
-    public string $success = '#518132';
-    public string $warning = '#AF640E';
-    public string $danger = '#EC0426';
-    public string $link = '#1A7DB2';
+    public string $linkColor = '#1A7DB2';
     public string $textColorHeading = '#37474f';
     public string $textColorMain = '#31414a';
     public string $textColorDefault = '#4b4b4b';
@@ -216,10 +238,34 @@ class Configuration extends Model
     public string $topMenuTextColor = '#31414a';
     public string $topMenuButtonHoverBackgroundColor = '#f7f7f7';
     public string $topMenuButtonHoverTextColor = '#242424';
-    public string $scss = '';
     public string|bool $hideTopMenuOnScrollDown = false;
     public string|bool $hideBottomMenuOnScrollDown = false;
     public string|bool $hideTextInBottomMenuItems = false;
+
+    // Dark mode colors
+    public string $linkColorDark = '#88c5e8'; // Based on mix(white, $primary, 10%)
+    public string $textColorHeadingDark = '#e0e3e5'; // Lighter version of textColorHeading
+    public string $textColorMainDark = '#dddddd'; // From $text-color-main-dark
+    public string $textColorDefaultDark = '#f0f0f0'; // From $text-color-default-dark
+    public string $textColorSecondaryDark = '#bbbbbb'; // From $text-color-secondary-dark
+    public string $textColorHighlightDark = '#ffffff'; // From $text-color-highlight-dark
+    public string $textColorSoftDark = '#dddddd'; // From $text-color-soft-dark
+    public string $textColorSoft2Dark = '#cccccc'; // From $text-color-soft2-dark
+    public string $textColorSoft3Dark = '#7b7773'; // From $text-color-soft3-dark
+    public string $textColorContrastDark = '#ffffff'; // From $text-color-contrast-dark
+    public string $backgroundColorMainDark = '#222222'; // From $background-color-main-dark
+    public string $backgroundColorSecondaryDark = '#333333'; // From $background-color-secondary-dark
+    public string $backgroundColorPageDark = '#000000'; // From $background-color-page-dark
+    public string $backgroundColorHighlightDark = '#054254'; // Based on rgba($info, 0.2)
+    public string $backgroundColorHighlightSoftDark = '#1a2326'; // Based on darken(desaturate(adjust-hue($info, 6), 16), 55)
+    // Add these properties
+    public string $panelBorderColorDark = '#1f2225'; // From $input-border-color-dark
+    public string $menuTextColorDark = '#dddddd'; // From $text-color-main-dark
+    public string $menuBorderColorDark = '#333333'; // Darker version of menuBorderColor
+    public string $topMenuBackgroundColorDark = '#222222'; // From $background-color-main-dark
+    public string $topMenuTextColorDark = '#dddddd'; // From $text-color-main-dark
+    public string $topMenuButtonHoverBackgroundColorDark = '#333333'; // From $background-color-secondary-dark
+    public string $topMenuButtonHoverTextColorDark = '#ffffff'; // From $text-color-highlight-dark
 
     public static function getJustifyContentOptions(): array
     {
@@ -262,7 +308,6 @@ class Configuration extends Model
             'hideTopMenuOnScrollDown',
             'hideBottomMenuOnScrollDown',
             'hideTextInBottomMenuItems',
-            'scss',
         ]);
     }
 
@@ -277,15 +322,8 @@ class Configuration extends Model
     public function rules()
     {
         return [
-            [array_merge(static::getCssAttributeNames(), ['menuStyle', 'scss']), 'string'],
+            [array_merge(static::getCssAttributeNames(), ['menuStyle']), 'string'],
             [['hideTopMenuOnScrollDown', 'hideBottomMenuOnScrollDown', 'hideTextInBottomMenuItems'], 'boolean'],
-            ['scss', function ($attribute, $params, $validator) {
-                try {
-                    $this->getCssFromScss();
-                } catch (ServerErrorHttpException $e) {
-                    $this->addError($attribute, $e->getMessage());
-                }
-            }],
         ];
     }
 
@@ -294,15 +332,11 @@ class Configuration extends Model
      */
     public function attributeLabels()
     {
+        $variantForDarkModeLabel = Yii::t('CleanThemeModule.config', 'Variant for dark mode');
+
         return [
             'containerMaxWidth' => Yii::t('CleanThemeModule.config', 'Main content container width'),
-            'default' => Yii::t('CleanThemeModule.config', 'Main default color'),
-            'primary' => Yii::t('CleanThemeModule.config', 'Main "Primary" color'),
-            'info' => Yii::t('CleanThemeModule.config', 'Main "Info" color'),
-            'success' => Yii::t('CleanThemeModule.config', 'Main "Success" color'),
-            'warning' => Yii::t('CleanThemeModule.config', 'Main "Warning" color'),
-            'danger' => Yii::t('CleanThemeModule.config', 'Main "Danger" color'),
-            'link' => Yii::t('CleanThemeModule.config', 'Main color for links'),
+            'linkColor' => Yii::t('CleanThemeModule.config', 'Main color for links'),
             'textColorHeading' => Yii::t('CleanThemeModule.config', 'Headings text color'),
             'textColorMain' => Yii::t('CleanThemeModule.config', 'Main text color'),
             'textColorDefault' => Yii::t('CleanThemeModule.config', 'Default text color for icons, buttons, etc.'),
@@ -351,7 +385,30 @@ class Configuration extends Model
             'hideTopMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the top menu on scroll down'),
             'hideBottomMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the bottom menu on scroll down'),
             'hideTextInBottomMenuItems' => Yii::t('CleanThemeModule.config', 'Hide the text of the bottom menu buttons'),
-            'scss' => Yii::t('CleanThemeModule.config', 'Custom CSS'),
+
+            // Dark mode colors
+            'linkColorDark' => $variantForDarkModeLabel,
+            'textColorHeadingDark' => $variantForDarkModeLabel,
+            'textColorMainDark' => $variantForDarkModeLabel,
+            'textColorDefaultDark' => $variantForDarkModeLabel,
+            'textColorSecondaryDark' => $variantForDarkModeLabel,
+            'textColorHighlightDark' => $variantForDarkModeLabel,
+            'textColorSoftDark' => $variantForDarkModeLabel,
+            'textColorSoft2Dark' => $variantForDarkModeLabel,
+            'textColorSoft3Dark' => $variantForDarkModeLabel,
+            'textColorContrastDark' => $variantForDarkModeLabel,
+            'backgroundColorMainDark' => $variantForDarkModeLabel,
+            'backgroundColorSecondaryDark' => $variantForDarkModeLabel,
+            'backgroundColorPageDark' => $variantForDarkModeLabel,
+            'backgroundColorHighlightDark' => $variantForDarkModeLabel,
+            'backgroundColorHighlightSoftDark' => $variantForDarkModeLabel,
+            'panelBorderColorDark' => $variantForDarkModeLabel,
+            'menuTextColorDark' => $variantForDarkModeLabel,
+            'menuBorderColorDark' => $variantForDarkModeLabel,
+            'topMenuBackgroundColorDark' => $variantForDarkModeLabel,
+            'topMenuTextColorDark' => $variantForDarkModeLabel,
+            'topMenuButtonHoverBackgroundColorDark' => $variantForDarkModeLabel,
+            'topMenuButtonHoverTextColorDark' => $variantForDarkModeLabel,
         ];
     }
 
@@ -362,10 +419,10 @@ class Configuration extends Model
     {
         $inPx = Yii::t('CleanThemeModule.config', 'In pixel');
         $inEm = Yii::t('CleanThemeModule.config', 'In relative size (em)');
-        $googleFonts =
-            Yii::t('CleanThemeModule.config', 'Google Font name') . ' ' .
-            Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->xs() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>' .
-            Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
+        $googleFonts
+            = Yii::t('CleanThemeModule.config', 'Google Font name') . ' '
+            . Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->sm() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>'
+            . Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
                 'seeDocumentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
             ]);
 
@@ -393,7 +450,6 @@ class Configuration extends Model
             ]),
             'topBarHeight' => $inPx,
             'topBarFontSize' => $inPx,
-            'scss' => Yii::t('CleanThemeModule.config', 'Use Sassy CSS syntax (SCSS)'),
         ];
     }
 
@@ -438,7 +494,7 @@ class Configuration extends Model
             $this->settingsManager->set($attributeName, $this->$attributeName);
         }
 
-        $this->generateDynamicCSSFile();
+        $this->generateScssRootFile();
 
         return true;
     }
@@ -446,83 +502,89 @@ class Configuration extends Model
     /**
      * @throws Exception
      */
-    public function generateDynamicCSSFile(): void
+    public function generateScssRootFile(): void
     {
-        $css = '/** This file is auto-generated by the Clean Theme configuration. Do not edit the file directly. */' . PHP_EOL . PHP_EOL;
+        $scss = '/** This file is auto-generated by the Clean Theme configuration. Do not edit the file directly. */' . PHP_EOL . PHP_EOL;
 
-        // Start CSS variables
-        $css .= ':root {' . PHP_EOL;
+        // Start root variables
+        $scss .= ':root {' . PHP_EOL;
 
-        // Configuration attributes
+        // Configuration attributes (skip dark colors)
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
+            if (static::isDarkColorAttribute($name)) {
+                continue;
+            }
             $cssVarName = (self::CSS_ATTRIBUTE_PREFIXES[$name] ?? '--hh-ct-') . Inflector::camel2id($name);
-            $value = static::isFontAttribute($name) ?
-                '"' . $this->$name . '", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' :
-                $this->$name;
+            $value = static::isFontAttribute($name)
+                ? '"' . $this->$name . '", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+                : $this->$name;
 
             // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px;`
-            $css .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+            $scss .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
         }
-        $css .= PHP_EOL;
-
-        // Special colors (darkened, lightened and faded colors from the on selected in the configuration)
-        foreach ($this->getSpecialColorCssVariables() as $cssVariable) {
-            [$amount, $function] = array_reverse(explode('-', $cssVariable));
-            $colorName = lcfirst(Inflector::camelize(
-                substr($cssVariable, strlen(self::HUMHUB_CSS_PREFIX), strlen($cssVariable) - strlen($function . '-' . $amount) - strlen(self::HUMHUB_CSS_PREFIX)),
-            ));
-            if (
-                $colorName
-                && isset($this->$colorName)
-                && $amount
-                && in_array($function, static::SUPPORTED_LESS_FUNCTIONS, true)
-            ) {
-                $css .= '    ' . $cssVariable . ': ' . ColorHelper::$function($this->$colorName, $amount) . ';' . PHP_EOL;
-            }
-        }
+        $scss .= PHP_EOL;
 
         // Dimensions
-        $css .= '    --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING . 'px;' . PHP_EOL;
-        $css .= '    --hh-fixed-header-height: ' . ((int)$this->topBarHeight + self::TOP_BAR_BOTTOM_SPACING) . 'px;' . PHP_EOL;
-        $css .= '    --hh-fixed-footer-height: 0px;' . PHP_EOL;
+        $scss .= '    --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING . 'px;' . PHP_EOL;
+        $scss .= '    --hh-fixed-header-height: ' . ((int)$this->topBarHeight + self::TOP_BAR_BOTTOM_SPACING) . 'px;' . PHP_EOL;
+        $scss .= '    --hh-fixed-footer-height: 0px;' . PHP_EOL;
 
-        // End CSS variables
-        $css .= '}' . PHP_EOL;
-        $css .= PHP_EOL;
+        // End root variables
+        $scss .= '}' . PHP_EOL;
+        $scss .= PHP_EOL;
+
+        // Dark mode configuration attributes
+        $scss .= '@if $enable-dark-mode {' . PHP_EOL;
+        $scss .= '    @include color-mode(dark, true) {' . PHP_EOL;
+        foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
+            if (!static::isDarkColorAttribute($name)) {
+                continue;
+            }
+            $cssVarName = (self::CSS_ATTRIBUTE_PREFIXES[$name] ?? '--hh-ct-') . Inflector::camel2id($name);
+            $cssVarName = preg_replace('/-dark$/', '', $cssVarName); // Remove the -dark suffix
+            $value = $this->$name;
+            $scss .= '        ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+        }
+        $scss .= '    }' . PHP_EOL;
+        $scss .= '}' . PHP_EOL;
+        $scss .= PHP_EOL;
 
         // Mobile CSS variables
-        $css .= '@media (max-width: ' . ($this->getLessVariableValue('@screen-sm-min') ?? '768px') . ') {' . PHP_EOL;
-        $css .= '    :root {' . PHP_EOL;
-        $css .= '        --hh-ct-top-bar-height: ' . self::TOP_BAR_HEIGHT_SM . 'px;' . PHP_EOL;
-        $css .= '        --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING_SM . 'px;' . PHP_EOL;
-        $css .= '        --hh-fixed-header-height: ' . (self::TOP_BAR_HEIGHT_SM + self::TOP_BAR_BOTTOM_SPACING_SM) . 'px;' . PHP_EOL;
-        $css .= '    }' . PHP_EOL;
-        $css .= '}' . PHP_EOL;
-        $css .= PHP_EOL;
-        $css .= '@media (max-width: ' . ($this->getLessVariableValue('@screen-xs-min') ?? '570px') . ') {' . PHP_EOL;
-        $css .= '    :root {' . PHP_EOL;
-        $css .= '        --hh-fixed-footer-height: ' . (self::BOTTOM_BAR_HEIGHT_XS + 2) . 'px;' . PHP_EOL; // + 2px for the bottom border
-        $css .= '    }' . PHP_EOL;
-        $css .= '}' . PHP_EOL;
-
-        // Custom CSS
-        if ($this->scss) {
-            $css .= PHP_EOL . $this->getCssFromScss() . PHP_EOL;
-        }
+        $scss .= '@media (max-width: var(--bs-breakpoint-md)) {' . PHP_EOL;
+        $scss .= '    :root {' . PHP_EOL;
+        $scss .= '        --hh-ct-top-bar-height: ' . self::TOP_BAR_HEIGHT_SM . 'px;' . PHP_EOL;
+        $scss .= '        --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING_SM . 'px;' . PHP_EOL;
+        $scss .= '        --hh-fixed-header-height: ' . (self::TOP_BAR_HEIGHT_SM + self::TOP_BAR_BOTTOM_SPACING_SM) . 'px;' . PHP_EOL;
+        $scss .= '    }' . PHP_EOL;
+        $scss .= '}' . PHP_EOL;
+        $scss .= PHP_EOL;
+        $scss .= '@media (max-width: var(--bs-breakpoint-sm)) {' . PHP_EOL;
+        $scss .= '    :root {' . PHP_EOL;
+        $scss .= '        --hh-fixed-footer-height: ' . (self::BOTTOM_BAR_HEIGHT_XS + 2) . 'px;' . PHP_EOL; // + 2px for the bottom border
+        $scss .= '    }' . PHP_EOL;
+        $scss .= '}' . PHP_EOL;
 
         // Write file
-        $dynamicCssPath = Yii::getAlias(self::DYNAMIC_CSS_FILE_PATH);
+        $rootScssPath = Yii::getAlias(self::ROOT_SCSS_FILE_PATH);
         if (
-            !is_dir($dynamicCssPath)
-            && !mkdir($dynamicCssPath, 0765)
-            && !is_dir($dynamicCssPath)
+            !is_dir($rootScssPath)
+            && !mkdir($rootScssPath, 0765)
+            && !is_dir($rootScssPath)
         ) {
-            throw new Exception(sprintf('Directory "%s" was not created', $dynamicCssPath));
+            throw new Exception(sprintf('Directory "%s" was not created', $rootScssPath));
         }
-        file_put_contents($dynamicCssPath . '/' . self::DYNAMIC_CSS_FILE_NAME, $css);
+        $result = file_put_contents($rootScssPath . '/' . self::ROOT_SCSS_FILE_NAME, $scss);
+        if ($result === false) {
+            throw new Exception(sprintf('File "%s" could not be written', $rootScssPath . '/' . self::ROOT_SCSS_FILE_NAME));
+        }
 
-        // Clear cache
-        Yii::$app->assetManager->clear();
+        // Rebuild CSS
+        if (Module::isThemeBasedActive()) {
+            $buildResult = ThemeHelper::buildCss();
+            if ($buildResult !== true) {
+                throw new Exception('Theme CSS could not be rebuilt: ' . $buildResult);
+            }
+        }
     }
 
     public function getGoogleFontsCss2UrlParams(): string
@@ -544,39 +606,8 @@ class Configuration extends Model
         return implode('&', $fontsEncoded);
     }
 
-    private function getSpecialColorCssVariables(): array
+    public static function isDarkColorAttribute(string $name): bool
     {
-        return file(Yii::getAlias(static::SPECIAL_COLOR_VARIABLES_IN_HUMHUB_MODIFIED_FILE), FILE_IGNORE_NEW_LINES);
-    }
-
-    /**
-     * @return string
-     * @throws ServerErrorHttpException
-     */
-    private function getCssFromScss(): string
-    {
-        // Generate custom CSS from SCSS
-        if (!class_exists('Compiler')) {
-            require_once Yii::getAlias('@clean-theme/vendor/autoload.php');
-        }
-        $compiler = new Compiler();
-        $scss = str_replace(['<style>', '<style type="text/css">', '</style>'], ['', '', ''], $this->scss);
-        try {
-            return $compiler->compileString($scss)->getCss();
-        } catch (SassException $e) {
-            throw new ServerErrorHttpException(Yii::t('CleanThemeModule.config', 'Cannot compile SCSS to CSS code. Error message:') . ' ' . $e->getMessage());
-        }
-    }
-
-    private function getLessVariableValue(string $variableName): ?string
-    {
-        $lessVariablesContent = file_get_contents(Yii::getAlias(self::THEME_LESS_VARIABLES_FILE));
-        $pattern = '/' . $variableName . ':\s*(\d+px);/';
-        $matches = [];
-
-        if (preg_match($pattern, $lessVariablesContent, $matches)) {
-            return $matches[1];
-        }
-        return null;
+        return str_ends_with($name, 'Dark');
     }
 }

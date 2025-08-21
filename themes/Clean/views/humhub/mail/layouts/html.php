@@ -21,7 +21,7 @@ $configuration = $module->getConfiguration();
         <meta name="viewport" content="initial-scale=1.0"/>
         <meta name="format-detection" content="telephone=no"/>
 
-        <title><?php echo Html::encode(Yii::$app->name); ?></title>
+        <title><?= Html::encode(Yii::$app->name) ?></title>
             <style type="text/css">
 
                 <?php $defaultBackground =  $configuration->backgroundColorMain ?>
@@ -564,9 +564,9 @@ $configuration = $module->getConfiguration();
                                                                         <tr>
                                                                             <td style="text-align:center;">
                                                                                 <span style="text-decoration: none; color:<?= $configuration->textColorContrast ?>;">
-                                                                                    <a href="<?php echo Url::to(['/'], true); ?>"
+                                                                                    <a href="<?= Url::to(['/'], true) ?>"
                                                                                         style="text-decoration: none; font-size: 18px; line-height: 27px; font-family: <?= Yii::$app->view->theme->variable('mail-font-family', DefaultMailStyle::DEFAULT_FONT_FAMILY) ?>; color: <?= $configuration->textColorContrast ?>; font-weight: 700; text-align: left;">
-                                                                                            <?php echo Html::encode(Yii::$app->name); ?>
+                                                                                            <?= Html::encode(Yii::$app->name) ?>
                                                                                     </a>
                                                                                 </span>
                                                                             </td>
@@ -701,8 +701,8 @@ $configuration = $module->getConfiguration();
                                                                     <?php endif; ?>
 
                                                                     <span style="text-decoration: none; color:<?= $soft2Color ?>;">
-                                                                        <?= FooterMenu::widget(['location' => FooterMenu::LOCATION_EMAIL]); ?>
-                                                                        <?= PoweredBy::widget(['linkOptions' => ['style' => 'text-decoration:none;color:'.$soft2Color]]); ?>
+                                                                        <?= FooterMenu::widget(['location' => FooterMenu::LOCATION_EMAIL]) ?>
+                                                                        <?= PoweredBy::widget(['linkOptions' => ['style' => 'text-decoration:none;color:'.$soft2Color]]) ?>
                                                                     </span>
 
                                                                 </td>

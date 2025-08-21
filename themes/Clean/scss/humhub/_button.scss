@@ -1,0 +1,10 @@
+//
+// Buttons
+// --------------------------------------------------
+.btn:not(.form-control) {
+    font-size: var(--hh-ct-font-size);
+}
+
+.btn-sm {
+    font-size: calc(var(--hh-ct-font-size) - 2px);
+}

@@ -1,0 +1,60 @@
+//
+// Navs
+// --------------------------------------------------
+
+// Remove left line
+.nav-pills,
+.nav-tabs,
+.account {
+    .dropdown-menu {
+        li {
+            &, &:hover, &.selected {
+                border-left: none !important;
+            }
+        }
+    }
+}
+
+body.hh-ct-menu-style-background {
+    // Tab menu: change text color, fill with color active tab, remove background color for others tabs, and remove borders
+    .tab-menu .nav-tabs, ul.tab-menu-settings {
+        li > a {
+            color: var(--hh-ct-menu-text-color);
+            padding-top: 14px;
+            border: none;
+            border-bottom: 1px solid var(--hh-ct-menu-border-color);
+            background-color: transparent;
+            max-height: 41px;
+            outline: none;
+            transition: .25s;
+
+            &:not(.active) {
+                &:hover, &:focus {
+                    padding-top: 14px;
+                    border-top: none !important;
+                    background-color: var(--hh-background-color-secondary);
+                }
+            }
+
+            &.active {
+                &, &:hover, &:focus {
+                    padding-top: 14px;
+                    background-color: var(--bs-primary);
+                    color: var(--hh-text-color-contrast);
+                    border: none !important;
+                    border-bottom: 1px solid var(--bs-primary) !important;
+                }
+            }
+        }
+    }
+}
+
+body.hh-ct-menu-style-bordered {
+    .tab-menu .nav-tabs, ul.tab-menu-settings {
+        li > a {
+            &.active, &:hover, &:focus {
+                border-top-color: var(--bs-link-color);
+            }
+        }
+    }
+}
