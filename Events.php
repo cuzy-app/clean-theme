@@ -28,6 +28,10 @@ class Events
 
     public static function onViewBeforeRender($event)
     {
+        if (!Module::isThemeBasedActive()) {
+            return;
+        }
+
         /** @var View $view */
         $view = $event->sender;
 

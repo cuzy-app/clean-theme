@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: If the Clean Theme module is enabled, but the Clean Theme is not selected in the Appearance settings, the assets mustn't be loaded
+
 2.3.1 (August 18, 2025)
 --------------------
 - Enh: Add dark mode color variations in the module configuration (requires the [Dark Mode module](https://marketplace.humhub.com/module/dark-mode))
