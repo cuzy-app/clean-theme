@@ -10,7 +10,7 @@ $user = Yii::$app->user->identity;
 <?php if ($user): ?>
     <div id="account-profile-header" class="container">
         <div class="row">
-            <div class="col-xl-12">
+            <div class="col-lg-12">
                 <?= ProfileHeader::widget(['user' => $user]); ?>
             </div>
         </div>
