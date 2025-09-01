@@ -4,10 +4,6 @@
 
 .form-control {
     border-radius: 25px;
-
-    &:focus {
-        border: 1px solid var(--bs-info);
-    }
 }
 
 // Not for creating a new publication

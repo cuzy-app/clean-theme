@@ -223,18 +223,14 @@
             > a:active,
             &.open > a,
             &.open .dropdown-toggle {
-                background-color: var(--primary-lighten-5);
+                background-color: var(--bs-primary);
                 color: var(--hh-text-color-contrast);
             }
         }
 
         .btn-enter {
-            background-color: var(--primary-lighten-5);
+            background-color: var(--bs-primary);
             margin: 6px 0;
-        }
-
-        .btn-enter:hover {
-            background-color: var(--primary-lighten-8);
         }
 
         .hh-list {

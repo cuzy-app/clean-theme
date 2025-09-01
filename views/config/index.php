@@ -43,7 +43,7 @@ $colorInputLabelOptions = ['class' => 'm-0'];
     </div>
 
     <div class="panel-body">
-        <div class="alert alert-info cuzy-free-module-info">
+        <div class="alert alert-info cuzy-free-module-info" role="alert">
             This module was created and is maintained by
             <a href="https://www.cuzy.app/"
                target="_blank">CUZY.APP (view other modules)</a>.

@@ -57,7 +57,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
 
         // If dropdown submenu has items
         if ($topMenuDropdown.children('.top-menu-item').length > 0) {
-            $topMenuSub.find('.dropdown-toggle').dropdown();
             $topMenuNavOrBottomMenu.append($topMenuSub); // Move the dropdown submenu to the end
         } else {
             $topMenuSub.hide();

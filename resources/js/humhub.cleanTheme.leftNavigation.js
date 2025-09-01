@@ -53,7 +53,7 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
     const nbColFromClass = function (element) {
         const colNbs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
         for (const colNb of colNbs) {
-            if (element.hasClass('col-lg-' + colNb)) {
+            if (element.hasClass('col-xl-' + colNb)) {
                 return colNb;
             }
         }
@@ -65,10 +65,10 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
             if (isReady && $menu.length) {
                 if (!$menu.hasClass('d-none')) {
                     $menu.addClass('d-none');
-                    navContainer.removeClass('col-lg-' + navContainerColNb);
-                    navContainer.addClass('col-lg-12');
-                    contentContainer.removeClass('col-lg-' + contentContainerColNb);
-                    contentContainer.addClass('col-lg-' + (contentContainerColNb + navContainerColNb));
+                    navContainer.removeClass('col-xl-' + navContainerColNb);
+                    navContainer.addClass('col-xl-12');
+                    contentContainer.removeClass('col-xl-' + contentContainerColNb);
+                    contentContainer.addClass('col-xl-' + (contentContainerColNb + navContainerColNb));
                     $expandBtn.removeClass('d-none');
                 }
             } else {
@@ -84,10 +84,10 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
             if (isReady && $menu.length) {
                 if ($menu.hasClass('d-none')) {
                     $menu.removeClass('d-none');
-                    navContainer.removeClass('col-lg-12');
-                    navContainer.addClass('col-lg-' + navContainerColNb);
-                    contentContainer.removeClass('col-lg-' + (contentContainerColNb + navContainerColNb));
-                    contentContainer.addClass('col-lg-' + contentContainerColNb);
+                    navContainer.removeClass('col-xl-12');
+                    navContainer.addClass('col-xl-' + navContainerColNb);
+                    contentContainer.removeClass('col-xl-' + (contentContainerColNb + navContainerColNb));
+                    contentContainer.addClass('col-xl-' + contentContainerColNb);
                     $expandBtn.addClass('d-none');
                 }
             } else {
