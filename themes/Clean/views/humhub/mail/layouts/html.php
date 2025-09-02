@@ -9,12 +9,15 @@ use yii\helpers\Url;
 
 /** @var Module $module */
 $module = Yii::$app->getModule('clean-theme');
-$configuration = $module->getConfiguration();
+$moduleConfiguration = $module->getConfiguration();
+
+/**
+ * @var string $content
+ */
 ?>
 
 <?php $this->beginPage() ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -24,8 +27,8 @@ $configuration = $module->getConfiguration();
         <title><?= Html::encode(Yii::$app->name) ?></title>
             <style type="text/css">
 
-                <?php $defaultBackground =  $configuration->backgroundColorMain ?>
-                <?php $colorPrimary =  $configuration->primary ?>
+                <?php $defaultBackground =  $moduleConfiguration->backgroundColorMain ?>
+                <?php $colorPrimary =  Yii::$app->view->theme->variable('primary') ?>
 
                 .ReadMsgBody {
                     width: 100%;
@@ -96,15 +99,15 @@ $configuration = $module->getConfiguration();
                 }
 
                 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-                    color: <?= $configuration->info ?> !important;
+                    color: <?= Yii::$app->view->theme->variable('info') ?> !important;
                 }
 
                 h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {
-                    color: <?= $configuration->info ?> !important;
+                    color: <?= Yii::$app->view->theme->variable('info') ?> !important;
                 }
 
                 h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
-                    color: <?= $configuration->info ?> !important;
+                    color: <?= Yii::$app->view->theme->variable('info') ?> !important;
                 }
 
                 table td, table tr {
@@ -119,7 +122,6 @@ $configuration = $module->getConfiguration();
                 }
 
                 code {
-                    white-space: 300;
                     word-break: break-all;
                 }
 
@@ -137,8 +139,8 @@ $configuration = $module->getConfiguration();
 
                 .nav-ul {
                     margin-left: -23px !important;
-                    margin-top: 0px !important;
-                    margin-bottom: 0px !important;
+                    margin-top: 0 !important;
+                    margin-bottom: 0 !important;
                 }
 
                 img {
@@ -397,7 +399,7 @@ $configuration = $module->getConfiguration();
 
                     table[class="col-2-footer"] {
                         width: 100% !important;
-                        margin-right: 0px !important;
+                        margin-right: 0 !important;
                     }
 
                     table[class="col-2-footer-last"] {
@@ -406,7 +408,7 @@ $configuration = $module->getConfiguration();
 
                     table[class="col-2"] {
                         width: 100% !important;
-                        margin-right: 0px !important;
+                        margin-right: 0 !important;
                     }
 
                     table[class="col-2-last"] {
@@ -416,7 +418,7 @@ $configuration = $module->getConfiguration();
 
                     table[class="col-3"] {
                         width: 100% !important;
-                        margin-right: 0px !important;
+                        margin-right: 0 !important;
                     }
 
                     table[class="col-3-last"] {
@@ -431,19 +433,19 @@ $configuration = $module->getConfiguration();
                     table[id="col-underline"] {
                         float: none !important;
                         width: 100% !important;
-                        border-bottom: 1px solid <?= $configuration->backgroundColorPage ?>;
+                        border-bottom: 1px solid <?= $moduleConfiguration->backgroundColorPage ?>;
                     }
 
                     td[id="col-underline"] {
                         float: none !important;
                         width: 100% !important;
-                        border-bottom: 1px solid <?= $configuration->backgroundColorPage ?>;
+                        border-bottom: 1px solid <?= $moduleConfiguration->backgroundColorPage ?>;
                     }
 
                     td[class="col-underline"] {
                         float: none !important;
                         width: 100% !important;
-                        border-bottom: 1px solid <?= $configuration->backgroundColorPage ?>;
+                        border-bottom: 1px solid <?= $moduleConfiguration->backgroundColorPage ?>;
                     }
 
                     td[class="text-center"] {
@@ -484,13 +486,13 @@ $configuration = $module->getConfiguration();
                     }
 
                     table[class="fix-box"] {
-                        padding-left: 0px !important;
-                        padding-right: 0px !important;
+                        padding-left: 0 !important;
+                        padding-right: 0 !important;
                     }
 
                     td[class="fix-box"] {
-                        padding-left: 0px !important;
-                        padding-right: 0px !important;
+                        padding-left: 0 !important;
+                        padding-right: 0 !important;
                     }
 
                     td[class="font-resize"] {
@@ -525,11 +527,11 @@ $configuration = $module->getConfiguration();
             <?php $this->head() ?>
     </head>
 
-    <body style="font-size:12px; font-family: <?= Yii::$app->view->theme->variable('mail-font-family', DefaultMailStyle::DEFAULT_FONT_FAMILY) ?>; background-color: <?= $configuration->backgroundColorPage ?>;">
+    <body style="font-size:12px; font-family: <?= Yii::$app->view->theme->variable('mail-font-family', DefaultMailStyle::DEFAULT_FONT_FAMILY) ?>; background-color: <?= $moduleConfiguration->backgroundColorPage ?>;">
         <?php $this->beginBody() ?>
 
         <!--start 100% wrapper (white background) -->
-        <table width="100%" id="mainStructure" border="0" cellspacing="0" cellpadding="0" style="background-color:<?= $configuration->backgroundColorPage ?>;">
+        <table width="100%" id="mainStructure" border="0" cellspacing="0" cellpadding="0" style="background-color:<?= $moduleConfiguration->backgroundColorPage ?>;">
 
 
             <!-- START VIEW HEADER -->
@@ -563,9 +565,9 @@ $configuration = $module->getConfiguration();
                                                                     <table align="center" border="0" cellspacing="0" cellpadding="0">
                                                                         <tr>
                                                                             <td style="text-align:center;">
-                                                                                <span style="text-decoration: none; color:<?= $configuration->textColorContrast ?>;">
+                                                                                <span style="text-decoration: none; color:<?= $moduleConfiguration->textColorContrast ?>;">
                                                                                     <a href="<?= Url::home(true) ?>"
-                                                                                        style="text-decoration: none; font-size: 18px; line-height: 27px; font-family: <?= Yii::$app->view->theme->variable('mail-font-family', DefaultMailStyle::DEFAULT_FONT_FAMILY) ?>; color: <?= $configuration->textColorContrast ?>; font-weight: 700; text-align: left;">
+                                                                                        style="text-decoration: none; font-size: 18px; line-height: 27px; font-family: <?= Yii::$app->view->theme->variable('mail-font-family', DefaultMailStyle::DEFAULT_FONT_FAMILY) ?>; color: <?= $moduleConfiguration->textColorContrast ?>; font-weight: 700; text-align: left;">
                                                                                             <?= Html::encode(Yii::$app->name) ?>
                                                                                     </a>
                                                                                 </span>
@@ -686,7 +688,7 @@ $configuration = $module->getConfiguration();
 
                                                 <tr>
                                                     <td valign="middle">
-                                                        <?php $soft2Color = $configuration->textColorSoft2;?>
+                                                        <?php $soft2Color = $moduleConfiguration->textColorSoft2;?>
                                                         <table align="center" border="0" cellspacing="0" cellpadding="0" class="container2">
 
                                                             <tr>

@@ -5,6 +5,7 @@ Unreleased
 --------------------
 - Fix: If the Clean Theme module is enabled, but the Clean Theme is not selected in the Appearance settings, the assets mustn't be loaded
 - Fix: Focused input border
+- Fix: Mail template colors
 
 2.3.1 (August 18, 2025)
 --------------------
