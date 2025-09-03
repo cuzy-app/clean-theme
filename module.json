@@ -2,8 +2,8 @@
     "id": "clean-theme",
     "name": "Clean Theme",
     "description": "Modern, smooth and uncluttered theme.",
-    "keywords": [],
-    "version": "2.3.1",
+    "keywords": ["theme", "clean", "modern", "smooth", "uncluttered"],
+    "version": "2.3.2",
     "humhub": {
         "minVersion": "1.18"
     },
