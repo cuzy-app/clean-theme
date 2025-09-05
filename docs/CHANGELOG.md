@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.3.4 (September 5, 2025)
+--------------------
+- Fix: On mobile, "My Spaces" menu item is not displayed correctly
+
 2.3.3 (September 5, 2025)
 --------------------
 - Fix: Top and bottom navigation menu bars on mobile

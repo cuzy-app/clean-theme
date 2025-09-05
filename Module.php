@@ -99,7 +99,7 @@ class Module extends \humhub\components\Module
             Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
         }
 
-        // Rebuild CSS
+        // Rebuild CSS: TODO remove for 1.18-beta-4+
         try {
             ThemeHelper::buildCss();
         } catch (Exception $e) {

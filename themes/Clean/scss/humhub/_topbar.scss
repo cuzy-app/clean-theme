@@ -120,10 +120,6 @@
 
         #top-menu-nav {
             justify-content: var(--hh-ct-top-menu-nav-justify-content);
-            > li > a {
-                display: flex;
-                align-items: center;
-            }
         }
 
         .notifications {
@@ -336,6 +332,7 @@
             > a {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
                 justify-content: center;
                 height: calc(var(--hh-ct-top-bar-height) - var(--hh-ct-panel-border-width));
                 color: var(--hh-ct-top-menu-text-color);

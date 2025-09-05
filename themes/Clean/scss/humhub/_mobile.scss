@@ -64,7 +64,6 @@
                     padding: 0 5px 5px 5px;
                     min-width: 65px;
                     max-width: 20ch;
-                    height: auto;
                     line-height: 12px !important;
                     font-size: 10px;
                     color: var(--bs-primary);
@@ -77,9 +76,13 @@
                     }
 
                     &#space-menu {
-                        align-items: center;
-                        justify-content: center;
-                        padding: 0;
+                        padding-bottom: 0; // If the current space image is displayed
+
+                        .no-space {
+                            padding-bottom: 5px; // If "My Spaces" is displayed
+                            display: flex;
+                            flex-direction: column;
+                        }
 
                         .space-acronym {
                             line-height: 20px;
