@@ -17,16 +17,20 @@
         > .container {
 
             .topbar-brand {
-                flex: 1;
-                white-space: nowrap;
                 text-overflow: ellipsis;
+                flex-grow: 1;
 
                 a.navbar-brand {
-                    display: block !important;
-                    padding-left: 10px !important;
+                    display: flex !important;
+                    justify-content: center; // To center the logo if truncated
+                    margin-left: 10px !important;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     font-size: 16px;
+                }
+
+                a.navbar-brand-text {
+                    justify-content: start;
                 }
             }
 
@@ -57,7 +61,6 @@
                 justify-content: space-between !important;
 
                 > li > a {
-                    display: block;
                     padding: 0 5px 5px 5px;
                     min-width: 65px;
                     max-width: 20ch;
@@ -84,7 +87,6 @@
                     }
 
                     i {
-                        display: block;
                         line-height: 35px;
                         font-size: 20px;
                         margin-bottom: 0;

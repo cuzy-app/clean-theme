@@ -52,13 +52,12 @@ if (Yii::$app->user->isGuest) {
 
         <!-- start: top navigation bar -->
         <div id="topbar" class="topbar navbar">
-            <div class="container">
-                <div class="topbar-brand d-none d-sm-block">
+            <div class="container flex-nowrap">
+                <div class="topbar-brand d-flex text-nowrap overflow-hidden">
                     <?= SiteLogo::widget() ?>
                 </div>
 
-                <ul id="top-menu-nav"
-                    class="nav<?= $module?->configuration->hideTextInBottomMenuItems ? ' hide-menu-item-texts' : '' ?>">
+                <ul id="top-menu-nav" class="flex-grow-1 nav<?= $module?->configuration->hideTextInBottomMenuItems ? ' hide-menu-item-texts' : '' ?>">
                     <!-- load space chooser widget -->
                     <?= Chooser::widget() ?>
 

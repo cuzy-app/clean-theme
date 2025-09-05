@@ -14,14 +14,6 @@
     padding-left: 0;
     padding-right: 0;
 
-    ul.nav {
-        float: left;
-    }
-
-    ul.nav > li {
-        float: left;
-    }
-
     ul.nav > li > a {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -127,8 +119,11 @@
         }
 
         #top-menu-nav {
-            flex: 1; // The space must be between the main menu items and the search button
             justify-content: var(--hh-ct-top-menu-nav-justify-content);
+            > li > a {
+                display: flex;
+                align-items: center;
+            }
         }
 
         .notifications {

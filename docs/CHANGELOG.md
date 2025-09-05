@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.3.3 (September 5, 2025)
+--------------------
+- Fix: Top and bottom navigation menu bars on mobile
+
 2.3.2 (September 3, 2025)
 --------------------
 - Fix: If the Clean Theme module is enabled, but the Clean Theme is not selected in the Appearance settings, the assets mustn't be loaded

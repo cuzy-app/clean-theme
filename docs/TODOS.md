@@ -1,10 +1,6 @@
 TODOS
 =====
 
-TODO BS5:
-- Check migration
-- To migration, add Theme recompile
-
 Google Fonts via API and download locally the font on configuration save.
 
 If a horizontal menu is on multiple lines, 2 ideas:
