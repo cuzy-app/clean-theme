@@ -98,6 +98,13 @@ class Module extends \humhub\components\Module
         } catch (Exception $e) {
             Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
         }
+
+        // Rebuild CSS
+        try {
+            ThemeHelper::buildCss();
+        } catch (Exception $e) {
+            Yii::error('Could not build CSS: ' . $e->getMessage(), 'clean-theme');
+        }
     }
 
     /**
