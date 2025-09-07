@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: Dark mode: Color issue in top bar dropdwon - https://github.com/felixhahnweilheim/humhub-dark-mode/issues/71
+
 2.3.4 (September 5, 2025)
 --------------------
 - Fix: On mobile, "My Spaces" menu item is not displayed correctly
