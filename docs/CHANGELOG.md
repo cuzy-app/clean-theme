@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Fix: Dark mode color for active bottom menu item
+
 2.3.5 (September 8, 2025)
 --------------------
 - Fix: Dark mode: Color issue in top bar dropdwon - https://github.com/felixhahnweilheim/humhub-dark-mode/issues/71

@@ -50,7 +50,7 @@ return [
   'Main content container width' => 'Largura do contêiner de conteúdo principal',
   'Main text color' => 'Cor do texto principal',
   'Menu style' => 'Estilo do menu',
-  'Menus' => 'Cardápios',
+  'Menus' => 'Menus',
   'Menus on small screens' => 'Menus em telas pequenas',
   'Modern, smooth and uncluttered theme' => 'Tema moderno, suave e organizado',
   'Navigation alignment' => 'Alinhamento de navegação',

@@ -66,6 +66,7 @@
                     max-width: 20ch;
                     line-height: 12px !important;
                     font-size: 10px;
+                    background-color: var(--hh-ct-bottom-menu-background-color);
                     color: var(--hh-ct-bottom-menu-text-color);
 
                     &.active,
@@ -73,6 +74,8 @@
                     &:active,
                     &:focus {
                         border-bottom: none !important;
+                        background-color: var(--hh-ct-bottom-menu-text-color);
+                        color: var(--hh-ct-bottom-menu-background-color);
                     }
 
                     &#space-menu {
@@ -137,11 +140,6 @@
     body.hh-ct-menu-style-background {
         #topbar > .container > #top-menu-nav {
             border-top: solid 2px var(--hh-background4);
-
-            > li > a.active {
-                background-color: var(--bs-primary) !important;
-                color: var(--hh-background-color-secondary) !important;
-            }
         }
     }
 
