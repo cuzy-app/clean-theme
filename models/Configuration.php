@@ -87,6 +87,8 @@ class Configuration extends Model
         'topMenuTextColor' => self::CLEAN_THEME_CSS_PREFIX,
         'topMenuButtonHoverBackgroundColor' => self::CLEAN_THEME_CSS_PREFIX,
         'topMenuButtonHoverTextColor' => self::CLEAN_THEME_CSS_PREFIX,
+        'bottomMenuBackgroundColor' => self::CLEAN_THEME_CSS_PREFIX,
+        'bottomMenuTextColor' => self::CLEAN_THEME_CSS_PREFIX,
 
         // Dark mode colors
         'linkColorDark' => self::BOOTSTRAP_CSS_PREFIX,
@@ -111,6 +113,8 @@ class Configuration extends Model
         'topMenuTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
         'topMenuButtonHoverBackgroundColorDark' => self::CLEAN_THEME_CSS_PREFIX,
         'topMenuButtonHoverTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'bottomMenuBackgroundColorDark' => self::CLEAN_THEME_CSS_PREFIX,
+        'bottomMenuTextColorDark' => self::CLEAN_THEME_CSS_PREFIX,
     ];
 
     /**
@@ -163,6 +167,8 @@ class Configuration extends Model
         'topMenuTextColor' => '',
         'topMenuButtonHoverBackgroundColor' => '',
         'topMenuButtonHoverTextColor' => '',
+        'bottomMenuBackgroundColor' => '',
+        'bottomMenuTextColor' => '',
 
         // Dark mode colors
         'linkColorDark' => '',
@@ -187,6 +193,8 @@ class Configuration extends Model
         'topMenuTextColorDark' => '',
         'topMenuButtonHoverBackgroundColorDark' => '',
         'topMenuButtonHoverTextColorDark' => '',
+        'bottomMenuBackgroundColorDark' => '',
+        'bottomMenuTextColorDark' => '',
     ];
 
     public SettingsManager $settingsManager;
@@ -238,6 +246,8 @@ class Configuration extends Model
     public string $topMenuTextColor = '#31414a';
     public string $topMenuButtonHoverBackgroundColor = '#f7f7f7';
     public string $topMenuButtonHoverTextColor = '#242424';
+    public string $bottomMenuBackgroundColor = '#f7f7f7';
+    public string $bottomMenuTextColor = '#31414a';
     public string|bool $hideTopMenuOnScrollDown = false;
     public string|bool $hideBottomMenuOnScrollDown = false;
     public string|bool $hideTextInBottomMenuItems = false;
@@ -266,6 +276,8 @@ class Configuration extends Model
     public string $topMenuTextColorDark = '#dddddd'; // From $text-color-main-dark
     public string $topMenuButtonHoverBackgroundColorDark = '#333333'; // From $background-color-secondary-dark
     public string $topMenuButtonHoverTextColorDark = '#ffffff'; // From $text-color-highlight-dark
+    public string $bottomMenuBackgroundColorDark = '#222222'; // From $background-color-main-dark
+    public string $bottomMenuTextColorDark = '#dddddd'; // From $text-color-main-dark
 
     public static function getJustifyContentOptions(): array
     {
@@ -382,6 +394,8 @@ class Configuration extends Model
             'topMenuTextColor' => Yii::t('CleanThemeModule.config', 'Text color'),
             'topMenuButtonHoverBackgroundColor' => Yii::t('CleanThemeModule.config', 'Button background color on hover'),
             'topMenuButtonHoverTextColor' => Yii::t('CleanThemeModule.config', 'Button text color on hover'),
+            'bottomMenuBackgroundColor' => Yii::t('CleanThemeModule.config', 'Background color'),
+            'bottomMenuTextColor' => Yii::t('CleanThemeModule.config', 'Text color'),
             'hideTopMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the top menu on scroll down'),
             'hideBottomMenuOnScrollDown' => Yii::t('CleanThemeModule.config', 'Hide the bottom menu on scroll down'),
             'hideTextInBottomMenuItems' => Yii::t('CleanThemeModule.config', 'Hide the text of the bottom menu buttons'),
@@ -409,6 +423,8 @@ class Configuration extends Model
             'topMenuTextColorDark' => $variantForDarkModeLabel,
             'topMenuButtonHoverBackgroundColorDark' => $variantForDarkModeLabel,
             'topMenuButtonHoverTextColorDark' => $variantForDarkModeLabel,
+            'bottomMenuBackgroundColorDark' => $variantForDarkModeLabel,
+            'bottomMenuTextColorDark' => $variantForDarkModeLabel,
         ];
     }
 

@@ -55,7 +55,7 @@
                 position: fixed;
                 bottom: 0;
                 padding-bottom: var(--hh-mobile-app-safe-area-inset-bottom, env(safe-area-inset-bottom)); // for the web view space (safe area) on mobile devices
-                background-color: var(--hh-background-color-secondary);
+                background-color: var(--hh-ct-bottom-menu-background-color);
                 width: auto;
                 min-width: 100%;
                 justify-content: space-between !important;
@@ -66,7 +66,7 @@
                     max-width: 20ch;
                     line-height: 12px !important;
                     font-size: 10px;
-                    color: var(--bs-primary);
+                    color: var(--hh-ct-bottom-menu-text-color);
 
                     &.active,
                     &:hover,

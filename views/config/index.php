@@ -174,6 +174,13 @@ $colorInputLabelOptions = ['class' => 'm-0'];
             <?= $form->field($model, 'topMenuButtonHoverTextColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->endCollapsibleFields() ?>
 
+            <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Bottom menu')) ?>
+            <?= $form->field($model, 'topMenuBackgroundColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'topMenuBackgroundColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'bottomMenuTextColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'bottomMenuTextColorDark', $darkColorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->endCollapsibleFields() ?>
+
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Menus on small screens')) ?>
             <?= $form->field($model, 'hideTopMenuOnScrollDown')->checkbox() ?>
             <?= $form->field($model, 'hideBottomMenuOnScrollDown')->checkbox() ?>

@@ -4,6 +4,7 @@ Changelog
 Unreleased
 --------------------
 - Fix: Dark mode: Color issue in top bar dropdwon - https://github.com/felixhahnweilheim/humhub-dark-mode/issues/71
+- Enh: Add bottom menu background and text color configuration, which also fixes a dark mode issue
 
 2.3.4 (September 5, 2025)
 --------------------
