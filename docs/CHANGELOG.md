@@ -5,6 +5,7 @@ Unreleased
 --------------------
 - Fix: Dark mode color for active bottom menu item
 - Fix: "Show all notifications" button styling
+- Chg: Remove rounded corners on text field inputs
 
 2.3.5 (September 8, 2025)
 --------------------
