@@ -8,7 +8,6 @@ Changelog
 - Chg: Remove rounded corners on text field inputs
 - Chg: Less right and left padding in the top bar search button
 - Fix: Rounded images are not displayed as a disc
-- Fix: "Create" button
 
 2.3.5 (September 8, 2025)
 --------------------
