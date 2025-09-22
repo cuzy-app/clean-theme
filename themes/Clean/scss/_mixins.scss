@@ -21,13 +21,13 @@
 // Thumbnails
 // --------------------------------------------------
 .rounded:not(#img-logo) {
-    border-radius: 50%;
+    border-radius: 50% !important;
 }
 
 .modules-group,
 form {
     .rounded:not(#img-logo) {
-        border-radius: 0;
+        border-radius: 0 !important;
     }
 }
 
