@@ -43,7 +43,7 @@ if (Yii::$app->user->isGuest) {
         <?php if ($googleFontsCss2UrlParams) : ?>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?<?= $googleFontsCss2UrlParams ?>:wght@100..900&display=swap">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?<?= $googleFontsCss2UrlParams ?>:wght@100;200;300;400;500;600;700;800;900&display=swap"> <?php // Don't replace with :wght@100..900 because some fonts such as Quicksand won't load because of the missing font weight?>
         <?php endif; ?>
     </head>
 

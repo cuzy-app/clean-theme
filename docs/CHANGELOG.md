@@ -4,6 +4,7 @@ Changelog
 Unreleased
 --------------------
 - Chg: If the top left logo overflows, reduce the size of it to fit the container
+- Fix: Some Google fonts don't load
 
 2.3.6 (September 22, 2025)
 --------------------
