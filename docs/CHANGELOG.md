@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.3.7 (September 23, 2025)
 --------------------
 - Chg: If the top left logo overflows, reduce the size of it to fit the container
 - Fix: Some Google fonts don't load
