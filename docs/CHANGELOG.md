@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+--------------------
+- Chg: If the top left logo overflows, reduce the size of it to fit the container
+
 2.3.6 (September 22, 2025)
 --------------------
 - Fix: Dark mode color for active bottom menu item

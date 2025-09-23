@@ -81,6 +81,7 @@
             height: auto;
 
             img#img-logo {
+                max-width: 100%;
                 max-height: calc(var(--hh-ct-top-bar-height) - 10px);
             }
 
