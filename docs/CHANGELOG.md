@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2.3.8 (September 27, 2025)
+--------------------
+- Enh: Dark mode color styling in config
+- Fix: Top menu active color: link -> highlight
+- Fix: CSS variables on mobile for heights calculations
+
 2.3.7 (September 23, 2025)
 --------------------
 - Chg: If the top left logo overflows, reduce the size of it to fit the container

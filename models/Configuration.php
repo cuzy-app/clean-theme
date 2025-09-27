@@ -344,7 +344,7 @@ class Configuration extends Model
      */
     public function attributeLabels()
     {
-        $variantForDarkModeLabel = Yii::t('CleanThemeModule.config', 'Variant for dark mode');
+        $variantForDarkModeLabel = Yii::t('CleanThemeModule.config', 'Dark mode');
 
         return [
             'containerMaxWidth' => Yii::t('CleanThemeModule.config', 'Main content container width'),
@@ -566,7 +566,7 @@ class Configuration extends Model
         $scss .= PHP_EOL;
 
         // Mobile CSS variables
-        $scss .= '@media (max-width: var(--bs-breakpoint-md)) {' . PHP_EOL;
+        $scss .= '@media (max-width: 767.98px) {' . PHP_EOL; // Don't use `max-width: var(--bs-breakpoint-md)`, because it doesn't work for CSS variables
         $scss .= '    :root {' . PHP_EOL;
         $scss .= '        --hh-ct-top-bar-height: ' . self::TOP_BAR_HEIGHT_SM . 'px;' . PHP_EOL;
         $scss .= '        --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING_SM . 'px;' . PHP_EOL;
@@ -574,7 +574,7 @@ class Configuration extends Model
         $scss .= '    }' . PHP_EOL;
         $scss .= '}' . PHP_EOL;
         $scss .= PHP_EOL;
-        $scss .= '@media (max-width: var(--bs-breakpoint-sm)) {' . PHP_EOL;
+        $scss .= '@media (max-width: 575.98px) {' . PHP_EOL; // Don't use `max-width: var(--bs-breakpoint-sm)`, because it doesn't work for CSS variables
         $scss .= '    :root {' . PHP_EOL;
         $scss .= '        --hh-fixed-footer-height: ' . (self::BOTTOM_BAR_HEIGHT_XS + 2) . 'px;' . PHP_EOL; // + 2px for the bottom border
         $scss .= '    }' . PHP_EOL;
