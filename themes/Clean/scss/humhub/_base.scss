@@ -1,6 +1,6 @@
 body {
     padding-top: calc(var(--hh-ct-top-bar-height) + var(--hh-ct-top-bar-bottom-spacing)); // Don't replace with --hh-fixed-header-height as its value changes to zero on mobile scroll down which creates a jump
-    padding-bottom: var(--hh-fixed-footer-height);
+    padding-bottom: calc(var(--hh-fixed-footer-height) + var(--hh-mobile-app-safe-area-inset-bottom, env(safe-area-inset-bottom)));
     font-family: var(--hh-ct-font-family);
     font-size: var(--hh-ct-font-size);
     font-weight: var(--hh-ct-font-weight);

@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+------------------
+- Enh: Add mobile safe bottom area
+
 2.3.8 (September 27, 2025)
 --------------------
 - Enh: Dark mode color styling in config
