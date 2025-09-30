@@ -125,6 +125,8 @@
 
         #top-menu-nav {
             justify-content: var(--hh-ct-top-menu-nav-justify-content);
+            height: var(--hh-ct-top-bar-height);
+            overflow: hidden; // Will become visible for the dropdown menu via JS
         }
 
         .notifications {

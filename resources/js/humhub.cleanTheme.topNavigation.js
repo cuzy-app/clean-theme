@@ -19,10 +19,10 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             let resizeTimeout;
             $(window).on('resize', function () {
                 clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(fixNavigationOverflow, 100);
+                resizeTimeout = setTimeout(fixNavigationOverflow, 250);
                 showMenus();
             });
-            setTimeout(fixNavigationOverflow, 100);
+            setTimeout(fixNavigationOverflow, 250);
 
             // Top menu -> icon buttons: update active status
             updateBtnStatus('search-menu', 'search', 'search');
@@ -41,12 +41,18 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      * @function fixNavigationOverflow
      */
     const fixNavigationOverflow = function () {
-        $topMenuSub.show(); // For isOverflow() calculations (will be hidden at the end of this function)
+        $topMenuNavOrBottomMenu.css('overflow', 'hidden'); // Prevents flickering during the adjustment
 
         while (!isOverflow()) {
             if (!moveFromDropDown('.top-menu-item:first', $topMenuNavOrBottomMenu)) {
                 break;
             }
+        }
+
+        if (isOverflow()) {
+            $topMenuSub.show();
+        } else {
+            $topMenuSub.hide();
         }
 
         while (isOverflow()) {
@@ -55,12 +61,8 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             }
         }
 
-        // If dropdown submenu has items
-        if ($topMenuDropdown.children('.top-menu-item').length > 0) {
-            $topMenuNavOrBottomMenu.append($topMenuSub); // Move the dropdown submenu to the end
-        } else {
-            $topMenuSub.hide();
-        }
+        // Move back the dropdown toggle button to the end and show it
+        $topMenuSub.appendTo($topMenuNavOrBottomMenu);
 
         // Change drop-down menus (such as the space chooser or the sub-menu) to drop-up if in the bottom menu (mobile view)
         if (isMobileView()) {
@@ -68,6 +70,8 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
         } else {
             $topMenuNavOrBottomMenu.children('.dropup').removeClass('dropup').addClass('dropdown'); // Drop down menus (such as the Space chooser)
         }
+
+        $topMenuNavOrBottomMenu.css('overflow', 'visible'); // For the dropdown menu to be visible
     };
 
     /**
@@ -114,11 +118,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      * @returns {boolean} - True if the top bar container overflows the top bar, false otherwise
      */
     const isOverflow = function () {
-        if (isMobileView()) {
-            // The bottom menu container height is greater than the height of the first item
-            return $topMenuNavOrBottomMenu.height() > $topMenuNavOrBottomMenu.find('.nav-item:first-of-type').outerHeight();
-        }
-        return $topMenuContainer.height() > $topMenu.height();
+        return $topMenuNavOrBottomMenu.children(':visible:last').position().top > 0;
     };
 
     /**

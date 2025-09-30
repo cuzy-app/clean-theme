@@ -1,7 +1,12 @@
 Changelog
 =========
 
-Unreleased
+2.3.10 (September 30, 2025)
+------------------
+- Fix: Top sub-menu dropdown toggle button position on mobile
+- Fix: Admin main menu on mobile
+
+2.3.9 (September 29, 2025)
 ------------------
 - Enh: Add mobile safe bottom area
 

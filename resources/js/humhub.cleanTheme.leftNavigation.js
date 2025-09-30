@@ -110,6 +110,11 @@ humhub.module('cleanTheme.leftNavigation', function (module, require, $) {
             removeLeftNavFixed();
             $leftNav.css("width", "");
 
+            // If the windows size is < 992px (bootstrap lg), do nothing
+            if (window.innerWidth < parseInt(getComputedStyle(document.body).getPropertyValue('--bs-breakpoint-lg'))) {
+                return;
+            }
+
             // Get new values
             const $topBar = $('#topbar');
             $topBarHeight = parseInt($topBar.css('top')) + $topBar.height();
