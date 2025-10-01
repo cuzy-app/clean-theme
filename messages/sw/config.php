@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Tofautisha rangi ya maandishi kwa vitufe vya "msingi", "maelezo", "mafanikio", "onyo", "hatari", n.k.',
   'Dark mode' => 'Hali ya giza',
   'Default text color for icons, buttons, etc.' => 'Rangi chaguomsingi ya maandishi kwa ikoni, vitufe, n.k.',
-  'Distinct border link color for active items' => 'Rangi tofauti ya kiungo cha mpaka kwa vipengee vinavyotumika',
+  'Distinct accent color for active items' => 'Rangi tofauti lafudhi kwa vitu vinavyotumika',
   'Export' => 'Hamisha',
   'Font family' => 'Familia ya herufi',
   'Font size' => 'Ukubwa wa herufi',

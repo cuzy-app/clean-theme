@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Αντίθεση χρώματος κειμένου για κουμπιά "κύριο", "πληροφορίες", "επιτυχία", "προειδοποίηση", "κίνδυνος" κ.λπ.',
   'Dark mode' => 'Σκοτεινή λειτουργία',
   'Default text color for icons, buttons, etc.' => 'Προεπιλεγμένο χρώμα κειμένου για εικονίδια, κουμπιά κ.λπ.',
-  'Distinct border link color for active items' => 'Ξεχωριστό χρώμα συνδέσμου περιγράμματος για ενεργά στοιχεία',
+  'Distinct accent color for active items' => 'Διακριτό χρώμα έμφασης για ενεργά στοιχεία',
   'Export' => 'Εξαγωγή',
   'Font family' => 'Οικογένεια γραμματοσειρών',
   'Font size' => 'Μέγεθος γραμματοσειράς',

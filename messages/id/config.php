@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontras warna teks untuk tombol "utama", "info", "sukses", "peringatan", "bahaya", dll.',
   'Dark mode' => 'Mode gelap',
   'Default text color for icons, buttons, etc.' => 'Warna teks default untuk ikon, tombol, dll.',
-  'Distinct border link color for active items' => 'Warna tautan batas yang berbeda untuk item aktif',
+  'Distinct accent color for active items' => 'Warna aksen yang berbeda untuk item aktif',
   'Export' => 'Ekspor',
   'Font family' => 'Keluarga font',
   'Font size' => 'Ukuran huruf',

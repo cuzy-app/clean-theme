@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrast tekstfarge for "primær", "info", "suksess", "advarsel", "fare"-knapper osv.',
   'Dark mode' => 'Mørk modus',
   'Default text color for icons, buttons, etc.' => 'Standard tekstfarge for ikoner, knapper osv.',
-  'Distinct border link color for active items' => 'Distinkt kantlinjefarge for aktive elementer',
+  'Distinct accent color for active items' => 'Distinkt aksentfarge for aktive elementer',
   'Export' => 'Eksport',
   'Font family' => 'Fontfamilie',
   'Font size' => 'Skriftstørrelse',

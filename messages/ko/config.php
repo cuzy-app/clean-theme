@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => '"기본", "정보", "성공", "경고", "위험" 버튼 등에 대한 대비 텍스트 색상입니다.',
   'Dark mode' => '다크 모드',
   'Default text color for icons, buttons, etc.' => '아이콘, 버튼 등의 기본 텍스트 색상입니다.',
-  'Distinct border link color for active items' => '활성 항목에 대한 뚜렷한 테두리 링크 색상',
+  'Distinct accent color for active items' => '활동적인 아이템을 위한 뚜렷한 악센트 컬러',
   'Export' => '내보내다',
   'Font family' => '글꼴 계열',
   'Font size' => '글꼴 크기',

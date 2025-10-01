@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrastowy kolor tekstu dla przycisków „główne”, „informacje”, „sukces”, „ostrzeżenie”, „niebezpieczeństwo” itp.',
   'Dark mode' => 'Tryb ciemny',
   'Default text color for icons, buttons, etc.' => 'Domyślny kolor tekstu ikon, przycisków itp.',
-  'Distinct border link color for active items' => 'Wyraźny kolor łącza obramowania dla aktywnych elementów',
+  'Distinct accent color for active items' => 'Wyraźny kolor akcentujący dla aktywnych elementów',
   'Export' => 'Eksport',
   'Font family' => 'Rodzina czcionek',
   'Font size' => 'Rozmiar czcionki',

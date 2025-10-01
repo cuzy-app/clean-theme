@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'لون نص متباين للأزرار "الأساسية"، و"المعلومات"، و"النجاح"، و"التحذير"، و"الخطر"، وما إلى ذلك.',
   'Dark mode' => 'الوضع المظلم',
   'Default text color for icons, buttons, etc.' => 'لون النص الافتراضي للأيقونات والأزرار وما إلى ذلك.',
-  'Distinct border link color for active items' => 'لون رابط حدود مميز للعناصر النشطة',
+  'Distinct accent color for active items' => 'لون مميز للعناصر النشطة',
   'Export' => 'يصدّر',
   'Font family' => 'خط العائلة',
   'Font size' => 'حجم الخط',

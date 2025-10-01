@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => '"Birincil", "bilgi", "başarı", "uyarı", "tehlike" düğmeleri vb. için kontrast metin rengi.',
   'Dark mode' => 'Karanlık mod',
   'Default text color for icons, buttons, etc.' => 'Simgeler, düğmeler vb. için varsayılan metin rengi.',
-  'Distinct border link color for active items' => 'Etkin öğeler için farklı sınır bağlantı rengi',
+  'Distinct accent color for active items' => 'Aktif öğeler için belirgin vurgu rengi',
   'Export' => 'İhracat',
   'Font family' => 'Font ailesi',
   'Font size' => 'Yazı Boyutu',

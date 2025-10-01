@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrastná farba textu pre tlačidlá "primárne", "informácie", "úspech", "varovanie", "nebezpečenstvo" atď.',
   'Dark mode' => 'Tmavý režim',
   'Default text color for icons, buttons, etc.' => 'Predvolená farba textu pre ikony, tlačidlá atď.',
-  'Distinct border link color for active items' => 'Odlišná farba odkazu ohraničenia pre aktívne položky',
+  'Distinct accent color for active items' => 'Výrazná akcentová farba pre aktívne položky',
   'Export' => 'Export',
   'Font family' => 'Rodina písiem',
   'Font size' => 'Veľkosť písma',

@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'የንፅፅር የፅሁፍ ቀለም ለ"ዋና"፣ "መረጃ"፣ "ስኬት"፣ "ማስጠንቀቂያ"፣ "አደጋ" አዝራሮች፣ ወዘተ።',
   'Dark mode' => 'ጨለማ ሁነታ',
   'Default text color for icons, buttons, etc.' => 'ለአዶዎች፣ አዝራሮች፣ ወዘተ ነባሪ የጽሑፍ ቀለም።',
-  'Distinct border link color for active items' => 'ለንቁ ንጥሎች የተለየ የድንበር ማገናኛ ቀለም',
+  'Distinct accent color for active items' => 'ለንቁ ዕቃዎች የተለየ የአነጋገር ቀለም',
   'Export' => 'ወደ ውጪ ላክ',
   'Font family' => 'የቅርጸ-ቁምፊ ቤተሰብ',
   'Font size' => 'የቅርጸ ቁምፊ መጠን',

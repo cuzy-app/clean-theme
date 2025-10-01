@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => '"Asosiy", "ma\'lumot", "muvaffaqiyat", "ogohlantirish", "xavf" tugmalari va boshqalar uchun kontrastli matn rangi.',
   'Dark mode' => 'Qorong\'i rejim',
   'Default text color for icons, buttons, etc.' => 'Belgilar, tugmalar va boshqalar uchun standart matn rangi.',
-  'Distinct border link color for active items' => 'Faol elementlar uchun ajratilgan chegara rangi',
+  'Distinct accent color for active items' => 'Faol elementlar uchun alohida urg\'u rangi',
   'Export' => 'Eksport',
   'Font family' => 'Shriftlar oilasi',
   'Font size' => 'Shrift hajmi',

@@ -48,13 +48,3 @@ body.hh-ct-menu-style-background {
         }
     }
 }
-
-body.hh-ct-menu-style-bordered {
-    .tab-menu .nav-tabs, ul.tab-menu-settings {
-        li > a {
-            &.active, &:hover, &:focus {
-                border-top-color: var(--bs-link-color);
-            }
-        }
-    }
-}

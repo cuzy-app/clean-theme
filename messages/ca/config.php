@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Contrasta el color del text per als botons "primari", "informació", "èxit", "advertència", "perill", etc.',
   'Dark mode' => 'Mode fosc',
   'Default text color for icons, buttons, etc.' => 'Color de text predeterminat per a icones, botons, etc.',
-  'Distinct border link color for active items' => 'Color d\'enllaç de vora diferent per als elements actius',
+  'Distinct accent color for active items' => 'Color d\'accent distintiu per als elements actius',
   'Export' => 'Exporta',
   'Font family' => 'Família de tipus de lletra',
   'Font size' => 'Mida de la font',

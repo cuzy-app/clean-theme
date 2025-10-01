@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Contrasterende tekstkleur voor knoppen "primair", "info", "succes", "waarschuwing", "gevaar", enz.',
   'Dark mode' => 'Donkere modus',
   'Default text color for icons, buttons, etc.' => 'Standaardtekstkleur voor pictogrammen, knoppen, enz.',
-  'Distinct border link color for active items' => 'Duidelijke randlinkkleur voor actieve items',
+  'Distinct accent color for active items' => 'Duidelijke accentkleur voor actieve items',
   'Export' => 'Exporteren',
   'Font family' => 'Lettertypefamilie',
   'Font size' => 'Lettertypegrootte',

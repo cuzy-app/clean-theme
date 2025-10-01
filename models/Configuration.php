@@ -304,7 +304,7 @@ class Configuration extends Model
     {
         return [
             self::MENU_STYLE_BACKGROUND => Yii::t('CleanThemeModule.config', 'Full primary color background for active items'),
-            self::MENU_STYLE_BORDERED => Yii::t('CleanThemeModule.config', 'Distinct border link color for active items'),
+            self::MENU_STYLE_BORDERED => Yii::t('CleanThemeModule.config', 'Distinct accent color for active items'),
         ];
     }
 

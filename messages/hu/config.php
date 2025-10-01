@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrasztos szövegszín az „elsődleges”, „információ”, „siker”, „figyelmeztetés”, „veszély” gombok stb.',
   'Dark mode' => 'Sötét mód',
   'Default text color for icons, buttons, etc.' => 'Alapértelmezett szövegszín az ikonokhoz, gombokhoz stb.',
-  'Distinct border link color for active items' => 'Különleges szegélylink színe az aktív elemekhez',
+  'Distinct accent color for active items' => 'Megkülönböztethető hangsúlyszín az aktív elemekhez',
   'Export' => 'Export',
   'Font family' => 'Betűtípus család',
   'Font size' => 'Betűméret',

@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Culoarea textului de contrast pentru butoanele „primar”, „informații”, „succes”, „avertizare”, „pericol” etc.',
   'Dark mode' => 'Mod întunecat',
   'Default text color for icons, buttons, etc.' => 'Culoarea implicită a textului pentru pictograme, butoane etc.',
-  'Distinct border link color for active items' => 'Culoare distinctă a legăturii chenarului pentru elementele active',
+  'Distinct accent color for active items' => 'Culoare distinctă de accent pentru elementele active',
   'Export' => 'Export',
   'Font family' => 'Familie de fonturi',
   'Font size' => 'Marimea fontului',

@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrastierende Textfarbe für die Schaltflächen „Primär“, „Info“, „Erfolg“, „Warnung“, „Gefahr“ usw.',
   'Dark mode' => 'Dunkler Modus',
   'Default text color for icons, buttons, etc.' => 'Standardtextfarbe für Symbole, Schaltflächen usw.',
-  'Distinct border link color for active items' => 'Eindeutige Rahmenfarbe für aktive Elemente',
+  'Distinct accent color for active items' => 'Markante Akzentfarbe für aktive Elemente',
   'Export' => 'Export',
   'Font family' => 'Schriftfamilie',
   'Font size' => 'Schriftgröße',

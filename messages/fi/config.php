@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrasti tekstin väri "ensisijainen", "tieto", "menestys", "varoitus", "vaara" jne.',
   'Dark mode' => 'Tumma tila',
   'Default text color for icons, buttons, etc.' => 'Tekstin oletusväri kuvakkeille, painikkeille jne.',
-  'Distinct border link color for active items' => 'Selkeä reunalinkin väri aktiivisille kohteille',
+  'Distinct accent color for active items' => 'Aktiivisten kohteiden erottuva korostusväri',
   'Export' => 'Viedä',
   'Font family' => 'Fonttiperhe',
   'Font size' => 'Fonttikoko',

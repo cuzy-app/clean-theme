@@ -431,7 +431,7 @@ body.hh-ct-menu-style-bordered {
     #topbar > .container > .nav {
         > li > a.active {
             padding-top: 3px;
-            border-bottom: 3px solid var(--hh-text-color-highlight);
+            border-bottom: 3px solid var(--bs-accent);
             color: var(--hh-text-color-highlight);
         }
     }

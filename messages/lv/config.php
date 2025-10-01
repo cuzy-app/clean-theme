@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrasta teksta krāsa pogām "primārā", "informācija", "veiksme", "brīdinājums", "bīstamība" utt.',
   'Dark mode' => 'Tumšais režīms',
   'Default text color for icons, buttons, etc.' => 'Noklusējuma teksta krāsa ikonām, pogām utt.',
-  'Distinct border link color for active items' => 'Atšķirīga apmales saites krāsa aktīviem vienumiem',
+  'Distinct accent color for active items' => 'Atšķirīga akcenta krāsa aktīvajiem elementiem',
   'Export' => 'Eksportēt',
   'Font family' => 'Fontu saime',
   'Font size' => 'Fonta izmērs',

@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrastinga teksto spalva mygtukams „pagrindinis“, „informacija“, „sėkmė“, „įspėjimas“, „pavojus“ ir kt.',
   'Dark mode' => 'Tamsusis režimas',
   'Default text color for icons, buttons, etc.' => 'Numatytoji piktogramų, mygtukų ir kt. teksto spalva.',
-  'Distinct border link color for active items' => 'Išskirtinė kraštinės nuorodos spalva aktyviems elementams',
+  'Distinct accent color for active items' => 'Skirtinga aktyvių elementų akcento spalva',
   'Export' => 'Eksportuoti',
   'Font family' => 'Šrifto šeima',
   'Font size' => 'Šrifto dydis',

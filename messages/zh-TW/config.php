@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => '「主要」、「訊息」、「成功」、「警告」、「危險」按鈕等的對比文字顏色。',
   'Dark mode' => '黑暗模式',
   'Default text color for icons, buttons, etc.' => '圖示、按鈕等的預設文字顏色。',
-  'Distinct border link color for active items' => '活動項目的獨特邊框連結顏色',
+  'Distinct accent color for active items' => '活動項目的獨特強調色',
   'Export' => '出口',
   'Font family' => '字體系列',
   'Font size' => '字體大小',

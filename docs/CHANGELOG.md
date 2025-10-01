@@ -1,6 +1,11 @@
 Changelog
 =========
 
+2.3.11 (October 1, 2025)
+------------------
+- Enh: Use accent color instead of link color for active items, when a border is used instead of a background color
+- Chg: Also use border color instead of background for the bottom menu on mobile when configured
+
 2.3.10 (September 30, 2025)
 ------------------
 - Fix: Top sub-menu dropdown toggle button position on mobile

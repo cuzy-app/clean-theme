@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Contraste de color de texto para los botones "primario", "información", "éxito", "advertencia", "peligro", etc.',
   'Dark mode' => 'Modo oscuro',
   'Default text color for icons, buttons, etc.' => 'Color de texto predeterminado para iconos, botones, etc.',
-  'Distinct border link color for active items' => 'Color de borde distintivo para los elementos activos',
+  'Distinct accent color for active items' => 'Color de acento distintivo para elementos activos',
   'Export' => 'Exportar',
   'Font family' => 'Familia tipográfica',
   'Font size' => 'Tamaño de fuente',

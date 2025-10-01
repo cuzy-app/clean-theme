@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrast textfärg för "primär", "info", "framgång", "varning", "fara"-knappar osv.',
   'Dark mode' => 'Mörkt läge',
   'Default text color for icons, buttons, etc.' => 'Standardtextfärg för ikoner, knappar etc.',
-  'Distinct border link color for active items' => 'Distinkt kantlänksfärg för aktiva objekt',
+  'Distinct accent color for active items' => 'Distinkt accentfärg för aktiva objekt',
   'Export' => 'Exportera',
   'Font family' => 'Typsnittsfamilj',
   'Font size' => 'Textstorlek',

@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'สีข้อความตัดกันสำหรับปุ่ม "หลัก", "ข้อมูล", "ความสำเร็จ", "คำเตือน", "อันตราย" ฯลฯ',
   'Dark mode' => 'โหมดมืด',
   'Default text color for icons, buttons, etc.' => 'สีข้อความเริ่มต้นสำหรับไอคอน ปุ่ม ฯลฯ',
-  'Distinct border link color for active items' => 'สีลิงก์ขอบที่ชัดเจนสำหรับรายการที่ใช้งานอยู่',
+  'Distinct accent color for active items' => 'สีเน้นที่แตกต่างสำหรับรายการที่ใช้งานอยู่',
   'Export' => 'ส่งออก',
   'Font family' => 'ครอบครัวแบบอักษร',
   'Font size' => 'ขนาดตัวอักษร',

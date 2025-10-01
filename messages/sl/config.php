@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrastna barva besedila za gumbe "primarno", "info", "uspeh", "opozorilo", "nevarnost" itd.',
   'Dark mode' => 'Temni način',
   'Default text color for icons, buttons, etc.' => 'Privzeta barva besedila za ikone, gumbe itd.',
-  'Distinct border link color for active items' => 'Razločna barva obrobne povezave za aktivne elemente',
+  'Distinct accent color for active items' => 'Izrazita poudarjena barva za aktivne elemente',
   'Export' => 'Izvozi',
   'Font family' => 'Družina pisav',
   'Font size' => 'Velikost pisave',

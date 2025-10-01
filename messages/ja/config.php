@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => '「プライマリ」、「情報」、「成功」、「警告」、「危険」などのボタンのテキスト色のコントラスト。',
   'Dark mode' => 'ダークモード',
   'Default text color for icons, buttons, etc.' => 'アイコン、ボタンなどのデフォルトのテキスト色。',
-  'Distinct border link color for active items' => 'アクティブなアイテムの明確な境界線リンクの色',
+  'Distinct accent color for active items' => 'アクティブなアイテムに際立ったアクセントカラー',
   'Export' => '輸出',
   'Font family' => 'フォントファミリー',
   'Font size' => 'フォントサイズ',

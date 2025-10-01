@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrèman koulè tèks pou "prensipal", "enfòmasyon", "siksè", "avètisman", "danje" bouton, elatriye.',
   'Dark mode' => 'Mòd nwa',
   'Default text color for icons, buttons, etc.' => 'Koulè tèks par défaut pou ikon, bouton, elatriye.',
-  'Distinct border link color for active items' => 'Koulè lyen fwontyè diferan pou atik aktif',
+  'Distinct accent color for active items' => 'Koulè aksan diferan pou atik aktif yo',
   'Export' => 'Ekspòtasyon',
   'Font family' => 'Fanmi font',
   'Font size' => 'Gwosè font',

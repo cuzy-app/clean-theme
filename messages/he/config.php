@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'ניגודיות לצבע טקסט עבור כפתורי "ראשי", "מידע", "הצלחה", "אזהרה", "סכנה" וכו\'.',
   'Dark mode' => 'מצב כהה',
   'Default text color for icons, buttons, etc.' => 'צבע טקסט ברירת מחדל עבור סמלים, לחצנים וכו\'.',
-  'Distinct border link color for active items' => 'צבע קישור גבול מובהק עבור פריטים פעילים',
+  'Distinct accent color for active items' => 'צבע הדגשה ברור לפריטים פעילים',
   'Export' => 'יְצוּא',
   'Font family' => 'משפחת גופן',
   'Font size' => 'גודל גופן',

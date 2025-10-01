@@ -25,7 +25,7 @@ return [
     'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => '',
     'Dark mode' => '',
     'Default text color for icons, buttons, etc.' => '',
-    'Distinct border link color for active items' => '',
+    'Distinct accent color for active items' => '',
     'Export' => '',
     'Font family' => '',
     'Font size' => '',

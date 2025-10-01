@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Màu văn bản tương phản cho các nút "chính", "thông tin", "thành công", "cảnh báo", "nguy hiểm", v.v.',
   'Dark mode' => 'Chế độ tối',
   'Default text color for icons, buttons, etc.' => 'Màu văn bản mặc định cho các biểu tượng, nút, v.v.',
-  'Distinct border link color for active items' => 'Màu liên kết đường viền riêng biệt cho các mục đang hoạt động',
+  'Distinct accent color for active items' => 'Màu sắc nhấn riêng biệt cho các vật dụng hoạt động',
   'Export' => 'Xuất khẩu',
   'Font family' => 'Họ phông chữ',
   'Font size' => 'Cỡ chữ',

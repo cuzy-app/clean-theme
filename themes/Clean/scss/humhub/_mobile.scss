@@ -74,8 +74,6 @@
                     &:active,
                     &:focus {
                         border-bottom: none !important;
-                        background-color: var(--hh-ct-bottom-menu-text-color);
-                        color: var(--hh-ct-bottom-menu-background-color);
                     }
 
                     &#space-menu {
@@ -140,16 +138,31 @@
     body.hh-ct-menu-style-background {
         #topbar > .container > #top-menu-nav {
             border-top: solid 2px var(--hh-background4);
+
+            > li > a {
+                &.active,
+                &:hover,
+                &:active,
+                &:focus {
+                    background-color: var(--hh-ct-bottom-menu-text-color);
+                    color: var(--hh-ct-bottom-menu-background-color);
+                }
+            }
         }
     }
 
     body.hh-ct-menu-style-bordered {
         #topbar > .container > #top-menu-nav {
-            border-top: solid 3px var(--hh-background4);
+            border-top: solid 3px var(--hh-background3);
 
-            > li > a.active {
-                margin-top: -3px;
-                border-top: 3px solid var(--bs-link-color);
+            > li > a {
+                &.active,
+                &:hover,
+                &:active,
+                &:focus {
+                    margin-top: -3px;
+                    border-top: 3px solid var(--bs-accent);
+                }
             }
         }
     }

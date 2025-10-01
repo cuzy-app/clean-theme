@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Kontrasti i ngjyrës së tekstit për butonat "primare", "info", "sukses", "paralajmërim", "rrezik", etj.',
   'Dark mode' => 'Modaliteti i errët',
   'Default text color for icons, buttons, etc.' => 'Ngjyra e parazgjedhur e tekstit për ikonat, butonat, etj.',
-  'Distinct border link color for active items' => 'Ngjyra e veçantë e lidhjes së kufirit për artikujt aktivë',
+  'Distinct accent color for active items' => 'Ngjyrë theksi e dallueshme për artikujt aktivë',
   'Export' => 'Eksporto',
   'Font family' => 'Familja e shkronjave',
   'Font size' => 'Përmasa e germave',

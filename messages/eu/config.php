@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Testuaren kolorea kontrastatua "primaria", "informazioa", "arrakasta", "abisua", "arriskua" botoietarako, etab.',
   'Dark mode' => 'Modu iluna',
   'Default text color for icons, buttons, etc.' => 'Ikonoen, botoien eta abarren testu-kolore lehenetsia.',
-  'Distinct border link color for active items' => 'Elementu aktiboen ertzaren estekaren kolore desberdina',
+  'Distinct accent color for active items' => 'Elementu aktiboetarako kolore bereizgarria',
   'Export' => 'Esportatu',
   'Font family' => 'Letra-tipoen familia',
   'Font size' => 'Letra-tamaina',

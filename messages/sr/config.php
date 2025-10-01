@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Контрастна боја текста за дугмад „примарни“, „инфо“, „успех“, „упозорење“, „опасност“ итд.',
   'Dark mode' => 'Тамни режим',
   'Default text color for icons, buttons, etc.' => 'Подразумевана боја текста за иконе, дугмад итд.',
-  'Distinct border link color for active items' => 'Изразита боја везе ивице за активне ставке',
+  'Distinct accent color for active items' => 'Јасна акцентна боја за активне ставке',
   'Export' => 'Извоз',
   'Font family' => 'Породица фонтова',
   'Font size' => 'Величина фонта',

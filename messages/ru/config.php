@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Контрастный цвет текста для кнопок «Основной», «Информация», «Успех», «Предупреждение», «Опасность» и т. д.',
   'Dark mode' => 'Темный режим',
   'Default text color for icons, buttons, etc.' => 'Цвет текста по умолчанию для значков, кнопок и т. д.',
-  'Distinct border link color for active items' => 'Отдельный цвет ссылки границы для активных элементов',
+  'Distinct accent color for active items' => 'Отдельный акцентный цвет для активных элементов',
   'Export' => 'Экспорт',
   'Font family' => 'Семейство шрифтов',
   'Font size' => 'Размер шрифта',

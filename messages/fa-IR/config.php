@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'کنتراست رنگ متن برای دکمه های "اصلی"، "اطلاعات"، "موفقیت"، "هشدار"، "خطر" و غیره.',
   'Dark mode' => 'حالت تاریک',
   'Default text color for icons, buttons, etc.' => 'رنگ متن پیش‌فرض برای نمادها، دکمه‌ها و غیره',
-  'Distinct border link color for active items' => 'رنگ پیوند مرزی متمایز برای موارد فعال',
+  'Distinct accent color for active items' => 'رنگ متمایز برای آیتم‌های فعال',
   'Export' => 'صادرات',
   'Font family' => 'خانواده فونت',
   'Font size' => 'اندازه فونت',

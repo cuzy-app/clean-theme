@@ -24,7 +24,7 @@ return [
   'Contrast text color for "primary", "info", "success", "warning", "danger" buttons, etc.' => 'Cyferbynnwch lliw testun ar gyfer botymau "sylfaenol", "gwybodaeth", "llwyddiant", "rhybudd", "perygl", ac ati.',
   'Dark mode' => 'Modd tywyll',
   'Default text color for icons, buttons, etc.' => 'Lliw testun diofyn ar gyfer eiconau, botymau, ac ati.',
-  'Distinct border link color for active items' => 'Lliw cyswllt ffin unigryw ar gyfer eitemau gweithredol',
+  'Distinct accent color for active items' => 'Lliw acen unigryw ar gyfer eitemau gweithredol',
   'Export' => 'Allforio',
   'Font family' => 'Teulu ffontiau',
   'Font size' => 'Maint y ffont',
