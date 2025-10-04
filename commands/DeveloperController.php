@@ -14,6 +14,7 @@ use Yii;
 use yii\base\Exception;
 use yii\console\Controller;
 use yii\console\ExitCode;
+use yii\helpers\BaseConsole;
 
 class DeveloperController extends Controller
 {
@@ -34,7 +35,7 @@ class DeveloperController extends Controller
             $this->message('Could not generate SCSS root file: ' . $e->getMessage(), 'error');
             return ExitCode::UNSPECIFIED_ERROR;
         }
-        $this->message("\nSuccessfully generated SCSS root file", 'success');
+        $this->stdout("\nSuccessfully generated SCSS root file.\n", BaseConsole::FG_GREEN);
         return ExitCode::OK;
     }
 }

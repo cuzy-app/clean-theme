@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+------------------
+- Fix: Console message on `php yii clean-theme/generate-scss-root-file` command
+
 2.3.11 (October 1, 2025)
 ------------------
 - Enh: Use accent color instead of link color for active items, when a border is used instead of a background color
