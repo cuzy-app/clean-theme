@@ -1,9 +1,10 @@
 Changelog
 =========
 
-Unreleased
+2.3.12 (October 17, 2025)
 ------------------
 - Fix: Console message on `php yii clean-theme/generate-scss-root-file` command
+- Fix: Bottom menu overlaps on mobile when having a bottom navigation menu for the OS
 
 2.3.11 (October 1, 2025)
 ------------------

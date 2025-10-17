@@ -54,7 +54,7 @@
             #top-menu-nav {
                 position: fixed;
                 bottom: 0;
-                padding-bottom: var(--hh-mobile-app-safe-area-inset-bottom, env(safe-area-inset-bottom)); // for the web view space (safe area) on mobile devices
+                height: calc(var(--hh-ct-top-bar-height) + var(--hh-mobile-app-safe-area-inset-bottom, env(safe-area-inset-bottom))); // for the web view space (safe area) on mobile devices
                 background-color: var(--hh-ct-bottom-menu-background-color);
                 width: auto;
                 min-width: 100%;
@@ -156,12 +156,14 @@
             border-top: solid 3px var(--hh-background3);
 
             > li > a {
+                margin-top: -3px;
+                border-top: solid 3px var(--hh-background3);
+
                 &.active,
                 &:hover,
                 &:active,
                 &:focus {
-                    margin-top: -3px;
-                    border-top: 3px solid var(--bs-accent);
+                    border-top-color: var(--bs-accent);
                 }
             }
         }

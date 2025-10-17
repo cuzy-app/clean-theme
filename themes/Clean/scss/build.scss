@@ -16,13 +16,15 @@
 @import "humhub/list";
 @import "humhub/media";
 @import "humhub/markdown";
-@import "humhub/mobile";
 @import "humhub/popover";
 @import "humhub/nav";
 @import "humhub/panel";
 @import "humhub/richtext";
 @import "humhub/topbar";
 @import "humhub/stream";
+
+// Overwrite HumHub mobile values
+@import "humhub/mobile";
 
 // Overwrite modules values
 @import "modules/space";
