@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+------------------
+- Fix: The new Header banner image in emails for HumHub 1.18 is not displayed
+
 2.3.12 (October 17, 2025)
 ------------------
 - Fix: Console message on `php yii clean-theme/generate-scss-root-file` command
