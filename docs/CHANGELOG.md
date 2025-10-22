@@ -1,9 +1,10 @@
 Changelog
 =========
 
-Unreleased
+2.3.13 (October 22, 2025)
 ------------------
 - Fix: The new Header banner image in emails for HumHub 1.18 is not displayed
+- Fix: The notification filter does not refresh as expected
 
 2.3.12 (October 17, 2025)
 ------------------

@@ -26,5 +26,10 @@ return [
             'event' => View::EVENT_BEFORE_RENDER,
             'callback' => [Events::class, 'onViewBeforeRender'],
         ],
+        [
+            'class' => View::class,
+            'event' => View::EVENT_BEGIN_BODY,
+            'callback' => [Events::class, 'onViewBeginBody'],
+        ],
     ],
 ];

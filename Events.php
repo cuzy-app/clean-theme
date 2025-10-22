@@ -28,18 +28,31 @@ class Events
 
     public static function onViewBeforeRender($event)
     {
-        if (!Module::isThemeBasedActive()) {
+        /** @var View $view */
+        $view = $event->sender;
+
+        $module = static::getModuleIfThemeActive();
+        if (!$module) {
+            return;
+        }
+
+        // Unregister the core TopNavigationAsset to prevent conflicts with the Clean Theme
+        unset($view->assetBundles[TopNavigationAsset::class]);
+    }
+
+    public static function onViewBeginBody($event)
+    {
+        if (Yii::$app->request->isAjax) {
+            return;
+        }
+
+        $module = static::getModuleIfThemeActive();
+        if (!$module) {
             return;
         }
 
         /** @var View $view */
         $view = $event->sender;
-
-        /** @var Module $module */
-        $module = Yii::$app->getModule('clean-theme');
-
-        // Unregister the core TopNavigationAsset to prevent conflicts with the Clean Theme
-        unset($view->assetBundles[TopNavigationAsset::class]);
 
         // Register the Clean Theme Assets instead
         CleanThemeAsset::register($view);
@@ -48,5 +61,20 @@ class Events
             'hideTopMenuOnScrollDown' => $module?->configuration->hideTopMenuOnScrollDown ?? false,
             'hideBottomMenuOnScrollDown' => $module?->configuration->hideBottomMenuOnScrollDown ?? false,
         ]);
+    }
+
+    protected static function getModuleIfThemeActive(): ?Module
+    {
+        if (!Module::isThemeBasedActive()) {
+            return null;
+        }
+
+        /** @var Module $module */
+        $module = Yii::$app->getModule('clean-theme');
+        if (!$module?->isEnabled) {
+            return null;
+        }
+
+        return $module;
     }
 }
