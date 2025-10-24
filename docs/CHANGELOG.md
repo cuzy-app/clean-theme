@@ -1,10 +1,9 @@
 Changelog
 =========
 
-2.3.14 (October 22, 2025)
+Unreleased
 ------------------
 - Fix: Don't display the bottom menu if no menu entries
-- Fix: Button text color
 
 2.3.13 (October 22, 2025)
 ------------------
