@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+------------------
+- Fix: Don't display the bottom menu if no menu entries
+
 2.3.13 (October 22, 2025)
 ------------------
 - Fix: The new Header banner image in emails for HumHub 1.18 is not displayed

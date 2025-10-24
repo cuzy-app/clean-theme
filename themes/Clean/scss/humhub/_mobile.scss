@@ -60,6 +60,11 @@
                 min-width: 100%;
                 justify-content: space-between !important;
 
+                // Hide if no menu entries
+                &:not(:has(li)) {
+                    display: none;
+                }
+
                 > li > a {
                     padding: 0 5px 5px 5px;
                     min-width: 65px;
