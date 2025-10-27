@@ -230,7 +230,7 @@
             &.open > a,
             &.open .dropdown-toggle {
                 background-color: var(--bs-primary);
-                color: var(--hh-text-color-contrast);
+                color: var(--hh-primary-contrast);
             }
         }
 
@@ -393,7 +393,7 @@
 
             > ul > li > a:hover, > li > ul > li > a.active {
                 background-color: var(--bs-primary);
-                color: var(--hh-text-color-contrast);
+                color: var(--hh-primary-contrast);
             }
         }
 

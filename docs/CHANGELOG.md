@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ------------------
 - Fix: Don't display the bottom menu if no menu entries
+- Enh: Auto contrast text color for components with primary background color
 
 2.3.13 (October 22, 2025)
 ------------------
