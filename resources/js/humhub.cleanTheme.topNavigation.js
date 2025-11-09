@@ -118,7 +118,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      * @returns {boolean} - True if the top bar container overflows the top bar, false otherwise
      */
     const isOverflow = function () {
-        return $topMenuNavOrBottomMenu.children(':visible:last').position().top > 0;
+        return Math.round($topMenuNavOrBottomMenu.children(':visible:last').position().top) > 0; // Math.round() for some Android devices such as Google Pixel
     };
 
     /**
