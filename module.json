@@ -3,9 +3,9 @@
     "name": "Clean Theme",
     "description": "Modern, smooth and uncluttered theme.",
     "keywords": ["theme", "clean", "modern", "smooth", "uncluttered"],
-    "version": "2.3.13",
+    "version": "2.3.14",
     "humhub": {
-        "minVersion": "1.18"
+        "minVersion": "1.18.0-beta.5"
     },
     "homepage": "https://cuzy.app",
     "authors": [

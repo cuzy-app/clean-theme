@@ -1,11 +1,12 @@
 Changelog
 =========
 
-Unreleased
+2.3.14 (November 10, 2025)
 ------------------
 - Fix: Don't display the bottom menu if no menu entries
 - Enh: Auto contrast text color for components with primary background color
 - Fix #37: Bottom menu issue on some Android devices (Google Pixel and Motorola TCL)
+- Chg: Min core version is now 1.18.0-beta.5
 
 2.3.13 (October 22, 2025)
 ------------------
