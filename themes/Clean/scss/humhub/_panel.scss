@@ -75,7 +75,7 @@
 
             // Hide default gray image
             &[src$="/img/default_banner.jpg"] {
-                width: 0;
+                height: 0; // Don't replace with display:none;
             }
         }
 

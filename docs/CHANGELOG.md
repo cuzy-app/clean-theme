@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.3.15 (November 15, 2025)
+------------------
+- Fix: Space header height when no banner image
+
 2.3.14 (November 10, 2025)
 ------------------
 - Fix: Don't display the bottom menu if no menu entries
