@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.3.16 (November 19, 2025)
+------------------
+- Fix: Top menu wrap when brand name very long
+
 2.3.15 (November 15, 2025)
 ------------------
 - Fix: Space header height when no banner image

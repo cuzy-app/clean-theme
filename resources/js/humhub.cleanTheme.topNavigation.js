@@ -41,7 +41,8 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      * @function fixNavigationOverflow
      */
     const fixNavigationOverflow = function () {
-        $topMenuNavOrBottomMenu.css('overflow', 'hidden'); // Prevents flickering during the adjustment
+        // Prevent flickering during the adjustment, and allow wrap for isOverflow testing
+        $topMenuNavOrBottomMenu.removeClass('overflow-visible flex-nowrap');
 
         while (!isOverflow()) {
             if (!moveFromDropDown('.top-menu-item:first', $topMenuNavOrBottomMenu)) {
@@ -71,7 +72,8 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             $topMenuNavOrBottomMenu.children('.dropup').removeClass('dropup').addClass('dropdown'); // Drop down menus (such as the Space chooser)
         }
 
-        $topMenuNavOrBottomMenu.css('overflow', 'visible'); // For the dropdown menu to be visible
+        // For the dropdown menu to be visible and not to wrap if brand name very long
+        $topMenuNavOrBottomMenu.addClass('overflow-visible flex-nowrap');
     };
 
     /**
