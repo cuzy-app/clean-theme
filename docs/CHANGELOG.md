@@ -4,6 +4,7 @@ Changelog
 2.3.16 (November 19, 2025)
 ------------------
 - Fix: Top menu wrap when brand name very long
+- Fix: Migration from HumHub 1.17
 
 2.3.15 (November 15, 2025)
 ------------------

@@ -1,6 +1,5 @@
 <?php
 
-use humhub\helpers\ThemeHelper;
 use humhub\modules\cleanTheme\Module;
 use yii\db\Migration;
 
@@ -20,7 +19,6 @@ class m250402_151649_bs5 extends Migration
         }
 
         $coreSettingsManager = Yii::$app->settings;
-        $rebuildCss = false;
 
         $scss = $moduleSettingsManager->get('scss');
         if ($scss) {
@@ -30,7 +28,6 @@ class m250402_151649_bs5 extends Migration
             }
             $coreSettingsManager->set('themeCustomScss', $scss);
             $moduleSettingsManager->delete('scss');
-            $rebuildCss = true;
         }
 
         $primary = $moduleSettingsManager->get('primary');
@@ -38,7 +35,6 @@ class m250402_151649_bs5 extends Migration
             $coreSettingsManager->set('themePrimaryColor', $primary);
             $coreSettingsManager->set('useDefaultThemePrimaryColor', false);
             $moduleSettingsManager->delete('primary');
-            $rebuildCss = true;
         }
 
         $success = $moduleSettingsManager->get('success');
@@ -46,7 +42,6 @@ class m250402_151649_bs5 extends Migration
             $coreSettingsManager->set('themeSuccessColor', $success);
             $coreSettingsManager->set('useDefaultThemeSuccessColor', false);
             $moduleSettingsManager->delete('success');
-            $rebuildCss = true;
         }
 
         $danger = $moduleSettingsManager->get('danger');
@@ -54,7 +49,6 @@ class m250402_151649_bs5 extends Migration
             $coreSettingsManager->set('themeDangerColor', $danger);
             $coreSettingsManager->set('useDefaultThemeDangerColor', false);
             $moduleSettingsManager->delete('danger');
-            $rebuildCss = true;
         }
 
         $warning = $moduleSettingsManager->get('warning');
@@ -62,7 +56,6 @@ class m250402_151649_bs5 extends Migration
             $coreSettingsManager->set('themeWarningColor', $warning);
             $coreSettingsManager->set('useDefaultThemeWarningColor', false);
             $moduleSettingsManager->delete('warning');
-            $rebuildCss = true;
         }
 
         $info = $moduleSettingsManager->get('info');
@@ -70,7 +63,6 @@ class m250402_151649_bs5 extends Migration
             $coreSettingsManager->set('themeInfoColor', $info);
             $coreSettingsManager->set('useDefaultThemeInfoColor', false);
             $moduleSettingsManager->delete('info');
-            $rebuildCss = true;
         }
 
         $default = $moduleSettingsManager->get('default');
@@ -78,19 +70,12 @@ class m250402_151649_bs5 extends Migration
             $coreSettingsManager->set('themeLightColor', $default);
             $coreSettingsManager->set('useDefaultThemeLightColor', false);
             $moduleSettingsManager->delete('default'); // Default becomes Light
-            $rebuildCss = true;
         }
 
         $link = $moduleSettingsManager->get('link');
         if ($link) {
             $moduleSettingsManager->set('linkColor', $link);
             $moduleSettingsManager->delete('link');
-            $rebuildCss = true;
-        }
-
-        // If the current theme is "Clean", rebuild CSS
-        if ($rebuildCss && Module::isThemeBasedActive()) {
-            ThemeHelper::buildCss();
         }
     }
 
