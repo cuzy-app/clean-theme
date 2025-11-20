@@ -17,5 +17,5 @@ ul.contextMenu {
     transition: .25s;
     border: 1px solid var(--hh-ct-menu-border-color);
     border-radius: .215rem;
-    box-shadow: 0 3px 12px var(--hh-ct-panel-box-shadow);
+    box-shadow: var(--hh-ct-panel-box-shadow);
 }
