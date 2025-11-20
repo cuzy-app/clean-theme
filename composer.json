@@ -1,17 +1,18 @@
 {
-  "name": "humhub/mail",
+  "name": "cuzy-app/clean-theme",
   "type": "humhub-module",
   "config": {
     "platform": {
       "php": "8.2"
     }
   },
-  "repositories": {
-    "humhub-module-coding-standards": {
+  "repositories": [
+    {
+      "name": "humhub-module-coding-standards",
       "type": "vcs",
       "url": "https://github.com/humhub/module-coding-standards.git"
     }
-  },
+    ],
   "require-dev": {
     "humhub/module-coding-standards": "dev-main"
   },
