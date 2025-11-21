@@ -34,7 +34,7 @@ if (Yii::$app->user->isGuest) {
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
     <head>
-        <title><?= strip_tags($this->pageTitle) ?></title>
+        <title><?= strip_tags((string) $this->pageTitle) ?></title>
         <meta charset="<?= Yii::$app->charset ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
         <?php $this->head() ?>

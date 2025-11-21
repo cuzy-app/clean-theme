@@ -325,7 +325,7 @@ class Configuration extends Model
 
     private static function isFontAttribute($attributeName): bool
     {
-        return str_ends_with($attributeName, 'ontFamily');
+        return str_ends_with((string) $attributeName, 'ontFamily');
     }
 
     /**
