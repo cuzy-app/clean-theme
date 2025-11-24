@@ -1,0 +1,3 @@
+.layout-sidebar-container {
+    padding-bottom: calc(var(--hh-fixed-footer-height) + var(--hh-mobile-app-safe-area-inset-bottom, env(safe-area-inset-bottom))) !important;
+}

@@ -4,6 +4,7 @@ Changelog
 Unreleased
 ------------------
 - Fix: Dropdown box shadow
+- Fix: Right Sidebar bottom margin on mobile
 
 2.3.16 (November 19, 2025)
 ------------------
