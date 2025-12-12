@@ -19,17 +19,17 @@ return [
         [
             'class' => Application::class,
             'event' => Application::EVENT_ON_INIT,
-            'callback' => [Events::class, 'onConsoleApplicationInit'],
+            'callback' => Events::onConsoleApplicationInit(...),
         ],
         [
             'class' => View::class,
             'event' => View::EVENT_BEFORE_RENDER,
-            'callback' => [Events::class, 'onViewBeforeRender'],
+            'callback' => Events::onViewBeforeRender(...),
         ],
         [
             'class' => View::class,
             'event' => View::EVENT_BEGIN_BODY,
-            'callback' => [Events::class, 'onViewBeginBody'],
+            'callback' => Events::onViewBeginBody(...),
         ],
     ],
 ];
