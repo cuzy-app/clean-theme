@@ -3,8 +3,6 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
     module.initOnPjaxLoad = true;
 
     const $body = $('body');
-    const $topMenu = $('#topbar');
-    const $topMenuContainer = $('#topbar > .container');
     const $topMenuNavOrBottomMenu = $('#top-menu-nav');
     const $topMenuSub = $('#top-menu-sub');
     const $topMenuDropdown = $('#top-menu-sub-dropdown');
@@ -120,7 +118,11 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
      * @returns {boolean} - True if the top bar container overflows the top bar, false otherwise
      */
     const isOverflow = function () {
-        return Math.round($topMenuNavOrBottomMenu.children(':visible:last').position().top) > 0; // Math.round() for some Android devices such as Google Pixel
+        const lastVisibleChild = $topMenuNavOrBottomMenu.children(':visible:last');
+        if (!lastVisibleChild.length) {
+            return false;
+        }
+        return Math.round(lastVisibleChild.position().top) > 0; // Math.round() for some Android devices such as Google Pixel
     };
 
     /**
