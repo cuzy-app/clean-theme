@@ -6,6 +6,7 @@ Unreleased
 - Fix: Dropdown box shadow
 - Fix: Right Sidebar bottom margin on mobile
 - Fix: In some situations, error in console `Cannot read property of underfined (reading 'top')`
+- Fix: "My Profile" button translation
 
 2.3.16 (November 19, 2025)
 ------------------
