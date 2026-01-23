@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.3.17 (January 23, 2025)
 ------------------
 - Fix: Dropdown box shadow
 - Fix: Right Sidebar bottom margin on mobile

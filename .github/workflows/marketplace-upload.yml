@@ -1,0 +1,13 @@
+on:
+    push:
+        tags:
+            - 'v*'
+
+name: Upload to HumHub Marketplace
+
+jobs:
+    build:
+        uses: humhub/module-coding-standards/.github/workflows/marketplace-upload.yml@main
+        secrets:
+            MARKETPLACE_API_KEY: ${{ secrets.MARKETPLACE_API_KEY }}
+            MARKETPLACE_API_KEY_INT: ${{ secrets.MARKETPLACE_API_KEY_INT }}
