@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+------------------
+- Fix: Opening Modals indents topbar
+
 2.3.17 (January 23, 2025)
 ------------------
 - Fix: Dropdown box shadow

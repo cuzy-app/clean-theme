@@ -51,7 +51,7 @@ if (Yii::$app->user->isGuest) {
     <?php $this->beginBody() ?>
 
         <!-- start: top navigation bar -->
-        <div id="topbar" class="topbar navbar">
+        <div id="topbar" class="topbar fixed-top navbar">
             <div class="container flex-nowrap">
                 <div class="topbar-brand d-flex text-nowrap overflow-hidden">
                     <?= SiteLogo::widget() ?>
