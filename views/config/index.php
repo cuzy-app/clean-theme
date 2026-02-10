@@ -177,8 +177,8 @@ $darkColorInputLabelOptions['class'] .= ' fw-normal';
             <?= $form->endCollapsibleFields() ?>
 
             <?= $form->beginCollapsibleFields(Yii::t('CleanThemeModule.config', 'Bottom menu')) ?>
-            <?= $form->field($model, 'topMenuBackgroundColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
-            <?= $form->field($model, 'topMenuBackgroundColorDark', $darkColorInputOptions)->colorInput()->label(null, $darkColorInputLabelOptions) ?>
+            <?= $form->field($model, 'bottomMenuBackgroundColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
+            <?= $form->field($model, 'bottomMenuBackgroundColorDark', $darkColorInputOptions)->colorInput()->label(null, $darkColorInputLabelOptions) ?>
             <?= $form->field($model, 'bottomMenuTextColor', $colorInputOptions)->colorInput()->label(null, $colorInputLabelOptions) ?>
             <?= $form->field($model, 'bottomMenuTextColorDark', $darkColorInputOptions)->colorInput()->label(null, $darkColorInputLabelOptions) ?>
             <?= $form->endCollapsibleFields() ?>
