@@ -58,7 +58,7 @@
                 background-color: var(--hh-ct-bottom-menu-background-color);
                 width: auto;
                 min-width: 100%;
-                justify-content: space-between !important;
+                justify-content: space-around !important;
 
                 // Hide if no menu entries
                 &:not(:has(li)) {
