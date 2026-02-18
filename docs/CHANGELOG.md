@@ -1,13 +1,13 @@
 Changelog
 =========
 
-Unreleased
+2.3.18 (February 18, 2026)
 ------------------
 - Fix: Opening Modals indents topbar
 - Fix #44: Use bottomMenu fields for all Bottom Menu section items (thanks @jazzu)
 - Enh: Use "space around" alignment in the Bottom menu instead of "space between"
 
-2.3.17 (January 23, 2025)
+2.3.17 (January 23, 2026)
 ------------------
 - Fix: Dropdown box shadow
 - Fix: Right Sidebar bottom margin on mobile
