@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Unreleased
+------------------
+- Fix: When Distinct accent color is select for the menu style, remove the CSS to force the active menu item color 
+
 2.3.18 (February 18, 2026)
 ------------------
 - Fix: Opening Modals indents topbar
