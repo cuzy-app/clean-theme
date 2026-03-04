@@ -3,7 +3,8 @@ Changelog
 
 Unreleased
 ------------------
-- Fix: When Distinct accent color is select for the menu style, remove the CSS to force the active menu item color 
+- Fix: When Distinct accent color is select for the menu style, remove the CSS to force the active menu item color
+- Fix: Page Title encoding
 
 2.3.18 (February 18, 2026)
 ------------------
