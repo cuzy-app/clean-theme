@@ -5,7 +5,8 @@
     "keywords": ["theme", "clean", "modern", "smooth", "uncluttered"],
     "version": "2.3.18",
     "humhub": {
-        "minVersion": "1.18.0-beta.5"
+        "minVersion": "1.18",
+        "maxVersion": "1.18"
     },
     "homepage": "https://cuzy.app",
     "authors": [
