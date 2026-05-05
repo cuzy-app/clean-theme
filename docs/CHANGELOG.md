@@ -5,6 +5,7 @@ Unreleased
 ------------------
 - Fix: When Distinct accent color is select for the menu style, remove the CSS to force the active menu item color
 - Fix: Page Title encoding
+- Fix: Dropdown position on mobile with the Files module
 
 2.3.18 (February 18, 2026)
 ------------------
