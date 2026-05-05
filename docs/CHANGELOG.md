@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Unreleased
+2.3.19 (May 5, 2026)
 ------------------
 - Fix: When Distinct accent color is select for the menu style, remove the CSS to force the active menu item color
 - Fix: Page Title encoding
