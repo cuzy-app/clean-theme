@@ -31,7 +31,7 @@ if ($module?->collapsibleLeftNavigation && empty($options['id'])) {
 ?>
 
 <?= $module?->collapsibleLeftNavigation
-    ? Button::light()->icon('bars')->id($expandBtn)->cssClass('d-none')->sm()->loader(false)
+    ? Button::light()->icon('bars')->options(['aria-label' => Yii::t('CleanThemeModule.base', 'Expand navigation')])->id($expandBtn)->cssClass('d-none')->sm()->loader(false)
     : '' ?>
 
 <?= Html::beginTag('div', $options) ?>
@@ -40,7 +40,7 @@ if ($module?->collapsibleLeftNavigation && empty($options['id'])) {
         <div class="panel-heading">
             <?= $menu->panelTitle ?>
             <?= $module?->collapsibleLeftNavigation
-                ? Button::light()->icon('chevron-left')->id($collapseBtn)->right()->sm()->loader(false)
+                ? Button::light()->icon('chevron-left')->options(['aria-label' => Yii::t('CleanThemeModule.base', 'Collapse navigation')])->id($collapseBtn)->right()->sm()->loader(false)
                 : '' ?>
         </div>
     <?php endif; ?>
