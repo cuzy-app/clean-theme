@@ -13,6 +13,7 @@ use humhub\components\SettingsManager;
 use humhub\helpers\ThemeHelper;
 use humhub\modules\cleanTheme\Module;
 use humhub\widgets\bootstrap\Button;
+use humhub\widgets\bootstrap\Link;
 use Yii;
 use yii\base\Exception;
 use yii\base\Model;
@@ -439,7 +440,7 @@ class Configuration extends Model
             = Yii::t('CleanThemeModule.config', 'Google Font name') . ' '
             . Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->sm() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>'
             . Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
-                'seeDocumentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
+                'seeDocumentationLink' => Link::to(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
             ]);
 
         return [

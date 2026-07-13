@@ -13,6 +13,7 @@ use humhub\helpers\Html;
 use humhub\modules\admin\permissions\ManageSettings;
 use humhub\modules\cleanTheme\Module;
 use humhub\widgets\bootstrap\Button;
+use humhub\widgets\bootstrap\Link;
 use humhub\widgets\form\ActiveForm;
 use Yii;
 
@@ -194,7 +195,7 @@ $darkColorInputLabelOptions['class'] .= ' fw-normal';
 
             <?php ActiveForm::begin(); ?>
             <?= Html::input('hidden', 'reset', true) ?>
-            <?= Button::asLink(Yii::t('CleanThemeModule.config', 'Reset everything to default values'))
+            <?= Link::to(Yii::t('CleanThemeModule.config', 'Reset everything to default values'))
                 ->cssClass('text-danger')
                 ->options(['style' => 'margin-top: -20px;'])
                 ->icon('undo')
