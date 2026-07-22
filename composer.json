@@ -1,6 +1,11 @@
 {
   "name": "cuzy-app/clean-theme",
   "type": "humhub-module",
+  "autoload": {
+    "psr-4": {
+      "humhub\\modules\\cleanTheme\\": ""
+    }
+  },
   "config": {
     "platform": {
       "php": "8.2"
