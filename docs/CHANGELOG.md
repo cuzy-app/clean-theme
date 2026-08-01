@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.4.1 (Unreleased)
+------------------
+- Fix: Apply border-radius 50% to `.rounded` class HTML elements only if is `img`
+
 2.4.0 (July 16, 2026)
 ------------------
 - Fix: Compatibility with HumHub 1.19
