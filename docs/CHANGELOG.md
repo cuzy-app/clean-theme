@@ -1,9 +1,10 @@
 Changelog
 =========
 
-2.4.1 (Unreleased)
+2.4.1 (August 10, 2026)
 ------------------
 - Fix: Apply border-radius 50% to `.rounded` class HTML elements only if is `img`
+- Enh #45: Skip `onViewBeforeRender` on AJAX requests and memoize module state per request to avoid redundant DB queries on every widget render
 
 2.4.0 (July 16, 2026)
 ------------------

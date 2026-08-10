@@ -28,6 +28,10 @@ class Events
 
     public static function onViewBeforeRender($event)
     {
+        if (Yii::$app->request->isAjax) {
+            return;
+        }
+
         /** @var View $view */
         $view = $event->sender;
 
@@ -65,16 +69,24 @@ class Events
 
     protected static function getModuleIfThemeActive(): ?Module
     {
+        static $cachedModule = false;
+        if ($cachedModule !== false) {
+            return $cachedModule ?: null;
+        }
+
         if (!Module::isThemeBasedActive()) {
+            $cachedModule = null;
             return null;
         }
 
         /** @var Module $module */
         $module = Yii::$app->getModule('clean-theme');
         if (!$module?->isEnabled) {
+            $cachedModule = null;
             return null;
         }
 
+        $cachedModule = $module;
         return $module;
     }
 }
