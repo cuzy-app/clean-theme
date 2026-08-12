@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.4.2 (Unreleased)
+------------------
+- Fix: Remove CSS for buttons (keep core styling)
+
 2.4.1 (August 10, 2026)
 ------------------
 - Fix: Apply border-radius 50% to `.rounded` class HTML elements only if is `img`

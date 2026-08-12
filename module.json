@@ -3,7 +3,7 @@
     "name": "Clean Theme",
     "description": "Modern, smooth and uncluttered theme.",
     "keywords": ["theme", "clean", "modern", "smooth", "uncluttered"],
-    "version": "2.4.1",
+    "version": "2.4.2",
     "humhub": {
         "minVersion": "1.19",
         "maxVersion": "1.19"
