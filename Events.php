@@ -28,7 +28,7 @@ class Events
 
     public static function onViewBeforeRender($event)
     {
-        if (Yii::$app->request->isAjax) {
+        if (Yii::$app->request?->isAjax) {
             return;
         }
 

@@ -1,9 +1,10 @@
 Changelog
 =========
 
-2.4.2 (Unreleased)
+2.4.2 (August 21, 2026)
 ------------------
 - Fix: Remove CSS for buttons (keep core styling)
+- Fix: Error in the log `unknown property: yii\console\Request::isAjax` for some queued jobs (since 2.4.1)
 
 2.4.1 (August 10, 2026)
 ------------------
