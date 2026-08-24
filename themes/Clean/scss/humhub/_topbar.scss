@@ -286,11 +286,6 @@
             background-color: transparent;
         }
 
-        .dropdown-menu {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-
         // Space and search dropdown menu
         #space-menu-dropdown,
         #search-menu-dropdown {
@@ -401,7 +396,6 @@
             color: var(--hh-text-color-soft);
             font-size: 11px;
             margin: 0;
-            font-weight: var(--hh-ct-font-family);
         }
 
         // Remove caret icon from dropdown toggle
@@ -432,6 +426,16 @@ body.hh-ct-menu-style-bordered {
         > li > a.active {
             padding-top: 3px;
             border-bottom: 3px solid var(--bs-accent);
+        }
+    }
+}
+
+body.hh-ct-menu-style-soft {
+    #topbar > .container > .nav {
+        > li > a.active {
+            background-color: var(--hh-background-color-highlight);
+            color: var(--bs-primary);
+            border-bottom: none;
         }
     }
 }

@@ -31,6 +31,9 @@
 @import "modules/clean-theme";
 @import "modules/sharebetween";
 
+// Respect the user's reduced motion preference (must stay imported last)
+@import "humhub/motion";
+
 // Temporary fix to https://github.com/humhub/humhub-internal/issues/528
 body > .sp-container.sp-hidden {
     display: none;

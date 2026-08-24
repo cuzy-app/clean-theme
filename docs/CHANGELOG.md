@@ -1,6 +1,16 @@
 Changelog
 =========
 
+2.5.0 (Unreleased)
+------------------
+- Enh: New "Soft highlight background with primary color text for active items" menu style
+- Enh: New extension point allowing child themes (e.g. Clean Theme Pro) to provide their own default values for the theme configuration, while values saved by the administrator keep precedence (`Configuration::EVENT_INIT_DEFAULTS`)
+- Enh: Form controls now follow the configured font size
+- Enh: Modules shipping their own font files can prevent a font from being loaded from Google Fonts (`Module::$locallyHostedFonts`)
+- Enh: Theme transitions are disabled for users with the "reduced motion" system preference (accessibility)
+- Fix: Remove invalid `font-weight` declarations (they referenced a font family variable and were ignored by browsers)
+- Fix: The configured values were lost in the generated SCSS root file after a module update (`Module::update()` is never called by HumHub — replaced with a migration)
+
 2.4.2 (August 21, 2026)
 ------------------
 - Fix: Remove CSS for buttons (keep core styling)

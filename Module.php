@@ -30,6 +30,15 @@ class Module extends \humhub\components\Module
      * @inheridoc
      */
     public bool $collapsibleLeftNavigation = false;
+
+    /**
+     * Font families that are hosted locally (provided via `@font-face` by a theme or a module)
+     * and must therefore never be loaded from Google Fonts.
+     * Modules shipping their own font files can add their font names to this list.
+     * @since 2.5.0
+     */
+    public static array $locallyHostedFonts = ['Open Sans'];
+
     private ?Configuration $_configuration = null;
 
     public const THEME_NAME = 'Clean';
@@ -97,13 +106,6 @@ class Module extends \humhub\components\Module
             $this->configuration->generateScssRootFile();
         } catch (Exception $e) {
             Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
-        }
-
-        // Rebuild CSS: TODO remove for 1.18-beta-4+
-        try {
-            ThemeHelper::buildCss();
-        } catch (Exception $e) {
-            Yii::error('Could not build CSS: ' . $e->getMessage(), 'clean-theme');
         }
     }
 

@@ -2,9 +2,25 @@
 // Forms
 // --------------------------------------------------
 
-// Not for creating a new publication
+// Form controls follow the configured font size (the HumHub core hardcodes 14px).
+// The selector list matches the core selectors extending `%form-control-base` (see @humhub/resources/scss/_form.scss).
+.form-control,
+.grid-view .filters input,
+.grid-view .filters select,
+.select2-container--humhub .select2-selection,
+.select2-container--humhub .select2-search--dropdown .select2-search__field {
+    font-size: var(--hh-ct-font-size);
+}
+
 #contentForm_message .form-control {
     border-radius: var(--hh-ct-panel-border-radius);
+}
+
+// We cannot overwrite border-top-left-radius and border-top-right-radius
+// TODO: Fix this in core @protected/humhub/modules/post/widgets/views/form.php#L31-32 and then remove this patch
+#contentFormBody:not(.contentForm-expanded) #contentForm_message .ProseMirror {
+    border-bottom-left-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
 }
 
 .checkbox label {

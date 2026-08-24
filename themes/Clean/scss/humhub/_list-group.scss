@@ -33,3 +33,26 @@ body.hh-ct-menu-style-background {
         }
     }
 }
+
+// "Soft" menu style: soft highlight background with primary color text for active items
+body.hh-ct-menu-style-soft {
+    a.list-group-item {
+        border-left: none !important;
+
+        &:not(.active) {
+            &:hover, &:focus {
+                background-color: var(--hh-background-color-secondary);
+                border-left: none !important;
+            }
+        }
+
+        &.active {
+            &, &:hover, &:focus {
+                background-color: var(--hh-background-color-highlight);
+                color: var(--bs-primary);
+                font-weight: var(--hh-ct-font-bold-weight);
+                border-left: none !important;
+            }
+        }
+    }
+}
