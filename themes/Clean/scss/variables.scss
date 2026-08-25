@@ -21,6 +21,11 @@ $baseTheme: "HumHub";
 // Disable topbar import of HumHub theme
 $prev-topbar: true;
 
+// Disable the list-group import of the HumHub theme: it forced its own look with `!important`
+// declarations that this theme had to fight. `scss/humhub/_list-group.scss` owns the component
+// now, and ports the parts of the core layer the HumHub markup depends on.
+$prev-list-group: true;
+
 // Default colors for HumHub administration settings
 $primary: #31414a !default;
 $success: #518132 !default;

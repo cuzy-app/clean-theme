@@ -1,58 +1,107 @@
 //
-// List-Group
+// List-Group (left navigation: settings, space and admin menus)
 // --------------------------------------------------
+// The HumHub core `_list-group.scss` layer is disabled for this theme (`$prev-list-group: true`
+// in `variables.scss`), because it forced its own look with six `!important` declarations —
+// an accent border on every item, a hover reset, panel corner-radius resets — which this theme
+// then had to fight with `!important` of its own. This file owns the component instead.
+// Bootstrap's own list-group styles are untouched: only HumHub's layer is replaced.
+//
+// Two parts of that layer are load-bearing and are ported below:
+//   * `.list-group-vertical-{bp}`: invented by HumHub, NOT a Bootstrap class, and required by
+//     `@humhub/modules/ui/menu/widgets/views/left-navigation.php` (and this theme's override of
+//     it) to switch the navigation from a row to a column on wide screens.
+//   * the horizontal scrolling row on small screens, here scoped to `.list-group-horizontal` —
+//     the class that actually means "row" — instead of every list group on the page.
+
+.list-group {
+    --bs-list-group-bg: var(--hh-background-color-main);
+    --bs-list-group-border-width: 0; // The active state is a background or a rail, never a grid
+    --bs-list-group-border-radius: 0;
+    --bs-list-group-item-padding-x: 15px;
+    --bs-list-group-item-padding-y: 10px;
+    --bs-list-group-action-hover-bg: var(--hh-background-color-secondary);
+    --bs-list-group-active-bg: var(--hh-background-color-secondary);
+    --bs-list-group-active-color: var(--hh-text-color-highlight);
+}
+
+.list-group-item {
+    font-size: var(--hh-ct-menu-font-size);
+    font-weight: var(--hh-ct-font-bold-weight);
+    color: var(--hh-ct-menu-text-color);
+
+    i {
+        font-size: 14px;
+    }
+}
 
 a.list-group-item {
-    padding: 10px 15px;
     transition: .25s;
-    font-size: var(--hh-ct-menu-font-size);
-    color: var(--hh-ct-menu-text-color);
 
     &:hover {
         background-color: var(--hh-background-color-secondary);
     }
 }
 
+//
+// Active item, per menu style (see the "Menu style" theme configuration)
+//
+// Full primary color background
 body.hh-ct-menu-style-background {
-    a.list-group-item {
-        border-left: none !important;
-
-        &:not(.active) {
-            &:hover, &:focus {
-                background-color: var(--hh-background-color-secondary);
-                border-left: none !important;
-            }
+    a.list-group-item.active {
+        &, &:hover, &:focus {
+            background-color: var(--bs-primary);
+            color: var(--hh-primary-contrast);
         }
+    }
+}
+
+// Soft highlight background with primary color text
+body.hh-ct-menu-style-soft {
+    a.list-group-item.active {
+        &, &:hover, &:focus {
+            background-color: var(--hh-background-color-highlight);
+            color: var(--bs-primary);
+        }
+    }
+}
+
+// Distinct accent color: a rail on the leading edge, which is what the HumHub core used to
+// provide through its `listGroupItemActiveOrFocus()` mixin
+body.hh-ct-menu-style-bordered {
+    a.list-group-item {
+        border-left: 3px solid transparent; // Reserve the space, so the active item does not shift
 
         &.active {
             &, &:hover, &:focus {
-                background-color: var(--bs-primary);
-                color: var(--hh-primary-contrast);
-                border-left: none !important;
+                border-left-color: var(--bs-accent);
+                color: var(--hh-text-color-highlight);
             }
         }
     }
 }
 
-// "Soft" menu style: soft highlight background with primary color text for active items
-body.hh-ct-menu-style-soft {
-    a.list-group-item {
-        border-left: none !important;
-
-        &:not(.active) {
-            &:hover, &:focus {
-                background-color: var(--hh-background-color-secondary);
-                border-left: none !important;
-            }
+//
+// Layout helpers the HumHub markup depends on (ported — see the note above)
+//
+@each $breakpoint in (sm, md, lg, xl, xxl) {
+    @include media-breakpoint-up($breakpoint) {
+        .list-group-vertical-#{$breakpoint} {
+            flex-direction: column;
         }
+    }
+}
 
-        &.active {
-            &, &:hover, &:focus {
-                background-color: var(--hh-background-color-highlight);
-                color: var(--bs-primary);
-                font-weight: var(--hh-ct-font-bold-weight);
-                border-left: none !important;
-            }
+// Below the breakpoint where it becomes a column, the navigation is a scrollable row
+@include media-breakpoint-down(lg) {
+    .list-group-horizontal {
+        gap: 4px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        > .list-group-item {
+            white-space: nowrap;
+            border-radius: 3px;
         }
     }
 }
