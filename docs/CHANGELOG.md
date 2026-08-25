@@ -9,6 +9,7 @@ Changelog
 - Enh: Modules shipping their own font files can prevent a font from being loaded from Google Fonts (`Module::$locallyHostedFonts`)
 - Enh: Theme transitions are disabled for users with the "reduced motion" system preference (accessibility)
 - Fix: Remove invalid `font-weight` declarations (they referenced a font family variable and were ignored by browsers)
+- Fix: In a narrow window with a visible scrollbar, the top bar was slightly wider than the page and its right-hand buttons (account menu, notifications) were partly cut off
 - Fix: The configured values were lost in the generated SCSS root file after a module update (`Module::update()` is never called by HumHub — replaced with a migration)
 - Chg: The theme now fully owns the styling of the navigation menus (settings, space and administration menus), instead of overriding the HumHub one: all forced styles (`!important`) are removed, which makes the menus easier to customize for child themes. The three menu styles are unchanged, and on small screens only the navigation menus become a horizontal scrolling bar — other lists keep their vertical layout
 

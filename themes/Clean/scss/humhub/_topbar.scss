@@ -10,7 +10,12 @@
 .topbar {
     position: fixed;
     height: var(--hh-ct-top-bar-height);
-    width: 100%;
+    // Not `width: 100%`: a fixed element resolves percentages against the initial containing
+    // block, which includes the classic scrollbar gutter — the bar came out 412px wide in a
+    // 400px viewport and pushed the account controls off-screen. Sizing from both inset edges
+    // sidesteps the question (and `100vw` has exactly the same flaw as `100%` here).
+    inset-inline: 0;
+    width: auto;
     padding-left: 0;
     padding-right: 0;
 
