@@ -100,8 +100,13 @@ body.hh-ct-menu-style-bordered {
         -webkit-overflow-scrolling: touch;
 
         > .list-group-item {
+            // `nowrap` is load-bearing, not cosmetic: without it the items shrink below their
+            // own text, wrap one character per line, and the row grows downwards instead of
+            // scrolling. `flex` and `min-width` hold that floor from the other side.
+            flex: 0 0 auto;
+            min-width: auto;
             white-space: nowrap;
-            border-radius: 3px;
+            border-radius: var(--bs-border-radius);
         }
     }
 }
