@@ -103,4 +103,18 @@
             display: inline-block;
         }
     }
+
+    // Replace the Share Between text with an icon
+    .share-between-container > a {
+        font-size: 0;
+        padding: 0 3px;
+
+        &:before {
+            font: normal normal normal 14px/1 FontAwesome;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            content: "\f045"; // https://fontawesome.com/v4/icon/share-square-o
+            display: inline-block;
+        }
+    }
 }
