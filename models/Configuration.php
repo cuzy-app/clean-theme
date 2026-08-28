@@ -27,14 +27,6 @@ use yii\helpers\Inflector;
  */
 class Configuration extends Model
 {
-    /**
-     * Triggered after the default values are initialized and before the stored settings are loaded.
-     * Other modules (e.g. child themes such as Clean Theme Pro) can listen to this event to
-     * overwrite the default values, while values saved by the administrator still take precedence.
-     * @since 2.5.0
-     */
-    public const EVENT_INIT_DEFAULTS = 'initDefaults';
-
     public const ROOT_SCSS_FILE_PATH = '@clean-theme/themes/Clean/scss';
     public const ROOT_SCSS_FILE_NAME = 'config-generated-root.scss';
     public const BOOTSTRAP_CSS_PREFIX = '--bs-';
@@ -289,17 +281,6 @@ class Configuration extends Model
     public string $topMenuButtonHoverTextColorDark = '#ffffff'; // From $text-color-highlight-dark
     public string $bottomMenuBackgroundColorDark = '#222222'; // From $background-color-main-dark
     public string $bottomMenuTextColorDark = '#dddddd'; // From $text-color-main-dark
-
-    /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        parent::init();
-        // Allow other modules (e.g. child themes) to overwrite the default values.
-        // Values saved by the administrator are loaded afterward (see `loadBySettings()`) and take precedence.
-        $this->trigger(self::EVENT_INIT_DEFAULTS);
-    }
 
     public static function getJustifyContentOptions(): array
     {
