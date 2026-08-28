@@ -17,11 +17,12 @@
     column-gap: 6px;
 
     a {
+        margin-top: 0;
         color: var(--bs-accent);
     }
 
     > span {
-        display: inline-flex; // Prevents from having 24px height because the line-height is inherited from a parent
+        line-height: normal; // Prevents from having 24px height because the line-height is inherited from a parent
     }
 
     // Replace the Comment text with an icon
