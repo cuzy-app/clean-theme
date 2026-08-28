@@ -12,6 +12,7 @@ Changelog
 - Fix: In a narrow window with a visible scrollbar, the top bar was slightly wider than the page and its right-hand buttons (account menu, notifications) were partly cut off
 - Fix: The configured values were lost in the generated SCSS root file after a module update (`Module::update()` is never called by HumHub — replaced with a migration)
 - Chg: The theme now fully owns the styling of the navigation menus (settings, space and administration menus), instead of overriding the HumHub one: all forced styles (`!important`) are removed, which makes the menus easier to customize for child themes. The three menu styles are unchanged, and on small screens only the navigation menus become a horizontal scrolling bar — other lists keep their vertical layout
+- Fix: Vertical alignment of the calendar icons in the stream entry footer
 
 2.4.2 (August 21, 2026)
 ------------------

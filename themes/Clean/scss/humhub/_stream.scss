@@ -10,8 +10,18 @@
 
 
 .wall-entry-controls {
+    // Same as Reaction SCSS, but in case the Reaction module is not installed
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    column-gap: 6px;
+
     a {
         color: var(--bs-accent);
+    }
+
+    > span {
+        display: inline-flex; // Prevents from having 24px height because the line-height is inherited from a parent
     }
 
     // Replace the Comment text with an icon
