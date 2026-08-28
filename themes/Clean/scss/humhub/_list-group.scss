@@ -14,16 +14,8 @@
 //   * the horizontal scrolling row on small screens, here scoped to `.list-group-horizontal` —
 //     the class that actually means "row" — instead of every list group on the page.
 
-.list-group {
-    --bs-list-group-bg: var(--hh-background-color-main);
-    --bs-list-group-border-width: 0; // The active state is a background or a rail, never a grid
-    --bs-list-group-border-radius: 0;
-    --bs-list-group-item-padding-x: 15px;
-    --bs-list-group-item-padding-y: 10px;
-    --bs-list-group-action-hover-bg: var(--hh-background-color-secondary);
-    --bs-list-group-active-bg: var(--hh-background-color-secondary);
-    --bs-list-group-active-color: var(--hh-text-color-highlight);
-}
+// The component values (surface, borders, item padding, active and hover states) are Bootstrap
+// Sass variables, see `variables.scss`.
 
 .list-group-item {
     font-size: var(--hh-ct-menu-font-size);

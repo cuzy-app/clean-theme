@@ -13,6 +13,8 @@ Changelog
 - Fix: The configured values were lost in the generated SCSS root file after a module update (`Module::update()` is never called by HumHub — replaced with a migration)
 - Chg: The theme now fully owns the styling of the navigation menus (settings, space and administration menus), instead of overriding the HumHub one: all forced styles (`!important`) are removed, which makes the menus easier to customize for child themes. The three menu styles are unchanged, and on small screens only the navigation menus become a horizontal scrolling bar — other lists keep their vertical layout
 - Fix: Vertical alignment of the calendar icons in the stream entry footer
+- Fix: The link color of the theme configuration had no effect — Bootstrap 5.3 colors links from `--bs-link-color-rgb` and not from `--bs-link-color`, so links kept the HumHub core color. The generated SCSS root file now writes the `-rgb` companion and the hover pair as well
+- Chg: Bootstrap defaults (dropdowns, navigation menus) are customized by overwriting their Sass variables instead of redeclaring the generated `--bs-*` CSS variables in the component files, so child themes and the "Custom SCSS" setting of Administration -> Settings -> Appearance can overwrite them
 
 2.4.2 (August 21, 2026)
 ------------------

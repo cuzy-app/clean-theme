@@ -33,3 +33,30 @@ $danger: #EC0426 !default;
 $warning: #AF640E !default;
 $info: #1A808E !default;
 $light: #f3f3f3 !default;
+
+
+//
+// Bootstrap component defaults
+// --------------------------------------------------
+// A Bootstrap default is customized by overwriting its Sass variable here, which is what feeds
+// the generated `--bs-*` custom properties. A `--bs-*` declaration in a component file is only
+// for a customization scoped to a specific selector (e.g. `.navbar.topbar`).
+
+// Dropdowns
+$dropdown-border-width: 1px !default;
+$dropdown-border-color: var(--hh-ct-menu-border-color) !default;
+$dropdown-border-radius: .215rem !default;
+$dropdown-box-shadow: var(--hh-ct-panel-box-shadow) !default;
+
+// List groups — the left navigation (settings, space and admin menus).
+// The HumHub core component layer is disabled above ($prev-list-group), so this theme owns the
+// look; the values the core happens to share are restated here on purpose, so the component does
+// not silently follow a core change.
+$list-group-bg: var(--hh-background-color-main) !default;
+$list-group-border-width: 0 !default; // The active state is a background or a rail, never a grid
+$list-group-border-radius: 0 !default;
+$list-group-item-padding-x: 15px !default;
+$list-group-item-padding-y: 10px !default;
+$list-group-hover-bg: var(--hh-background-color-secondary) !default; // feeds --bs-list-group-action-hover-bg
+$list-group-active-bg: var(--hh-background-color-secondary) !default;
+$list-group-active-color: var(--hh-text-color-highlight) !default;

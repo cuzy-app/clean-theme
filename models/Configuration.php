@@ -352,6 +352,34 @@ class Configuration extends Model
     }
 
     /**
+     * Companion CSS variables that a generated one cannot do without.
+     *
+     * Bootstrap 5.3 colors links with `rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1))`
+     * and swaps `--bs-link-color-rgb` for `--bs-link-hover-color-rgb` on hover (see
+     * `@vendor/twbs/bootstrap/scss/_reboot.scss`), so `--bs-link-color` alone changes nothing:
+     * the `-rgb` companion and the hover pair have to be written as well. The hover color repeats
+     * the link color, as the HumHub core does (`$link-hover-color: $link-color`).
+     *
+     * `to-rgb()` is a Bootstrap SCSS function: the generated file is compiled by
+     * `ThemeHelper::buildCss()`, which imports `@vendor/twbs/bootstrap/scss/_functions.scss` first.
+     *
+     * @param string $cssVarName CSS variable name, without the `-dark` suffix of a dark mode attribute
+     * @param string $value Value of the generated CSS variable
+     * @param string $indent Indentation of the generated line
+     * @since 2.5.0
+     */
+    private static function getCompanionCssVariables(string $cssVarName, string $value, string $indent): string
+    {
+        if ($cssVarName !== '--bs-link-color') {
+            return '';
+        }
+
+        return $indent . '--bs-link-color-rgb: #{to-rgb(' . $value . ')};' . PHP_EOL
+            . $indent . '--bs-link-hover-color: ' . $value . ';' . PHP_EOL
+            . $indent . '--bs-link-hover-color-rgb: #{to-rgb(' . $value . ')};' . PHP_EOL;
+    }
+
+    /**
      * @inheritdoc
      */
     public function rules()
@@ -563,6 +591,7 @@ class Configuration extends Model
 
             // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px;`
             $scss .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+            $scss .= static::getCompanionCssVariables($cssVarName, $value . $unit, '    ');
         }
         $scss .= PHP_EOL;
 
@@ -586,6 +615,7 @@ class Configuration extends Model
             $cssVarName = preg_replace('/-dark$/', '', $cssVarName); // Remove the -dark suffix
             $value = $this->$name;
             $scss .= '        ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+            $scss .= static::getCompanionCssVariables($cssVarName, $value . $unit, '        ');
         }
         $scss .= '    }' . PHP_EOL;
         $scss .= '}' . PHP_EOL;
