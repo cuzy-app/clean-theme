@@ -13,6 +13,7 @@ Changelog
 - Fix: Vertical alignment of the calendar icons in the stream entry footer
 - Fix: The link color of the theme configuration had no effect — Bootstrap 5.3 colors links from `--bs-link-color-rgb` and not from `--bs-link-color`, so links kept the HumHub core color. The generated SCSS root file now writes the `-rgb` companion and the hover pair as well
 - Chg: Bootstrap defaults (dropdowns, navigation menus) are customized by overwriting their Sass variables instead of redeclaring the generated `--bs-*` CSS variables in the component files, so child themes and the "Custom SCSS" setting of Administration -> Settings -> Appearance can overwrite them
+- Chg: Secondary color for #6c757d to have a better contrast with the text which is now white instead of black
 
 2.4.2 (August 21, 2026)
 ------------------
