@@ -7,6 +7,10 @@
         border-radius: var(--hh-ct-panel-border-radius);
         box-shadow: var(--hh-ct-panel-box-shadow);
 
+        .card-panel-over-layer {
+            border-radius: var(--hh-ct-panel-border-radius);
+        }
+
         .card-body div {
             font-size: 14px;
         }
