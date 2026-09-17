@@ -34,4 +34,4 @@ https://github.com/cuzy-app/clean-theme
 
 ## Licence
 
-[GNU AGPL](https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md)
+[GNU AGPL](https://github.com/cuzy-app/clean-theme/blob/main/docs/LICENCE.md)

@@ -364,7 +364,7 @@ Changelog:
 - Chg: Moved `@smallScreen` and `@tinyScreen` from `humhub+mobile.less` to `variables.less`
 - Chg: Replaced `@headings-color` with `@text-color-main`
 - Enh: Added config page (for admins)
-- Enh: Added a child theme example (see [docs/README.md](https://github.com/cuzy-app/clean-theme/blob/master/docs/README.md#child-themes))
+- Enh: Added a child theme example (see [docs/README.md](https://github.com/cuzy-app/clean-theme/blob/main/docs/README.md#child-themes))
 
 1.4.0 (March 11, 2023)
 --------------------
