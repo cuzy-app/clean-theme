@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.5.0 (Unreleased)
+2.5.0 (September 27, 2026)
 ------------------
 - Enh: New "Soft highlight background with primary color text for active items" menu style
 - Fix: Form controls now follow the configured font size
