@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.5.1 (September 28, 2026)
+------------------
+- Chg: The CSS variables generated from the theme configuration are no longer written to `themes/Clean/scss/config-generated-root.scss` and compiled into the theme CSS, but served dynamically at `clean-theme-config.css` and loaded after the theme CSS. The module directory no longer needs to be writable, configuration changes no longer rebuild the theme CSS, and the `php yii clean-theme/generate-scss-root-file` command is removed. Child themes overwriting one of these variables in SCSS must now use a more specific selector than `:root`
+
 2.5.0 (September 27, 2026)
 ------------------
 - Enh: New "Soft highlight background with primary color text for active items" menu style

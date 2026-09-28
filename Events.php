@@ -9,23 +9,15 @@
 
 namespace humhub\modules\cleanTheme;
 
+use humhub\assets\CoreBundleAsset;
 use humhub\assets\TopNavigationAsset;
-use humhub\components\console\Application;
 use humhub\components\View;
 use humhub\modules\cleanTheme\assets\CleanThemeAsset;
 use humhub\modules\cleanTheme\assets\CleanThemeTopNavigationAsset;
-use humhub\modules\cleanTheme\commands\DeveloperController;
 use Yii;
 
 class Events
 {
-    public static function onConsoleApplicationInit($event)
-    {
-        /** @var Application $application */
-        $application = $event->sender;
-        $application->controllerMap['clean-theme'] = DeveloperController::class;
-    }
-
     public static function onViewBeforeRender($event)
     {
         if (Yii::$app->request->isAjax ?? false) {
@@ -57,6 +49,9 @@ class Events
 
         /** @var View $view */
         $view = $event->sender;
+
+        // Register the CSS variables generated from the configuration, after the theme CSS so that they overwrite the core defaults
+        $view->registerCssFile($module->configuration->getCssUrl(), ['depends' => CoreBundleAsset::class]);
 
         // Register the Clean Theme Assets instead
         CleanThemeAsset::register($view);

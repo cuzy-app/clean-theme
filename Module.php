@@ -12,7 +12,6 @@ namespace humhub\modules\cleanTheme;
 use humhub\helpers\ThemeHelper;
 use humhub\modules\cleanTheme\models\Configuration;
 use Yii;
-use yii\base\Exception;
 use yii\helpers\Url;
 
 /**
@@ -85,28 +84,10 @@ class Module extends \humhub\components\Module
     public function enable()
     {
         if (parent::enable() !== false) {
-            try {
-                $this->configuration->generateScssRootFile();
-            } catch (Exception $e) {
-                Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
-                return false;
-            }
             $this->enableTheme();
             return true;
         }
         return false;
-    }
-
-    public function update()
-    {
-        parent::update();
-
-        // Recreate SCSS root file because it was removed by module update
-        try {
-            $this->configuration->generateScssRootFile();
-        } catch (Exception $e) {
-            Yii::error('Could not generate SCSS root file: ' . $e->getMessage(), 'clean-theme');
-        }
     }
 
     /**

@@ -7,7 +7,6 @@
  * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
-use humhub\components\console\Application;
 use humhub\components\View;
 use humhub\modules\cleanTheme\Events;
 
@@ -15,12 +14,10 @@ return [
     'id' => 'clean-theme',
     'class' => humhub\modules\cleanTheme\Module::class,
     'namespace' => 'humhub\modules\cleanTheme',
+    'urlManagerRules' => [
+        'clean-theme-config.css' => 'clean-theme/css/index',
+    ],
     'events' => [
-        [
-            'class' => Application::class,
-            'event' => Application::EVENT_ON_INIT,
-            'callback' => [Events::class, 'onConsoleApplicationInit'],
-        ],
         [
             'class' => View::class,
             'event' => View::EVENT_BEFORE_RENDER,
