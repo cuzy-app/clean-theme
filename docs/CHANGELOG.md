@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.5.2 (Unreleased)
+------------------
+- Fix: The CSS variables stylesheet (`clean-theme-config.css`) was answered with a 403 while a user gate was open (2FA check, terms acceptance, forced password change…), so the gate page lost the theme configuration; the route is now registered as a gate infrastructure route (requires HumHub 1.19.0-beta.4+)
+
 2.5.1 (September 28, 2026)
 ------------------
 - Chg: The CSS variables generated from the theme configuration are no longer written to `themes/Clean/scss/config-generated-root.scss` and compiled into the theme CSS, but served dynamically at `clean-theme-config.css` and loaded after the theme CSS. The module directory no longer needs to be writable, configuration changes no longer rebuild the theme CSS, and the `php yii clean-theme/generate-scss-root-file` command is removed. Child themes overwriting one of these variables in SCSS must now use a more specific selector than `:root`

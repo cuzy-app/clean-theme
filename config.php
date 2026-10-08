@@ -7,6 +7,7 @@
  * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
+use humhub\components\gates\GateManager;
 use humhub\components\View;
 use humhub\modules\cleanTheme\Events;
 
@@ -27,6 +28,11 @@ return [
             'class' => View::class,
             'event' => View::EVENT_BEGIN_BODY,
             'callback' => [Events::class, 'onViewBeginBody'],
+        ],
+        [
+            'class' => GateManager::class,
+            'event' => GateManager::EVENT_INIT_GATES,
+            'callback' => [Events::class, 'onGateInit'],
         ],
     ],
 ];

@@ -11,6 +11,7 @@ namespace humhub\modules\cleanTheme;
 
 use humhub\assets\CoreBundleAsset;
 use humhub\assets\TopNavigationAsset;
+use humhub\components\gates\GateInitEvent;
 use humhub\components\View;
 use humhub\modules\cleanTheme\assets\CleanThemeAsset;
 use humhub\modules\cleanTheme\assets\CleanThemeTopNavigationAsset;
@@ -60,6 +61,21 @@ class Events
             'hideTopMenuOnScrollDown' => $module?->configuration->hideTopMenuOnScrollDown ?? false,
             'hideBottomMenuOnScrollDown' => $module?->configuration->hideBottomMenuOnScrollDown ?? false,
         ]);
+    }
+
+    /**
+     * The generated CSS variables (`CssController`) are a stylesheet every page depends on to
+     * render, the page of an open user gate included (2FA check, terms, forced password change…).
+     * Declared as a gate infrastructure route, so that no gate intercepts the request: the
+     * browser fetches a stylesheet without `Accept: text/html`, and an intercepting gate would
+     * answer with a 403 and leave the gate page without its theme configuration.
+     * The controller delivers no user content.
+     *
+     * @see https://github.com/humhub/humhub/blob/develop/docs/develop/user-gates.md
+     */
+    public static function onGateInit(GateInitEvent $event): void
+    {
+        $event->manager->registerInfrastructureRoute('clean-theme/css');
     }
 
     protected static function getModuleIfThemeActive(): ?Module
