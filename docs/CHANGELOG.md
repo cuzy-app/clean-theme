@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.5.2 (Unreleased)
+2.5.2 (October 21, 2026)
 ------------------
 - Fix: The CSS variables stylesheet (`clean-theme-config.css`) was answered with a 403 while a user gate was open (2FA check, terms acceptance, forced password change…), so the gate page lost the theme configuration; the route is now registered as a gate infrastructure route (requires HumHub 1.19.0-beta.4+)
 
