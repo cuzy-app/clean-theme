@@ -2,7 +2,7 @@
 /**
  * Clean Theme
  * @link https://github.com/cuzy-app/clean-theme
- * @license https://github.com/cuzy-app/clean-theme/blob/main/docs/LICENCE.md
+ * @license https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md
  * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
@@ -13,6 +13,7 @@ use humhub\helpers\Html;
 use humhub\modules\admin\permissions\ManageSettings;
 use humhub\modules\cleanTheme\Module;
 use humhub\widgets\bootstrap\Button;
+use humhub\widgets\bootstrap\Link;
 use humhub\widgets\form\ActiveForm;
 use Yii;
 
@@ -194,7 +195,7 @@ $darkColorInputLabelOptions['class'] .= ' fw-normal';
 
             <?php ActiveForm::begin(); ?>
             <?= Html::input('hidden', 'reset', true) ?>
-            <?= Button::asLink(Yii::t('CleanThemeModule.config', 'Reset everything to default values'))
+            <?= Link::to(Yii::t('CleanThemeModule.config', 'Reset everything to default values'))
                 ->cssClass('text-danger')
                 ->options(['style' => 'margin-top: -20px;'])
                 ->icon('undo')

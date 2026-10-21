@@ -3,11 +3,11 @@
 /**
  * Clean Theme
  * @link https://github.com/cuzy-app/clean-theme
- * @license https://github.com/cuzy-app/clean-theme/blob/main/docs/LICENCE.md
+ * @license https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md
  * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
-use humhub\components\console\Application;
+use humhub\components\gates\GateManager;
 use humhub\components\View;
 use humhub\modules\cleanTheme\Events;
 
@@ -15,12 +15,10 @@ return [
     'id' => 'clean-theme',
     'class' => humhub\modules\cleanTheme\Module::class,
     'namespace' => 'humhub\modules\cleanTheme',
+    'urlManagerRules' => [
+        'clean-theme-config.css' => 'clean-theme/css/index',
+    ],
     'events' => [
-        [
-            'class' => Application::class,
-            'event' => Application::EVENT_ON_INIT,
-            'callback' => [Events::class, 'onConsoleApplicationInit'],
-        ],
         [
             'class' => View::class,
             'event' => View::EVENT_BEFORE_RENDER,
@@ -30,6 +28,11 @@ return [
             'class' => View::class,
             'event' => View::EVENT_BEGIN_BODY,
             'callback' => [Events::class, 'onViewBeginBody'],
+        ],
+        [
+            'class' => GateManager::class,
+            'event' => GateManager::EVENT_INIT_GATES,
+            'callback' => [Events::class, 'onGateInit'],
         ],
     ],
 ];

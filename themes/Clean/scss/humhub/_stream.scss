@@ -10,8 +10,19 @@
 
 
 .wall-entry-controls {
+    // Same as Reaction SCSS, but in case the Reaction module is not installed
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    column-gap: 6px;
+
     a {
+        margin-top: 0;
         color: var(--bs-accent);
+    }
+
+    > span {
+        line-height: normal; // Prevents from having 24px height because the line-height is inherited from a parent
     }
 
     // Replace the Comment text with an icon
@@ -100,6 +111,20 @@
             -webkit-font-smoothing: antialiased;
             font-size: 18px;
             content: "\f0a2"; // https://fontawesome.com/v4/icon/bell-o
+            display: inline-block;
+        }
+    }
+
+    // Replace the Share Between text with an icon
+    .share-between-container > a {
+        font-size: 0;
+        padding: 0 3px;
+
+        &:before {
+            font: normal normal normal 14px/1 FontAwesome;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            content: "\f045"; // https://fontawesome.com/v4/icon/share-square-o
             display: inline-block;
         }
     }

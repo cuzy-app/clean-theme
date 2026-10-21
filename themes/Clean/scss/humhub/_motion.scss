@@ -1,0 +1,16 @@
+//
+// Motion
+// --------------------------------------------------
+// Respect the user's reduced motion preference (WCAG 2.2) for the transitions defined by this theme.
+// Bootstrap already handles its own transitions via `$enable-reduced-motion`.
+// This file must stay imported last in `build.scss` so equal-specificity selectors win by source order.
+
+@media (prefers-reduced-motion: reduce) {
+    body[class] .tab-menu .nav-tabs li > a,
+    body[class] ul.tab-menu-settings li > a,
+    body[class] a.list-group-item,
+    body.hide-top-menu #topbar,
+    body.hide-bottom-menu #topbar > .container #top-menu-nav {
+        transition-duration: .01s;
+    }
+}

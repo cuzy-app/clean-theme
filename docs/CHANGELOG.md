@@ -1,6 +1,42 @@
 Changelog
 =========
 
+2.5.2 (Unreleased)
+------------------
+- Fix: The CSS variables stylesheet (`clean-theme-config.css`) was answered with a 403 while a user gate was open (2FA check, terms acceptance, forced password change…), so the gate page lost the theme configuration; the route is now registered as a gate infrastructure route (requires HumHub 1.19.0-beta.4+)
+
+2.5.1 (September 28, 2026)
+------------------
+- Chg: The CSS variables generated from the theme configuration are no longer written to `themes/Clean/scss/config-generated-root.scss` and compiled into the theme CSS, but served dynamically at `clean-theme-config.css` and loaded after the theme CSS. The module directory no longer needs to be writable, configuration changes no longer rebuild the theme CSS, and the `php yii clean-theme/generate-scss-root-file` command is removed. Child themes overwriting one of these variables in SCSS must now use a more specific selector than `:root`
+
+2.5.0 (September 27, 2026)
+------------------
+- Enh: New "Soft highlight background with primary color text for active items" menu style
+- Fix: Form controls now follow the configured font size
+- Enh: Modules shipping their own font files can prevent a font from being loaded from Google Fonts (`Module::$locallyHostedFonts`)
+- Enh: Theme transitions are disabled for users with the "reduced motion" system preference (accessibility)
+- Fix: Remove invalid `font-weight` declarations (they referenced a font family variable and were ignored by browsers)
+- Fix: In a narrow window with a visible scrollbar, the top bar was slightly wider than the page and its right-hand buttons (account menu, notifications) were partly cut off
+- Chg: The theme now fully owns the styling of the navigation menus (settings, space and administration menus), instead of overriding the HumHub one: all forced styles (`!important`) are removed, which makes the menus easier to customize for child themes. The three menu styles are unchanged, and on small screens only the navigation menus become a horizontal scrolling bar — other lists keep their vertical layout
+- Fix: Vertical alignment of the calendar icons in the stream entry footer
+- Fix: The link color of the theme configuration had no effect — Bootstrap 5.3 colors links from `--bs-link-color-rgb` and not from `--bs-link-color`, so links kept the HumHub core color. The generated SCSS root file now writes the `-rgb` companion and the hover pair as well
+- Chg: Bootstrap defaults (dropdowns, navigation menus) are customized by overwriting their Sass variables instead of redeclaring the generated `--bs-*` CSS variables in the component files, so child themes and the "Custom SCSS" setting of Administration -> Settings -> Appearance can overwrite them
+- Chg: Secondary color for #6c757d to have a better contrast with the text which is now white instead of black
+
+2.4.2 (August 21, 2026)
+------------------
+- Fix: Remove CSS for buttons (keep core styling)
+- Fix: Error in the log `unknown property: yii\console\Request::isAjax` for some queued jobs (since 2.4.1)
+
+2.4.1 (August 10, 2026)
+------------------
+- Fix: Apply border-radius 50% to `.rounded` class HTML elements only if is `img`
+- Enh #45: Skip `onViewBeforeRender` on AJAX requests and memoize module state per request to avoid redundant DB queries on every widget render
+
+2.4.0 (July 16, 2026)
+------------------
+- Fix: Compatibility with HumHub 1.19
+
 2.3.19 (May 5, 2026)
 ------------------
 - Fix: When Distinct accent color is select for the menu style, remove the CSS to force the active menu item color
@@ -364,7 +400,7 @@ Changelog:
 - Chg: Moved `@smallScreen` and `@tinyScreen` from `humhub+mobile.less` to `variables.less`
 - Chg: Replaced `@headings-color` with `@text-color-main`
 - Enh: Added config page (for admins)
-- Enh: Added a child theme example (see [docs/README.md](https://github.com/cuzy-app/clean-theme/blob/main/docs/README.md#child-themes))
+- Enh: Added a child theme example (see [docs/README.md](https://github.com/cuzy-app/clean-theme/blob/master/docs/README.md#child-themes))
 
 1.4.0 (March 11, 2023)
 --------------------

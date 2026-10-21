@@ -2,12 +2,10 @@
 
 // Define mixins
 @import "mixins";
-@import "config-generated-root";
 
 // Overwrite HumHub values
 @import "humhub/base";
 @import "humhub/badge";
-@import "humhub/button";
 @import "humhub/cards";
 @import "humhub/dropdown";
 @import "humhub/gridview";
@@ -30,7 +28,9 @@
 // Overwrite modules values
 @import "modules/space";
 @import "modules/clean-theme";
-@import "modules/sharebetween";
+
+// Respect the user's reduced motion preference (must stay imported last)
+@import "humhub/motion";
 
 // Temporary fix to https://github.com/humhub/humhub-internal/issues/528
 body > .sp-container.sp-hidden {

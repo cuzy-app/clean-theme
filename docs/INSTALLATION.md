@@ -32,4 +32,4 @@ More information about the CSP configuration can be found in the [HumHub documen
 
 If you want to build a chid-theme over the Clean theme, see [Documentation here](https://docs.humhub.org/docs/theme/overview) and [Wiki here](https://community.humhub.com/s/theming-appearance/wiki/52/Theme+creation).
 
-Use available CSS variables in `protected/modules/clean-theme/themes/Clean/scss/config-generated-root.scss`.
+The CSS variables generated from the theme configuration (Administration -> Modules -> Clean Theme -> Configure) are served at `<your HumHub URL>/clean-theme-config.css`: use them in your child theme. They are loaded after the theme CSS, so a child theme overwriting one of them in SCSS must use a more specific selector than `:root`.

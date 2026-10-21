@@ -3,20 +3,20 @@
 /**
  * Clean Theme
  * @link https://github.com/cuzy-app/clean-theme
- * @license https://github.com/cuzy-app/clean-theme/blob/main/docs/LICENCE.md
+ * @license https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md
  * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
  */
 
 namespace humhub\modules\cleanTheme\models;
 
 use humhub\components\SettingsManager;
-use humhub\helpers\ThemeHelper;
 use humhub\modules\cleanTheme\Module;
 use humhub\widgets\bootstrap\Button;
+use humhub\widgets\bootstrap\Link;
 use Yii;
-use yii\base\Exception;
 use yii\base\Model;
 use yii\helpers\Inflector;
+use yii\helpers\Url;
 
 /**
  *
@@ -25,8 +25,11 @@ use yii\helpers\Inflector;
  */
 class Configuration extends Model
 {
-    public const ROOT_SCSS_FILE_PATH = '@clean-theme/themes/Clean/scss';
-    public const ROOT_SCSS_FILE_NAME = 'config-generated-root.scss';
+    /**
+     * Setting storing the version of the generated CSS (changed on each save), used as a cache buster
+     * @since 2.5.1
+     */
+    public const CSS_VERSION_SETTING = 'cssVersion';
     public const BOOTSTRAP_CSS_PREFIX = '--bs-';
     public const HUMHUB_CSS_PREFIX = '--hh-';
     public const CLEAN_THEME_CSS_PREFIX = '--hh-ct-';
@@ -36,6 +39,7 @@ class Configuration extends Model
     public const BOTTOM_BAR_HEIGHT_XS = 50;
     public const MENU_STYLE_BACKGROUND = 'background';
     public const MENU_STYLE_BORDERED = 'bordered';
+    public const MENU_STYLE_SOFT = 'soft';
 
     /**
      * This list must contain all CSS attribute names
@@ -305,6 +309,7 @@ class Configuration extends Model
         return [
             self::MENU_STYLE_BACKGROUND => Yii::t('CleanThemeModule.config', 'Full primary color background for active items'),
             self::MENU_STYLE_BORDERED => Yii::t('CleanThemeModule.config', 'Distinct accent color for active items'),
+            self::MENU_STYLE_SOFT => Yii::t('CleanThemeModule.config', 'Soft highlight background with primary color text for active items'),
         ];
     }
 
@@ -326,6 +331,57 @@ class Configuration extends Model
     private static function isFontAttribute($attributeName): bool
     {
         return str_ends_with((string) $attributeName, 'ontFamily');
+    }
+
+    /**
+     * Companion CSS variables that a generated one cannot do without.
+     *
+     * Bootstrap 5.3 colors links with `rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1))`
+     * and swaps `--bs-link-color-rgb` for `--bs-link-hover-color-rgb` on hover (see
+     * `@vendor/twbs/bootstrap/scss/_reboot.scss`), so `--bs-link-color` alone changes nothing:
+     * the `-rgb` companion and the hover pair have to be written as well. The hover color repeats
+     * the link color, as the HumHub core does (`$link-hover-color: $link-color`).
+     *
+     * The `-rgb` companions need the color as an `r, g, b` list: it is computed from a hexadecimal color
+     * (the format of the configuration color inputs). For any other color format, they are skipped.
+     *
+     * @param string $cssVarName CSS variable name, without the `-dark` suffix of a dark mode attribute
+     * @param string $value Value of the generated CSS variable
+     * @param string $indent Indentation of the generated line
+     * @since 2.5.0
+     */
+    private static function getCompanionCssVariables(string $cssVarName, string $value, string $indent): string
+    {
+        if ($cssVarName !== '--bs-link-color') {
+            return '';
+        }
+
+        $css = $indent . '--bs-link-hover-color: ' . $value . ';' . PHP_EOL;
+
+        $rgb = static::hexColorToRgb($value);
+        if ($rgb !== null) {
+            $css .= $indent . '--bs-link-color-rgb: ' . $rgb . ';' . PHP_EOL
+                . $indent . '--bs-link-hover-color-rgb: ' . $rgb . ';' . PHP_EOL;
+        }
+
+        return $css;
+    }
+
+    /**
+     * @return string|null `r, g, b` list, or null if the color is not a hexadecimal color (`#rgb` or `#rrggbb`)
+     * @since 2.5.1
+     */
+    private static function hexColorToRgb(string $color): ?string
+    {
+        $hex = ltrim(trim($color), '#');
+        if (!preg_match('/^(?:[0-9a-f]{3}|[0-9a-f]{6})$/i', $hex)) {
+            return null;
+        }
+        if (strlen($hex) === 3) {
+            $hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+        }
+
+        return implode(', ', array_map('hexdec', str_split($hex, 2)));
     }
 
     /**
@@ -439,7 +495,7 @@ class Configuration extends Model
             = Yii::t('CleanThemeModule.config', 'Google Font name') . ' '
             . Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->sm() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>'
             . Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
-                'seeDocumentationLink' => Button::asLink(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
+                'seeDocumentationLink' => Link::to(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
             ]);
 
         return [
@@ -479,9 +535,6 @@ class Configuration extends Model
         $this->hideTextInBottomMenuItems = (bool)$this->hideTextInBottomMenuItems;
     }
 
-    /**
-     * @throws Exception
-     */
     public function save(): bool
     {
         if (!$this->validate()) {
@@ -510,20 +563,40 @@ class Configuration extends Model
             $this->settingsManager->set($attributeName, $this->$attributeName);
         }
 
-        $this->generateScssRootFile();
+        // Cache buster of the generated CSS file (see `getCssUrl()`)
+        $this->settingsManager->set(self::CSS_VERSION_SETTING, (string)time());
 
         return true;
     }
 
     /**
-     * @throws Exception
+     * URL of the CSS file generated from the configuration (see `getCss()`), with a cache buster
+     * changing on each configuration save and module update.
+     *
+     * @since 2.5.1
      */
-    public function generateScssRootFile(): void
+    public function getCssUrl(): string
     {
-        $scss = '/** This file is auto-generated by the Clean Theme configuration. Do not edit the file directly. */' . PHP_EOL . PHP_EOL;
+        $version = Yii::$app->getModule('clean-theme')?->getVersion() . '-' . $this->settingsManager->get(self::CSS_VERSION_SETTING, '0');
+
+        return Url::to(['/clean-theme/css/index', 'v' => $version]);
+    }
+
+    /**
+     * CSS variables generated from the configuration.
+     *
+     * The CSS is served by `CssController` (see `urlManagerRules` in `config.php`) and registered after the theme
+     * CSS (see `Events::onViewBeginBody()`), so that these values overwrite the HumHub core defaults.
+     * Nothing is written to the disk and the theme CSS doesn't need to be rebuilt when the configuration changes.
+     *
+     * @since 2.5.1
+     */
+    public function getCss(): string
+    {
+        $css = '/** This file is generated by the Clean Theme configuration. */' . PHP_EOL . PHP_EOL;
 
         // Start root variables
-        $scss .= ':root {' . PHP_EOL;
+        $css .= ':root {' . PHP_EOL;
 
         // Configuration attributes (skip dark colors)
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
@@ -536,22 +609,22 @@ class Configuration extends Model
                 : $this->$name;
 
             // Example for `$containerMaxWidth` attribute: `--container-max-width: 1600px;`
-            $scss .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+            $css .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+            $css .= static::getCompanionCssVariables($cssVarName, $value . $unit, '    ');
         }
-        $scss .= PHP_EOL;
+        $css .= PHP_EOL;
 
         // Dimensions
-        $scss .= '    --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING . 'px;' . PHP_EOL;
-        $scss .= '    --hh-fixed-header-height: ' . ((int)$this->topBarHeight + self::TOP_BAR_BOTTOM_SPACING) . 'px;' . PHP_EOL;
-        $scss .= '    --hh-fixed-footer-height: 0px;' . PHP_EOL;
+        $css .= '    --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING . 'px;' . PHP_EOL;
+        $css .= '    --hh-fixed-header-height: ' . ((int)$this->topBarHeight + self::TOP_BAR_BOTTOM_SPACING) . 'px;' . PHP_EOL;
+        $css .= '    --hh-fixed-footer-height: 0px;' . PHP_EOL;
 
         // End root variables
-        $scss .= '}' . PHP_EOL;
-        $scss .= PHP_EOL;
+        $css .= '}' . PHP_EOL;
+        $css .= PHP_EOL;
 
-        // Dark mode configuration attributes
-        $scss .= '@if $enable-dark-mode {' . PHP_EOL;
-        $scss .= '    @include color-mode(dark, true) {' . PHP_EOL;
+        // Dark mode configuration attributes (same selector as the Bootstrap `color-mode(dark, true)` mixin)
+        $css .= '[data-bs-theme="dark"] {' . PHP_EOL;
         foreach (self::CSS_ATTRIBUTE_UNITS as $name => $unit) {
             if (!static::isDarkColorAttribute($name)) {
                 continue;
@@ -559,58 +632,38 @@ class Configuration extends Model
             $cssVarName = (self::CSS_ATTRIBUTE_PREFIXES[$name] ?? '--hh-ct-') . Inflector::camel2id($name);
             $cssVarName = preg_replace('/-dark$/', '', $cssVarName); // Remove the -dark suffix
             $value = $this->$name;
-            $scss .= '        ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+            $css .= '    ' . $cssVarName . ': ' . $value . $unit . ';' . PHP_EOL;
+            $css .= static::getCompanionCssVariables($cssVarName, $value . $unit, '    ');
         }
-        $scss .= '    }' . PHP_EOL;
-        $scss .= '}' . PHP_EOL;
-        $scss .= PHP_EOL;
+        $css .= '}' . PHP_EOL;
+        $css .= PHP_EOL;
 
         // Mobile CSS variables
-        $scss .= '@media (max-width: 767.98px) {' . PHP_EOL; // Don't use `max-width: var(--bs-breakpoint-md)`, because it doesn't work for CSS variables
-        $scss .= '    :root {' . PHP_EOL;
-        $scss .= '        --hh-ct-top-bar-height: ' . self::TOP_BAR_HEIGHT_SM . 'px;' . PHP_EOL;
-        $scss .= '        --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING_SM . 'px;' . PHP_EOL;
-        $scss .= '        --hh-fixed-header-height: ' . (self::TOP_BAR_HEIGHT_SM + self::TOP_BAR_BOTTOM_SPACING_SM) . 'px;' . PHP_EOL;
-        $scss .= '    }' . PHP_EOL;
-        $scss .= '}' . PHP_EOL;
-        $scss .= PHP_EOL;
-        $scss .= '@media (max-width: 575.98px) {' . PHP_EOL; // Don't use `max-width: var(--bs-breakpoint-sm)`, because it doesn't work for CSS variables
-        $scss .= '    :root {' . PHP_EOL;
-        $scss .= '        --hh-fixed-footer-height: ' . (self::BOTTOM_BAR_HEIGHT_XS + 2) . 'px;' . PHP_EOL; // + 2px for the bottom border
-        $scss .= '    }' . PHP_EOL;
-        $scss .= '}' . PHP_EOL;
+        $css .= '@media (max-width: 767.98px) {' . PHP_EOL; // Don't use `max-width: var(--bs-breakpoint-md)`, because it doesn't work for CSS variables
+        $css .= '    :root {' . PHP_EOL;
+        $css .= '        --hh-ct-top-bar-height: ' . self::TOP_BAR_HEIGHT_SM . 'px;' . PHP_EOL;
+        $css .= '        --hh-ct-top-bar-bottom-spacing: ' . self::TOP_BAR_BOTTOM_SPACING_SM . 'px;' . PHP_EOL;
+        $css .= '        --hh-fixed-header-height: ' . (self::TOP_BAR_HEIGHT_SM + self::TOP_BAR_BOTTOM_SPACING_SM) . 'px;' . PHP_EOL;
+        $css .= '    }' . PHP_EOL;
+        $css .= '}' . PHP_EOL;
+        $css .= PHP_EOL;
+        $css .= '@media (max-width: 575.98px) {' . PHP_EOL; // Don't use `max-width: var(--bs-breakpoint-sm)`, because it doesn't work for CSS variables
+        $css .= '    :root {' . PHP_EOL;
+        $css .= '        --hh-fixed-footer-height: ' . (self::BOTTOM_BAR_HEIGHT_XS + 2) . 'px;' . PHP_EOL; // + 2px for the bottom border
+        $css .= '    }' . PHP_EOL;
+        $css .= '}' . PHP_EOL;
 
-        // Write file
-        $rootScssPath = Yii::getAlias(self::ROOT_SCSS_FILE_PATH);
-        if (
-            !is_dir($rootScssPath)
-            && !mkdir($rootScssPath, 0765)
-            && !is_dir($rootScssPath)
-        ) {
-            throw new Exception(sprintf('Directory "%s" was not created', $rootScssPath));
-        }
-        $result = file_put_contents($rootScssPath . '/' . self::ROOT_SCSS_FILE_NAME, $scss);
-        if ($result === false) {
-            throw new Exception(sprintf('File "%s" could not be written', $rootScssPath . '/' . self::ROOT_SCSS_FILE_NAME));
-        }
-
-        // Rebuild CSS
-        if (Module::isThemeBasedActive()) {
-            $buildResult = ThemeHelper::buildCss();
-            if ($buildResult !== true) {
-                throw new Exception('Theme CSS could not be rebuilt: ' . $buildResult);
-            }
-        }
+        return $css;
     }
 
     public function getGoogleFontsCss2UrlParams(): string
     {
         $fonts = [];
-        if ($this->fontFamily !== 'Open Sans') {
+        if (!in_array($this->fontFamily, Module::$locallyHostedFonts, true)) {
             $fonts[] = $this->fontFamily;
         }
         if (
-            $this->headingFontFamily !== 'Open Sans'
+            !in_array($this->headingFontFamily, Module::$locallyHostedFonts, true)
             && !in_array($this->headingFontFamily, $fonts, true)
         ) {
             $fonts[] = $this->headingFontFamily;

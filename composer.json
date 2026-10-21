@@ -17,7 +17,7 @@
       "type": "vcs",
       "url": "https://github.com/humhub/module-coding-standards.git"
     }
-  ],
+    ],
   "require-dev": {
     "humhub/module-coding-standards": "dev-main"
   },
