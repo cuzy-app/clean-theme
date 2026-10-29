@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.5.3 (Unreleased)
+------------------
+- Fix: Reviewed French, German, Spanish, Portuguese, Brazilian Portuguese, Italian and Dutch translations (wrong meanings, HumHub terminology, consistent wording and form of address); Traditional Chinese is now actually in Traditional Chinese and Norwegian Nynorsk in Nynorsk (they were copies of Simplified Chinese and Bokmål)
+
 2.5.2 (October 21, 2026)
 ------------------
 - Fix: The CSS variables stylesheet (`clean-theme-config.css`) was answered with a 403 while a user gate was open (2FA check, terms acceptance, forced password change…), so the gate page lost the theme configuration; the route is now registered as a gate infrastructure route (requires HumHub 1.19.0-beta.4+)

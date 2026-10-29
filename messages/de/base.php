@@ -1,5 +1,5 @@
 <?php
 return [
-  'Collapse navigation' => 'Navigation ausblenden',
+  'Collapse navigation' => 'Navigation einklappen',
   'Expand navigation' => 'Navigation erweitern',
 ];
