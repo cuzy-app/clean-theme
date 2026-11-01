@@ -11,7 +11,9 @@ namespace humhub\modules\cleanTheme;
 
 use humhub\helpers\ThemeHelper;
 use humhub\modules\cleanTheme\models\Configuration;
+use humhub\models\ModuleEnabled;
 use Yii;
+use yii\base\UserException;
 use yii\helpers\Url;
 
 /**
@@ -74,6 +76,14 @@ class Module extends \humhub\components\Module
      */
     public function disable()
     {
+        // Clean Theme Pro is a child theme of this one and cannot render without it. Checked here, in the code of
+        // this module, because it is the only code that runs on every path: the `module/*` console commands do not
+        // load the other modules (HumHub 1.19), so a guard in Clean Theme Pro would never be called there.
+        // Read from the `module_enabled` table for the same reason.
+        if (in_array('clean-theme-pro', ModuleEnabled::getEnabledIds(), true)) {
+            throw new UserException('The Clean Theme cannot be disabled while the Clean Theme Pro module is enabled: disable Clean Theme Pro first.');
+        }
+
         $this->disableTheme();
         parent::disable();
     }

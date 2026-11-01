@@ -1,6 +1,10 @@
 Changelog
 =========
 
+2.5.4 (Unreleased)
+------------------
+- Fix: The Clean Theme could be disabled while the Clean Theme Pro module, its child theme, was still enabled, from the command line (`php yii module/disable clean-theme`), leaving a site without a working theme; it is now refused wherever it comes from
+
 2.5.3 (November 1, 2026)
 ------------------
 - Fix: Reviewed French, German, Spanish, Portuguese, Brazilian Portuguese, Italian and Dutch translations (wrong meanings, HumHub terminology, consistent wording and form of address); Traditional Chinese is now actually in Traditional Chinese and Norwegian Nynorsk in Nynorsk (they were copies of Simplified Chinese and Bokmål)

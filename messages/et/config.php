@@ -68,6 +68,7 @@ return [
     'Reset successful!' => '',
     'Secondary background color used for tabs, etc.' => '',
     'Secondary text color for some icons, buttons, etc.' => '',
+    'Soft highlight background with primary color text for active items' => '',
     'Soft highlight color for informative backgrounds (e.g. Wiki active category)' => '',
     'Soft text color 2 for other side information like wall entry links (like/comment), help blocks in forms, etc.' => '',
     'Soft text color 3 for placeholders, grid view summary, etc.' => '',
