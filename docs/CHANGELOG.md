@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.5.3 (Unreleased)
+2.5.3 (November 1, 2026)
 ------------------
 - Fix: Reviewed French, German, Spanish, Portuguese, Brazilian Portuguese, Italian and Dutch translations (wrong meanings, HumHub terminology, consistent wording and form of address); Traditional Chinese is now actually in Traditional Chinese and Norwegian Nynorsk in Nynorsk (they were copies of Simplified Chinese and Bokmål)
 - Fix: The CSS variables stylesheet is now served at `clean-theme-config-css` instead of `clean-theme-config.css`, as web servers serving `.css` URLs as static files (e.g. nginx `try_files $uri =404`, Plesk "Serve static files directly by nginx") answered it with a 404, so the theme configuration was not applied. The old URL still works when it reaches HumHub
