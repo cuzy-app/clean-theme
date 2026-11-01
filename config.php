@@ -17,7 +17,7 @@ return [
     'namespace' => 'humhub\modules\cleanTheme',
     'urlManagerRules' => [
         // Without extension: web servers serving `.css` URLs as static files would answer with a 404
-        'clean-theme-config' => 'clean-theme/css/index',
+        'clean-theme-config-css' => 'clean-theme/css/index',
         // URL until 2.5.2, still referenced by pages cached before the update
         'clean-theme-config.css' => 'clean-theme/css/index',
     ],
