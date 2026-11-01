@@ -17,7 +17,7 @@ use yii\web\Response;
 
 /**
  * Serves the CSS variables generated from the theme configuration (see `Configuration::getCss()`)
- * at the `clean-theme-config.css` URL (see `urlManagerRules` in `config.php`).
+ * at the `clean-theme-config` URL (see `urlManagerRules` in `config.php`).
  *
  * @property Module $module
  * @since 2.5.1
