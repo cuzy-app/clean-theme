@@ -3,7 +3,7 @@
  * Clean Theme
  * @link https://github.com/cuzy-app/clean-theme
  * @license https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md
- * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
+ * @author [Marc FARRE](https://marc.fun) for [CUZY.app](https://www.cuzy.app)
  */
 
 namespace humhub\modules\cleanTheme\models;
@@ -49,7 +49,7 @@ $darkColorInputLabelOptions['class'] .= ' fw-normal';
         <div class="alert alert-info cuzy-free-module-info" role="alert">
             This module was created and is maintained by
             <a href="https://www.cuzy.app/"
-               target="_blank">CUZY.APP (view other modules)</a>.
+               target="_blank">CUZY.app (view other modules)</a>.
             <br>
             It's free, but it's the result of a lot of design and maintenance work over time.
             <br>

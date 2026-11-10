@@ -4,7 +4,7 @@
  * Clean Theme
  * @link https://github.com/cuzy-app/clean-theme
  * @license https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md
- * @author [Marc FARRE](https://marc.fun) for [CUZY.APP](https://www.cuzy.app)
+ * @author [Marc FARRE](https://marc.fun) for [CUZY.app](https://www.cuzy.app)
  */
 
 use humhub\components\gates\GateManager;
