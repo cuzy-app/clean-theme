@@ -1,8 +1,7 @@
 name: Rector
 
+# Runs on the maintainer's machine instead (pre-commit hook and monthly run); kept here as a manual button.
 on:
-  schedule:
-    - cron: "0 5 * * 5"
   workflow_dispatch:
 
 jobs:
