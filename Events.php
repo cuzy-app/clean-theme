@@ -15,6 +15,7 @@ use humhub\components\gates\GateInitEvent;
 use humhub\components\View;
 use humhub\modules\cleanTheme\assets\CleanThemeAsset;
 use humhub\modules\cleanTheme\assets\CleanThemeTopNavigationAsset;
+use humhub\modules\cleanTheme\services\GoogleFontsService;
 use Yii;
 
 class Events
@@ -50,6 +51,9 @@ class Events
 
         /** @var View $view */
         $view = $event->sender;
+
+        // Copy the Google Fonts downloaded to the server to the assets folder, if missing there (e.g. after a cache flush)
+        (new GoogleFontsService($module->configuration))->publish();
 
         // Register the CSS variables generated from the configuration, after the theme CSS so that they overwrite the core defaults
         $view->registerCssFile($module->configuration->getCssUrl(), ['depends' => CoreBundleAsset::class]);

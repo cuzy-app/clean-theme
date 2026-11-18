@@ -9,6 +9,7 @@ use humhub\helpers\DeviceDetectorHelper;
 use humhub\helpers\Html;
 use humhub\modules\cleanTheme\models\Configuration;
 use humhub\modules\cleanTheme\Module;
+use humhub\modules\cleanTheme\services\GoogleFontsService;
 use humhub\modules\space\widgets\Chooser;
 use humhub\modules\user\widgets\AccountTopMenu;
 use humhub\widgets\NotificationArea;
@@ -18,7 +19,13 @@ use humhub\widgets\TopMenuRightStack;
 
 /** @var Module $module */
 $module = Yii::$app->getModule('clean-theme');
-$googleFontsCss2UrlParams = $module?->configuration->getGoogleFontsCss2UrlParams();
+// Google Fonts are loaded from Google only if they could not be downloaded to the server (see `GoogleFontsService`)
+// Published here, before the decision, as a failed publish clears the key (`Events::onViewBeginBody()` runs after the head)
+$googleFontsService = $module ? new GoogleFontsService($module->configuration) : null;
+$googleFontsService?->publish();
+$googleFontsCss2Url = $googleFontsService && $googleFontsService->getKey() === null
+    ? $module->configuration->getGoogleFontsCss2Url()
+    : null;
 
 AppAsset::register($this);
 
@@ -40,10 +47,10 @@ if (Yii::$app->user->isGuest) {
         <?php $this->head() ?>
         <?= $this->render('head') ?>
 
-        <?php if ($googleFontsCss2UrlParams) : ?>
+        <?php if ($googleFontsCss2Url) : ?>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?<?= $googleFontsCss2UrlParams ?>:wght@100;200;300;400;500;600;700;800;900&display=swap"> <?php // Don't replace with :wght@100..900 because some fonts such as Quicksand won't load because of the missing font weight?>
+            <link rel="stylesheet" href="<?= $googleFontsCss2Url ?>">
         <?php endif; ?>
     </head>
 

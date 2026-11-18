@@ -11,6 +11,7 @@ namespace humhub\modules\cleanTheme\models;
 
 use humhub\components\SettingsManager;
 use humhub\modules\cleanTheme\Module;
+use humhub\modules\cleanTheme\services\GoogleFontsService;
 use humhub\widgets\bootstrap\Button;
 use humhub\widgets\bootstrap\Link;
 use Yii;
@@ -40,6 +41,12 @@ class Configuration extends Model
     public const MENU_STYLE_BACKGROUND = 'background';
     public const MENU_STYLE_BORDERED = 'bordered';
     public const MENU_STYLE_SOFT = 'soft';
+    /**
+     * Appended to the Google Fonts stylesheet URL (see `getGoogleFontsCss2Url()`).
+     * Don't replace with :wght@100..900 because some fonts such as Quicksand won't load because of the missing font weight
+     * @since 2.6.0
+     */
+    public const GOOGLE_FONTS_CSS2_URL_SUFFIX = ':wght@100;200;300;400;500;600;700;800;900&display=swap';
 
     /**
      * This list must contain all CSS attribute names
@@ -255,6 +262,11 @@ class Configuration extends Model
     public string|bool $hideTopMenuOnScrollDown = false;
     public string|bool $hideBottomMenuOnScrollDown = false;
     public string|bool $hideTextInBottomMenuItems = false;
+
+    /**
+     * Whether the Google Fonts could not be downloaded on the last `save()` (see `GoogleFontsService::download()`)
+     */
+    private bool $_googleFontsDownloadFailed = false;
 
     // Dark mode colors
     public string $linkColorDark = '#88c5e8'; // Based on mix(white, $primary, 10%)
@@ -496,7 +508,8 @@ class Configuration extends Model
             . Button::info(Yii::t('CleanThemeModule.config', 'Browse fonts'))->icon('external-link')->link('https://fonts.google.com/')->options(['target' => '_blank'])->loader(false)->sm() . ' (' . Yii::t('CleanThemeModule.config', 'Use the name in the URL') . ')<br>'
             . Yii::t('CleanThemeModule.config', 'You must authorize HumHub to download Google Fonts in the configuration file: {seeDocumentationLink}', [
                 'seeDocumentationLink' => Link::to(Yii::t('CleanThemeModule.config', 'see documentation'))->link('https://marketplace.humhub.com/module/clean-theme/installation')->options(['target' => '_blank']),
-            ]);
+            ]) . ' '
+            . Yii::t('CleanThemeModule.config', 'When saving, the fonts are downloaded to the server and served from it: this authorization is only needed if the server cannot reach Google Fonts.');
 
         return [
             'containerMaxWidth' => $inPx,
@@ -566,7 +579,19 @@ class Configuration extends Model
         // Cache buster of the generated CSS file (see `getCssUrl()`)
         $this->settingsManager->set(self::CSS_VERSION_SETTING, (string)time());
 
+        // Serve the Google Fonts from the server; if they cannot be downloaded, they are loaded from Google
+        $this->_googleFontsDownloadFailed = !(new GoogleFontsService($this))->download();
+
         return true;
+    }
+
+    /**
+     * Whether the Google Fonts could not be downloaded on the last `save()`, and are loaded from Google instead
+     * @since 2.6.0
+     */
+    public function hasGoogleFontsDownloadFailed(): bool
+    {
+        return $this->_googleFontsDownloadFailed;
     }
 
     /**
@@ -653,6 +678,12 @@ class Configuration extends Model
         $css .= '    }' . PHP_EOL;
         $css .= '}' . PHP_EOL;
 
+        // Google Fonts downloaded to the server (see `GoogleFontsService`)
+        $fontFaceCss = (new GoogleFontsService($this))->getFontFaceCss();
+        if ($fontFaceCss !== '') {
+            $css .= PHP_EOL . $fontFaceCss . PHP_EOL;
+        }
+
         return $css;
     }
 
@@ -673,6 +704,19 @@ class Configuration extends Model
             $fontsEncoded[] = 'family=' . urlencode($font);
         }
         return implode('&', $fontsEncoded);
+    }
+
+    /**
+     * URL of the Google Fonts stylesheet of the configured fonts
+     *
+     * @return string|null null if no font is loaded from Google Fonts (see `Module::$locallyHostedFonts`)
+     * @since 2.6.0
+     */
+    public function getGoogleFontsCss2Url(): ?string
+    {
+        $params = $this->getGoogleFontsCss2UrlParams();
+
+        return $params ? 'https://fonts.googleapis.com/css2?' . $params . self::GOOGLE_FONTS_CSS2_URL_SUFFIX : null;
     }
 
     public static function isDarkColorAttribute(string $name): bool

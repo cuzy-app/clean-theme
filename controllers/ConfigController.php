@@ -31,14 +31,14 @@ class ConfigController extends Controller
 
         if (isset($post['UploadConfiguration'])) {
             if ($uploadModel->load($post) && $uploadModel->validate() && $uploadModel->save()) {
-                $this->view->saved();
+                $this->savedOrGoogleFontsWarning($model);
                 return $this->refresh();
             }
             $this->view->error('Could not upload the configuration: ' . Json::encode($uploadModel->getErrors()));
         }
 
         if (isset($post['Configuration']) && $model->load($post) && $model->validate() && $model->save()) {
-            $this->view->saved();
+            $this->savedOrGoogleFontsWarning($model);
             return $this->refresh();
         }
 
@@ -59,6 +59,20 @@ class ConfigController extends Controller
             'model' => $model,
             'uploadModel' => $uploadModel,
         ]);
+    }
+
+    /**
+     * The configuration is saved even if the Google Fonts could not be downloaded: the admin is warned that they
+     * are loaded from Google
+     * @since 2.6.0
+     */
+    private function savedOrGoogleFontsWarning(Configuration $model): void
+    {
+        if ($model->hasGoogleFontsDownloadFailed()) {
+            $this->view->warn(Yii::t('CleanThemeModule.config', 'Saved, but the fonts could not be downloaded to the server: they are loaded from Google Fonts instead.'));
+        } else {
+            $this->view->saved();
+        }
     }
 
     public function actionDownloadJson()

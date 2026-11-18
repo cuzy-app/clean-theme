@@ -1,8 +1,9 @@
 Changelog
 =========
 
-2.5.4 (Unreleased)
+2.6.0 (Unreleased)
 ------------------
+- Enh: Google Fonts are downloaded to the server when the configuration is saved (and when the module is updated) and served from it, so browsers no longer contact Google; if the server cannot download them, they are still loaded from Google
 - Fix: The Clean Theme could be disabled while the Clean Theme Pro module, its child theme, was still enabled, from the command line (`php yii module/disable clean-theme`), leaving a site without a working theme; it is now refused wherever it comes from
 
 2.5.3 (November 1, 2026)

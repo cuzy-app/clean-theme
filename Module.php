@@ -11,6 +11,7 @@ namespace humhub\modules\cleanTheme;
 
 use humhub\helpers\ThemeHelper;
 use humhub\modules\cleanTheme\models\Configuration;
+use humhub\modules\cleanTheme\services\GoogleFontsService;
 use humhub\models\ModuleEnabled;
 use Yii;
 use yii\base\UserException;
@@ -85,6 +86,11 @@ class Module extends \humhub\components\Module
         }
 
         $this->disableTheme();
+        try {
+            (new GoogleFontsService($this->getConfiguration()))->deleteFiles();
+        } catch (\Throwable $e) {
+            Yii::warning('Could not delete the downloaded Google Fonts: ' . $e->getMessage(), 'clean-theme');
+        }
         parent::disable();
     }
 

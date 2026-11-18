@@ -1,9 +1,11 @@
 Installation
 ============
 
-## Allow Google Fonts in the custom CSP Configuration 
+## Allow Google Fonts in the custom CSP Configuration (only if the server cannot reach Google Fonts)
 
-If you plan to use Google Fonts, you need to authorize HumHub to download Google Fonts by adding the `https://fonts.gstatic.com` URL in the CSP Settings of the `web.php` configuration file.
+When the theme configuration is saved (and when the module is updated), the Google Fonts are downloaded to the server and served from it, so browsers don't contact Google. If the server cannot reach Google Fonts (e.g. no outgoing connection), a warning is shown when saving the configuration and the fonts are loaded from Google by the browsers instead.
+
+Only in this case, you need to authorize HumHub to download Google Fonts by adding the `https://fonts.gstatic.com` URL in the CSP Settings of the `web.php` configuration file.
 
 Example of configuration for the `protected/config/web.php` file: 
 
