@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.6.1 (Unreleased)
+2.6.1 (November 25, 2026)
 ------------------
 - Fix: The search icon of the top bar was not highlighted on the search page (its route is now `content/search`)
 - Fix: The icons of the top bar (notifications, messages…) stay highlighted while their dropdown is open
