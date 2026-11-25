@@ -23,7 +23,7 @@ humhub.module('cleanTheme.topNavigation', function (module, require, $) {
             setTimeout(fixNavigationOverflow, 250);
 
             // Top menu -> icon buttons: update active status
-            updateBtnStatus('search-menu', 'search', 'search');
+            updateBtnStatus('search-menu', 'content', 'search');
             updateBtnStatus('icon-notifications', 'notification', 'overview');
             updateBtnStatus('icon-messages', 'mail', 'mail');
             updateBtnStatus('icon-activity-web-summary', 'activity-web-summary', 'latest');

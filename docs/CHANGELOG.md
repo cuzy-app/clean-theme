@@ -1,6 +1,16 @@
 Changelog
 =========
 
+2.6.1 (Unreleased)
+------------------
+- Fix: The search icon of the top bar was not highlighted on the search page (its route is now `content/search`)
+- Fix: The icons of the top bar (notifications, messages…) stay highlighted while their dropdown is open
+- Fix: On small screens, the space chooser of the bottom bar shows its search field at the bottom again, next to the bar (a Bootstrap 3 selector no longer matched); obsolete Bootstrap 3 `.open` selectors removed from the top bar styles
+- Enh: Unit tests (Codeception) of the configuration (saving, generated CSS variables, JSON import), the Google Fonts served from the server, the CSS variables stylesheet route, the theme detection and the guard against disabling the module while Clean Theme Pro is enabled
+- Enh: Browser test scenarios for an AI agent, to run after a HumHub core upgrade (`docs/BROWSER-TESTS.md`), and how to retake the module screenshots (`docs/SCREENSHOTS.md`)
+- Enh: Reworded README
+- Enh: New screenshots
+
 2.6.0 (November 18, 2026)
 ------------------
 - Enh: Google Fonts are downloaded to the server when the configuration is saved (and when the module is updated) and served from it, so browsers no longer contact Google; if the server cannot download them, they are still loaded from Google

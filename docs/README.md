@@ -4,25 +4,25 @@ Modern, smooth and uncluttered theme.
 
 ## Overview
 
-- Module configuration: customize colors, fonts, borders, main container width, etc. (with upload/download a file config feature)
+- Module configuration: customize the colors, fonts, borders, width of the main container, etc. The configuration can be exported to a file and imported again.
 - Top bar:
-  - Large screens: the 2 top menu bars are merged into one
+  - Large screens: the two top menu bars are merged into one.
   - Small screens:
-    - The second menu becomes a bottom menu bar.
-    - On scrolling down, the top and bottom menus can be hidden.
-  - The search, notifications and messages buttons are marked active when browsing the corresponding pages.
-- User's account pages: the profile's header (with "My profile" button) is added
-- Active menu item: The top or left border can be replaced with a background color
-- Left navigation menu: 
-  - Sticky when scrolling vertically.
-  - Can be collapsable via the `collapsibleLeftNavigation` property ([see doc](https://docs.humhub.org/docs/admin/advanced-configuration)).
-- You can create a Child theme ([see doc](https://marketplace.humhub.com/module/clean-theme/installation))
+    - The second menu bar moves to the bottom of the screen.
+    - The top and bottom bars can be hidden when scrolling down.
+  - The search, notifications and messages buttons are highlighted on their respective pages.
+- Account pages: the profile header is displayed, with a "My profile" button.
+- Active menu item: the top or left border can be replaced with a background color.
+- Left navigation menu:
+  - Stays visible (sticky) when scrolling down.
+  - Can be made collapsible with the `collapsibleLeftNavigation` property ([see the documentation](https://docs.humhub.org/docs/admin/advanced-configuration)).
+- Child themes: you can build your own theme on top of this one ([see the documentation](https://marketplace.humhub.com/module/clean-theme/installation)).
 
 ## Pricing
 
-This module is free, but the result of a lot of work for design and maintenance over time.
+This module is free, but designing and maintaining it over time takes a lot of work.
 
-If it's useful to you, please consider [making a donation](https://www.cuzy.app/checkout/donate/) or [participating in the code](https://github.com/cuzy-app/clean-theme). Thanks!
+If you find it useful, please consider [making a donation](https://www.cuzy.app/checkout/donate/) or [contributing to the code](https://github.com/cuzy-app/clean-theme). Thanks!
 
 ## Repository
 
@@ -34,8 +34,8 @@ https://github.com/cuzy-app/clean-theme
 
 ## Licence
 
-[GNU AGPL](https://github.com/cuzy-app/clean-theme/blob/master/docs/LICENCE.md)
+[GNU AGPL](https://github.com/cuzy-app/clean-theme/blob/main/docs/LICENCE.md)
 
 ## Hosting
 
-This theme is installed and updated for you on [CUZY Hosting](https://www.cuzy.app/hosting), managed HumHub hosting with every CUZY module included.
+This theme is installed and kept up to date for you on [CUZY Hosting](https://www.cuzy.app/hosting), a managed HumHub hosting service that includes every CUZY module.

@@ -162,7 +162,8 @@
 
                 &:hover,
                 &:active,
-                &:focus {
+                &:focus,
+                &.show {
                     background-color: var(--hh-ct-top-menu-button-hover-background-color);
                     color: var(--hh-ct-top-menu-button-hover-text-color);
                     text-decoration: none;
@@ -235,9 +236,7 @@
                 background-color: var(--hh-background-color-secondary);
             }
 
-            > a:active,
-            &.open > a,
-            &.open .dropdown-toggle {
+            > a:active {
                 background-color: var(--bs-primary);
                 color: var(--hh-primary-contrast);
             }
@@ -289,9 +288,7 @@
         }
 
         .dropdown.account > a,
-        .dropdown.account.open > a,
-        .dropdown.account > a:hover,
-        .dropdown.account.open > a:hover {
+        .dropdown.account > a:hover {
             background-color: transparent;
         }
 

@@ -128,7 +128,7 @@
             }
 
             // Space browser
-            .open #space-menu-dropdown {
+            #space-menu-dropdown.show {
                 display: flex;
                 flex-direction: column-reverse; // Display the search input at the bottom
 
