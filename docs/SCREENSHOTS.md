@@ -24,9 +24,16 @@ in BROWSER-TESTS.md).
 ## Capture
 
 - Set the browser viewport to **1280 × 910 pixels**.
-- For longer pages, such as a long wiki page, increase the height and keep the same width.
+- For longer pages, such as a long wiki page, increase the height, up to **1400 pixels**, and keep the same width.
+  Beyond that, capture the part that matters (scroll to it, collapse the other sections or crop to one section) or
+  split it into two screenshots.
 - For mobile views (the bottom bar), set the browser viewport to **400 × 900 pixels**.
 - Capture the module's own actions step by step.
+- Hide what is not related to the module, for the capture only: other modules' entries and badges in the top,
+  profile and administration menus, notification counters, debug toolbars, banners (cookies, push notifications,
+  maintenance), reactions and other unrelated widgets. Inject CSS or remove the elements in the page (e.g. with the
+  browser's developer tools), and keep the page looking like a real HumHub page: its header, the module's own menu
+  entry and the theme. Never change the instance's settings or disable modules for a screenshot.
 - Capture **1:1 pixel**: one pixel of the PNG = one CSS pixel of the viewport, so a 1280 px wide viewport gives a
   1280 px wide PNG. On a high-density screen (Retina, 4K with scaling), set the device pixel ratio to 1 in the
   browser's responsive mode instead of downscaling the image afterwards. Do not use a "fit to size" or
@@ -34,8 +41,8 @@ in BROWSER-TESTS.md).
 
 ## Publish
 
-- Check the PNG width: **1280 pixels** (400 for mobile views). If it is not, retake the screenshot at the right
-  viewport and pixel ratio rather than resizing it.
+- Check the PNG size: **1280 pixels** wide (400 for mobile views) and at most **1400 pixels** high. If it is not,
+  retake the screenshot at the right viewport and pixel ratio rather than resizing it.
 - Save as PNG without lossy compression: no JPEG, no color reduction (pngquant, "8-bit" or "palette" export), no
   quality slider. PNG compression levels (up to 9) are lossless and fine.
 - Save them as `resources/screen_<n>.png`, in the order they should appear, and keep the `screenshots` list of
@@ -60,7 +67,9 @@ wait for my answer. Then:
    data it needs, and wait for my go.
 2. Have Claude in Chrome create the sample data with the test accounts of docs/BROWSER-TESTS.md, following the
    "Prepare content" section, then take the screenshots following the "Capture" section.
-3. Check them as described in "Publish" (1:1 pixel, 1280 px wide, lossless PNG), replace the files in resources/
-   and update module.json if their number changed. Do not commit anything.
-4. At the end, list the screenshots replaced or added, and the sample data created, and ask whether to delete it.
+3. Before each capture, hide what is not related to the module, for the capture only, as "Capture" says; never
+   change the instance's settings.
+4. Check them as described in "Publish" (1:1 pixel, 1280 px wide, at most 1400 px high, lossless PNG), replace the
+   files in resources/ and update module.json if their number changed. Do not commit anything.
+5. At the end, list the screenshots replaced or added, and the sample data created, and ask whether to delete it.
 ```
